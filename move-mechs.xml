@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rapid>
+    <dir id="clanInvasion" path="../RT-Mechs/ClanInvasion3061"/>
+    <dir id="target" path="../IrianTech/battleMech"/>
+
+    <resource-list id="mechGear">
+        <!-- BattleTech -->
+        <dir path="../../BattleTech_Data/StreamingAssets/data/ammunitionBox"/>
+        <dir path="../../BattleTech_Data/StreamingAssets/data/heatsinks"/>
+        <dir path="../../BattleTech_Data/StreamingAssets/data/jumpjets"/>
+        <dir path="../../BattleTech_Data/StreamingAssets/data/upgrades"/>
+        <dir path="../../BattleTech_Data/StreamingAssets/data/weapon"/>
+
+        <!-- IrianTech -->
+        <dir path="../IrianTech/ammunitionBox"/>
+        <dir path="../IrianTech/customWeapon"/>
+        <dir path="../IrianTech/heatsinks"/>
+        <dir path="../IrianTech/jumpjets"/>
+        <dir path="../IrianTech/mechUpgrades"/>
+        <dir path="../IrianTech/upgrades"/>
+        <dir path="../IrianTech/weapon"/>
+
+        <!-- Imported from RogueTech -->
+        <dir path="../IrianTech/rogueTech/Actuators"/>
+        <dir path="../IrianTech/rogueTech/AddOn"/>
+        <dir path="../IrianTech/rogueTech/Artillery"/>
+        <dir path="../IrianTech/rogueTech/Clan"/>
+        <dir path="../IrianTech/rogueTech/Cockpit"/>
+        <dir path="../IrianTech/rogueTech/Heatsinks"/>
+        <dir path="../IrianTech/rogueTech/Jumpjets"/>
+        <dir path="../IrianTech/rogueTech/Munitions"/>
+        <dir path="../IrianTech/rogueTech/OmniTech"/>
+        <dir path="../IrianTech/rogueTech/Primitive"/>
+        <dir path="../IrianTech/rogueTech/Sensors"/>
+        <dir path="../IrianTech/rogueTech/TargetTrackingSystem"/>
+        <dir path="../IrianTech/rogueTech/Upgrade"/>
+        <dir path="../IrianTech/rogueTech/Weapons"/>
+
+        <!-- JK_Variants -->
+        <dir path="../JK_VariantsCampaign/ammunitionBox"/>
+        <dir path="../JK_VariantsCampaign/heatsinks"/>
+        <dir path="../JK_VariantsCampaign/upgrades"/>
+        <dir path="../JK_VariantsCampaign/weapon"/>
+
+        <!-- Vanilla Plus -->
+        <dir path="../Vanilla Plus Core/ammunitionbox"/>
+        <dir path="../Vanilla Plus Core/heatsinks"/>
+        <dir path="../Vanilla Plus Core/internals"/>
+        <dir path="../Vanilla Plus Core/jumpjets"/>
+        <dir path="../Vanilla Plus Core/weapons"/>
+
+    </resource-list>
+
+    <unsupported-list>
+        <!-- Rogue Tech Custom Components -->
+        <unsupported-inventory item="Linked_Armor_NullSignatureSystem"/>
+        <unsupported-inventory item="Gear_ECM_Angel"/>
+        <unsupported-inventory item="Gear_Engine_XXL"/>
+    </unsupported-list>
+
+    <task-list id="chassis-standard">
+        <update-location name="Head" property="InventorySlots" value="1"/>
+        <update-location name="RightArm" property="InventorySlots" value="8"/>
+        <update-location name="RightTorso" property="InventorySlots" value="10"/>
+        <update-location name="CenterTorso" property="InventorySlots" value="4"/>
+        <update-location name="LeftTorso" property="InventorySlots" value="10"/>
+        <update-location name="LeftArm" property="InventorySlots" value="8"/>
+        <update-location name="RightLeg" property="InventorySlots" value="4"/>
+        <update-location name="LeftLeg" property="InventorySlots" value="4"/>
+
+        <swap-fixedEquipment item="Gear_JumpJet_Standard" with="Gear_JumpJet_Generic_Standard"/>
+
+        <remove-fixedEquipment item="Lootable_Engine_Standard"/>
+        <remove-fixedEquipment item="Lootable_Structure_Standard"/>
+        <remove-fixedEquipment item="Lootable_Engine_ICE"/>
+        <remove-fixedEquipment item="Unique_Cockpit_Dual"/>
+
+        <remove-fixedEquipment item="Linked_Engine_Size_1"/>
+        <remove-fixedEquipment item="Linked_Engine_Size_2"/>
+        <remove-fixedEquipment item="Linked_Engine_Size_3"/>
+        <remove-fixedEquipment item="Linked_Engine_Size_4"/>
+        <remove-fixedEquipment item="Linked_Engine_Size_4_Armored"/>
+        <remove-fixedEquipment item="Linked_Engine_Size_6"/>
+        <remove-fixedEquipment item="Linked_Engine_Size_8"/>
+
+        <remove-quirk/>
+        <remove-engine/>
+        <remove-gyro/>
+        <remove-endosteel/>
+
+        <swap-hardpoint weaponMount="Special" with="Ballistic"/>
+        <swap-hardpoint weaponMount="SpecialHandHeld" with="Ballistic"/>
+    </task-list>
+
+    <task-list id="mech-standard">
+        <swap-inventory item="Gear_Cockpit_CommSuite" with="Gear_Cockpit_StarCorps_Improved"/>
+        <swap-inventory item="Gear_Cockpit_Rangefinder_PlusPlus" with="Gear_Cockpit_Majesty_M_M_180KL"/>
+        <swap-inventory item="Gear_ECM_Guardian" with="Gear_Guardian_ECM"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_Probe_BeagleActiveProbe" with="Gear_AP"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_HeatSinkKit_Double" with="Gear_HeatSink_Engine_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_HeatSinkKit_Double_Clan" with="Gear_HeatSink_Engine_Double_Clan"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_HeatSink_Double" with="Gear_HeatSink_Generic_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_HeatSink_Double_Clan" with="Gear_HeatSink_Generic_Double_Clan"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_HeatSink_Single" with="Gear_HeatSink_Generic_Standard"/>
+        <swap-inventory item="Gear_JumpJet_Standard" with="Gear_JumpJet_Generic_Standard"/>
+        <swap-inventory item="Gear_JumpJet_Standard_Improved" with="Gear_JumpJet_Standard_Improved"/>
+        <swap-inventory item="Gear_JumpJet_Heavy" with="Gear_JumpJet_Generic_Heavy"/>
+        <swap-inventory item="Gear_JumpJet_Assault" with="Gear_JumpJet_Generic_Assault"/>
+        <swap-inventory item="Gear_MASC" with="Gear_MASC"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_MASC_Clan" with="Gear_MASC_CLAN"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Weapon_AMS" with="Gear_AMS" itemType="Upgrade"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Weapon_AMS_Laser" with="Gear_AMS" itemType="Upgrade"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Weapon_AMS_Clan" with="Gear_AMS_CLAN" itemType="Upgrade"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Weapon_AMS_Laser_Clan" with="Gear_AMS_CLAN" itemType="Upgrade"/> <!-- Vanilla Plus -->
+
+        <swap-inventory item="Gear_Actuator_Omni_Lower" with="Gear_Actuator_Omni_Lower"/> <!-- NEED TO IMPORT ACTUATORS FROM RT -->
+        <swap-inventory item="Gear_FCS_Missile_Accuracy" with="Gear_FCS_Missile_Accuracy"/>
+        <swap-inventory item="Gear_FCS_AdvancedTC_Clan" with="Gear_FCS_AdvancedTC_Clan"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_MultiTrack" with="Gear_TargetingTrackingSystem_MultiTrack"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_Ballistic" with="Gear_TargetingTrackingSystem_Ballistic"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_Energy" with="Gear_TargetingTrackingSystem_Energy"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_Evasion" with="Gear_TargetingTrackingSystem_Evasion"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_Gunnery" with="Gear_TargetingTrackingSystem_Gunnery"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_Missile" with="Gear_TargetingTrackingSystem_Missile"/>
+
+        <!-- Primitive Weapons -->
+        <swap-inventory item="Weapon_Laser_Primitive_Large" with="Weapon_Laser_Primitive_Large"/>
+        <swap-inventory item="Weapon_Laser_Primitive_Medium" with="Weapon_Laser_Primitive_Medium"/>
+
+        <!-- Handle Gear_Attachment_ArtemisIV and convert to launcher paired with Artemis ammo -->
+        <swap-inventory item="Weapon_LRM_5" with="Weapon_LRM_5_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_10" with="Weapon_LRM_10_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_15" with="Weapon_LRM_15_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_20" with="Weapon_LRM_20_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_5_Clan" with="Weapon_LRM_5_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_10_Clan" with="Weapon_LRM_10_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_15_Clan" with="Weapon_LRM_15_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_20_Clan" with="Weapon_LRM_20_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_2" with="Weapon_SRM_2_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_4" with="Weapon_SRM_4_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_6" with="Weapon_SRM_6_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_2_Clan" with="Weapon_SRM_2_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_4_Clan" with="Weapon_SRM_4_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_6_Clan" with="Weapon_SRM_6_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+
+        <!-- Vanilla Plus Primitive -->
+<!--        <swap-inventory item="Weapon_Rocket_10" with="Weapon_RocketLauncher_RL10_0_STOCK"/>-->
+<!--        <swap-inventory item="Weapon_Rocket_15" with="Weapon_RocketLauncher_RL15_0_STOCK"/>-->
+<!--        <swap-inventory item="Weapon_Rocket_20" with="Weapon_RocketLauncher_RL20_0_STOCK"/>-->
+
+        <!-- Stock Weapons -->
+        <swap-inventory item="Weapon_Autocannon_AC_2" with="Weapon_Autocannon_AC2_0-STOCK"/>
+        <swap-inventory item="Weapon_Autocannon_AC_2_Defiance" with="Weapon_Autocannon_AC2_1-Defiance"/>
+        <swap-inventory item="Weapon_Autocannon_AC_2_Imperator" with="Weapon_Autocannon_AC2_2-Imperator"/>
+        <swap-inventory item="Weapon_Autocannon_AC_5" with="Weapon_Autocannon_AC5_0-STOCK"/>
+        <swap-inventory item="Weapon_Autocannon_AC_10" with="Weapon_Autocannon_AC10_0-STOCK"/>
+        <swap-inventory item="Weapon_Autocannon_AC_20" with="Weapon_Autocannon_AC20_0-STOCK"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_2_Double" with="Ammo_AmmunitionBox_Generic_AC2_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_10" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_10_Double" with="Ammo_AmmunitionBox_Generic_AC10_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_10_AP" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_20" with="Ammo_AmmunitionBox_Generic_AC20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_20_Double" with="Ammo_AmmunitionBox_Generic_AC20_Double"/>
+
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_2" with="Weapon_Autocannon_LB2X_0-STOCK"/>-->
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_5" with="Weapon_Autocannon_LB5X_0-STOCK"/>-->
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_10" with="Weapon_Autocannon_LB10X_0-STOCK"/>-->
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_20" with="Weapon_Autocannon_LB20X_0-STOCK"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_Cluster" with="Ammo_AmmunitionBox_Generic_LB2X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_Slug" with="Ammo_AmmunitionBox_Generic_LB2X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Cluster_Half" with="Ammo_AmmunitionBox_Generic_LB5X_Half"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Cluster" with="Ammo_AmmunitionBox_Generic_LB5X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Slug_Half" with="Ammo_AmmunitionBox_Generic_LB5X_Half"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Slug" with="Ammo_AmmunitionBox_Generic_LB5X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Cluster" with="Ammo_AmmunitionBox_Generic_LB10X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Cluster_Half" with="Ammo_AmmunitionBox_Generic_LB10X_Half"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Slug" with="Ammo_AmmunitionBox_Generic_LB10X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Cluster" with="Ammo_AmmunitionBox_Generic_LB20X"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Cluster_Double" with="Ammo_AmmunitionBox_Generic_LB20X_Double"/>-->
+<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Slug" with="Ammo_AmmunitionBox_Generic_LB20X"/>-->
+
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/> <!-- Vanilla Plus -->
+
+        <swap-inventory item="Weapon_Flamer" with="Weapon_Flamer_Flamer_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_Large" with="Weapon_Laser_LargeLaser_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_Large_Magna" with="Weapon_Laser_LargeLaser_2-Magna"/>
+        <swap-inventory item="Weapon_Laser_Large_ExoStar" with="Weapon_Laser_LargeLaser_2-ExoStar"/>
+        <swap-inventory item="Weapon_Laser_Medium" with="Weapon_Laser_MediumLaser_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_Medium_Magna" with="Weapon_Laser_MediumLaser_1-Magna"/>
+        <swap-inventory item="Weapon_Laser_Medium_ExoStar" with="Weapon_Laser_MediumLaser_1-ExoStar"/>
+        <swap-inventory item="Weapon_Laser_Small" with="Weapon_Laser_SmallLaser_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_Small_ExoStar" with="Weapon_Laser_SmallLaser_1-ExoStar"/>
+        <swap-inventory item="Weapon_PPC" with="Weapon_PPC_PPC_0-STOCK"/>
+        <swap-inventory item="Weapon_PPC_Snubnose" with="Weapon_PPC_PPCSnub_ARCH"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Weapon_PPC_ER" with="Weapon_PPC_PPCER_0-STOCK"/>
+        <swap-inventory item="Weapon_PPC_ER_MagnaFirestar" with="Weapon_PPC_PPCER_1-MagnaFirestar"/>
+        <swap-inventory item="Weapon_PPC_ER_TiegartMagnum" with="Weapon_PPC_PPCER_2-TiegartMagnum"/>
+        <swap-inventory item="Weapon_LRM_5" with="Weapon_LRM_LRM5_0-STOCK"/>
+        <swap-inventory item="Weapon_LRM_10" with="Weapon_LRM_LRM10_0-STOCK"/>
+        <swap-inventory item="Weapon_LRM_10_LongFire" with="Weapon_LRM_LRM10_2-LongFire"/>
+        <swap-inventory item="Weapon_LRM_15" with="Weapon_LRM_LRM15_0-STOCK"/>
+        <swap-inventory item="Weapon_LRM_15_LongFire" with="Weapon_LRM_LRM15_2-LongFire"/>
+        <swap-inventory item="Weapon_LRM_15_Zeus" with="Weapon_LRM_LRM15_2-Zeus"/>
+        <swap-inventory item="Weapon_LRM_20" with="Weapon_LRM_LRM20_0-STOCK"/>
+        <swap-inventory item="Weapon_LRM_20_LongFire" with="Weapon_LRM_LRM20_2-LongFire"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Double" with="Ammo_AmmunitionBox_Generic_LRM_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Improved" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_ListenKill" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_SAM" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clearance" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Weapon_SRM_2" with="Weapon_SRM_SRM2_0-STOCK"/>
+        <swap-inventory item="Weapon_SRM_4" with="Weapon_SRM_SRM4_0-STOCK"/>
+        <swap-inventory item="Weapon_SRM_6" with="Weapon_SRM_SRM6_0-STOCK"/>
+        <swap-inventory item="Weapon_SRM_6_Irian" with="Weapon_SRM_SRM6_2-Irian"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Double" with="Ammo_AmmunitionBox_Generic_SRM_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_AMS" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Weapon_MachineGun" with="Weapon_MachineGun_MachineGun_0-STOCK"/>
+        <swap-inventory item="Weapon_MachineGun_Dual" with="Weapon_MachineGun_MachineGun_0-STOCK"/>
+        <swap-inventory item="Weapon_MachineGun_Array" with="Weapon_MachineGun_MachineGun_0-STOCK"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun" with="Ammo_AmmunitionBox_Generic_MG"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Half" with="Ammo_AmmunitionBox_Generic_MG_Half"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Double" with="Ammo_AmmunitionBox_Generic_MG_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_AP" with="Ammo_AmmunitionBox_Generic_MG"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Incendiary" with="Ammo_AmmunitionBox_Generic_MG"/>
+
+        <swap-inventory item="Weapon_Laser_Pulse_Large" with="Weapon_Laser_LargeLaserPulse_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Medium" with="Weapon_Laser_MediumLaserPulse_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Medium_RakerIV" with="Weapon_Laser_MediumLaserPulse_1-RakerIV"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Medium_Magna400P" with="Weapon_Laser_MediumLaserPulse_2-Magna400P"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Small" with="Weapon_Laser_SmallLaserPulse_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_ER_Large" with="Weapon_Laser_LargeLaserER_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_ER_Medium" with="Weapon_Laser_MediumLaserER_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_ER_Medium_MagnaVI" with="Weapon_Laser_MediumLaserER_1-MagnaVI"/>
+        <swap-inventory item="Weapon_Laser_ER_Small" with="Weapon_Laser_SmallLaserER_0-STOCK"/>
+        <swap-inventory item="Weapon_Laser_ER_Small_DiverseOptics" with="Weapon_Laser_SmallLaserER_1-Diverse_Optics"/>
+
+        <!-- Vanilla Plus Inner Sphere -->
+        <swap-inventory item="Weapon_Gauss_Rifle_Light" with="Weapon_Gauss_Gauss_LIGHT"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Light" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Light_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/>
+        <swap-inventory item="Weapon_Gauss_Rifle_Heavy" with="Weapon_Gauss_Gauss_HEAVY"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Heavy" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Heavy_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/>
+<!--        <swap-inventory item="" with="Weapon_Gauss_Gauss_HEAVY-1-UMP"/>-->
+        <swap-inventory item="Weapon_Laser_XPulse_Medium" with="Weapon_Laser_MediumLaserPulse_X"/>
+        <swap-inventory item="Weapon_MRM_10" with="Weapon_MRM_10"/>
+<!--        <swap-inventory item="" with="Weapon_MRM_10-1-UMP"/>-->
+        <swap-inventory item="Weapon_MRM_20" with="Weapon_MRM_20"/>
+<!--        <swap-inventory item="" with="Weapon_MRM_20-1-UMP"/>-->
+        <swap-inventory item="Weapon_MRM_30" with="Weapon_MRM_30"/>
+<!--        <swap-inventory item="" with="Weapon_MRM_30-1-UMP"/>-->
+        <swap-inventory item="Weapon_MRM_40" with="Weapon_MRM_40"/>
+<!--        <swap-inventory item="" with="Weapon_MRM_40-1-UMP"/>-->
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem" with="Ammo_AmmunitionBox_MRM"/> <!-- TODO support this ammo -->
+        <swap-inventory item="Weapon_PPC_Heavy" with="Weapon_PPC_PPC_HEAVY"/>
+        <swap-inventory item="Weapon_PPC_Light" with="Weapon_PPC_PPC_LIGHT"/>
+        <swap-inventory item="Weapon_SRM_2_Streak" with="Weapon_SRM_SRM2_STREAK"/>
+        <swap-inventory item="Weapon_SRM_4_Streak" with="Weapon_SRM_SRM4_STREAK"/>
+        <swap-inventory item="Weapon_SRM_6_Streak" with="Weapon_SRM_SRM6_STREAK"/>
+
+        <!-- Vanilla Plus Clan -->
+        <swap-inventory item="Gear_Probe_Active_Clan" with="Gear_AP_CLAN"/>
+        <swap-inventory item="Gear_ECM_Guardian_Clan" with="Gear_Guardian_ECM_CLAN"/>
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_2_Clan" with="Weapon_Autocannon_AC2_LBX_CLAN"/>-->
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_5_Clan" with="Weapon_Autocannon_AC5_LBX_CLAN"/>-->
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_10_Clan" with="Weapon_Autocannon_AC10_LBX_CLAN"/>-->
+<!--        <swap-inventory item="Weapon_Autocannon_LBX_20_Clan" with="Weapon_Autocannon_AC20_LBX_CLAN"/>-->
+        <swap-inventory item="Weapon_Flamer_CLAN" with="Weapon_Flamer_Flamer_CLAN"/>
+        <swap-inventory item="Weapon_Flamer_Clan" with="Weapon_Flamer_Flamer_CLAN"/>
+        <swap-inventory item="Weapon_Gauss_Rifle_Clan" with="Weapon_Gauss_Gauss_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Heavy_Large_Clan" with="Weapon_Laser_HeavyLargeLaser_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Heavy_Medium_Clan" with="Weapon_Laser_HeavyMediumLaser_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Heavy_Small_Clan" with="Weapon_Laser_HeavySmallLaser_CLAN"/>
+        <swap-inventory item="Weapon_Laser_ER_Large_Clan" with="Weapon_Laser_LargeLaserER_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Large_Clan" with="Weapon_Laser_LargeLaserPulse_CLAN"/>
+        <swap-inventory item="Weapon_TAG_Light" with="Weapon_Laser_Light_TAG_CLAN"/>
+        <swap-inventory item="Weapon_Laser_ER_Medium_Clan" with="Weapon_Laser_MediumLaserER_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Medium_Clan" with="Weapon_Laser_MediumLaserPulse_CLAN"/>
+        <swap-inventory item="Weapon_Laser_ER_Micro_Clan" with="Weapon_Laser_MicroLaserER_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Micro_Clan" with="Weapon_Laser_MicroLaserPulse_CLAN"/>
+        <swap-inventory item="Weapon_Laser_ER_Small_Clan" with="Weapon_Laser_SmallLaserER_CLAN"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Small_Clan" with="Weapon_Laser_SmallLaserPulse_CLAN"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clan" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clan_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
+        <swap-inventory item="Weapon_MachineGun_Clan" with="Weapon_MachineGun_MachineGun_CLAN"/>
+        <swap-inventory item="Weapon_MachineGun_Array_Clan" with="Weapon_MachineGun_MachineGun_CLAN"/>
+        <swap-inventory item="Weapon_MachineGun_Heavy_Clan" with="Weapon_MachineGun_MachineGun_CLAN_HEAVY"/>
+        <swap-inventory item="Weapon_MachineGun_Light_Clan" with="Weapon_MachineGun_MachineGun_CLAN_LIGHT"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Heavy" with="Ammo_AmmunitionBox_Generic_MG"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Light" with="Ammo_AmmunitionBox_Generic_MG"/>
+        <swap-inventory item="Weapon_PPC_ER_Clan" with="Weapon_PPC_PPCER_CLAN"/>
+        <swap-inventory item="Weapon_NARC_Clan" with="Weapon_SRM_SRM_NARC_CLAN"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Clan" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Clan" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Clan_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+
+        <!-- Rogue Tech Inner Sphere -->
+        <swap-inventory item="Weapon_Rifle_Medium" with="Weapon_Rifle_Medium"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Rifle_Medium"/>
+        <swap-inventory item="Weapon_Pod_A" with="Weapon_Pod_A"/>
+        <swap-inventory item="BoltOn_Weapon_Pod_A" with="Weapon_Pod_A"/>
+        <swap-inventory item="Weapon_Autocannon_RAC_2" with="Weapon_Autocannon_RAC_2"/>
+        <swap-inventory item="Weapon_Autocannon_RAC_5" with="Weapon_Autocannon_RAC_5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_2_Double" with="Ammo_AmmunitionBox_Generic_AC2_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_5_AP" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
+
+        <!-- Rogue Tech Autocannon Clan Variants -->
+        <swap-inventory item="Weapon_Autocannon_RAC_2_Clan" with="Weapon_Autocannon_RAC_2_Clan"/>
+        <swap-inventory item="Weapon_Autocannon_RAC_5_Clan" with="Weapon_Autocannon_RAC_5_Clan"/>
+        <swap-inventory item="Weapon_Autocannon_UAC_2_Clan" with="Weapon_Autocannon_UAC_2_Clan"/>
+        <swap-inventory item="Weapon_Autocannon_UAC_5_Clan" with="Weapon_Autocannon_UAC_5_Clan"/>
+        <swap-inventory item="Weapon_Autocannon_UAC_10_Clan" with="Weapon_Autocannon_UAC_10_Clan"/>
+        <swap-inventory item="Weapon_Autocannon_UAC_20_Clan" with="Weapon_Autocannon_UAC_20_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_2_Half" with="Ammo_AmmunitionBox_Generic_AC2_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_2_Double" with="Ammo_AmmunitionBox_Generic_AC2_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_5_Half" with="Ammo_AmmunitionBox_Generic_AC5_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_5_Caseless" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_10" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_10_Half" with="Ammo_AmmunitionBox_Generic_AC10_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_10_Double" with="Ammo_AmmunitionBox_Generic_AC10_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_10_Caseless" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_20" with="Ammo_AmmunitionBox_Generic_AC20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Half" with="Ammo_AmmunitionBox_Generic_AC20_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Double" with="Ammo_AmmunitionBox_Generic_AC20_Double"/>
+
+        <!-- Rogue Tech Magshot -->
+        <swap-inventory item="Weapon_Gauss_Magshot_Clan" with="Weapon_Gauss_Gauss_CLAN"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Magshot_Half" with="Ammo_AmmunitionBox_Generic_GAUSS_Half"/>
+
+        <!-- Rogue Tech Thunderbolt -->
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB5_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB5"/>
+
+        <!-- Rogue Tech Narc -->
+        <swap-inventory item="Ammo_AmmunitionBox_Narc_Beacon" with="Ammo_AmmunitionBox_Generic_Narc"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Narc_Explosive" with="Ammo_AmmunitionBox_Generic_Narc"/>
+
+        <swap-inventory item="Ammo_AmmunitionBox_ATM" with="Ammo_AmmunitionBox_ATM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ATM_ER_Half" with="Ammo_AmmunitionBox_ATM_ER_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ATM_HE" with="Ammo_AmmunitionBox_ATM_HE"/>
+
+        <swap-inventory item="Ammo_AmmunitionBox_Rifle_Heavy_APFSDS" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+
+        <!-- Rogue Tech Clan Enhanced Variants -->
+        <!-- Imported irianTech/rogueTech/Clan/Improved -->
+
+        <!-- Rogue Tech Heatsinks -->
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_1" with="rogueTech_EngineCooling_Heatsinks_1"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_2" with="rogueTech_EngineCooling_Heatsinks_2"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_3" with="rogueTech_EngineCooling_Heatsinks_3"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_4" with="rogueTech_EngineCooling_Heatsinks_4"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_5" with="rogueTech_EngineCooling_Heatsinks_5"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_6" with="rogueTech_EngineCooling_Heatsinks_6"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_7" with="rogueTech_EngineCooling_Heatsinks_7"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_8" with="rogueTech_EngineCooling_Heatsinks_8"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_9" with="rogueTech_EngineCooling_Heatsinks_9"/>
+        <swap-inventory item="Gear_EngineCooling_Heatsinks_10" with="rogueTech_EngineCooling_Heatsinks_10"/>
+        <swap-inventory item="Gear_Cooling_Pod_x1" with="rogueTech_Cooling_Pod_x1"/>
+        <swap-inventory item="Gear_Cooling_Pod_x1_Clan" with="rogueTech_Cooling_Pod_x1_Clan"/>
+        <swap-inventory item="Gear_Cooling_Pod_x2" with="rogueTech_Cooling_Pod_x2"/>
+        <swap-inventory item="Gear_Cooling_Pod_x2_Clan" with="rogueTech_Cooling_Pod_x2_Clan"/>
+        <swap-inventory item="Gear_Cooling_Pod_x3" with="rogueTech_Cooling_Pod_x3"/>
+        <swap-inventory item="Gear_Cooling_Pod_x3_Clan" with="rogueTech_Cooling_Pod_x3_Clan"/>
+        <swap-inventory item="Gear_Cooling_Pod_x4" with="rogueTech_Cooling_Pod_x4"/>
+        <swap-inventory item="Gear_Cooling_Pod_x4_Clan" with="rogueTech_Cooling_Pod_x4_Clan"/>
+        <swap-inventory item="Gear_Cooling_Pod_x5" with="rogueTech_Cooling_Pod_x5"/>
+        <swap-inventory item="Gear_Cooling_Pod_x5_Clan" with="rogueTech_Cooling_Pod_x5_Clan"/>
+
+        <!-- Rogue Tech Cockpit/Sensors -->
+        <swap-inventory item="Gear_Cockpit_CommandConsole" with="Gear_Cockpit_CommandConsole"/>
+        <swap-inventory item="Gear_Sensors_HighPowered" with="Gear_Sensors_HighPowered"/>
+
+        <swap-inventory item="Gear_JumpJet_Prototype_Heavy" with="Gear_JumpJet_Heavy_Improved"/>
+
+        <!-- Rogue Tech components not supported by base game -->
+        <remove-inventory item="Gear_CASE"/>
+        <remove-inventory item="Gear_CASE2"/>
+        <remove-inventory item="Gear_Armor_LightFerroFibrous"/>
+        <remove-inventory item="Gear_Armor_FerroFibrous"/>
+        <remove-inventory item="Gear_Armor_FerroFibrous_Clan"/>
+        <remove-inventory item="Gear_Armor_Hardened"/>
+        <remove-inventory item="Gear_AdvancedMaterials1"/>
+        <remove-inventory item="Gear_AdvancedMaterials2"/>
+        <remove-inventory item="Gear_ModularArmor_Mk1"/>
+        <remove-inventory item="Gear_ModularArmor_Mk2"/>
+        <remove-inventory item="Gear_ModularArmor_Mk3"/>
+        <remove-inventory item="Gear_ModularArmor_Mk4"/>
+        <remove-inventory item="Gear_ModularArmor_Rear_Mk1"/>
+        <remove-inventory item="Gear_ModularArmor_Rear_Mk2"/>
+        <remove-inventory item="Gear_ModularArmor_Rear_Mk3"/>
+        <remove-inventory item="Gear_ModularArmor_Rear_Mk4"/>
+        <remove-inventory item="Gear_TSM_Standard"/>
+        <remove-inventory item="Gear_TSM_Industrial"/>
+        <remove-inventory item="Ammo_AmmunitionBox_AMS"/> <!-- basic AMS does not require ammo -->
+        <remove-inventory item="Ammo_AmmunitionBox_AMS_Double"/>
+        <remove-inventory item="Linked_Engine_Size_1"/>
+        <remove-inventory item="Linked_Engine_Size_2"/>
+        <remove-inventory item="Linked_Engine_Size_3"/>
+        <remove-inventory item="Linked_Engine_Size_4"/>
+        <remove-inventory item="Linked_Engine_Size_4_Armored"/>
+        <remove-inventory item="Linked_Engine_Size_6"/>
+        <remove-inventory item="Linked_Engine_Size_8"/>
+        <remove-inventory item="Lootable_HeatSinkKit_Single"/>
+        <remove-inventory item="Gear_C3_Master"/>
+        <remove-inventory item="Gear_C3_Slave"/>
+        <remove-inventory item="Gear_C3i"/>
+        <remove-inventory item="Gear_Cockpit_ArmoredCowl"/>
+        <remove-inventory item="Gear_Cockpit_Small"/>
+        <remove-inventory item="Gear_Turret"/>
+        <remove-inventory item="Gear_PartialWing_IS"/>
+        <remove-inventory item="Linked_PartialWing_LTslot"/>
+        <remove-inventory item="Gear_Cooling_Flush_Clan"/>
+        <remove-inventory item="Special_AddOn_UAV"/>
+        <remove-inventory item="BoltOn_Weapon_Rocket_Chaff"/>
+        <remove-engine/>
+        <remove-gyro/>
+        <remove-endosteel/>
+        <recalc-tonnage/>
+        <recalc-movement/>
+        <recalc-cost apply="mechGear"/>
+    </task-list>
+
+    <copy>
+        <mechdef source="${clanInvasion}/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <chassisdef source="${clanInvasion}/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <mech model="anvil_ANV-3M" engineRating="300" engineType="standard" endoSteel="true"/>
+        <mech model="anvil_ANV-5M" engineRating="300" engineType="standard" endoSteel="true"/>
+        <mech model="anvil_ANV-6M" engineRating="300" engineType="standard" endoSteel="true"/>
+        <mech model="anvil_ANV-8M" engineRating="240" engineType="standard" endoSteel="true"/>
+
+        <mech model="arcas_ARS-1" engineRating="325" engineType="XL" endoSteel="true"/>
+        <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true"/>
+
+        <hardpoints id="atlas">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="atlas_AS7-8D" engineRating="300" engineType="standard" apply="atlas"/>
+        <mech model="atlas_AS7-8K" engineRating="300" engineType="standard" endoSteel="true" apply="atlas"/>
+        <mech model="atlas_AS7-C" engineRating="300" engineType="XL" apply="atlas"/>
+        <mech model="atlas_AS7-CM" engineRating="310" engineType="XL" apply="atlas"/>
+        <mech model="atlas_AS7-D(C)" engineRating="300" engineType="standard" apply="atlas"/>
+        <mech model="atlas_AS7-K" engineRating="300" engineType="XL" apply="atlas"/>
+        <mech model="atlas_AS7-K-DC" engineRating="300" engineType="XL" apply="atlas"/>
+        <mech model="atlas_AS7-KH" engineRating="300" engineType="standard" techBase="Clan" apply="atlas"/>
+        <mech model="atlas_AS7-MCA" engineRating="300" engineType="standard" apply="atlas"/> <!-- Mech Commander -->
+        <mech model="atlas_AS7-MCJ" engineRating="300" engineType="standard" endoSteel="true" apply="atlas"/> <!-- Mech Commander -->
+        <mech model="atlas_AS7-MCW" engineRating="300" engineType="standard" endoSteel="true" apply="atlas"/> <!-- Mech Commander -->
+        <mech model="atlas_AS7-S" engineRating="300" engineType="standard" apply="atlas"/>
+        <mech model="atlas_AS7-S2" engineRating="300" engineType="light" apply="atlas"/>
+        <mech model="atlas_AS9-K" engineRating="300" engineType="XL" apply="atlas"/>
+
+        <mech model="atlas_ii_AS7-D-H" engineRating="300" engineType="standard" ferroFibrous="true" apply="atlas"/>
+        <mech model="atlas_ii_AS7-D-H2" engineRating="300" engineType="standard" ferroFibrous="true" apply="atlas"/>
+
+        <hardpoints id="awesome">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="awesome_AWS-9M" engineRating="320" engineType="XL" apply="awesome"/>
+        <mech model="awesome_AWS-9Q" engineRating="240" engineType="standard" apply="awesome"/>
+
+        <hardpoints id="banshee">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="banshee_BNC-1DM" engineRating="380" engineType="XL" apply="banshee"/>
+        <mech model="banshee_BNC-1E" engineRating="340" engineType="standard" apply="banshee"/>
+        <mech model="banshee_BNC-3EA" engineRating="380" engineType="standard" apply="banshee"/>
+        <mech model="banshee_BNC-3ER" engineRating="380" engineType="standard" apply="banshee"/>
+        <mech model="banshee_BNC-3MC" engineRating="380" engineType="standard" apply="banshee"/>
+        <mech model="banshee_BNC-3SR" engineRating="285" engineType="standard" apply="banshee"/>
+        <mech model="banshee_BNC-4S" engineRating="295" engineType="standard" apply="banshee"/>
+        <mech model="banshee_BNC-5-GD" engineRating="380" engineType="XL" apply="banshee"/>
+        <mech model="banshee_BNC-5S" engineRating="380" engineType="XL" apply="banshee"/>
+
+        <mech model="battle_cobra_BTC-A" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <set-hardpoint location="RightArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel,AntiPersonnel"/>
+        </mech>
+        <mech model="battle_cobra_BTC-B" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <set-hardpoint location="RightArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+        </mech>
+        <mech model="battle_cobra_BTC-F" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,AntiPersonnel"/>
+        </mech>
+        <mech model="battle_cobra_BTC-H" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <set-hardpoint location="RightArm" weaponMounts="Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Energy,Energy,AntiPersonnel"/>
+        </mech>
+        <mech model="battle_cobra_BTC-Prime" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <set-hardpoint location="RightArm" weaponMounts="Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Energy,AntiPersonnel"/>
+        </mech>
+
+        <mech model="battleaxe_BKX-1X" engineRating="255" engineType="standard" endoSteel="false" ferroFibrous="false"/>
+        <mech model="battleaxe_BKX-7K" engineRating="280" engineType="standard" endoSteel="false" ferroFibrous="false"/>
+        <mech model="battleaxe_BKX-7NC" engineRating="280" engineType="standard" endoSteel="false" ferroFibrous="false"/>
+
+        <hardpoints id="battle-master">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Ballistic,Energy,Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="battlemaster_BLR-1C" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1C2" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1CX" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1Gbc" engineRating="340" engineType="standard" endoSteel="true" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1Gc" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1Gd" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1GR" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1GT" engineRating="340" engineType="XL" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1HD" engineRating="340" engineType="XL" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1J" engineRating="255" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1K" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" techBase="Clan" apply="battle-master"/>
+        <mech model="battlemaster_BLR-1M" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+<!-- brawler needs actuators       <mech model="battlemaster_BLR-1P" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>-->
+        <mech model="battlemaster_BLR-2C" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-2C2" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-3C" engineRating="340" engineType="standard" endoSteel="true" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-3M" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-3M-DC" engineRating="340" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-3NC" engineRating="375" engineType="XL" endoSteel="false" ferroFibrous="false" techBase="Clan" apply="battle-master"/> <!-- 75 ton -->
+        <mech model="battlemaster_BLR-3S" engineRating="340" engineType="XL" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-3W" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="false" techBase="Clan" apply="battle-master"/>
+        <mech model="battlemaster_BLR-5R" engineRating="340" engineType="XL" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-IID" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="false" apply="battle-master"/>
+        <mech model="battlemaster_BLR-TD" engineRating="255" engineType="standard" endoSteel="false" ferroFibrous="false" apply="battle-master"/>
+
+        <mech model="bellerophon_BEL-1X" engineRating="290" engineType="standard" endoSteel="false">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic,Missile,AntiPersonnel"/>
+        </mech>
+
+        <mech model="beowulf_BEO-12" engineRating="270" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+
+        <mech model="black_lanner_BKL-C" engineRating="385" engineType="XL" endoSteel="true" techBase="Clan">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,Energy,Energy,Energy,Energy"/>
+        </mech>
+        <mech model="black_lanner_BKL-F2" engineRating="385" engineType="XL" endoSteel="true" techBase="Clan">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel"/>
+        </mech>
+        <mech model="black_lanner_BKL-G2" engineRating="385" engineType="XL" endoSteel="true" techBase="Clan">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,Energy,Energy"/>
+        </mech>
+        <mech model="black_lanner_BKL-H" engineRating="385" engineType="XL" endoSteel="true" techBase="Clan">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,Energy,Energy"/>
+        </mech>
+        <mech model="black_lanner_BKL-S" engineRating="385" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,Missile,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,Energy,AntiPersonnel"/>
+        </mech>
+
+        <mech model="blood_kite_BKT-1" engineRating="255" engineType="standard" endoSteel="true" techBase="Clan">
+            <set-hardpoint location="RightArm" weaponMounts="Ballistic,Energy,AntiPersonnel"/>
+            <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,Missile,AntiPersonnel"/>
+            <set-hardpoint location="LeftArm" weaponMounts="Energy,AntiPersonnel,AntiPersonnel"/>
+        </mech>
+
+        <mech model="bowman_BWM-1" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="bowman_BWM-2" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="bowman_BWM-4" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="brigand_LDT-1" engineRating="150" engineType="standard" endoSteel="true"/>
+
+        <mech model="caesar_CES-3KH" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="caesar_CES-3R" engineRating="280" engineType="XL"/>
+
+        <mech model="centurion_CN9-B1" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="centurion_CN9-D" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="centurion_CN9-D3" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="centurion_CN9-D3D" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="centurion_CN9-H" engineRating="200" engineType="standard"/>
+        <mech model="centurion_CN10-B" engineRating="220" engineType="standard" endoSteel="true"/>
+        <mech model="centurion_CN10-J" engineRating="220" engineType="standard" endoSteel="true"/>
+        <mech model="centurion_CN10-W" engineRating="220" engineType="XL" endoSteel="true"/>
+
+        <hardpoints id="chameleon">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic,Energy,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </hardpoints>
+
+        <mech model="chameleon_CLN-5C" engineRating="300" engineType="standard" endoSteel="true" ferroFibrous="true" apply="chameleon"/>
+        <mech model="chameleon_CLN-7V" engineRating="300" engineType="standard" apply="chameleon"/>
+        <mech model="chameleon_CLN-7W" engineRating="300" engineType="standard" apply="chameleon"/>
+        <mech model="chameleon_CLN-7Z" engineRating="300" engineType="XL" apply="chameleon"/>
+        <mech model="chameleon_TRC-4B" engineRating="300" engineType="standard" apply="chameleon"/>
+        <mech model="chameleon_TRC-4C" engineRating="300" engineType="standard" techBase="Clan" apply="chameleon"/>
+
+        <hardpoints id="clint">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </hardpoints>
+
+        <mech model="clint_CLNT-1-2R" engineRating="240" engineType="standard" apply="clint"/>
+        <mech model="clint_CLNT-2-2R" engineRating="240" engineType="standard" apply="clint"/>
+        <mech model="clint_CLNT-2-3T" engineRating="240" engineType="standard" apply="clint"/>
+        <mech model="clint_CLNT-2-3TR" engineRating="240" engineType="standard" apply="clint"/>
+        <mech model="clint_CLNT-2-3U" engineRating="240" engineType="standard" apply="clint"/>
+        <mech model="clint_CLNT-2-4T" engineRating="240" engineType="standard" apply="clint"/>
+        <mech model="clint_CLNT-2-GD" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="clint"/>
+        <mech model="clint_CLNT-3-3TR" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="clint"/>
+
+        <mech model="clint_iic_CLNT-IIC-1" engineRating="240" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="commando_iic_COM-IIC" engineRating="150" engineType="standard" endoSteel="true" techBase="Clan"/>
+
+        <hardpoints id="crusader">
+            <add-hardpoint location="RightArm" weaponMounts="Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,AntiPersonnel,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="crusader_CRD-1R" engineRating="260" engineType="standard" endoSteel="true" apply="crusader"/>
+        <mech model="crusader_CRD-2R" engineRating="260" engineType="standard" endoSteel="true" apply="crusader"/>
+        <mech model="crusader_CRD-3D" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-3K" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-3L" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-3R" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-3RR" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-3R-WDR" engineRating="260" engineType="XL" techBase="Clan" apply="crusader"/>
+        <mech model="crusader_CRD-3-WDR" engineRating="260" engineType="XL" techBase="Clan" apply="crusader"/>
+        <mech model="crusader_CRD-4BR" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-4D" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-4Db" engineRating="260" engineType="standard" endoSteel="true" apply="crusader"/>
+        <mech model="crusader_CRD-4K" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-4L" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-5M" engineRating="260" engineType="XL" apply="crusader"/>
+        <mech model="crusader_CRD-5S" engineRating="260" engineType="standard" apply="crusader"/>
+        <mech model="crusader_CRD-6T" engineRating="325" engineType="XL" apply="crusader"/>
+
+        <mech model="cyclone_CYC-A1" engineRating="210" engineType="XL"/>
+        <mech model="cyclone_CYC-A3" engineRating="150" engineType="standard"/>
+        <mech model="cyclone_CYC-A3P" engineRating="150" engineType="standard"/>
+        <mech model="cyclone_CYC-B2" engineRating="180" engineType="light" endoSteel="true"/>
+        <mech model="cyclone_CYC-C1" engineRating="210" engineType="XL" endoSteel="true"/>
+
+        <mech model="daedalus_DAD-3C" engineRating="270" engineType="XL" endoSteel="true"/>
+
+        <mech model="devastator_DVS-1D" engineRating="300" engineType="standard"/>
+        <mech model="devastator_DVS-2" engineRating="300" engineType="XL"/>
+        <mech model="devastator_DVS-2-EC" engineRating="300" engineType="XL"/>
+        <mech model="devastator_DVS-3" engineRating="300" engineType="XL"/>
+
+        <!-- Dire Wolf GOES HERE -->
+
+<!--        <mech model="dragoon_AEM-01" engineRating="280" engineType="XL" ferroFibrous="true"/>-->
+<!--        <mech model="dragoon_AEM-02" engineRating="350" engineType="XL" ferroFibrous="true"/>-->
+<!--        <mech model="dragoon_AEM-03" engineRating="280" engineType="XL" ferroFibrous="true"/>-->
+<!--        <mech model="dragoon_AEM-04" engineRating="280" engineType="XL" ferroFibrous="true"/>-->
+
+        <mech model="enfield_END-6J" engineRating="250" engineType="XL" endoSteel="true"/>
+        <mech model="enfield_END-6J-EC" engineRating="250" engineType="XL" endoSteel="true"/>
+        <mech model="enfield_END-6Q" engineRating="250" engineType="XL" endoSteel="true"/>
+
+        <mech model="enforcer_ENF-4D" engineRating="200" engineType="standard" endoSteel="true"/>
+        <mech model="enforcer_ENF-4KH" engineRating="200" engineType="standard" ferroFibrous="true" techBase="Clan"/>
+        <mech model="enforcer_ENF-4P" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="enforcer_ENF-4RR" engineRating="200" engineType="standard"/>
+        <mech model="enforcer_ENF-4R-WDR" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="enforcer_ENF-5D" engineRating="250" engineType="XL" ferroFibrous="true"/>
+        <mech model="enforcer_ENF-5DR" engineRating="250" engineType="XL" endoSteel="true"/>
+        <mech model="enforcer_ENF-5P" engineRating="250" engineType="XL"/>
+        <mech model="enforcer_ENF-7S" engineRating="225" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="enforcer_ENF-NAIS-WC" engineRating="250" engineType="XL" ferroFibrous="true"/>
+
+        <mech model="enforcer_iii_ENF-6M" engineRating="250" engineType="XL" endoSteel="true"/>
+
+        <mech model="excalibur_EXC-3BK" engineRating="350" engineType="XL" endoSteel="true"/>
+        <mech model="excalibur_EXC-B1" engineRating="350" engineType="XL"/>
+        <mech model="excalibur_EXC-B2" engineRating="350" engineType="XL"/>
+        <mech model="excalibur_EXC-B2b" engineRating="350" engineType="XL" endoSteel="true"/>
+        <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="excalibur_EXC-C1" engineRating="350" engineType="XL"/>
+
+        <mech model="falcon_hawk_FNHK-9K" engineRating="175" engineType="XL" ferroFibrous="true"/>
+        <mech model="falcon_hawk_FNHK-9K1A" engineRating="175" engineType="XL" ferroFibrous="true"/>
+
+        <mech model="galahad_GLH-1D" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="galahad_GLH-2D" engineRating="180" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+
+        <mech model="grand_crusader_GRN-D-02-W" engineRating="320" engineType="XL" endoSteel="true"/>
+        <mech model="grand_crusader_GRN-D-01" engineRating="240" engineType="XL" endoSteel="true"/>
+        <mech model="grand_crusader_GRN-D-01-U" engineRating="320" engineType="XL" endoSteel="true"/>
+        <mech model="grand_crusader_GRN-D-01-X" engineRating="320" engineType="XL" endoSteel="true"/>
+        <mech model="grand_crusader_GRN-D-02" engineRating="240" engineType="XL" endoSteel="true"/>
+        <mech model="grand_crusader_GRN-D-02-B" engineRating="320" engineType="XL" endoSteel="true"/>
+
+        <mech model="granddragon_DRG-1G" engineRating="300" engineType="standard"/>
+        <mech model="granddragon_DRG-1GK-DC" engineRating="300" engineType="standard"/>
+        <mech model="granddragon_DRG-3K" engineRating="300" engineType="light" endoSteel="true" ferroFibrous="true"/>
+        <mech model="granddragon_DRG-5K" engineRating="360" engineType="XL"/>
+        <mech model="granddragon_DRG-5K-DC" engineRating="360" engineType="XL"/>
+        <mech model="granddragon_DRG-C" engineRating="360" engineType="XL"/>
+
+        <mech model="grandtitan_T-IT-N11M2" engineRating="400" engineType="XL" endoSteel="true"/>
+        <mech model="grandtitan_T-IT-N10M" engineRating="400" engineType="XL" endoSteel="true"/>
+        <mech model="grandtitan_T-IT-N11M" engineRating="400" engineType="XL" endoSteel="true"/>
+
+        <hardpoints id="grendel">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy"/>
+        </hardpoints>
+
+        <mech model="grendel_GRD-A" engineRating="315" engineType="XL" endoSteel="true" techBase="Clan" apply="grendel"/>
+        <mech model="grendel_GRD-B" engineRating="315" engineType="XL" endoSteel="true" techBase="Clan" apply="grendel"/>
+        <mech model="grendel_GRD-C" engineRating="315" engineType="XL" endoSteel="true" techBase="Clan" apply="grendel"/>
+        <mech model="grendel_GRD-D" engineRating="315" engineType="XL" endoSteel="true" techBase="Clan" apply="grendel"/>
+        <mech model="grendel_GRD-E" engineRating="315" engineType="XL" endoSteel="true" techBase="Clan" apply="grendel"/>
+        <mech model="grendel_GRD-Prime" engineRating="315" engineType="XL" endoSteel="true" techBase="Clan" apply="grendel"/>
+
+        <hardpoints id="griffin">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="griffin_GRF-1A" engineRating="290" engineType="standard" apply="griffin"/>
+        <mech model="griffin_GRF-1DS" engineRating="275" engineType="XL" apply="griffin"/>
+        <mech model="griffin_GRF-1NR" engineRating="275" engineType="standard" apply="griffin"/>
+        <mech model="griffin_GRF-1RG" engineRating="275" engineType="standard" apply="griffin"/>
+        <mech model="griffin_GRF-1RGb" engineRating="275" engineType="standard" apply="griffin"/>
+        <mech model="griffin_GRF-2N" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" apply="griffin"/>
+        <mech model="griffin_GRF-2N2" engineRating="275" engineType="standard" endoSteel="true" apply="griffin"/>
+        <!-- <mech model="griffin_GRF-2Nb" engineRating="300" engineType="light" endoSteel="true" apply="griffin"/> --> <!-- Null Signature -->
+        <mech model="griffin_GRF-3M" engineRating="275" engineType="XL" apply="griffin"/>
+        <mech model="griffin_GRF-3RG" engineRating="275" engineType="standard" apply="griffin"/>
+        <mech model="griffin_GRF-6CV" engineRating="275" engineType="light" endoSteel="true" ferroFibrous="true" apply="griffin"/>
+        <mech model="griffin_GRF-KH" engineRating="275" engineType="standard" apply="griffin"/>
+
+        <hardpoints id="griffin-IIC">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="griffin_iic_GRF-IIC" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="griffin-IIC"/>
+        <mech model="griffin_iic_GRF-IIC-2" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="griffin-IIC"/>
+        <mech model="griffin_iic_GRF-IIC-3" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="griffin-IIC"/>
+        <mech model="griffin_iic_GRF-IIC-4" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="griffin-IIC"/>
+        <mech model="griffin_iic_GRF-IIC-X" engineRating="240" engineType="XL" endoSteel="true" techBase="Clan" apply="griffin-IIC"/>
+
+        <mech model="grizzly_GRZ-1" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy"/>
+        </mech>
+
+        <mech model="gunslinger_GUN-1ERD" engineRating="255" engineType="XL"/>
+<!--        <mech model="gunslinger_GUN-2ERD" engineRating="255" engineType="XL"/>-->
+<!--        <mech model="gunslinger_GUN-2ERDr" engineRating="255" engineType="XL"/>-->
+<!--        <mech model="gunslinger_GUN-3ERD" engineRating="255" engineType="XL"/>-->
+
+        <mech model="hammer_HMR-3C" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="hammer_HMR-3M" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="hammer_HMR-3P" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="hammer_HMR-3S" engineRating="150" engineType="standard" endoSteel="true"/>
+
+        <mech model="hammerhands_HMH-3D" engineRating="225" engineType="standard"/>
+        <mech model="hammerhands_HMH-4D" engineRating="225" engineType="standard"/>
+
+        <hardpoints id="havoc">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="havoc_HAV-A" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
+        <mech model="havoc_HAV-B" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
+        <mech model="havoc_HAV-C" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
+        <mech model="havoc_HAV-Prime" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
+
+<!-- Artillery Support Mech
+        <mech model="helepolis_HEP-0H" engineRating="215" engineType="standard"/>
+        <mech model="helepolis_HEP-1H" engineRating="210" engineType="standard"/>
+        <mech model="helepolis_HEP-2H" engineRating="225" engineType="standard"/>
+        <mech model="helepolis_HEP-3H" engineRating="225" engineType="standard"/>
+-->
+
+        <mech model="helios_HEL-3D" engineRating="240" engineType="standard" endoSteel="true"/>
+        <mech model="helios_HEL-4A" engineRating="240" engineType="standard" endoSteel="true"/>
+        <mech model="helios_HEL-C" engineRating="240" engineType="standard" endoSteel="true"/>
+
+        <hardpoints id="hellbringer">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <!-- Hellbringer (Loki) -->
+        <mech model="hellbringer_HBR-A" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-B" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-C" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-F" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-GP" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-H" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-J" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-M" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-Prime" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+
+        <hardpoints id="hellion">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="hellion_HEN-A" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="hellion"/>
+        <mech model="hellion_HEN-B" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="hellion"/>
+        <mech model="hellion_HEN-C" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="hellion"/>
+        <mech model="hellion_HEN-Prime" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="hellion"/>
+
+        <mech model="hermes_HER-1Sb" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="hermes_HER-3S" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="hermes_HER-3S1" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="hermes_HER-3S2" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="hermes_HER-4K" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="hermes_HER-4M" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="hermes_HER-4S" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+
+        <mech model="hermes_ii_HER-2M" engineRating="280" engineType="standard"/>
+        <mech model="hermes_ii_HER-2S" engineRating="240" engineType="standard"/>
+        <mech model="hermes_ii_HER-2SR" engineRating="240" engineType="standard"/>
+        <mech model="hermes_ii_HER-4KR" engineRating="240" engineType="standard"/>
+        <mech model="hermes_ii_HER-5ME" engineRating="240" engineType="standard" endoSteel="true"/>
+        <mech model="hermes_ii_HER-5S" engineRating="240" engineType="standard" endoSteel="true"/>
+
+        <hardpoints id="highlander-IIC">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="highlander_iic_HGN-IIC-1" engineRating="270" engineType="standard" techBase="Clan" apply="highlander-IIC"/>
+        <mech model="highlander_iic_HGN-IIC-A" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan" apply="highlander-IIC"/>
+        <mech model="highlander_iic_HGN-IIC-B" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan" apply="highlander-IIC"/>
+        <mech model="highlander_iic_HGN-IIC-C" engineRating="280" engineType="XL" ferroFibrous="true" techBase="Clan" apply="highlander-IIC"/>
+
+        <mech model="icarus_ICR-1X" engineRating="200" engineType="standard"/>
+
+        <mech model="icarus_ii_ICR-1S" engineRating="160" engineType="standard"/>
+
+        <mech model="initiate_INI-02" engineRating="160" engineType="standard" endoSteel="true"/>
+
+        <hardpoints id="kingcrab">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="kingcrab_KGC-0000" engineRating="300" engineType="standard" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-000" engineRating="300" engineType="standard" ferroFibrous="true" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-000b" engineRating="300" engineType="standard" ferroFibrous="true" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-0" engineRating="300" engineType="standard" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-001" engineRating="300" engineType="XL" ferroFibrous="true" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-002" engineRating="270" engineType="XL" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-010" engineRating="300" engineType="standard" endoSteel="true" apply="kingcrab"/>
+        <mech model="kingcrab_KGC-200" engineRating="300" engineType="standard" apply="kingcrab"/>
+
+        <mech model="lancelot_LNC25-01" engineRating="360" engineType="XL"/>
+        <mech model="lancelot_LNC25-01b" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="lancelot_LNC25-01sl" engineRating="360" engineType="XL" ferroFibrous="true"/>
+        <mech model="lancelot_LNC25-01X" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="lancelot_LNC25-02" engineRating="240" engineType="standard"/>
+        <mech model="lancelot_LNC25-03" engineRating="300" engineType="XL"/>
+        <mech model="lancelot_LNC25-04" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="lancelot_LNC25-05" engineRating="360" engineType="XL"/>
+        <mech model="lancelot_LNC25-C" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="lancelot_LNC25-C2" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <hardpoints id="liberator">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="liberator_LIBR-A" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
+        <mech model="liberator_LIBR-B" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
+        <mech model="liberator_LIBR-C" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
+        <mech model="liberator_LIBR-D" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
+        <mech model="liberator_LIBR-Prime" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
+
+        <hardpoints id="linebacker">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="linebacker_LBK-A" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+        <mech model="linebacker_LBK-B" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+        <mech model="linebacker_LBK-C" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+        <mech model="linebacker_LBK-D" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+        <mech model="linebacker_LBK-E" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+        <mech model="linebacker_LBK-Prime" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+        <mech model="linebacker_LBK-X" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="linebacker"/>
+
+        <mech model="longbow_LGB-0C" engineRating="325" engineType="standard"/>
+        <mech model="longbow_LGB-0W" engineRating="340" engineType="standard"/>
+        <mech model="longbow_LGB-0W2" engineRating="340" engineType="standard"/>
+        <mech model="longbow_LGB-7Q" engineRating="255" engineType="standard"/>
+        <mech model="longbow_LGB-7V" engineRating="255" engineType="XL"/>
+        <mech model="longbow_LGB-7W" engineRating="255" engineType="standard"/>
+        <mech model="longbow_LGB-8C" engineRating="255" engineType="standard"/>
+        <mech model="longbow_LGB-10C" engineRating="255" engineType="standard"/>
+        <mech model="longbow_LGB-12C" engineRating="255" engineType="XL"/>
+        <mech model="longbow_LGB-12U" engineRating="255" engineType="XL"/>
+        <mech model="longbow_LGB-OW" engineRating="255" engineType="standard"/>
+
+        <hardpoints id="mad-dog">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <!-- Mad Dog (aka Vulture) -->
+        <mech model="mad_dog_MDD-A" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-A2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-B" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-C" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-D" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-D2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-D3" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-DD" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-G2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-H" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-J" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-KH" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-M" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-PB" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-Prime" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-S" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-WDR1" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-WDR2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+
+        <mech model="mauler_MAL-1P" engineRating="270" engineType="XL" ferroFibrous="true"/>
+        <mech model="mauler_MAL-1R" engineRating="270" engineType="XL" ferroFibrous="true"/>
+        <mech model="mauler_MAL-1X-AFFC" engineRating="270" engineType="XL"/>
+        <mech model="mauler_MAL-1Y" engineRating="270" engineType="XL" ferroFibrous="true"/>
+        <mech model="mauler_MAL-2P" engineRating="270" engineType="XL" ferroFibrous="true"/>
+        <mech model="mauler_MAL-2R" engineRating="270" engineType="XL" ferroFibrous="true"/>
+        <mech model="mauler_MAL-C" engineRating="270" engineType="XL" ferroFibrous="true"/>
+
+        <hardpoints id="merlin">
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="merlin_MLN-1A" engineRating="240" engineType="standard" apply="merlin"/>
+        <mech model="merlin_MLN-1A1" engineRating="240" engineType="standard" apply="merlin"/>
+        <mech model="merlin_MLN-1Ar" engineRating="240" engineType="standard" apply="merlin"/>
+        <mech model="merlin_MLN-1B" engineRating="240" engineType="standard" apply="merlin"/>
+        <mech model="merlin_MLN-1B1" engineRating="240" engineType="standard" apply="merlin"/>
+        <mech model="merlin_MLN-2A" engineRating="240" engineType="XL" apply="merlin"/>
+
+        <mech model="osprey_OSP-15" engineRating="220" engineType="XL" endoSteel="true"/>
+
+        <mech model="predator_PCA-1" engineRating="300" engineType="XL" techBase="Clan"/>
+
+        <mech model="predator_ii_PCA2-1" engineRating="325" engineType="XL" endoSteel="true"/>
+        <mech model="predator_ii_PCA2-2" engineRating="325" engineType="XL" endoSteel="true"/>
+
+        <mech model="roughneck_RGH-1A" engineRating="260" engineType="standard"/>
+        <mech model="roughneck_RGH-1B" engineRating="260" engineType="standard"/>
+        <mech model="roughneck_RGH-1C" engineRating="260" engineType="standard"/>
+        <mech model="roughneck_RGH-3A" engineRating="260" engineType="standard"/>
+
+        <hardpoints id="savage-coyote">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="savage_coyote_SVG-A" engineRating="255" engineType="XL" techBase="Clan" apply="savage-coyote"/>
+        <mech model="savage_coyote_SVG-B" engineRating="255" engineType="XL" techBase="Clan" apply="savage-coyote"/>
+        <mech model="savage_coyote_SVG-Prime" engineRating="255" engineType="XL" techBase="Clan" apply="savage-coyote"/>
+
+        <mech model="sentinel_STN-1S" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3K" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3KA" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3KB" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3L" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3Lb" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3M" engineRating="240" engineType="standard"/>
+
+        <hardpoints id="shadow-hawk-IIC">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="shadowhawk_iic_SHD-IIC-1" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
+        <mech model="shadowhawk_iic_SHD-IIC-2" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
+        <mech model="shadowhawk_iic_SHD-IIC-3" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
+        <mech model="shadowhawk_iic_SHD-IIC-4" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
+
+        <mech model="spartan_SPT-C" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="spartan_SPT-N1" engineRating="400" engineType="XL"/>
+        <mech model="spartan_SPT-N2" engineRating="400" engineType="XL"/>
+        <mech model="spartan_SPT-NF" engineRating="400" engineType="XL"/>
+
+        <mech model="starslayer_STY-2C" engineRating="250" engineType="standard" ferroFibrous="true"/>
+        <mech model="starslayer_STY-2C-EC" engineRating="250" engineType="standard" ferroFibrous="true"/>
+        <mech model="starslayer_STY-3C" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="starslayer_STY-3D" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+
+        <hardpoints id="stooping-hawk">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="stooping_hawk_SHWK-A" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+        <mech model="stooping_hawk_SHWK-B" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+        <mech model="stooping_hawk_SHWK-C" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+        <mech model="stooping_hawk_SHWK-D" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+        <mech model="stooping_hawk_SHWK-E" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+        <mech model="stooping_hawk_SHWK-Prime" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+
+        <hardpoints id="storm-crow">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="stormcrow_SCR-A" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-B" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-C" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-D" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-E" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-H" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-I" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-L" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-P" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-Prime" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-TC" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+        <mech model="stormcrow_SCR-W" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="storm-crow"/>
+
+        <hardpoints id="summoner">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="summoner_SMN-A" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-B" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-C" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-D" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-E" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-E2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-F" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-F2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-F3" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-G2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-H" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-H2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-I2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-J2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-M" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-O" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-P1" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-P2" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-P3" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-Prime" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+
+        <hardpoints id="sun-spider">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
+        </hardpoints>
+
+        <mech model="sun_spider_SNS-A" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
+        <mech model="sun_spider_SNS-B" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
+        <mech model="sun_spider_SNS-C" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
+        <mech model="sun_spider_SNS-D" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
+        <mech model="sun_spider_SNS-F" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
+        <mech model="sun_spider_SNS-Prime" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
+
+        <mech model="sunder_SD1-O" engineRating="360" engineType="XL"/>
+        <mech model="sunder_SD1-OA" engineRating="360" engineType="XL"/>
+        <mech model="sunder_SD1-OB" engineRating="360" engineType="XL"/>
+        <mech model="sunder_SD1-OC" engineRating="360" engineType="XL"/>
+        <mech model="sunder_SD1-OR" engineRating="360" engineType="XL"/>
+
+        <mech model="talon_TLN-3L" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="talon_TLN-5V" engineRating="280" engineType="XL"/>
+        <mech model="talon_TLN-5VNO" engineRating="210" engineType="standard"/>
+        <mech model="talon_TLN-5W" engineRating="280" engineType="XL"/>
+        <mech model="talon_TLN-5W-EC" engineRating="280" engineType="XL"/>
+
+        <mech model="thanatos_TNS-4M" engineRating="375" engineType="XL" endoSteel="true"/>
+        <mech model="thanatos_TNS-4P" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="thanatos_TNS-4S" engineRating="375" engineType="XL" endoSteel="true"/>
+        <mech model="thanatos_TNS-5P" engineRating="300" engineType="light" endoSteel="true"/>
+        <mech model="thanatos_TNS-5S" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="thanatos_TNS-5T" engineRating="300" engineType="light" endoSteel="true"/>
+        <mech model="thantos_THS-4A" engineRating="275" engineType="XL" endoSteel="true"/>
+
+        <hardpoints id="thunderbolt">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy"/>
+        </hardpoints>
+
+        <mech model="thunderbolt_TDR-1C" engineRating="210" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5G" engineRating="260" engineType="standard" ferroFibrous="true" techBase="Clan" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5L" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5LS" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5S" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5Sb" engineRating="260" engineType="standard" endoSteel="true" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5Sb2" engineRating="260" engineType="standard" endoSteel="true" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5Sd" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5SE" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5SP" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5SR" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5SS" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-7M" engineRating="260" engineType="standard" ferroFibrous="true" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-8M" engineRating="260" engineType="standard" ferroFibrous="true" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-9S" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-9SE" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-9W" engineRating="260" engineType="standard" ferroFibrous="true" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-9WDR" engineRating="260" engineType="standard" ferroFibrous="true" techBase="Clan" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-C" engineRating="260" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-C2" engineRating="260" engineType="standard" techBase="Clan" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-F4V" engineRating="195" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-F4W" engineRating="195" engineType="standard" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-F4X" engineRating="195" engineType="standard" apply="thunderbolt"/>
+
+        <!-- Timber Wolf GOES HERE -->
+
+        <mech model="titan_TI-1A" engineRating="300" engineType="standard"/>
+        <mech model="titan_TI-1AD" engineRating="300" engineType="standard"/>
+        <mech model="titan_TI-1D" engineRating="300" engineType="XL"/>
+        <mech model="titan_TI-2D" engineRating="300" engineType="XL"/>
+
+        <mech model="ursus_URS-1" engineRating="200" engineType="standard" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="valkyrie_ii_VLK-II-1A" engineRating="360" engineType="XL">
+            <remove-inventory item="Gear_Cockpit_LifeSupportA_Piloting"/>
+            <remove-inventory item="Gear_Cockpit_LifeSupportB_Tactics"/>
+            <!-- Gear_Cockpit_Siri-->
+            <!-- Gear_Sensors_Huntress-->
+        </mech>
+
+        <hardpoints id="victor">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
+        </hardpoints>
+
+        <mech model="victor_VTR-9A" engineRating="320" engineType="standard" apply="victor"/>
+        <mech model="victor_VTR-9A1" engineRating="320" engineType="standard" apply="victor"/>
+        <mech model="victor_VTR-9B(C)" engineRating="320" engineType="standard" techBase="Clan" apply="victor"/>
+        <mech model="victor_VTR-9B" engineRating="320" engineType="standard" apply="victor"/>
+        <mech model="victor_VTR-9B-CE" engineRating="320" engineType="standard" techBase="Clan" apply="victor"/>
+        <mech model="victor_VTR-9BR" engineRating="320" engineType="standard" apply="victor"/>
+        <mech model="victor_VTR-9D" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
+        <mech model="victor_VTR-9D-2" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
+        <mech model="victor_VTR-9Db" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
+        <mech model="victor_VTR-9G" engineRating="320" engineType="standard" ferroFibrous="true" techBase="Clan" apply="victor"/>
+        <mech model="victor_VTR-9K" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
+        <mech model="victor_VTR-9P" engineRating="320" engineType="standard" apply="victor"/>
+        <mech model="victor_VTR-9RC" engineRating="320" engineType="XL" ferroFibrous="true" apply="victor"/>
+        <mech model="victor_VTR-9S" engineRating="320" engineType="standard" apply="victor"/>
+        <mech model="victor_VTR-10B" engineRating="380" engineType="XL" endoSteel="true" apply="victor"/>
+        <mech model="victor_VTR-C" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
+
+        <mech model="whitworth_WTH-0" engineRating="160" engineType="standard"/>
+        <mech model="whitworth_WTH-1" engineRating="160" engineType="standard"/>
+        <mech model="whitworth_WTH-1R" engineRating="160" engineType="standard"/>
+        <mech model="whitworth_WTH-1S" engineRating="160" engineType="standard"/>
+        <mech model="whitworth_WTH-1SR" engineRating="160" engineType="standard"/>
+        <mech model="whitworth_WTH-2" engineRating="160" engineType="standard"/>
+
+        <hardpoints id="wolverine">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,  Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="wolverine_WVR-TD" engineRating="275" engineType="XL" endoSteel="true" apply="wolverine"/>
+        <mech model="wolverine_WVR-1R" engineRating="270" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-2C_(C)" engineRating="275" engineType="XL" endoSteel="true" techBase="Clan" apply="wolverine"/>
+        <mech model="wolverine_WVR-3R" engineRating="265" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6D" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6GD" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" apply="wolverine"/>
+        <mech model="wolverine_WVR-6K" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6KH" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6M" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6MR" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6R" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6R-CE" engineRating="275" engineType="XL" techBase="Clan" apply="wolverine"/>
+        <mech model="wolverine_WVR-6RR" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-6SL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" apply="wolverine"/>
+        <mech model="wolverine_WVR-6T" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-7D" engineRating="275" engineType="XL" ferroFibrous="true" apply="wolverine"/>
+        <mech model="wolverine_WVR-7K" engineRating="280" engineType="XL" endoSteel="true" apply="wolverine"/>
+        <mech model="wolverine_WVR-7M" engineRating="275" engineType="XL" apply="wolverine"/>
+        <mech model="wolverine_WVR-8Kp" engineRating="275" engineType="XL" endoSteel="true" apply="wolverine"/>
+
+        <mech model="wolverine_ii_WVR-7H" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" apply="wolverine"/>
+
+        <mech model="wolverine_iic_WVR-IIC" engineRating="275" engineType="XL" endoSteel="true" techBase="Clan" apply="wolverine"/>
+
+        <mech model="wyvern_WVE-5N" engineRating="180" engineType="standard" endoSteel="true"/>
+        <mech model="wyvern_WVE-5Nb" engineRating="180" engineType="XL" endoSteel="true"/>
+        <mech model="wyvern_WVE-5Nsl" engineRating="180" engineType="standard" endoSteel="true"/>
+        <mech model="wyvern_WVE-5UX" engineRating="180" engineType="standard" endoSteel="true">
+            <remove-inventory item="Gear_Supercharger"/>
+            <remove-inventory item="Weapon_VehicleGrenadeLauncher"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Mortar"/>
+        </mech>
+        <mech model="wyvern_WVE-6N" engineRating="180" engineType="standard" endoSteel="true"/>
+        <mech model="wyvern_WVE-9N" engineRating="180" engineType="standard" endoSteel="true"/>
+
+        <mech model="wyvern_iic_WVE-IIC" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <hardpoints id="zeus">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="zeus_ZEU-5S" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-5T" engineRating="320" engineType="standard" ferroFibrous="true" apply="zeus"/>
+        <mech model="zeus_ZEU-6A" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-6S" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-6S-DC" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-6SR" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-6T" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-6Y" engineRating="320" engineType="standard" apply="zeus"/>
+        <mech model="zeus_ZEU-9S" engineRating="320" engineType="standard" ferroFibrous="true" apply="zeus"/>
+        <mech model="zeus_ZEU-9S2" engineRating="320" engineType="XL" ferroFibrous="true" apply="zeus"/>
+        <mech model="zeus_ZEU-9S-DC" engineRating="320" engineType="standard" ferroFibrous="true" apply="zeus"/>
+        <mech model="zeus_ZEU-IS" engineRating="320" engineType="standard" apply="zeus">
+            <remove-inventory item="BoltOn_Weapon_GrenadeLauncher_5"/>
+            <remove-inventory item="BoltOn_Weapon_Rocket_20_Super_x10"/>
+        </mech>
+<!--        <mech model="zeus_ZEU-P-X" engineRating="400" engineType="XXL"/>-->
+<!--        <mech model="zeus-x_ZEU-X" engineRating="400" engineType="XXL"/>-->
+    </copy>
+</rapid>

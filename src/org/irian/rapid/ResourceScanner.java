@@ -1,0 +1,46 @@
+package org.irian.rapid;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class ResourceScanner {
+
+    private final List<File> dirList = new ArrayList<>();
+
+    public ResourceScanner(List<String> dirList) {
+        for (var dir : dirList) {
+            var file = new File(dir);
+            if (file.isDirectory()) {
+                this.dirList.add(file);
+            }
+            else {
+                System.out.printf("Ignoring folder... [%s] is not a directory\n", dir);
+            }
+        }
+    }
+
+    public File scanDirectories(String filename) {
+        for (var dir : dirList) {
+            File file = scanDirectory(dir, filename);
+            if (file != null) return file;
+        }
+
+        System.out.printf("File not found: %s\n", filename);
+        return null;
+    }
+
+    private File scanDirectory(File dir, String filename) {
+        for (var file : Objects.requireNonNull(dir.listFiles())) {
+            if (file.isDirectory()) {
+                var f = scanDirectory(file, filename);
+                if (f != null) return f;
+            }
+            if (filename.equals(file.getName())) {
+                return file;
+            }
+        }
+        return null;
+    }
+}
