@@ -645,9 +645,9 @@
 
         <hardpoints id="chameleon">
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
-            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
-            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic,Energy,AntiPersonnel"/>
-            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel,AntiPersonnel"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
         </hardpoints>
 
@@ -881,7 +881,9 @@
         <mech model="hellbringer_HBR-C" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
         <mech model="hellbringer_HBR-F" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
         <mech model="hellbringer_HBR-GP" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
-        <mech model="hellbringer_HBR-H" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
+        <mech model="hellbringer_HBR-H" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer">
+            <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel, AntiPersonnel, AntiPersonnel, AntiPersonnel, AntiPersonnel"/>
+        </mech>
         <mech model="hellbringer_HBR-J" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
         <mech model="hellbringer_HBR-M" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
         <mech model="hellbringer_HBR-Prime" engineRating="325" engineType="XL" techBase="Clan" apply="hellbringer"/>
@@ -1011,6 +1013,14 @@
             <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
         </hardpoints>
 
+        <hardpoints id="mdd-wdr">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
         <!-- Mad Dog (aka Vulture) -->
         <mech model="mad_dog_MDD-A" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-A2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
@@ -1028,8 +1038,8 @@
         <mech model="mad_dog_MDD-PB" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-Prime" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-S" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
-        <mech model="mad_dog_MDD-WDR1" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
-        <mech model="mad_dog_MDD-WDR2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-WDR1" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mdd-wdr"/>
+        <mech model="mad_dog_MDD-WDR2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mdd-wdr"/>
 
         <mech model="mauler_MAL-1P" engineRating="270" engineType="XL" ferroFibrous="true"/>
         <mech model="mauler_MAL-1R" engineRating="270" engineType="XL" ferroFibrous="true"/>
@@ -1152,7 +1162,10 @@
         </hardpoints>
 
         <mech model="summoner_SMN-A" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
-        <mech model="summoner_SMN-B" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
+        <mech model="summoner_SMN-B" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile, Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile, Missile"/>
+        </mech>
         <mech model="summoner_SMN-C" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
         <mech model="summoner_SMN-D" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
         <mech model="summoner_SMN-E" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
@@ -1187,11 +1200,19 @@
         <mech model="sun_spider_SNS-F" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
         <mech model="sun_spider_SNS-Prime" engineRating="350" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="sun-spider"/>
 
-        <mech model="sunder_SD1-O" engineRating="360" engineType="XL"/>
-        <mech model="sunder_SD1-OA" engineRating="360" engineType="XL"/>
-        <mech model="sunder_SD1-OB" engineRating="360" engineType="XL"/>
-        <mech model="sunder_SD1-OC" engineRating="360" engineType="XL"/>
-        <mech model="sunder_SD1-OR" engineRating="360" engineType="XL"/>
+        <hardpoints id="sunder">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Energy, Missile, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy, Energy, Energy, Missile, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="sunder_SD1-O" engineRating="360" engineType="XL" apply="sunder"/>
+        <mech model="sunder_SD1-OA" engineRating="360" engineType="XL" apply="sunder"/>
+        <mech model="sunder_SD1-OB" engineRating="360" engineType="XL" apply="sunder"/>
+        <mech model="sunder_SD1-OC" engineRating="360" engineType="XL" apply="sunder"/>
+        <mech model="sunder_SD1-OR" engineRating="360" engineType="XL" apply="sunder"/>
 
         <mech model="talon_TLN-3L" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="talon_TLN-5V" engineRating="280" engineType="XL"/>
@@ -1199,13 +1220,21 @@
         <mech model="talon_TLN-5W" engineRating="280" engineType="XL"/>
         <mech model="talon_TLN-5W-EC" engineRating="280" engineType="XL"/>
 
-        <mech model="thanatos_TNS-4M" engineRating="375" engineType="XL" endoSteel="true"/>
-        <mech model="thanatos_TNS-4P" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="thanatos_TNS-4S" engineRating="375" engineType="XL" endoSteel="true"/>
-        <mech model="thanatos_TNS-5P" engineRating="300" engineType="light" endoSteel="true"/>
-        <mech model="thanatos_TNS-5S" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="thanatos_TNS-5T" engineRating="300" engineType="light" endoSteel="true"/>
-        <mech model="thantos_THS-4A" engineRating="275" engineType="XL" endoSteel="true"/>
+        <hardpoints id="thanatos">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Energy, Missile, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy, Energy, Energy, Missile, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, Missile, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="thanatos_TNS-4M" engineRating="375" engineType="XL" endoSteel="true" apply="thanatos"/>
+        <mech model="thanatos_TNS-4P" engineRating="300" engineType="XL" endoSteel="true" apply="thanatos"/>
+        <mech model="thanatos_TNS-4S" engineRating="375" engineType="XL" endoSteel="true" apply="thanatos"/>
+        <mech model="thanatos_TNS-5P" engineRating="300" engineType="light" endoSteel="true" apply="thanatos"/>
+        <mech model="thanatos_TNS-5S" engineRating="300" engineType="XL" endoSteel="true" apply="thanatos"/>
+        <mech model="thanatos_TNS-5T" engineRating="300" engineType="light" endoSteel="true" apply="thanatos"/>
+        <mech model="thantos_THS-4A" engineRating="275" engineType="XL" endoSteel="true" apply="thanatos"/>
 
         <hardpoints id="thunderbolt">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
@@ -1248,7 +1277,17 @@
 
         <mech model="ursus_URS-1" engineRating="200" engineType="standard" ferroFibrous="true" techBase="Clan"/>
 
-        <mech model="valkyrie_ii_VLK-II-1A" engineRating="360" engineType="XL">
+        <hardpoints id="valkyrie_ii">
+            <add-hardpoint location="LeftLeg" weaponMounts="Missile, AntiPersonnel"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy, Energy, Energy, Missile, AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="RightLeg" weaponMounts="Missile, AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="valkyrie_ii_VLK-II-1A" engineRating="360" engineType="XL" apply="valkyrie_ii">
             <remove-inventory item="Gear_Cockpit_LifeSupportA_Piloting"/>
             <remove-inventory item="Gear_Cockpit_LifeSupportB_Tactics"/>
             <!-- Gear_Cockpit_Siri-->
