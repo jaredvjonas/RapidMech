@@ -9,14 +9,13 @@ public class ResourceScanner {
 
     private final List<File> dirList = new ArrayList<>();
 
-    public ResourceScanner(List<String> dirList) {
-        for (var dir : dirList) {
-            var file = new File(dir);
-            if (file.isDirectory()) {
-                this.dirList.add(file);
+    public ResourceScanner(List<File> dirList) {
+        for (var f : dirList) {
+            if (f.isDirectory()) {
+                this.dirList.add(f);
             }
             else {
-                System.out.printf("Ignoring folder... [%s] is not a directory\n", dir);
+                System.out.printf("Ignoring folder... [%s] is not a directory\n", f);
             }
         }
     }

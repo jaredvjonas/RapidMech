@@ -1,53 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rapid>
-    <dir id="clanInvasion" path="../RT-Mechs/ClanInvasion3061"/>
-    <dir id="target" path="../IrianTech/battleMech"/>
+    <dir id="btHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH"/>
+    <dir id="clanInvasion" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/ClanInvasion3061"/>
+    <dir id="irianTechHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH/mods/IrianTech"/>
+    <dir id="target" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH/mods/IrianTech/battleMech"/>
 
     <resource-list id="mechGear">
         <!-- BattleTech -->
-        <dir path="../../BattleTech_Data/StreamingAssets/data/ammunitionBox"/>
-        <dir path="../../BattleTech_Data/StreamingAssets/data/heatsinks"/>
-        <dir path="../../BattleTech_Data/StreamingAssets/data/jumpjets"/>
-        <dir path="../../BattleTech_Data/StreamingAssets/data/upgrades"/>
-        <dir path="../../BattleTech_Data/StreamingAssets/data/weapon"/>
+        <dir path="${btHome}/BattleTech_Data/StreamingAssets/data/ammunitionBox"/>
+        <dir path="${btHome}/BattleTech_Data/StreamingAssets/data/heatsinks"/>
+        <dir path="${btHome}/BattleTech_Data/StreamingAssets/data/jumpjets"/>
+        <dir path="${btHome}/BattleTech_Data/StreamingAssets/data/upgrades"/>
+        <dir path="${btHome}/BattleTech_Data/StreamingAssets/data/weapon"/>
 
         <!-- IrianTech -->
-        <dir path="../IrianTech/ammunitionBox"/>
-        <dir path="../IrianTech/customWeapon"/>
-        <dir path="../IrianTech/heatsinks"/>
-        <dir path="../IrianTech/jumpjets"/>
-        <dir path="../IrianTech/mechUpgrades"/>
-        <dir path="../IrianTech/upgrades"/>
-        <dir path="../IrianTech/weapon"/>
+        <dir path="${irianTechHome}/ammunitionBox"/>
+        <dir path="${irianTechHome}/customWeapon"/>
+        <dir path="${irianTechHome}/heatsinks"/>
+        <dir path="${irianTechHome}/jumpjets"/>
+        <dir path="${irianTechHome}/mechUpgrades"/>
+        <dir path="${irianTechHome}/upgrades"/>
+        <dir path="${irianTechHome}/weapon"/>
 
         <!-- Imported from RogueTech -->
-        <dir path="../IrianTech/rogueTech/Actuators"/>
-        <dir path="../IrianTech/rogueTech/AddOn"/>
-        <dir path="../IrianTech/rogueTech/Artillery"/>
-        <dir path="../IrianTech/rogueTech/Clan"/>
-        <dir path="../IrianTech/rogueTech/Cockpit"/>
-        <dir path="../IrianTech/rogueTech/Heatsinks"/>
-        <dir path="../IrianTech/rogueTech/Jumpjets"/>
-        <dir path="../IrianTech/rogueTech/Munitions"/>
-        <dir path="../IrianTech/rogueTech/OmniTech"/>
-        <dir path="../IrianTech/rogueTech/Primitive"/>
-        <dir path="../IrianTech/rogueTech/Sensors"/>
-        <dir path="../IrianTech/rogueTech/TargetTrackingSystem"/>
-        <dir path="../IrianTech/rogueTech/Upgrade"/>
-        <dir path="../IrianTech/rogueTech/Weapons"/>
+        <dir path="${irianTechHome}/rogueTech/Actuators"/>
+        <dir path="${irianTechHome}/rogueTech/AddOn"/>
+        <dir path="${irianTechHome}/rogueTech/Artillery"/>
+        <dir path="${irianTechHome}/rogueTech/Clan/Improved"/>
+        <dir path="${irianTechHome}/rogueTech/Clan/Internals"/>
+        <dir path="${irianTechHome}/rogueTech/Clan/Weapons"/>
+        <dir path="${irianTechHome}/rogueTech/Cockpit"/>
+        <dir path="${irianTechHome}/rogueTech/Heatsinks"/>
+        <dir path="${irianTechHome}/rogueTech/Jumpjets"/>
+        <dir path="${irianTechHome}/rogueTech/Munitions"/>
+        <dir path="${irianTechHome}/rogueTech/OmniTech"/>
+        <dir path="${irianTechHome}/rogueTech/Primitive"/>
+        <dir path="${irianTechHome}/rogueTech/Sensors"/>
+        <dir path="${irianTechHome}/rogueTech/TargetTrackingSystem"/>
+        <dir path="${irianTechHome}/rogueTech/Upgrade"/>
+        <dir path="${irianTechHome}/rogueTech/Weapons"/>
 
-        <!-- JK_Variants -->
-        <dir path="../JK_VariantsCampaign/ammunitionBox"/>
-        <dir path="../JK_VariantsCampaign/heatsinks"/>
-        <dir path="../JK_VariantsCampaign/upgrades"/>
-        <dir path="../JK_VariantsCampaign/weapon"/>
-
-        <!-- Vanilla Plus -->
-        <dir path="../Vanilla Plus Core/ammunitionbox"/>
-        <dir path="../Vanilla Plus Core/heatsinks"/>
-        <dir path="../Vanilla Plus Core/internals"/>
-        <dir path="../Vanilla Plus Core/jumpjets"/>
-        <dir path="../Vanilla Plus Core/weapons"/>
+        <!-- Imported from Vanilla Plus -->
+        <dir path="${irianTechHome}/vanillaPlusCore/ammunitionbox"/>
+        <dir path="${irianTechHome}/vanillaPlusCore/heatsinks"/>
+        <dir path="${irianTechHome}/vanillaPlusCore/internals"/>
+        <dir path="${irianTechHome}/vanillaPlusCore/weapons"/>
 
     </resource-list>
 
@@ -143,7 +140,7 @@
         <swap-inventory item="Weapon_SRM_4_Clan" with="Weapon_SRM_4_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
         <swap-inventory item="Weapon_SRM_6_Clan" with="Weapon_SRM_6_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
 
-        <!-- Vanilla Plus Primitive -->
+        <!-- Primitive Weapons -->
 <!--        <swap-inventory item="Weapon_Rocket_10" with="Weapon_RocketLauncher_RL10_0_STOCK"/>-->
 <!--        <swap-inventory item="Weapon_Rocket_15" with="Weapon_RocketLauncher_RL15_0_STOCK"/>-->
 <!--        <swap-inventory item="Weapon_Rocket_20" with="Weapon_RocketLauncher_RL20_0_STOCK"/>-->
@@ -251,66 +248,6 @@
         <swap-inventory item="Weapon_Laser_ER_Small" with="Weapon_Laser_SmallLaserER_0-STOCK"/>
         <swap-inventory item="Weapon_Laser_ER_Small_DiverseOptics" with="Weapon_Laser_SmallLaserER_1-Diverse_Optics"/>
 
-        <!-- Vanilla Plus Inner Sphere -->
-        <swap-inventory item="Weapon_Gauss_Rifle_Light" with="Weapon_Gauss_Gauss_LIGHT"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Light" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Light_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/>
-        <swap-inventory item="Weapon_Gauss_Rifle_Heavy" with="Weapon_Gauss_Gauss_HEAVY"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Heavy" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Heavy_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/>
-<!--        <swap-inventory item="" with="Weapon_Gauss_Gauss_HEAVY-1-UMP"/>-->
-        <swap-inventory item="Weapon_Laser_XPulse_Medium" with="Weapon_Laser_MediumLaserPulse_X"/>
-        <swap-inventory item="Weapon_MRM_10" with="Weapon_MRM_10"/>
-<!--        <swap-inventory item="" with="Weapon_MRM_10-1-UMP"/>-->
-        <swap-inventory item="Weapon_MRM_20" with="Weapon_MRM_20"/>
-<!--        <swap-inventory item="" with="Weapon_MRM_20-1-UMP"/>-->
-        <swap-inventory item="Weapon_MRM_30" with="Weapon_MRM_30"/>
-<!--        <swap-inventory item="" with="Weapon_MRM_30-1-UMP"/>-->
-        <swap-inventory item="Weapon_MRM_40" with="Weapon_MRM_40"/>
-<!--        <swap-inventory item="" with="Weapon_MRM_40-1-UMP"/>-->
-        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem" with="Ammo_AmmunitionBox_MRM"/> <!-- TODO support this ammo -->
-        <swap-inventory item="Weapon_PPC_Heavy" with="Weapon_PPC_PPC_HEAVY"/>
-        <swap-inventory item="Weapon_PPC_Light" with="Weapon_PPC_PPC_LIGHT"/>
-        <swap-inventory item="Weapon_SRM_2_Streak" with="Weapon_SRM_SRM2_STREAK"/>
-        <swap-inventory item="Weapon_SRM_4_Streak" with="Weapon_SRM_SRM4_STREAK"/>
-        <swap-inventory item="Weapon_SRM_6_Streak" with="Weapon_SRM_SRM6_STREAK"/>
-
-        <!-- Vanilla Plus Clan -->
-        <swap-inventory item="Gear_Probe_Active_Clan" with="Gear_AP_CLAN"/>
-        <swap-inventory item="Gear_ECM_Guardian_Clan" with="Gear_Guardian_ECM_CLAN"/>
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_2_Clan" with="Weapon_Autocannon_AC2_LBX_CLAN"/>-->
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_5_Clan" with="Weapon_Autocannon_AC5_LBX_CLAN"/>-->
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_10_Clan" with="Weapon_Autocannon_AC10_LBX_CLAN"/>-->
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_20_Clan" with="Weapon_Autocannon_AC20_LBX_CLAN"/>-->
-        <swap-inventory item="Weapon_Flamer_CLAN" with="Weapon_Flamer_Flamer_CLAN"/>
-        <swap-inventory item="Weapon_Flamer_Clan" with="Weapon_Flamer_Flamer_CLAN"/>
-        <swap-inventory item="Weapon_Gauss_Rifle_Clan" with="Weapon_Gauss_Gauss_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Heavy_Large_Clan" with="Weapon_Laser_HeavyLargeLaser_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Heavy_Medium_Clan" with="Weapon_Laser_HeavyMediumLaser_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Heavy_Small_Clan" with="Weapon_Laser_HeavySmallLaser_CLAN"/>
-        <swap-inventory item="Weapon_Laser_ER_Large_Clan" with="Weapon_Laser_LargeLaserER_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Large_Clan" with="Weapon_Laser_LargeLaserPulse_CLAN"/>
-        <swap-inventory item="Weapon_TAG_Light" with="Weapon_Laser_Light_TAG_CLAN"/>
-        <swap-inventory item="Weapon_Laser_ER_Medium_Clan" with="Weapon_Laser_MediumLaserER_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Medium_Clan" with="Weapon_Laser_MediumLaserPulse_CLAN"/>
-        <swap-inventory item="Weapon_Laser_ER_Micro_Clan" with="Weapon_Laser_MicroLaserER_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Micro_Clan" with="Weapon_Laser_MicroLaserPulse_CLAN"/>
-        <swap-inventory item="Weapon_Laser_ER_Small_Clan" with="Weapon_Laser_SmallLaserER_CLAN"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Small_Clan" with="Weapon_Laser_SmallLaserPulse_CLAN"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clan" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clan_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
-        <swap-inventory item="Weapon_MachineGun_Clan" with="Weapon_MachineGun_MachineGun_CLAN"/>
-        <swap-inventory item="Weapon_MachineGun_Array_Clan" with="Weapon_MachineGun_MachineGun_CLAN"/>
-        <swap-inventory item="Weapon_MachineGun_Heavy_Clan" with="Weapon_MachineGun_MachineGun_CLAN_HEAVY"/>
-        <swap-inventory item="Weapon_MachineGun_Light_Clan" with="Weapon_MachineGun_MachineGun_CLAN_LIGHT"/>
-        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Heavy" with="Ammo_AmmunitionBox_Generic_MG"/>
-        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Light" with="Ammo_AmmunitionBox_Generic_MG"/>
-        <swap-inventory item="Weapon_PPC_ER_Clan" with="Weapon_PPC_PPCER_CLAN"/>
-        <swap-inventory item="Weapon_NARC_Clan" with="Weapon_SRM_SRM_NARC_CLAN"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Clan" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Clan" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Clan_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-
         <!-- Rogue Tech Inner Sphere -->
         <swap-inventory item="Weapon_Rifle_Medium" with="Weapon_Rifle_Medium"/>
         <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Rifle_Medium"/>
@@ -323,6 +260,7 @@
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5_AP" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem" with="Ammo_AmmunitionBox_MRM"/>
 
         <!-- Rogue Tech Autocannon Clan Variants -->
         <swap-inventory item="Weapon_Autocannon_RAC_2_Clan" with="Weapon_Autocannon_RAC_2_Clan"/>
@@ -347,8 +285,8 @@
         <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Double" with="Ammo_AmmunitionBox_Generic_AC20_Double"/>
 
         <!-- Rogue Tech Magshot -->
-        <swap-inventory item="Weapon_Gauss_Magshot_Clan" with="Weapon_Gauss_Gauss_CLAN"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Magshot_Half" with="Ammo_AmmunitionBox_Generic_GAUSS_Half"/>
+        <swap-inventory item="Weapon_Gauss_Magshot_Clan" with="Weapon_Gauss_Magshot_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Magshot_Half" with="Ammo_AmmunitionBox_Magshot_Half"/>
 
         <!-- Rogue Tech Thunderbolt -->
         <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB5_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB5"/>
@@ -442,9 +380,16 @@
         <recalc-cost apply="mechGear"/>
     </task-list>
 
+    <task-list id="drop-artemis">
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_Generic_SRM"/>
+
+        <remove-inventory item="Gear_Attachment_ArtemisIV"/>
+    </task-list>
+
     <copy>
-        <mechdef source="${clanInvasion}/mech" dest="${target}/mech" tasks="mech-standard"/>
-        <chassisdef source="${clanInvasion}/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${clanInvasion}/Base/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <chassisdef source="${clanInvasion}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <mech model="anvil_ANV-3M" engineRating="300" engineType="standard" endoSteel="true"/>
         <mech model="anvil_ANV-5M" engineRating="300" engineType="standard" endoSteel="true"/>
@@ -745,7 +690,7 @@
         <mech model="excalibur_EXC-B1" engineRating="350" engineType="XL"/>
         <mech model="excalibur_EXC-B2" engineRating="350" engineType="XL"/>
         <mech model="excalibur_EXC-B2b" engineRating="350" engineType="XL" endoSteel="true"/>
-        <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" tasks="drop-artemis"/>
         <mech model="excalibur_EXC-C1" engineRating="350" engineType="XL"/>
 
         <mech model="falcon_hawk_FNHK-9K" engineRating="175" engineType="XL" ferroFibrous="true"/>
@@ -1249,7 +1194,7 @@
         <mech model="thunderbolt_TDR-5L" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-5LS" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-5S" engineRating="260" engineType="standard" apply="thunderbolt"/>
-        <mech model="thunderbolt_TDR-5Sb" engineRating="260" engineType="standard" endoSteel="true" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5Sb" engineRating="260" engineType="standard" endoSteel="true" apply="thunderbolt" tasks="drop-artemis"/>
         <mech model="thunderbolt_TDR-5Sb2" engineRating="260" engineType="standard" endoSteel="true" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-5Sd" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-5SE" engineRating="260" engineType="standard" apply="thunderbolt"/>
@@ -1396,5 +1341,23 @@
         </mech>
 <!--        <mech model="zeus_ZEU-P-X" engineRating="400" engineType="XXL"/>-->
 <!--        <mech model="zeus-x_ZEU-X" engineRating="400" engineType="XXL"/>-->
+    </copy>
+
+    <copy>
+        <mechdef source="${clanInvasion}/Base FlashPoint/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <chassisdef source="${clanInvasion}/Base FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+    </copy>
+
+    <copy>
+        <mechdef source="${clanInvasion}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <chassisdef source="${clanInvasion}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+    </copy>
+
+    <copy>
+        <mechdef source="${clanInvasion}/Base UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <chassisdef source="${clanInvasion}/Base UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
     </copy>
 </rapid>

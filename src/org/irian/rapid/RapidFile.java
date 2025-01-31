@@ -24,6 +24,7 @@ public class RapidFile {
     private final File _file;
     private final Map<String, String> variables = new HashMap<>();
     private final Map<String, ResourceList> resourceMap = new HashMap<>();
+    private final Map<String, ResourceScanner> resourceCache = new HashMap<>();
     private final Map<String, TaskList> taskMap = new HashMap<>();
     private static final List<String> NonPortableEquipment = new ArrayList<>();
 
@@ -84,15 +85,21 @@ public class RapidFile {
                 System.out.printf("mech model=[%s]\n", mechCmd.model);
 
                 var mech = loadMech(mechCmd, copy.chassisDefCmd, copy.mechDefCmd);
-                processTaskList(mechCmd.tasks, mech, false);
+                processTaskList(mechCmd.taskList, mech, false); // process child elements
+
+                TaskList mechTasks = taskMap.get(mechCmd.tasks); // process tasks attribute
+                if (mechTasks != null) {
+                    processTaskList(mechTasks.taskItems, mech, false);
+                }
 
                 System.out.printf("Processing %s\n", mech.chasisDef.Description.Id);
                 TaskList chassisList = taskMap.get(copy.chassisDefCmd.tasks);
                 processTaskList(chassisList.taskItems, mech, true);
 
                 System.out.printf("Processing %s\n", mech.mechDef.Description.Id);
-                TaskList mechTasks = taskMap.get(copy.mechDefCmd.tasks);
-                processTaskList(mechTasks.taskItems, mech, false);
+                TaskList globalTasks = taskMap.get(copy.mechDefCmd.tasks); // process tasks referenced by the <mechdef> element
+                processTaskList(globalTasks.taskItems, mech, false);
+
                 Hardpoints hardpoints = hardpointsMap.get(mechCmd.apply);
                 if (hardpoints != null) {
                     processTaskList(hardpoints.tasks, mech, false);
@@ -241,9 +248,13 @@ public class RapidFile {
         }
         else if (task instanceof RecalcCost) {
             String apply = ((RecalcCost) task).apply;
-            var resourceList = resourceMap.get(apply);
-            var paths = resourceList.getPaths();
-            var resourceScanner = new ResourceScanner(paths);
+            var resourceScanner = resourceCache.get(apply);
+            if (resourceScanner == null) {
+                var resource = resourceMap.get(apply);
+                var files = buildResourceList(resource.getPaths());
+                resourceScanner = new ResourceScanner(files);
+                resourceCache.put(apply, resourceScanner);
+            }
 
             mech.recalculateCost(resourceScanner);
         }
@@ -353,7 +364,7 @@ public class RapidFile {
     }
 
     private void swapItem(SwapItem task, MechDef def) {
-        List<Inventory> attachments = new ArrayList<>();
+        List<String> attachments = new ArrayList<>();
 
         for (var item : def.inventory) {
             if (item.ComponentDefID.equals(task.item)) {
@@ -362,7 +373,7 @@ public class RapidFile {
                     var temp = def.findAttachment(item.LocalGUID);
                     if (temp.ComponentDefID.equals(task.whenAttachment)) {
                         item.LocalGUID = null; // erase the GUID
-                        attachments.add(temp); // save attachment for deletion
+                        attachments.add(temp.TargetComponentGUID); // save attachment for deletion
                         // and swap items...
                     } else {
                         continue; // skip this task
@@ -378,7 +389,9 @@ public class RapidFile {
         }
 
         if (!attachments.isEmpty()) {
-            def.inventory.removeAll(attachments);
+            for (var attachment : attachments) {
+                def.inventory.removeIf(item -> attachment.equals(item.TargetComponentGUID));
+            }
         }
     }
 
@@ -419,6 +432,21 @@ public class RapidFile {
         return value;
     }
 
+    private List<File> buildResourceList(List<String> paths) {
+        var resourceList = new ArrayList<File>();
+        for (var path : paths) {
+            try {
+                var f = buildPath(path);
+                if (f != null) {
+                    resourceList.add(f);
+                }
+            } catch (IOException e) {
+                System.out.printf("Error processing directory path %s", path);
+            }
+        }
+        return resourceList;
+    }
+
     /**
      * C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH\mods\RT-Mechs\ClanInvasion3061\chassis
      * C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH\mods\RT-Mechs\ClanInvasion3061\mech
@@ -430,6 +458,7 @@ public class RapidFile {
 //        System.out.printf("   directory [%s]\n", directory);
         if (!directory.exists()) {
             System.out.printf("   Directory [%s] does not exist!!!\n", directory);
+            return null;
         }
         return directory;
     }

@@ -6,6 +6,7 @@ import jakarta.xml.bind.annotation.XmlElements;
 import org.irian.rapid.commands.tasks.AddHardpoint;
 import org.irian.rapid.commands.tasks.RemoveItem;
 import org.irian.rapid.commands.tasks.SetHardpoint;
+import org.irian.rapid.commands.tasks.SwapItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +36,14 @@ public class MechCmd {
     @XmlAttribute
     public String apply;
 
+    @XmlAttribute
+    public String tasks;
+
     @XmlElements({
             @XmlElement(name="add-hardpoint", type = AddHardpoint.class),
             @XmlElement(name="set-hardpoint", type = SetHardpoint.class),
+            @XmlElement(name="swap-inventory", type = SwapItem.class),
             @XmlElement(name="remove-inventory", type = RemoveItem.class)
     })
-    public List<TaskCmd> tasks = new ArrayList<>();
+    public List<TaskCmd> taskList = new ArrayList<>();
 }
