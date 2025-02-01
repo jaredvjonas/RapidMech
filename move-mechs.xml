@@ -124,22 +124,6 @@
         <swap-inventory item="Weapon_Laser_Primitive_Large" with="Weapon_Laser_Primitive_Large"/>
         <swap-inventory item="Weapon_Laser_Primitive_Medium" with="Weapon_Laser_Primitive_Medium"/>
 
-        <!-- Handle Gear_Attachment_ArtemisIV and convert to launcher paired with Artemis ammo -->
-        <swap-inventory item="Weapon_LRM_5" with="Weapon_LRM_5_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_10" with="Weapon_LRM_10_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_15" with="Weapon_LRM_15_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_20" with="Weapon_LRM_20_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_5_Clan" with="Weapon_LRM_5_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_10_Clan" with="Weapon_LRM_10_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_15_Clan" with="Weapon_LRM_15_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_20_Clan" with="Weapon_LRM_20_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_2" with="Weapon_SRM_2_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_4" with="Weapon_SRM_4_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_6" with="Weapon_SRM_6_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_2_Clan" with="Weapon_SRM_2_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_4_Clan" with="Weapon_SRM_4_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_6_Clan" with="Weapon_SRM_6_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-
         <!-- Primitive Weapons -->
 <!--        <swap-inventory item="Weapon_Rocket_10" with="Weapon_RocketLauncher_RL10_0_STOCK"/>-->
 <!--        <swap-inventory item="Weapon_Rocket_15" with="Weapon_RocketLauncher_RL15_0_STOCK"/>-->
@@ -333,6 +317,7 @@
         <swap-inventory item="Gear_JumpJet_Prototype_Heavy" with="Gear_JumpJet_Heavy_Improved"/>
 
         <!-- Rogue Tech components not supported by base game -->
+        <remove-inventory item="Gear_Attachment_ArtemisIV"/>
         <remove-inventory item="Gear_CASE"/>
         <remove-inventory item="Gear_CASE2"/>
         <remove-inventory item="Gear_Armor_LightFerroFibrous"/>
@@ -380,9 +365,29 @@
         <recalc-cost apply="mechGear"/>
     </task-list>
 
+    <task-list id="artemis">
+        <!-- Handle Gear_Attachment_ArtemisIV and convert to launcher paired with Artemis ammo -->
+        <swap-inventory item="Weapon_LRM_5" with="Weapon_LRM_5_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_10" with="Weapon_LRM_10_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_15" with="Weapon_LRM_15_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_20" with="Weapon_LRM_20_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_5_Clan" with="Weapon_LRM_5_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_10_Clan" with="Weapon_LRM_10_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_15_Clan" with="Weapon_LRM_15_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_20_Clan" with="Weapon_LRM_20_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_2" with="Weapon_SRM_2_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_4" with="Weapon_SRM_4_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_6" with="Weapon_SRM_6_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_2_Clan" with="Weapon_SRM_2_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_4_Clan" with="Weapon_SRM_4_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_6_Clan" with="Weapon_SRM_6_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+    </task-list>
+
     <task-list id="drop-artemis">
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Clan" with="Ammo_AmmunitionBox_LRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Clan" with="Ammo_AmmunitionBox_SRM_Clan"/>
 
         <remove-inventory item="Gear_Attachment_ArtemisIV"/>
     </task-list>
@@ -638,8 +643,8 @@
         <mech model="crusader_CRD-3L" engineRating="260" engineType="standard" apply="crusader"/>
         <mech model="crusader_CRD-3R" engineRating="260" engineType="standard" apply="crusader"/>
         <mech model="crusader_CRD-3RR" engineRating="260" engineType="standard" apply="crusader"/>
-        <mech model="crusader_CRD-3R-WDR" engineRating="260" engineType="XL" techBase="Clan" apply="crusader"/>
-        <mech model="crusader_CRD-3-WDR" engineRating="260" engineType="XL" techBase="Clan" apply="crusader"/>
+        <mech model="crusader_CRD-3R-WDR" engineRating="260" engineType="XL" techBase="Clan" apply="crusader" tasks="drop-artemis"/>
+        <mech model="crusader_CRD-3-WDR" engineRating="260" engineType="XL" techBase="Clan" apply="crusader" tasks="drop-artemis"/>
         <mech model="crusader_CRD-4BR" engineRating="260" engineType="standard" apply="crusader"/>
         <mech model="crusader_CRD-4D" engineRating="260" engineType="standard" apply="crusader"/>
         <mech model="crusader_CRD-4Db" engineRating="260" engineType="standard" endoSteel="true" apply="crusader"/>
@@ -751,7 +756,7 @@
         <mech model="griffin_GRF-3M" engineRating="275" engineType="XL" apply="griffin"/>
         <mech model="griffin_GRF-3RG" engineRating="275" engineType="standard" apply="griffin"/>
         <mech model="griffin_GRF-6CV" engineRating="275" engineType="light" endoSteel="true" ferroFibrous="true" apply="griffin"/>
-        <mech model="griffin_GRF-KH" engineRating="275" engineType="standard" apply="griffin"/>
+        <mech model="griffin_GRF-KH" engineRating="275" engineType="standard" apply="griffin" tasks="drop-artemis"/>
 
         <hardpoints id="griffin-IIC">
             <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, AntiPersonnel, AntiPersonnel"/>
@@ -798,8 +803,8 @@
 
         <mech model="havoc_HAV-A" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
         <mech model="havoc_HAV-B" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
-        <mech model="havoc_HAV-C" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
-        <mech model="havoc_HAV-Prime" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc"/>
+        <mech model="havoc_HAV-C" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc" tasks="drop-artemis"/>
+        <mech model="havoc_HAV-Prime" engineRating="270" engineType="standard" ferroFibrous="true" techBase="Clan" apply="havoc" tasks="drop-artemis"/>
 
 <!-- Artillery Support Mech
         <mech model="helepolis_HEP-0H" engineRating="215" engineType="standard"/>
@@ -916,7 +921,7 @@
             <add-hardpoint location="RightArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
         </hardpoints>
 
-        <mech model="liberator_LIBR-A" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
+        <mech model="liberator_LIBR-A" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator" tasks="drop-artemis"/>
         <mech model="liberator_LIBR-B" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
         <mech model="liberator_LIBR-C" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
         <mech model="liberator_LIBR-D" engineRating="260" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="liberator"/>
@@ -969,14 +974,14 @@
         <!-- Mad Dog (aka Vulture) -->
         <mech model="mad_dog_MDD-A" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-A2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
-        <mech model="mad_dog_MDD-B" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-B" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog" tasks="drop-artemis"/>
         <mech model="mad_dog_MDD-C" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-D" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-D2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-D3" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
-        <mech model="mad_dog_MDD-DD" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-DD" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog" tasks="drop-artemis"/>
         <mech model="mad_dog_MDD-G2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
-        <mech model="mad_dog_MDD-H" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-H" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog" tasks="drop-artemis"/>
         <mech model="mad_dog_MDD-J" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-KH" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-M" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
@@ -1071,7 +1076,7 @@
         </hardpoints>
 
         <mech model="stooping_hawk_SHWK-A" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
-        <mech model="stooping_hawk_SHWK-B" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
+        <mech model="stooping_hawk_SHWK-B" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk" tasks="drop-artemis"/>
         <mech model="stooping_hawk_SHWK-C" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
         <mech model="stooping_hawk_SHWK-D" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
         <mech model="stooping_hawk_SHWK-E" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stooping-hawk"/>
@@ -1205,8 +1210,8 @@
         <mech model="thunderbolt_TDR-8M" engineRating="260" engineType="standard" ferroFibrous="true" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-9S" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-9SE" engineRating="260" engineType="standard" apply="thunderbolt"/>
-        <mech model="thunderbolt_TDR-9W" engineRating="260" engineType="standard" ferroFibrous="true" apply="thunderbolt"/>
-        <mech model="thunderbolt_TDR-9WDR" engineRating="260" engineType="standard" ferroFibrous="true" techBase="Clan" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-9W" engineRating="260" engineType="standard" ferroFibrous="true" apply="thunderbolt" tasks="drop-artemis"/>
+        <mech model="thunderbolt_TDR-9WDR" engineRating="260" engineType="standard" ferroFibrous="true" techBase="Clan" apply="thunderbolt" tasks="drop-artemis"/>
         <mech model="thunderbolt_TDR-C" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-C2" engineRating="260" engineType="standard" techBase="Clan" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-F4V" engineRating="195" engineType="standard" apply="thunderbolt"/>
