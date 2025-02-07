@@ -976,7 +976,10 @@
         </hardpoints>
 
         <!-- Mad Dog (aka Vulture) -->
-        <mech model="mad_dog_MDD-A" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
+        <mech model="mad_dog_MDD-A" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog">
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+        </mech>
         <mech model="mad_dog_MDD-A2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-B" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
         <mech model="mad_dog_MDD-C" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mad-dog"/>
