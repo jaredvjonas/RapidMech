@@ -93,12 +93,16 @@ public class RapidFile {
                 }
 
                 System.out.printf("Processing %s\n", mech.chasisDef.Description.Id);
-                TaskList chassisList = taskMap.get(copy.chassisDefCmd.tasks);
-                processTaskList(chassisList.taskItems, mech, true);
+                for (var taskId : parseList(copy.chassisDefCmd.tasks)) {
+                    TaskList chassisList = taskMap.get(taskId);
+                    processTaskList(chassisList.taskItems, mech, true);
+                }
 
                 System.out.printf("Processing %s\n", mech.mechDef.Description.Id);
-                TaskList globalTasks = taskMap.get(copy.mechDefCmd.tasks); // process tasks referenced by the <mechdef> element
-                processTaskList(globalTasks.taskItems, mech, false);
+                for (var taskId : parseList(copy.mechDefCmd.tasks)) {
+                    TaskList globalTasks = taskMap.get(taskId); // process tasks referenced by the <mechdef> element
+                    processTaskList(globalTasks.taskItems, mech, false);
+                }
 
                 Hardpoints hardpoints = hardpointsMap.get(mechCmd.apply);
                 if (hardpoints != null) {
@@ -485,5 +489,10 @@ public class RapidFile {
             }
         }
         return updatedString.toString();
+    }
+
+    private static List<String> parseList(String arguments) {
+        String[] split = arguments.split("\\s*,\\s*");
+        return List.of(split);
     }
 }
