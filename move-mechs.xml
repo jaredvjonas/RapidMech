@@ -369,20 +369,20 @@
 
     <task-list id="artemis">
         <!-- Handle Gear_Attachment_ArtemisIV and convert to launcher paired with Artemis ammo -->
-        <swap-inventory item="Weapon_LRM_5" with="Weapon_LRM_5_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_10" with="Weapon_LRM_10_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_15" with="Weapon_LRM_15_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_20" with="Weapon_LRM_20_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_5_Clan" with="Weapon_LRM_5_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_10_Clan" with="Weapon_LRM_10_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_15_Clan" with="Weapon_LRM_15_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_20_Clan" with="Weapon_LRM_20_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_2" with="Weapon_SRM_2_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_4" with="Weapon_SRM_4_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_6" with="Weapon_SRM_6_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_2_Clan" with="Weapon_SRM_2_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_4_Clan" with="Weapon_SRM_4_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_6_Clan" with="Weapon_SRM_6_Clan_Artemis" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_5_Artemis" with="Weapon_LRM_5" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_10_Artemis" with="Weapon_LRM_10" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_15_Artemis" with="Weapon_LRM_15" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_20_Artemis" with="Weapon_LRM_20" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_5_Clan_Artemis" with="Weapon_LRM_5_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_10_Clan_Artemis" with="Weapon_LRM_10_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_15_Clan_Artemis" with="Weapon_LRM_15_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_LRM_20_Clan_Artemis" with="Weapon_LRM_20_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_2_Artemis" with="Weapon_SRM_2" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_4_Artemis" with="Weapon_SRM_4" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_6_Artemis" with="Weapon_SRM_6" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_2_Clan_Artemis" with="Weapon_SRM_2_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_4_Clan_Artemis" with="Weapon_SRM_4_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
+        <swap-inventory item="Weapon_SRM_6_Clan_Artemis" with="Weapon_SRM_6_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
 
         <remove-inventory item="Gear_Attachment_ArtemisIV"/>
     </task-list>
