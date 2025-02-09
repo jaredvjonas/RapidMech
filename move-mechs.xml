@@ -25,6 +25,7 @@
         <!-- Imported from RogueTech -->
         <dir path="${irianTechHome}/rogueTech/Actuators"/>
         <dir path="${irianTechHome}/rogueTech/AddOn"/>
+        <dir path="${irianTechHome}/rogueTech/AMS"/>
         <dir path="${irianTechHome}/rogueTech/Artillery"/>
         <dir path="${irianTechHome}/rogueTech/Clan/Improved"/>
         <dir path="${irianTechHome}/rogueTech/Clan/Internals"/>
@@ -39,6 +40,7 @@
         <dir path="${irianTechHome}/rogueTech/TargetTrackingSystem"/>
         <dir path="${irianTechHome}/rogueTech/Upgrade"/>
         <dir path="${irianTechHome}/rogueTech/Weapons"/>
+        <dir path="${irianTechHome}/rogueTech/Unique/Weapons"/>
 
         <!-- Imported from Vanilla Plus -->
         <dir path="${irianTechHome}/vanillaPlusCore/ammunitionbox"/>
@@ -121,8 +123,8 @@
         <swap-inventory item="Gear_TargetingTrackingSystem_Missile" with="Gear_TargetingTrackingSystem_Missile"/>
 
         <!-- Primitive Weapons -->
-        <swap-inventory item="Weapon_Laser_Primitive_Large" with="Weapon_Laser_Primitive_Large"/>
-        <swap-inventory item="Weapon_Laser_Primitive_Medium" with="Weapon_Laser_Primitive_Medium"/>
+<!--        <swap-inventory item="Weapon_Laser_Primitive_Large" with="Weapon_Laser_Primitive_Large"/>-->
+<!--        <swap-inventory item="Weapon_Laser_Primitive_Medium" with="Weapon_Laser_Primitive_Medium"/>-->
 
         <!-- Primitive Weapons -->
 <!--        <swap-inventory item="Weapon_Rocket_10" with="Weapon_RocketLauncher_RL10_0_STOCK"/>-->
@@ -130,16 +132,20 @@
 <!--        <swap-inventory item="Weapon_Rocket_20" with="Weapon_RocketLauncher_RL20_0_STOCK"/>-->
 
         <!-- Stock Weapons -->
-        <swap-inventory item="Weapon_Autocannon_AC_2" with="Weapon_Autocannon_AC2_0-STOCK"/>
-        <swap-inventory item="Weapon_Autocannon_AC_2_Defiance" with="Weapon_Autocannon_AC2_1-Defiance"/>
-        <swap-inventory item="Weapon_Autocannon_AC_2_Imperator" with="Weapon_Autocannon_AC2_2-Imperator"/>
-        <swap-inventory item="Weapon_Autocannon_AC_5" with="Weapon_Autocannon_AC5_0-STOCK"/>
-        <swap-inventory item="Weapon_Autocannon_AC_10" with="Weapon_Autocannon_AC10_0-STOCK"/>
-        <swap-inventory item="Weapon_Autocannon_AC_20" with="Weapon_Autocannon_AC20_0-STOCK"/>
+        <swap-inventory item="Weapon_Flamer_Vehicle" with="Weapon_Flamer_Heavy"/>
+        <swap-inventory item="Weapon_Artillery_TAG_Barrage" with="Weapon_Laser_Medium"/>
+        <swap-inventory item="Weapon_Mine_20" with="Weapon_Rocket_20"/>
+
         <swap-inventory item="Ammo_AmmunitionBox_AC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_2_Half" with="Ammo_AmmunitionBox_Generic_AC2_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_2_Double" with="Ammo_AmmunitionBox_Generic_AC2_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_2_Flak" with="Ammo_AmmunitionBox_Generic_AC2"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_2_Precision" with="Ammo_AmmunitionBox_Generic_AC2"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_AP" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_Incendiary" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_Precision" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_10" with="Ammo_AmmunitionBox_Generic_AC10"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_10_Double" with="Ammo_AmmunitionBox_Generic_AC10_Double"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_10_AP" with="Ammo_AmmunitionBox_Generic_AC10"/>
@@ -166,93 +172,59 @@
         <swap-inventory item="Ammo_AmmunitionBox_Gauss" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
         <swap-inventory item="Ammo_AmmunitionBox_Gauss_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/> <!-- Vanilla Plus -->
 
-        <swap-inventory item="Weapon_Flamer" with="Weapon_Flamer_Flamer_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_Large" with="Weapon_Laser_LargeLaser_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_Large_Magna" with="Weapon_Laser_LargeLaser_2-Magna"/>
-        <swap-inventory item="Weapon_Laser_Large_ExoStar" with="Weapon_Laser_LargeLaser_2-ExoStar"/>
-        <swap-inventory item="Weapon_Laser_Medium" with="Weapon_Laser_MediumLaser_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_Medium_Magna" with="Weapon_Laser_MediumLaser_1-Magna"/>
-        <swap-inventory item="Weapon_Laser_Medium_ExoStar" with="Weapon_Laser_MediumLaser_1-ExoStar"/>
-        <swap-inventory item="Weapon_Laser_Small" with="Weapon_Laser_SmallLaser_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_Small_ExoStar" with="Weapon_Laser_SmallLaser_1-ExoStar"/>
-        <swap-inventory item="Weapon_PPC" with="Weapon_PPC_PPC_0-STOCK"/>
-        <swap-inventory item="Weapon_PPC_Snubnose" with="Weapon_PPC_PPCSnub_ARCH"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Weapon_PPC_ER" with="Weapon_PPC_PPCER_0-STOCK"/>
-        <swap-inventory item="Weapon_PPC_ER_MagnaFirestar" with="Weapon_PPC_PPCER_1-MagnaFirestar"/>
-        <swap-inventory item="Weapon_PPC_ER_TiegartMagnum" with="Weapon_PPC_PPCER_2-TiegartMagnum"/>
-        <swap-inventory item="Weapon_LRM_5" with="Weapon_LRM_LRM5_0-STOCK"/>
-        <swap-inventory item="Weapon_LRM_10" with="Weapon_LRM_LRM10_0-STOCK"/>
-        <swap-inventory item="Weapon_LRM_10_LongFire" with="Weapon_LRM_LRM10_2-LongFire"/>
-        <swap-inventory item="Weapon_LRM_15" with="Weapon_LRM_LRM15_0-STOCK"/>
-        <swap-inventory item="Weapon_LRM_15_LongFire" with="Weapon_LRM_LRM15_2-LongFire"/>
-        <swap-inventory item="Weapon_LRM_15_Zeus" with="Weapon_LRM_LRM15_2-Zeus"/>
-        <swap-inventory item="Weapon_LRM_20" with="Weapon_LRM_LRM20_0-STOCK"/>
-        <swap-inventory item="Weapon_LRM_20_LongFire" with="Weapon_LRM_LRM20_2-LongFire"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/> <!-- Vanilla Plus -->
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Double" with="Ammo_AmmunitionBox_Generic_LRM_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_ER" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Improved" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_ListenKill" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_SAM" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Clearance" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Weapon_SRM_2" with="Weapon_SRM_SRM2_0-STOCK"/>
-        <swap-inventory item="Weapon_SRM_4" with="Weapon_SRM_SRM4_0-STOCK"/>
-        <swap-inventory item="Weapon_SRM_6" with="Weapon_SRM_SRM6_0-STOCK"/>
-        <swap-inventory item="Weapon_SRM_6_Irian" with="Weapon_SRM_SRM6_2-Irian"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/> <!-- Vanilla Plus -->
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Double" with="Ammo_AmmunitionBox_Generic_SRM_Double"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Acid" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_AMS" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Weapon_MachineGun" with="Weapon_MachineGun_MachineGun_0-STOCK"/>
-        <swap-inventory item="Weapon_MachineGun_Dual" with="Weapon_MachineGun_MachineGun_0-STOCK"/>
-        <swap-inventory item="Weapon_MachineGun_Array" with="Weapon_MachineGun_MachineGun_0-STOCK"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun" with="Ammo_AmmunitionBox_Generic_MG"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Half" with="Ammo_AmmunitionBox_Generic_MG_Half"/> <!-- Vanilla Plus -->
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Double" with="Ammo_AmmunitionBox_Generic_MG_Double"/> <!-- Vanilla Plus -->
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_AP" with="Ammo_AmmunitionBox_Generic_MG"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Incendiary" with="Ammo_AmmunitionBox_Generic_MG"/>
 
-        <swap-inventory item="Weapon_Laser_Pulse_Large" with="Weapon_Laser_LargeLaserPulse_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Medium" with="Weapon_Laser_MediumLaserPulse_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Medium_RakerIV" with="Weapon_Laser_MediumLaserPulse_1-RakerIV"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Medium_Magna400P" with="Weapon_Laser_MediumLaserPulse_2-Magna400P"/>
-        <swap-inventory item="Weapon_Laser_Pulse_Small" with="Weapon_Laser_SmallLaserPulse_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_ER_Large" with="Weapon_Laser_LargeLaserER_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_ER_Medium" with="Weapon_Laser_MediumLaserER_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_ER_Medium_MagnaVI" with="Weapon_Laser_MediumLaserER_1-MagnaVI"/>
-        <swap-inventory item="Weapon_Laser_ER_Small" with="Weapon_Laser_SmallLaserER_0-STOCK"/>
-        <swap-inventory item="Weapon_Laser_ER_Small_DiverseOptics" with="Weapon_Laser_SmallLaserER_1-Diverse_Optics"/>
-
         <!-- Rogue Tech Inner Sphere -->
-        <swap-inventory item="Weapon_Rifle_Medium" with="Weapon_Rifle_Medium"/>
         <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Rifle_Medium"/>
-        <swap-inventory item="Weapon_Pod_A" with="Weapon_Pod_A"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium_APFSDS" with="Ammo_AmmunitionBox_Rifle_Medium"/>
         <swap-inventory item="BoltOn_Weapon_Pod_A" with="Weapon_Pod_A"/>
-        <swap-inventory item="Weapon_Autocannon_RAC_2" with="Weapon_Autocannon_RAC_2"/>
-        <swap-inventory item="Weapon_Autocannon_RAC_5" with="Weapon_Autocannon_RAC_5"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_2_Double" with="Ammo_AmmunitionBox_Generic_AC2_Double"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5_AP" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
+
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Acid" with="Ammo_AmmunitionBox_MRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem" with="Ammo_AmmunitionBox_MRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem_Half" with="Ammo_AmmunitionBox_MRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Incendiary_Half" with="Ammo_AmmunitionBox_MRM_Half"/>
 
         <!-- Rogue Tech Autocannon Clan Variants -->
-        <swap-inventory item="Weapon_Autocannon_RAC_2_Clan" with="Weapon_Autocannon_RAC_2_Clan"/>
-        <swap-inventory item="Weapon_Autocannon_RAC_5_Clan" with="Weapon_Autocannon_RAC_5_Clan"/>
-        <swap-inventory item="Weapon_Autocannon_UAC_2_Clan" with="Weapon_Autocannon_UAC_2_Clan"/>
-        <swap-inventory item="Weapon_Autocannon_UAC_5_Clan" with="Weapon_Autocannon_UAC_5_Clan"/>
-        <swap-inventory item="Weapon_Autocannon_UAC_10_Clan" with="Weapon_Autocannon_UAC_10_Clan"/>
-        <swap-inventory item="Weapon_Autocannon_UAC_20_Clan" with="Weapon_Autocannon_UAC_20_Clan"/>
         <swap-inventory item="Ammo_AmmunitionBox_UAC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
         <swap-inventory item="Ammo_AmmunitionBox_UAC_2_Half" with="Ammo_AmmunitionBox_Generic_AC2_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_UAC_2_Double" with="Ammo_AmmunitionBox_Generic_AC2_Double"/>
@@ -268,8 +240,11 @@
         <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Half" with="Ammo_AmmunitionBox_Generic_AC20_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Double" with="Ammo_AmmunitionBox_Generic_AC20_Double"/>
 
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Clan" with="Ammo_AmmunitionBox_LRM_Clan"/>
+
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Clan" with="Ammo_AmmunitionBox_SRM_Clan"/>
+
         <!-- Rogue Tech Magshot -->
-        <swap-inventory item="Weapon_Gauss_Magshot_Clan" with="Weapon_Gauss_Magshot_Clan"/>
         <swap-inventory item="Ammo_AmmunitionBox_Magshot_Half" with="Ammo_AmmunitionBox_Magshot_Half"/>
 
         <!-- Rogue Tech Thunderbolt -->
@@ -316,15 +291,36 @@
 
         <swap-inventory item="Gear_JumpJet_Prototype_Heavy" with="Gear_JumpJet_Heavy_Improved"/>
 
+        <!-- Rogue Tech ammunition that has not been ported -->
+        <remove-inventory item="Weapon_FluidGun"/>
+        <remove-inventory item="Ammo_AmmunitionBox_Fluid_Acid"/>
+        <remove-inventory item="Ammo_AmmunitionBox_Fluid_Inferno"/>
+
+        <remove-inventory item="Ammo_AmmunitionBox_Narc_ShootAndSit"/>
+        <remove-inventory item="Ammo_AmmunitionBox_iNarc_ECM"/>
+        <remove-inventory item="Ammo_AmmunitionBox_iNarc_Explosive"/>
+        <remove-inventory item="Ammo_AmmunitionBox_iNarc_Haywire"/>
+
         <!-- Rogue Tech components not supported by base game -->
+        <remove-inventory item="Gear_Gyro_Stability"/>
         <remove-inventory item="Gear_CASE"/>
         <remove-inventory item="Gear_CASE2"/>
+        <remove-inventory item="Gear_CASE2_Clan"/>
         <remove-inventory item="Gear_Armor_LightFerroFibrous"/>
         <remove-inventory item="Gear_Armor_FerroFibrous"/>
         <remove-inventory item="Gear_Armor_FerroFibrous_Clan"/>
+        <remove-inventory item="Gear_Armor_FerroLamellor_Clan"/>
+        <remove-inventory item="Gear_Armor_HeavyFerroFibrous"/>
         <remove-inventory item="Gear_Armor_Hardened"/>
+        <remove-inventory item="Gear_Armor_NullSignatureSystem"/>
+        <remove-inventory item="Gear_Armor_ReflectiveCoating"/>
+        <remove-inventory item="Gear_Armor_Stealth"/>
+        <remove-inventory item="Gear_ArmorMod_SpallLiner"/>
         <remove-inventory item="Gear_AdvancedMaterials1"/>
         <remove-inventory item="Gear_AdvancedMaterials2"/>
+        <remove-inventory item="Gear_EngineCooling_EmergencyCoolant_1"/>
+        <remove-inventory item="Gear_Gyro_Defense"/>
+        <remove-inventory item="Gear_Gyro_Melee_Plus"/>
         <remove-inventory item="Gear_ModularArmor_Mk1"/>
         <remove-inventory item="Gear_ModularArmor_Mk2"/>
         <remove-inventory item="Gear_ModularArmor_Mk3"/>
@@ -333,10 +329,12 @@
         <remove-inventory item="Gear_ModularArmor_Rear_Mk2"/>
         <remove-inventory item="Gear_ModularArmor_Rear_Mk3"/>
         <remove-inventory item="Gear_ModularArmor_Rear_Mk4"/>
+        <remove-inventory item="Gear_Structure_Composite"/>
+        <remove-inventory item="Gear_Structure_EndoComposite"/>
         <remove-inventory item="Gear_TSM_Standard"/>
         <remove-inventory item="Gear_TSM_Industrial"/>
-        <remove-inventory item="Ammo_AmmunitionBox_AMS"/> <!-- basic AMS does not require ammo -->
-        <remove-inventory item="Ammo_AmmunitionBox_AMS_Double"/>
+        <remove-inventory item="Linked_Armor_NullSignatureSystem"/>
+        <remove-inventory item="Linked_Armor_Stealth"/>
         <remove-inventory item="Linked_Engine_Size_1"/>
         <remove-inventory item="Linked_Engine_Size_2"/>
         <remove-inventory item="Linked_Engine_Size_3"/>
@@ -345,17 +343,27 @@
         <remove-inventory item="Linked_Engine_Size_6"/>
         <remove-inventory item="Linked_Engine_Size_8"/>
         <remove-inventory item="Lootable_HeatSinkKit_Single"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Sword_4tons"/>
         <remove-inventory item="Gear_C3_Master"/>
         <remove-inventory item="Gear_C3_Slave"/>
         <remove-inventory item="Gear_C3i"/>
         <remove-inventory item="Gear_Cockpit_ArmoredCowl"/>
+        <remove-inventory item="Gear_Cockpit_ArmoredCowl_Plus"/>
+        <remove-inventory item="Gear_Cockpit_LifeSupportA_Gunnery"/>
+        <remove-inventory item="Gear_Cockpit_LifeSupportB_Gunnery"/>
         <remove-inventory item="Gear_Cockpit_Small"/>
+        <remove-inventory item="Gear_Spikes_Solaris"/>
         <remove-inventory item="Gear_Turret"/>
         <remove-inventory item="Gear_PartialWing_IS"/>
+        <remove-inventory item="Linked_Armor_AMS_Laser_Integrated"/>
+        <remove-inventory item="Linked_ArmorMod_SpallLiner"/>
         <remove-inventory item="Linked_PartialWing_LTslot"/>
         <remove-inventory item="Gear_Cooling_Flush_Clan"/>
+        <remove-inventory item="Special_AddOn_CoolShot_Clan"/>
         <remove-inventory item="Special_AddOn_UAV"/>
         <remove-inventory item="BoltOn_Weapon_Rocket_Chaff"/>
+        <remove-inventory item="BoltOn_Weapon_RemoteSensor"/>
+        <remove-inventory item="BoltOn_Weapon_AMS"/>
         <remove-engine/>
         <remove-gyro/>
         <remove-endosteel/>
@@ -407,6 +415,21 @@
 
         <mech model="arcas_ARS-1" engineRating="325" engineType="XL" endoSteel="true"/>
         <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true"/>
+
+        <mech model="arctic_cheetah_ACH-A" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="arctic_cheetah_ACH-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="arctic_cheetah_ACH-C" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="arctic_cheetah_ACH-D" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="arctic_cheetah_ACH-Prime" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="arctic_cheetah_ACH-X" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="arctic_fox_af1" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="arctic_fox_af1a" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="arctic_fox_af1b" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="arctic_fox_af1c" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="arctic_fox_af1d" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
 
         <hardpoints id="atlas">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
@@ -541,6 +564,14 @@
 
         <mech model="beowulf_BEO-12" engineRating="270" engineType="XL" endoSteel="false" ferroFibrous="true"/>
 
+        <mech model="black_hawk-ku_BHKU-O" engineRating="300" engineType="XL"/>
+        <mech model="black_hawk-ku_BHKU-OA" engineRating="300" engineType="XL"/>
+        <mech model="black_hawk-ku_BHKU-OB" engineRating="300" engineType="XL"/>
+        <mech model="black_hawk-ku_BHKU-OC" engineRating="300" engineType="XL"/>
+        <mech model="black_hawk-ku_BHKU-OD" engineRating="300" engineType="XL"/>
+        <mech model="black_hawk-ku_BHKU-OR" engineRating="300" engineType="XL"/>
+        <mech model="black_hawk-ku_BHKU-OX" engineRating="300" engineType="XL"/>
+
         <mech model="black_lanner_BKL-C" engineRating="385" engineType="XL" endoSteel="true" techBase="Clan">
             <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
             <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
@@ -585,8 +616,31 @@
 
         <mech model="brigand_LDT-1" engineRating="150" engineType="standard" endoSteel="true"/>
 
+        <mech model="bushwacker_BSW-S2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-X1" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-X2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+
         <mech model="caesar_CES-3KH" engineRating="280" engineType="XL" techBase="Clan"/>
         <mech model="caesar_CES-3R" engineRating="280" engineType="XL"/>
+
+        <mech model="cataphract_CTF-0X" engineRating="300" engineType="standard"/>
+        <mech model="cataphract_CTF-1X" engineRating="300" engineType="standard"/>
+        <mech model="cataphract_CTF-2X" engineRating="300" engineType="standard"/>
+        <mech model="cataphract_CTF-3D" engineRating="280" engineType="XL"/>
+        <mech model="cataphract_CTF-3L" engineRating="280" engineType="XL"/>
+        <mech model="cataphract_CTF-4X" engineRating="225" engineType="standard"/>
+
+        <mech model="catapult_CPLT-A1" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-C1" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-C1b" engineRating="260" engineType="standard" ferroFibrous="true"/>
+        <mech model="catapult_CPLT-C3" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-C4" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-C4C" engineRating="260" engineType="XL"/>
+        <mech model="catapult_CPLT-C5" engineRating="260" engineType="standard" endoSteel="true"/>
+        <mech model="catapult_CPLT-K2" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-K2K" engineRating="330" engineType="XL"/>
+        <mech model="catapult_CPLT-K3" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-K5" engineRating="260" engineType="XL" endoSteel="true"/>
 
         <mech model="centurion_CN9-B1" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="centurion_CN9-D" engineRating="300" engineType="XL" endoSteel="true"/>
@@ -612,6 +666,30 @@
         <mech model="chameleon_TRC-4B" engineRating="300" engineType="standard" apply="chameleon"/>
         <mech model="chameleon_TRC-4C" engineRating="300" engineType="standard" techBase="Clan" apply="chameleon"/>
 
+        <mech model="charger_CGR_C" engineRating="400" engineType="XL" ferroFibrous="true"/>
+        <mech model="charger_CGR-1A1" engineRating="400" engineType="standard"/>
+        <mech model="charger_CGR-1A1R" engineRating="400" engineType="standard"/>
+        <mech model="charger_CGR-1A2" engineRating="320" engineType="standard"/>
+        <mech model="charger_CGR-1A5" engineRating="320" engineType="standard"/>
+        <mech model="charger_CGR-1A9" engineRating="320" engineType="standard"/>
+        <mech model="charger_CGR-1L" engineRating="400" engineType="standard"/>
+        <mech model="charger_CGR-1P5" engineRating="320" engineType="standard"/>
+        <mech model="charger_CGR-3K" engineRating="400" engineType="XL" ferroFibrous="true"/>
+        <mech model="charger_CGR-9ZJ" engineRating="400" engineType="XL" endoSteel="true"/>
+        <mech model="charger_CGR-SB" engineRating="240" engineType="standard"/>
+
+        <mech model="cicada_CDA-2A" engineRating="320" engineType="standard"/>
+        <mech model="cicada_CDA-2B" engineRating="320" engineType="standard"/>
+        <mech model="cicada_CDA-2G" engineRating="320" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="cicada_CDA-2P" engineRating="280" engineType="standard"/>
+        <mech model="cicada_CDA-3C" engineRating="280" engineType="standard"/>
+        <mech model="cicada_CDA-3D" engineRating="280" engineType="standard"/>
+        <mech model="cicada_CDA-3E" engineRating="280" engineType="XL"/>
+        <mech model="cicada_CDA-3F" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="cicada_CDA-3G" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="cicada_CDA-3K" engineRating="280" engineType="XL"/>
+        <mech model="cicada_CDA-3M" engineRating="320" engineType="XL"/>
+
         <hardpoints id="clint">
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel"/>
@@ -632,6 +710,38 @@
         <mech model="clint_iic_CLNT-IIC-1" engineRating="240" engineType="XL" endoSteel="true" techBase="Clan"/>
 
         <mech model="commando_iic_COM-IIC" engineRating="150" engineType="standard" endoSteel="true" techBase="Clan"/>
+
+        <mech model="conjurer_HND-1" engineRating="300" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="conjurer_HND-7" engineRating="300" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="corsair_COR-5R" engineRating="285" engineType="standard"/>
+        <mech model="corsair_COR-5T" engineRating="285" engineType="standard"/>
+        <mech model="corsair_COR-6R" engineRating="285" engineType="standard"/>
+        <mech model="corsair_COR-7A" engineRating="285" engineType="standard"/>
+        <mech model="corsair_COR-7R" engineRating="285" engineType="standard"/>
+        <mech model="corsair_COR-S7" engineRating="285" engineType="light"/>
+
+        <mech model="cougar_COU-A" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-B" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-C" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-D" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-H" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-HR" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-MCA" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-MCJ" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-MCW" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="cougar_COU-Prime" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="crokett_CRK-5003-0" engineRating="255" engineType="standard"/>
+        <mech model="crokett_CRK-5003-1" engineRating="255" engineType="standard"/>
+        <mech model="crokett_CRK-5003-1b" engineRating="255" engineType="standard" endoSteel="true"/>
+
+        <mech model="crossbow_CRS-6B" engineRating="300" engineType="standard"/>
+        <mech model="crossbow_CRS-6C" engineRating="300" engineType="standard"/>
+        <mech model="crossbow_CRS-A" engineRating="325" engineType="standard" techBase="Clan"/>
+        <mech model="crossbow_CRS-B" engineRating="325" engineType="standard" techBase="Clan"/>
+        <mech model="crossbow_CRS-Prime" engineRating="325" engineType="standard" techBase="Clan"/>
+        <mech model="crossbow_CRS-X" engineRating="300" engineType="standard"/>
 
         <hardpoints id="crusader">
             <add-hardpoint location="RightArm" weaponMounts="Energy,AntiPersonnel,AntiPersonnel"/>
@@ -666,17 +776,69 @@
 
         <mech model="daedalus_DAD-3C" engineRating="270" engineType="XL" endoSteel="true"/>
 
+        <mech model="dart_DRT-3S" engineRating="225" engineType="standard"/>
+        <mech model="dart_DRT-4S" engineRating="225" engineType="standard"/>
+        <mech model="dart_DRT-6S" engineRating="225" engineType="standard" ferroFibrous="true"/>
+
+        <mech model="dervish_DV-1S" engineRating="265" engineType="standard"/>
+        <mech model="dervish_DV-6M" engineRating="275" engineType="standard"/>
+        <mech model="dervish_DV-6MD" engineRating="275" engineType="XL"/>
+        <mech model="dervish_DV-6MRU" engineRating="275" engineType="standard"/>
+        <mech model="dervish_DV-7D" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="dervish_DV-7P" engineRating="275" engineType="XL" endoSteel="true"/>
+        <mech model="dervish_DV-7S" engineRating="275" engineType="standard"/>
+
+        <mech model="dervish_iic_DV-IIC" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
         <mech model="devastator_DVS-1D" engineRating="300" engineType="standard"/>
         <mech model="devastator_DVS-2" engineRating="300" engineType="XL"/>
         <mech model="devastator_DVS-2-EC" engineRating="300" engineType="XL"/>
         <mech model="devastator_DVS-3" engineRating="300" engineType="XL"/>
 
-        <!-- Dire Wolf GOES HERE -->
+        <mech model="dire_wolf_DW-A" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-B" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-C" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-C2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-D2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-E2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-F2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-F3" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DWF-C" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DWF-C2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-H" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-Prime" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-S" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-W" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-W2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-WDR" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-X" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="dire_wolf_DW-X-B" engineRating="300" engineType="XL" techBase="Clan"/>
 
-<!--        <mech model="dragoon_AEM-01" engineRating="280" engineType="XL" ferroFibrous="true"/>-->
-<!--        <mech model="dragoon_AEM-02" engineRating="350" engineType="XL" ferroFibrous="true"/>-->
-<!--        <mech model="dragoon_AEM-03" engineRating="280" engineType="XL" ferroFibrous="true"/>-->
-<!--        <mech model="dragoon_AEM-04" engineRating="280" engineType="XL" ferroFibrous="true"/>-->
+        <mech model="dragon_DRG-1C" engineRating="300" engineType="standard"/>
+        <mech model="dragon_DRG-1N" engineRating="300" engineType="standard"/>
+        <mech model="dragon_DRG-1R" engineRating="300" engineType="standard"/>
+        <mech model="dragon_DRG-5N" engineRating="300" engineType="standard"/>
+
+        <mech model="dragonfire_DGR-3F" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="dragonfire_DGR-4F" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <mech model="dragoon_AEM-01" engineRating="280" engineType="XL" ferroFibrous="true"/>
+        <mech model="dragoon_AEM-02" engineRating="350" engineType="XL" ferroFibrous="true"/>
+        <mech model="dragoon_AEM-03" engineRating="280" engineType="XL" ferroFibrous="true"/>
+        <mech model="dragoon_AEM-04" engineRating="280" engineType="XL" ferroFibrous="true"/>
+
+        <mech model="ebon_jaguar_EBJ-A" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ebon_jaguar_EBJ-B" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ebon_jaguar_EBJ-C" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ebon_jaguar_EBJ-D" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ebon_jaguar_EBJ-Prime" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="emperor_EMP-1A" engineRating="325" engineType="standard"/>
+        <mech model="emperor_EMP-5A" engineRating="270" engineType="standard"/>
+        <mech model="emperor_EMP-5B" engineRating="270" engineType="standard"/>
+        <mech model="emperor_EMP-6A" engineRating="270" engineType="XL"/>
+        <mech model="emperor_EMP-6A-EC" engineRating="270" engineType="XL" techBase="Clan"/>
+        <mech model="emperor_EMP-EC" engineRating="270" engineType="XL" techBase="Clan"/>
 
         <mech model="enfield_END-6J" engineRating="250" engineType="XL" endoSteel="true"/>
         <mech model="enfield_END-6J-EC" engineRating="250" engineType="XL" endoSteel="true"/>
@@ -702,11 +864,83 @@
         <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="excalibur_EXC-C1" engineRating="350" engineType="XL"/>
 
+        <!-- EXECUTIONER GOES HERE -->
+
+        <mech model="exterminator_EXT-4A" engineRating="325" engineType="standard"/>
+        <mech model="exterminator_EXT-4C" engineRating="390" engineType="XL"/>
+        <mech model="exterminator_EXT-4D" engineRating="390" engineType="XL"/>
+        <mech model="exterminator_EXT-4Db" engineRating="390" engineType="XL" endoSteel="true"/>
+        <mech model="exterminator_EXT-4Db-EC" engineRating="390" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="exterminator_EXT-5E" engineRating="390" engineType="XL" endoSteel="true"/>
+
+        <mech model="exterminator_iic_EXT-IIC" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="falcon_FLC-4N" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-4Nb" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-4Nb-PP" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-4Nb-PP2" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-4P" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-5P2" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-5PW" engineRating="180" engineType="standard"/>
+
         <mech model="falcon_hawk_FNHK-9K" engineRating="175" engineType="XL" ferroFibrous="true"/>
         <mech model="falcon_hawk_FNHK-9K1A" engineRating="175" engineType="XL" ferroFibrous="true"/>
 
+        <mech model="fire_falcon_FF-A" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="fire_falcon_FF-B" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="fire_falcon_FF-C" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="fire_falcon_FF-D" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="fire_falcon_FF-E" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="fire_falcon_FF-Prime" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="firebee_FRB-1E" engineRating="210" engineType="standard"/>
+        <mech model="firebee_FRB-2E" engineRating="175" engineType="standard"/>
+        <mech model="firebee_FRB-2Ep" engineRating="175" engineType="standard"/>
+
+        <mech model="firefly_FFL-3A" engineRating="150" engineType="XL" ferroFibrous="true"/>
+        <mech model="firefly_FFL-3PP" engineRating="150" engineType="XL" ferroFibrous="true"/>
+        <mech model="firefly_FFL-3PP2" engineRating="150" engineType="XL"/>
+        <mech model="firefly_FFL-3PP3" engineRating="150" engineType="XL"/>
+        <mech model="firefly_FFL-3SLE" engineRating="150" engineType="XL" ferroFibrous="true"/>
+        <mech model="firefly_FFL-4A" engineRating="150" engineType="standard"/>
+        <mech model="firefly_FFL-4B" engineRating="150" engineType="standard"/>
+        <mech model="firefly_FFL-4C" engineRating="150" engineType="XL" endoSteel="true"/>
+        <mech model="firefly_FFL-5B" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="firefly_FFL-7A" engineRating="150" engineType="XL"/>
+        <mech model="firefly_FFL-C" engineRating="150" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="fox_CS-1" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="fox_CS-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
         <mech model="galahad_GLH-1D" engineRating="150" engineType="standard" endoSteel="true"/>
         <mech model="galahad_GLH-2D" engineRating="180" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+
+        <mech model="gallowglas_GAL-1GLS" engineRating="280" engineType="standard" endoSteel="true"/>
+        <mech model="gallowglas_GAL-2GLS" engineRating="280" engineType="standard" endoSteel="true"/>
+        <mech model="gallowglas_GAL-WD" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="gallowglas_GAL-WD1" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="gargoyle_GAR-A" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-B" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-C" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-D" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-D2" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-E" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-E2" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-F2" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-G2" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-H" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-H2" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="gargoyle_GAR-Prime" engineRating="400" engineType="XL" techBase="Clan"/>
+
+        <mech model="garm_GRM-01A" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="garm_GRM-01B" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+
+        <mech model="gladiator_GLD-1R" engineRating="265" engineType="standard"/>
+        <mech model="gladiator_GLD-2R" engineRating="275" engineType="standard"/>
+        <mech model="gladiator_GLD-3R" engineRating="275" engineType="standard"/>
+        <mech model="gladiator_GLD-3R2" engineRating="275" engineType="standard"/>
+        <mech model="gladiator_GLD-4R" engineRating="275" engineType="standard"/>
 
         <mech model="grand_crusader_GRN-D-02-W" engineRating="320" engineType="XL" endoSteel="true"/>
         <mech model="grand_crusader_GRN-D-01" engineRating="240" engineType="XL" endoSteel="true"/>
@@ -826,6 +1060,9 @@
             <add-hardpoint location="RightTorso" weaponMounts="Missile, Missile"/>
         </mech>
 
+        <mech model="hector_HOR-1B" engineRating="340" engineType="standard"/>
+        <mech model="hector_HOR-1C" engineRating="340" engineType="standard"/>
+
 <!-- Artillery Support Mech
         <mech model="helepolis_HEP-0H" engineRating="215" engineType="standard"/>
         <mech model="helepolis_HEP-1H" engineRating="210" engineType="standard"/>
@@ -870,6 +1107,11 @@
             <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
         </mech>
 
+        <mech model="hellfire_HLF-1" engineRating="240" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="hellhound_HND-1" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="hellhound_HND-2" engineRating="300" engineType="XL" techBase="Clan"/>
+
         <hardpoints id="hellion">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -909,6 +1151,13 @@
         <mech model="hermes_ii_HER-5ME" engineRating="240" engineType="standard" endoSteel="true"/>
         <mech model="hermes_ii_HER-5S" engineRating="240" engineType="standard" endoSteel="true"/>
 
+        <mech model="highlander_HGN-732" engineRating="270" engineType="standard" ferroFibrous="true"/>
+        <mech model="highlander_HGN-732b" engineRating="270" engineType="standard" ferroFibrous="true"/>
+        <mech model="highlander_HGN-733" engineRating="270" engineType="standard"/>
+        <mech model="highlander_HGN-733C" engineRating="270" engineType="standard"/>
+        <mech model="highlander_HGN-733P" engineRating="270" engineType="standard"/>
+        <mech model="highlander_HGN-736" engineRating="270" engineType="standard" ferroFibrous="true"/>
+
         <hardpoints id="highlander-IIC">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -922,11 +1171,82 @@
         <mech model="highlander_iic_HGN-IIC-B" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan" apply="highlander-IIC"/>
         <mech model="highlander_iic_HGN-IIC-C" engineRating="280" engineType="XL" ferroFibrous="true" techBase="Clan" apply="highlander-IIC"/>
 
+        <mech model="horned_owl_HOW-1" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="horned_owl_HOW-2" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="horned_owl_HOW-3" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="howler_HWR-1" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="howler_HWR-4" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="howler_HWR-5" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <!-- HUNCHBACK GOES HERE -->
+
+        <mech model="huntsman_HMN-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="huntsman_HMN-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="huntsman_HMN-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="huntsman_HMN-D" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="huntsman_HMN-P" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="huntsman_HMN-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
         <mech model="icarus_ICR-1X" engineRating="200" engineType="standard"/>
 
         <mech model="icarus_ii_ICR-1S" engineRating="160" engineType="standard"/>
 
+        <mech model="ice_ferret_IFR-A" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-A1" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-B" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-C" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-D" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-E" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-E2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-F2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-H" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-Prime" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-W" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="ice_ferret_IFR-W2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="incubus_INC-1" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="incubus_INC-2" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="incubus_INC-3" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="incubus_INC-7" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="incubus_INC-8" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
         <mech model="initiate_INI-02" engineRating="160" engineType="standard" endoSteel="true"/>
+
+        <mech model="iron_cheetah_ICH-A" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="iron_cheetah_ICH-B" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="iron_cheetah_ICH-C" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="iron_cheetah_ICH-D" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="iron_cheetah_ICH-E" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="iron_cheetah_ICH-F" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="iron_cheetah_ICH-Prime" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="jagermech_JM6-A" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-ACE" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-B" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-DD" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-DG" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-DGr" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-S" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-SR" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-TD" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-U" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM6-X" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM7-A" engineRating="280" engineType="standard"/>
+        <mech model="jagermech_JM7-D" engineRating="280" engineType="standard"/>
+        <mech model="jagermech_JM7-J" engineRating="280" engineType="standard"/>
+        <mech model="jagermech_JM7-W" engineRating="280" engineType="standard"/>
+        <mech model="jagermech_JM8-HK" engineRating="260" engineType="standard"/>
+        <mech model="jagermech_JM8-KH" engineRating="260" engineType="standard"/>
+
+        <mech model="jagermech_iic_JM6-IIC" engineRating="260" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="jagermech_iic_JM7-IIC" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="jagermech_iic_JM7-IIC2" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="jagermech_iii_JM6-D3" engineRating="325" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+
+        <!-- JENNER GOES HERE -->
+        <!-- Jenner IIC goes here -->
 
         <hardpoints id="kingcrab">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -944,6 +1264,51 @@
         <mech model="kingcrab_KGC-002" engineRating="270" engineType="XL" apply="kingcrab"/>
         <mech model="kingcrab_KGC-010" engineRating="300" engineType="standard" endoSteel="true" apply="kingcrab"/>
         <mech model="kingcrab_KGC-200" engineRating="300" engineType="standard" apply="kingcrab"/>
+
+        <mech model="kingfisher_KNF-A" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kingfisher_KNF-B" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kingfisher_KNF-C" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kingfisher_KNF-D" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kingfisher_KNF-F2" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kingfisher_KNF-H" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kingfisher_KNF-Prime" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="kintaro_KTO-18" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-18K" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-18S" engineRating="245" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-19" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-19b" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-20" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-21" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-C" engineRating="275" engineType="standard" ferroFibrous="true"/>
+        <mech model="kintaro_KTO-K" engineRating="275" engineType="standard" ferroFibrous="true"/>
+
+        <mech model="kit_fox_KF-A" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-B" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-C" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-D" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-E" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-E2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-F2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-F3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-G" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-G2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-H" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-J" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-M1" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-M2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-M3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-Prime" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-S" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-V" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-W" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="kit_fox_KF-XP" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="kodiak_KDK-1" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="kodiak_KDK-5" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="kodiak_KDK-GB" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="kodiak_KDK-P1" engineRating="340" engineType="XL" techBase="Clan"/>
+        <mech model="kodiak_KDK-P2" engineRating="255" engineType="XL" techBase="Clan"/>
 
         <mech model="lancelot_LNC25-01" engineRating="360" engineType="XL"/>
         <mech model="lancelot_LNC25-01b" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true"/>
@@ -1021,6 +1386,8 @@
             <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, Energy, Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, Energy, Energy"/>
         </mech>
+
+        <!-- LOCUST IIC goes here -->
 
         <mech model="longbow_LGB-0C" engineRating="325" engineType="standard"/>
         <mech model="longbow_LGB-0W" engineRating="340" engineType="standard"/>
@@ -1105,6 +1472,47 @@
         <mech model="mad_dog_MDD-WDR1" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mdd-wdr"/>
         <mech model="mad_dog_MDD-WDR2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mdd-wdr"/>
 
+        <mech model="marauder_ii_MAD-2K" engineRating="300" engineType="light"/>
+        <mech model="marauder_ii_MAD-4A" engineRating="300" engineType="light"/>
+        <mech model="marauder_ii_MAD-4B" engineRating="300" engineType="light"/>
+        <mech model="marauder_ii_MAD-4HB" engineRating="300" engineType="standard"/>
+        <mech model="marauder_ii_MAD-5A" engineRating="300" engineType="XL"/>
+        <mech model="marauder_ii_MAD-5B" engineRating="300" engineType="XL"/>
+        <mech model="marauder_ii_MAD-5C" engineRating="300" engineType="XL"/>
+        <mech model="marauder_ii_MAD-5V" engineRating="300" engineType="XL"/>
+        <mech model="marauder_ii_MAD-6W" engineRating="300" engineType="XL" techBase="Clan"/>
+
+        <mech model="marauder_iic_MAD-IIC-1" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="marauder_iic_MAD-IIC-8" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="marauder_iic_MAD-IIC-9" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="marauder_iic_MAD-IIC-A" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="marauder_MAD-1R" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-2R" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-2R-CE" engineRating="300" engineType="standard" ferroFibrous="true" techBase="Clan"/>
+        <mech model="marauder_MAD-3D" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3DR" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3G" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3K" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3L" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3M" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3R" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3RR" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3S" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3T" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-3W" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-4D" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-4T" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-4X" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-5CS" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-5D" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-5D-DC" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-5M" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-5R2" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-5S" engineRating="300" engineType="standard"/>
+        <mech model="marauder_MAD-C" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="marauder_MAD-NAIS-WC" engineRating="300" engineType="XL" endoSteel="true"/>
+
         <mech model="mauler_MAL-1P" engineRating="270" engineType="XL" ferroFibrous="true"/>
         <mech model="mauler_MAL-1R" engineRating="270" engineType="XL" ferroFibrous="true"/>
         <mech model="mauler_MAL-1X-AFFC" engineRating="270" engineType="XL"/>
@@ -1118,6 +1526,11 @@
             <add-hardpoint location="RightTorso" weaponMounts="Missile, AntiPersonnel"/>
         </hardpoints>
 
+        <mech model="medusa_MED-1" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="medusa_MED-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="medusa_MED-3" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="medusa_MED-4" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
         <mech model="merlin_MLN-1A" engineRating="240" engineType="standard" apply="merlin"/>
         <mech model="merlin_MLN-1A1" engineRating="240" engineType="standard" apply="merlin"/>
         <mech model="merlin_MLN-1Ar" engineRating="240" engineType="standard" apply="merlin"/>
@@ -1125,12 +1538,165 @@
         <mech model="merlin_MLN-1B1" engineRating="240" engineType="standard" apply="merlin"/>
         <mech model="merlin_MLN-2A" engineRating="240" engineType="XL" apply="merlin"/>
 
+        <mech model="mongoose_MON-66" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-66B" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-66CG" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-67" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-67L" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-68" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-68K" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-69" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-69K" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-70" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="mongoose_MON-C" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="mongoose_MON-C2" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="nighthawk_NTK-2Q" engineRating="210" engineType="XL"/>
+        <mech model="nighthawk_NTK-2Q-EC" engineRating="210" engineType="XL" techBase="Clan"/>
+        <mech model="nighthawk_NTK-2S" engineRating="210" engineType="XL"/>
+
+        <mech model="nightstar_NSR-7J" engineRating="285" engineType="standard"/>
+        <mech model="nightstar_NSR-9FC" engineRating="380" engineType="XL"/>
+        <mech model="nightstar_NSR-9J" engineRating="285" engineType="XL"/>
+        <mech model="nightstar_NSR-9JC" engineRating="275" engineType="standard" endoSteel="true"/>
+
+        <mech model="nova_cat_NCT-A" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-B" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-C" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-D" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-PA" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-PJ" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-Prime" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-PW" engineRating="280" engineType="XL" techBase="Clan"/>
+
+        <mech model="nova_NVA-A" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-B" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-C" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-D" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-E" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-E2" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-F2" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-G2" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-H" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-P1" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-Prime" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_NVA-S" engineRating="250" engineType="XL" techBase="Clan"/>
+
+        <mech model="omni-corvis_OCRV-A" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="omni-corvis_OCRV-B" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="omni-corvis_OCRV-Prime" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="orion_ON1-C" engineRating="355" engineType="standard"/>
+        <mech model="orion_ON1-E" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-H" engineRating="285" engineType="standard"/>
+        <mech model="orion_ON1-K" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-K-CE" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="orion_ON1-KR" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-M" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-MA" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-MB" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-MC" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-M-DC" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-V" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-VA" engineRating="300" engineType="standard"/>
+        <mech model="orion_ON1-V-DC" engineRating="300" engineType="standard"/>
+
+        <mech model="orion_iic_ON1-IIC-1" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="orion_iic_ON1-IIC-A" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="orion_iic_ON1-IIC-B" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="orion_iic_ON1-IIC-C" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
         <mech model="osprey_OSP-15" engineRating="220" engineType="XL" endoSteel="true"/>
+
+        <mech model="ostlord_OSL-9R" engineRating="320" engineType="standard"/>
+
+        <mech model="ostroc_OSR-2C" engineRating="300" engineType="standard"/>
+        <mech model="ostroc_OSR-2CB" engineRating="300" engineType="standard"/>
+        <mech model="ostroc_OSR-2CR" engineRating="300" engineType="standard"/>
+        <mech model="ostroc_OSR-2D" engineRating="300" engineType="standard"/>
+        <mech model="ostroc_OSR-2L" engineRating="300" engineType="standard"/>
+        <mech model="ostroc_OSR-2M" engineRating="300" engineType="standard"/>
+        <mech model="ostroc_OSR-3C" engineRating="300" engineType="standard"/>
+
+        <mech model="ostscout_OTT-7J" engineRating="280" engineType="standard"/>
+        <mech model="ostscout_OTT-7Jb" engineRating="280" engineType="standard"/>
+        <mech model="ostscout_OTT-7JR" engineRating="280" engineType="standard"/>
+        <mech model="ostscout_OTT-7K" engineRating="280" engineType="standard"/>
+
+        <mech model="ostsol_OTL-4D" engineRating="300" engineType="standard"/>
+        <mech model="ostsol_OTL-4DR" engineRating="300" engineType="standard"/>
+        <mech model="ostsol_OTL-4F" engineRating="300" engineType="standard"/>
+        <mech model="ostsol_OTL-5M" engineRating="300" engineType="standard"/>
+
+        <mech model="ostwar_OWR-2M" engineRating="250" engineType="standard"/>
+        <mech model="ostwar_OWR-2MB" engineRating="325" engineType="standard"/>
+        <mech model="ostwar_OWR-2MX" engineRating="330" engineType="standard"/>
+
+        <!-- panther goes here -->
+        <mech model="panther_PNT-5T" engineRating="145" engineType="standard"/>
+        <mech model="panther_PNT-6-KH" engineRating="140" engineType="standard"/>
+        <mech model="panther_PNT-8X" engineRating="145" engineType="standard"/>
+        <mech model="panther_PNT-8Z" engineRating="145" engineType="standard"/>
+        <mech model="panther_PNT-9ALAG" engineRating="180" engineType="standard"/>
+        <mech model="panther_PNT-9R" engineRating="145" engineType="standard"/>
+        <mech model="panther_PNT-9RR" engineRating="140" engineType="standard"/>
+        <mech model="panther_PNT-10K" engineRating="145" engineType="standard"/>
+        <mech model="panther_PNT-10KA" engineRating="145" engineType="standard"/>
+        <mech model="panther_PNT-12DC" engineRating="175" engineType="standard"/>
+        <mech model="panther_PNT-C" engineRating="145" engineType="standard" endoSteel="true"/>
+        <mech model="panther_PNT-CA" engineRating="145" engineType="standard" endoSteel="true"/>
+
+        <mech model="penetrator_PTR-4D" engineRating="300" engineType="standard"/>
+        <mech model="penetrator_PTR-4F" engineRating="300" engineType="standard"/>
+        <mech model="penetrator_PTR-4FX" engineRating="300" engineType="standard"/>
+        <mech model="penetrator_PTR-6M" engineRating="300" engineType="standard"/>
+        <mech model="penetrator_PTR-6S" engineRating="300" engineType="standard"/>
+
+        <mech model="perseus_p1" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="perseus_p1a" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="perseus_p1b" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="perseus_p1c" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="perseus_p1d" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <mech model="phantom_PTM-A" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="phantom_PTM-B" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="phantom_PTM-C" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="phantom_PTM-D" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="phantom_PTM-E" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="phantom_PTM-Prime" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="phoenix_PX-1R" engineRating="240" engineType="standard"/>
+        <mech model="phoenix_PX-3R" engineRating="250" engineType="standard"/>
+        <mech model="phoenix_PX-4R" engineRating="250" engineType="standard"/>
+
+        <mech model="pillager_PLG-1N" engineRating="300" engineType="standard"/>
+        <mech model="pillager_PLG-3Z" engineRating="300" engineType="XL"/>
+        <mech model="pillager_PLG-3Z-EC" engineRating="300" engineType="XL" techBase="Clan"/>
+
+        <mech model="pouncer_PCR-A" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="pouncer_PCR-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="pouncer_PCR-C" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="pouncer_PCR-D" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="pouncer_PCR-E" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="pouncer_PCR-Prime" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="pouncer_PCR-X-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <mech model="predator_PCA-1" engineRating="300" engineType="XL" techBase="Clan"/>
 
         <mech model="predator_ii_PCA2-1" engineRating="325" engineType="XL" endoSteel="true"/>
         <mech model="predator_ii_PCA2-2" engineRating="325" engineType="XL" endoSteel="true"/>
+
+        <mech model="pulverizer_PUL-2V" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="pulverizer_PUL-3R" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="pulverizer_PUL-C" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <!-- Quickdraw goes here -->
+
+        <mech model="rifleman_iic_RFL-IIC-1" engineRating="195" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="rifleman_iic_RFL-IIC-2" engineRating="260" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <mech model="rifleman_iic_RFL-IIC-A" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="rifleman_iii_RF2-A" engineRating="180" engineType="XL"/>
 
         <mech model="roughneck_RGH-1A" engineRating="260" engineType="standard"/>
         <mech model="roughneck_RGH-1B" engineRating="260" engineType="standard"/>
@@ -1167,6 +1733,39 @@
         <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard"/>
         <mech model="sentinel_STN-3M" engineRating="240" engineType="standard"/>
 
+        <mech model="shadow_cat_SHC-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-M" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-TC" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-U" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-V" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-W" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadow_cat_SHC-X" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="shadowhawk_SHD-1P" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-1R" engineRating="245" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2D" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2D2" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2GD" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2H" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2Hb" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2Hb-EC" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="shadowhawk_SHD-2HR" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2Ht" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2I" engineRating="270" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2K" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2Ki" engineRating="270" engineType="standard"/>
+        <mech model="shadowhawk_SHD-2P" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-3H" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-3H2" engineRating="220" engineType="standard"/>
+        <mech model="shadowhawk_SHD-5M" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-5S" engineRating="330" engineType="XL"/>
+        <mech model="shadowhawk_SHD-5S2" engineRating="330" engineType="XL"/>
+        <mech model="shadowhawk_SHD-5SF" engineRating="275" engineType="standard"/>
+        <mech model="shadowhawk_SHD-C" engineRating="275" engineType="standard"/>
+
         <hardpoints id="shadow-hawk-IIC">
             <add-hardpoint location="LeftArm" weaponMounts="Energy, AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Missile, Missile, AntiPersonnel"/>
@@ -1185,10 +1784,22 @@
         <mech model="spartan_SPT-N2" engineRating="400" engineType="XL"/>
         <mech model="spartan_SPT-NF" engineRating="400" engineType="XL"/>
 
+        <!-- stalker goes here -->
+
         <mech model="starslayer_STY-2C" engineRating="250" engineType="standard" ferroFibrous="true"/>
         <mech model="starslayer_STY-2C-EC" engineRating="250" engineType="standard" ferroFibrous="true"/>
         <mech model="starslayer_STY-3C" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="starslayer_STY-3D" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+
+        <!-- stinger goes here -->
+
+        <mech model="stone_rhino_SR-1" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-4" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-5" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-6" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-7" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-N" engineRating="275" engineType="XL" techBase="Clan"/>
 
         <hardpoints id="stooping-hawk">
             <add-hardpoint location="LeftArm" weaponMounts="Energy, AntiPersonnel"/>
@@ -1219,6 +1830,9 @@
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy"/>
         </mech>
+
+        <mech model="storm_giant_STG-1" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="storm_giant_STG-2" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <hardpoints id="storm-crow">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
@@ -1276,6 +1890,11 @@
             <add-hardpoint location="RightArm" weaponMounts="Energy, Missile"/>
         </mech>
 
+        <mech model="striker_STC-2C" engineRating="320" engineType="standard"/>
+        <mech model="striker_STC-2C-CE" engineRating="320" engineType="standard" techBase="Clan"/>
+        <mech model="striker_STC-2D" engineRating="320" engineType="standard"/>
+        <mech model="striker_STC-2S" engineRating="320" engineType="standard"/>
+
         <hardpoints id="summoner">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy, AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, AntiPersonnel"/>
@@ -1325,6 +1944,10 @@
         </mech>
         <mech model="summoner_SMN-Prime" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
 
+        <mech model="sun_bear_SBR-A" engineRating="275" engineType="XL" techBase="Clan"/>
+        <mech model="sun_bear_SBR-B" engineRating="275" engineType="XL" techBase="Clan"/>
+        <mech model="sun_bear_SBR-Prime" engineRating="275" engineType="XL" techBase="Clan"/>
+
         <hardpoints id="sun-spider">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -1371,11 +1994,26 @@
             <add-hardpoint location="Head" weaponMounts="Energy"/>
         </mech>
 
+        <mech model="super_wasp_WSP-2A-X" engineRating="150" engineType="standard"/>
+
+        <mech model="supernova_SNV-1" engineRating="270" engineType="standard" techBase="Clan"/>
+        <mech model="supernova_SNV-A" engineRating="270" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <mech model="supernova_SNV-C" engineRating="270" engineType="standard" endoSteel="true" techBase="Clan"/>
+
         <mech model="talon_TLN-3L" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="talon_TLN-5V" engineRating="280" engineType="XL"/>
         <mech model="talon_TLN-5VNO" engineRating="210" engineType="standard"/>
         <mech model="talon_TLN-5W" engineRating="280" engineType="XL"/>
         <mech model="talon_TLN-5W-EC" engineRating="280" engineType="XL"/>
+
+        <mech model="talos_TLS-1B" engineRating="200" engineType="standard"/>
+        <mech model="talos_TLS-1P" engineRating="200" engineType="standard"/>
+        <mech model="talos_TLS-4A" engineRating="200" engineType="standard"/>
+        <mech model="talos_TLS-4B" engineRating="200" engineType="standard"/>
+
+        <mech model="templar_CRD-1G" engineRating="260" engineType="standard"/>
+        <mech model="templar_CRD-1R" engineRating="260" engineType="standard"/>
+        <mech model="templar_CRD-6T" engineRating="325" engineType="XL"/>
 
         <hardpoints id="thanatos">
             <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, Missile, AntiPersonnel"/>
@@ -1391,7 +2029,21 @@
         <mech model="thanatos_TNS-5P" engineRating="300" engineType="light" endoSteel="true" apply="thanatos"/>
         <mech model="thanatos_TNS-5S" engineRating="300" engineType="XL" endoSteel="true" apply="thanatos"/>
         <mech model="thanatos_TNS-5T" engineRating="300" engineType="light" endoSteel="true" apply="thanatos"/>
+
         <mech model="thantos_THS-4A" engineRating="275" engineType="XL" endoSteel="true" apply="thanatos"/>
+
+        <mech model="thorn_THE-F" engineRating="120" engineType="standard" endoSteel="true"/>
+        <mech model="thorn_THE-N" engineRating="120" engineType="standard" endoSteel="true"/>
+        <mech model="thorn_THE-N1" engineRating="120" engineType="standard" endoSteel="true"/>
+        <mech model="thorn_THE-Nb" engineRating="120" engineType="standard" endoSteel="true"/>
+        <mech model="thorn_THE-N-EC" engineRating="120" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <mech model="thorn_THE-S" engineRating="120" engineType="standard" endoSteel="true"/>
+        <mech model="thorn_THE-T" engineRating="120" engineType="standard" endoSteel="true"/>
+
+        <mech model="thug_THG-10E" engineRating="320" engineType="standard"/>
+        <mech model="thug_THG-11E" engineRating="320" engineType="standard"/>
+        <mech model="thug_THG-11E2" engineRating="320" engineType="standard"/>
+        <mech model="thug_THG-11Eb" engineRating="320" engineType="standard"/>
 
         <hardpoints id="thunderbolt">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
@@ -1425,12 +2077,61 @@
         <mech model="thunderbolt_TDR-F4W" engineRating="195" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-F4X" engineRating="195" engineType="standard" apply="thunderbolt"/>
 
-        <!-- Timber Wolf GOES HERE -->
+        <mech model="thunderhawk_TDK-7KMA" engineRating="300" engineType="XL"/>
+        <mech model="thunderhawk_TDK-7X" engineRating="300" engineType="XL"/>
+        <mech model="thunderhawk_TDK-7Y" engineRating="300" engineType="XL"/>
+
+        <mech model="thunderhawk_TH-1" engineRating="270" engineType="XL"/>
+
+        <mech model="timber_wolf_TW-A" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-B" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-C" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-D" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-E" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-E2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-E3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-F2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-F3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-G" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-H" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-H2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-I" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-K" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-KH" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-KHCM" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-M_A" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-M_J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-M_W" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-N" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-Prime" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-S" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-SG" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-TC" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-WDR1" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-WDR2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="timber_wolf_TW-WDR3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <mech model="titan_TI-1A" engineRating="300" engineType="standard"/>
         <mech model="titan_TI-1AD" engineRating="300" engineType="standard"/>
         <mech model="titan_TI-1D" engineRating="300" engineType="XL"/>
         <mech model="titan_TI-2D" engineRating="300" engineType="XL"/>
+
+        <!-- TREBUCHET goes here -->
+        <!-- TREBUCHET IIC goes here -->
+
+        <mech model="turkina_TKR-A" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-B" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-C" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-D" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-M" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-MCA" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-MCJ" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-MCW" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-Prime" engineRating="285" engineType="XL" techBase="Clan"/>
+        <mech model="turkina_TKR-X-B" engineRating="285" engineType="XL" techBase="Clan"/>
+
+        <!-- URBANMECH goes here -->
 
         <mech model="ursus_URS-1" engineRating="200" engineType="standard" ferroFibrous="true" techBase="Clan"/>
 
@@ -1450,6 +2151,23 @@
             <!-- Gear_Cockpit_Siri-->
             <!-- Gear_Sensors_Huntress-->
         </mech>
+
+        <mech model="valkyrie_VLK-Q1" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="valkyrie_VLK-QA" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="valkyrie_VLK-QAR" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="valkyrie_VLK-QD" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="valkyrie_VLK-QF" engineRating="150" engineType="standard" endoSteel="true"/>
+        <mech model="valkyrie_VLK-QK" engineRating="150" engineType="standard" endoSteel="true"/>
+
+        <mech model="vapor_eagle_VGL-1" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="vapor_eagle_VGL-2" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="vapor_eagle_VGL-5" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="vapor_eagle_VGL-6" engineRating="330" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="venom_SDR-9K" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="venom_SDR-9KA" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="venom_SDR-9KB" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="venom_SDR-10K" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
 
         <hardpoints id="victor">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
@@ -1476,12 +2194,99 @@
         <mech model="victor_VTR-10B" engineRating="380" engineType="XL" endoSteel="true" apply="victor"/>
         <mech model="victor_VTR-C" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
 
+        <mech model="viking_VKG-2F" engineRating="270" engineType="standard"/>
+        <mech model="viking_VKG-2G" engineRating="270" engineType="standard"/>
+
+        <mech model="vindicator_VND-1AA" engineRating="225" engineType="standard"/>
+        <mech model="vindicator_VND-1KH" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-1P" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-1R" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-1RR" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-1SIC" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-1X" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-2C" engineRating="270" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="vindicator_VND-2R" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-2V" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-2X" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-3L" engineRating="180" engineType="standard"/>
+        <mech model="vindicator_VND-5L" engineRating="180" engineType="standard"/>
+
+        <mech model="viper_VP-1" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VP-5" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="viper_VPR-3X" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-A" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-B" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-C" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-D" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-E" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-E2" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-F2" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-Prime" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-S" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-V" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-W" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="viper_VPR-X" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <mech model="visionquest_VQ-1" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="visionquest_VQ-1NC" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="visionquest_VQ-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+
+        <mech model="warhammer_WHM-6D" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6DR" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6G" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6K" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6L" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6R" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6RR" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6Rb" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6Rk" engineRating="350" engineType="XL"/>
+        <mech model="warhammer_WHM-6RR" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6W" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6W3" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-6X" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7A" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7CS" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7D" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7K" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7K2" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7M" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7M-DC" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7S" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-C" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-C2" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-C3" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="warhammer_WHM-TD" engineRating="280" engineType="standard"/>
+
+        <mech model="warhammer_iic_WMR-IIC-1" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhammer_iic_WMR-IIC-2" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhammer_iic_WMR-IIC-3" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhammer_iic_WMR-IIC-A" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <!-- Warhawk goes here -->
+        <!-- Wasp goes here -->
+
         <mech model="whitworth_WTH-0" engineRating="160" engineType="standard"/>
         <mech model="whitworth_WTH-1" engineRating="160" engineType="standard"/>
         <mech model="whitworth_WTH-1R" engineRating="160" engineType="standard"/>
         <mech model="whitworth_WTH-1S" engineRating="160" engineType="standard"/>
         <mech model="whitworth_WTH-1SR" engineRating="160" engineType="standard"/>
         <mech model="whitworth_WTH-2" engineRating="160" engineType="standard"/>
+
+        <mech model="wolf_trap_WFT-1" engineRating="270" engineType="XL" endoSteel="true"/>
+        <mech model="wolf_trap_WFT-C" engineRating="270" engineType="XL" endoSteel="true"/>
+
+        <mech model="wolfhound_WLF-1" engineRating="210" engineType="standard"/>
+        <mech model="wolfhound_WLF-1A" engineRating="210" engineType="standard"/>
+        <mech model="wolfhound_WLF-1-KH" engineRating="210" engineType="standard"/>
+        <mech model="wolfhound_WLF-1R" engineRating="210" engineType="standard"/>
+        <mech model="wolfhound_WLF-1X" engineRating="240" engineType="XL" endoSteel="true"/>
+        <mech model="wolfhound_WLF-2" engineRating="210" engineType="standard"/>
+        <mech model="wolfhound_WLF-3-WDR" engineRating="210" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="wolfhound_WLF-7S" engineRating="210" engineType="standard"/>
+
+        <mech model="wolfhound_iic_WLF-IIC-3" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="wolfhound_iic_WLF-IIC-3A" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <hardpoints id="wolverine">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic,  Energy, Energy, AntiPersonnel"/>
@@ -1515,6 +2320,17 @@
 
         <mech model="wolverine_iic_WVR-IIC" engineRating="275" engineType="XL" endoSteel="true" techBase="Clan" apply="wolverine"/>
 
+        <mech model="woodsman_WMN-A" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <mech model="woodsman_WMN-B" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <mech model="woodsman_WMN-Prime" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan"/>
+
+        <mech model="woodsman_ii_WMN2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="woodsman_ii_WMN2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="woodsman_ii_WMN2-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="wraith_WRT-TR1" engineRating="385" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="wraith_WRT-TR2" engineRating="385" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+
         <mech model="wyvern_WVE-5N" engineRating="180" engineType="standard" endoSteel="true"/>
         <mech model="wyvern_WVE-5Nb" engineRating="180" engineType="XL" endoSteel="true"/>
         <mech model="wyvern_WVE-5Nsl" engineRating="180" engineType="standard" endoSteel="true"/>
@@ -1527,6 +2343,11 @@
         <mech model="wyvern_WVE-9N" engineRating="180" engineType="standard" endoSteel="true"/>
 
         <mech model="wyvern_iic_WVE-IIC" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <mech model="ymir_BWP-2B" engineRating="360" engineType="standard"/>
+        <mech model="ymir_BWP-2E" engineRating="360" engineType="standard"/>
+        <mech model="ymir_BWP-3A" engineRating="360" engineType="standard"/>
+        <mech model="ymir_BWP-X1" engineRating="325" engineType="standard"/>
 
         <hardpoints id="zeus">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel, AntiPersonnel"/>
