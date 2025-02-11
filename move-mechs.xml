@@ -875,7 +875,7 @@
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
         </mech>
         <mech model="dire_wolf_DW-F2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf">
-            <add-hardpoint location="leftArm" weaponMounts="Missile,Missile"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile"/>
             <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Missile,Missile"/>
         </mech>
