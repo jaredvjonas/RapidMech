@@ -260,6 +260,14 @@
 
         <swap-inventory item="Ammo_AmmunitionBox_Rifle_Heavy_APFSDS" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
 
+        <!-- Rogue Tech Mortar -->
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Acid_Half" with="Ammo_AmmunitionBox_Mortar_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Fascam_Half" with="Ammo_AmmunitionBox_Mortar_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Guided" with="Ammo_AmmunitionBox_Mortar"/>
+
+        <!-- Rogue Tech Thumper -->
+        <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_Thumper"/>
+
         <!-- Rogue Tech Clan Enhanced Variants -->
         <!-- Imported irianTech/rogueTech/Clan/Improved -->
 
