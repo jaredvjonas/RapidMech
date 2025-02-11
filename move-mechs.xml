@@ -416,18 +416,34 @@
         <mech model="arcas_ARS-1" engineRating="325" engineType="XL" endoSteel="true"/>
         <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true"/>
 
-        <mech model="arctic_cheetah_ACH-A" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="arctic_cheetah_ACH-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="arctic_cheetah_ACH-C" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="arctic_cheetah_ACH-D" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="arctic_cheetah_ACH-Prime" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="arctic_cheetah_ACH-X" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="arctic_cheetah">
+            <add-hardpoint location="Head" weaponMounts="Missile"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        </hardpoints>
 
-        <mech model="arctic_fox_af1" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="arctic_fox_af1a" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="arctic_fox_af1b" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="arctic_fox_af1c" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="arctic_fox_af1d" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="arctic_cheetah_ACH-A" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="arctic_cheetah"/>
+        <mech model="arctic_cheetah_ACH-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="arctic_cheetah"/>
+        <mech model="arctic_cheetah_ACH-C" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="arctic_cheetah"/>
+        <mech model="arctic_cheetah_ACH-D" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="arctic_cheetah"/>
+        <mech model="arctic_cheetah_ACH-Prime" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="arctic_cheetah"/>
+        <mech model="arctic_cheetah_ACH-X" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="arctic_cheetah"/>
+
+        <hardpoints id="arctic_fox">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="arctic_fox_af1" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
+        <mech model="arctic_fox_af1a" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
+        <mech model="arctic_fox_af1b" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
+        <mech model="arctic_fox_af1c" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
+        <mech model="arctic_fox_af1d" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
 
         <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
 
@@ -564,13 +580,30 @@
 
         <mech model="beowulf_BEO-12" engineRating="270" engineType="XL" endoSteel="false" ferroFibrous="true"/>
 
-        <mech model="black_hawk-ku_BHKU-O" engineRating="300" engineType="XL"/>
-        <mech model="black_hawk-ku_BHKU-OA" engineRating="300" engineType="XL"/>
-        <mech model="black_hawk-ku_BHKU-OB" engineRating="300" engineType="XL"/>
-        <mech model="black_hawk-ku_BHKU-OC" engineRating="300" engineType="XL"/>
-        <mech model="black_hawk-ku_BHKU-OD" engineRating="300" engineType="XL"/>
-        <mech model="black_hawk-ku_BHKU-OR" engineRating="300" engineType="XL"/>
-        <mech model="black_hawk-ku_BHKU-OX" engineRating="300" engineType="XL"/>
+        <hardpoints id="black_hawk-ku">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic,Energy,Energy"/>
+        </hardpoints>
+
+        <mech model="black_hawk-ku_BHKU-O" engineRating="300" engineType="XL" apply="black_hawk-ku">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="black_hawk-ku_BHKU-OA" engineRating="300" engineType="XL" apply="black_hawk-ku"/>
+        <mech model="black_hawk-ku_BHKU-OB" engineRating="300" engineType="XL" apply="black_hawk-ku"/>
+        <mech model="black_hawk-ku_BHKU-OC" engineRating="300" engineType="XL" apply="black_hawk-ku"/>
+        <mech model="black_hawk-ku_BHKU-OD" engineRating="300" engineType="XL" apply="black_hawk-ku">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile"/>
+        </mech>
+        <mech model="black_hawk-ku_BHKU-OR" engineRating="300" engineType="XL" apply="black_hawk-ku">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile"/>
+        </mech>
+        <mech model="black_hawk-ku_BHKU-OX" engineRating="300" engineType="XL" apply="black_hawk-ku">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,Energy,Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic,Energy,Energy,Energy,Energy,Energy"/>
+        </mech>
 
         <mech model="black_lanner_BKL-C" engineRating="385" engineType="XL" endoSteel="true" techBase="Clan">
             <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
@@ -681,7 +714,10 @@
         <mech model="cicada_CDA-2A" engineRating="320" engineType="standard"/>
         <mech model="cicada_CDA-2B" engineRating="320" engineType="standard"/>
         <mech model="cicada_CDA-2G" engineRating="320" engineType="standard" endoSteel="true" ferroFibrous="true"/>
-        <mech model="cicada_CDA-2P" engineRating="280" engineType="standard"/>
+        <mech model="cicada_CDA-2P" engineRating="280" engineType="standard">
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+        </mech>
         <mech model="cicada_CDA-3C" engineRating="280" engineType="standard"/>
         <mech model="cicada_CDA-3D" engineRating="280" engineType="standard"/>
         <mech model="cicada_CDA-3E" engineRating="280" engineType="XL"/>
@@ -721,27 +757,43 @@
         <mech model="corsair_COR-7R" engineRating="285" engineType="standard"/>
         <mech model="corsair_COR-S7" engineRating="285" engineType="light"/>
 
-        <mech model="cougar_COU-A" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-B" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-C" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-D" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-H" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-HR" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-MCA" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-MCJ" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-MCW" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="cougar_COU-Prime" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="cougar">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="cougar_COU-A" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-B" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-C" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-D" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-H" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-HR" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-MCA" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-MCJ" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-MCW" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
+        <mech model="cougar_COU-Prime" engineRating="175" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="cougar"/>
 
         <mech model="crokett_CRK-5003-0" engineRating="255" engineType="standard"/>
         <mech model="crokett_CRK-5003-1" engineRating="255" engineType="standard"/>
         <mech model="crokett_CRK-5003-1b" engineRating="255" engineType="standard" endoSteel="true"/>
 
-        <mech model="crossbow_CRS-6B" engineRating="300" engineType="standard"/>
-        <mech model="crossbow_CRS-6C" engineRating="300" engineType="standard"/>
-        <mech model="crossbow_CRS-A" engineRating="325" engineType="standard" techBase="Clan"/>
-        <mech model="crossbow_CRS-B" engineRating="325" engineType="standard" techBase="Clan"/>
-        <mech model="crossbow_CRS-Prime" engineRating="325" engineType="standard" techBase="Clan"/>
-        <mech model="crossbow_CRS-X" engineRating="300" engineType="standard"/>
+        <hardpoints id="crossbow">
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Missile,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,AntiPersonnel"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Missile,Missile"/>
+        </hardpoints>
+
+        <mech model="crossbow_CRS-6B" engineRating="300" engineType="standard" apply="crossbow"/>
+        <mech model="crossbow_CRS-6C" engineRating="300" engineType="standard" apply="crossbow"/>
+        <mech model="crossbow_CRS-A" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow"/>
+        <mech model="crossbow_CRS-B" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow"/>
+        <mech model="crossbow_CRS-Prime" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow"/>
+        <mech model="crossbow_CRS-X" engineRating="300" engineType="standard" apply="crossbow"/>
 
         <hardpoints id="crusader">
             <add-hardpoint location="RightArm" weaponMounts="Energy,AntiPersonnel,AntiPersonnel"/>
@@ -795,24 +847,41 @@
         <mech model="devastator_DVS-2-EC" engineRating="300" engineType="XL"/>
         <mech model="devastator_DVS-3" engineRating="300" engineType="XL"/>
 
-        <mech model="dire_wolf_DW-A" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-B" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-C" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-C2" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-D2" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-E2" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-F2" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-F3" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DWF-C" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DWF-C2" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-H" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-Prime" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-S" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-W" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-W2" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-WDR" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-X" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="dire_wolf_DW-X-B" engineRating="300" engineType="XL" techBase="Clan"/>
+        <hardpoints id="dire_wolf">
+            <add-hardpoint location="Head" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftLeg" weaponMounts="Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightLeg" weaponMounts="Missile,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="dire_wolf_DW-A" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-B" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-C" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-C2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-D2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-E2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="dire_wolf_DW-F2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf">
+            <add-hardpoint location="leftArm" weaponMounts="Missile,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile,Missile"/>
+        </mech>
+        <mech model="dire_wolf_DW-F3" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DWF-C" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DWF-C2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-H" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-Prime" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-S" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-W" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-W2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-WDR" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-X" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-X-B" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
 
         <mech model="dragon_DRG-1C" engineRating="300" engineType="standard"/>
         <mech model="dragon_DRG-1N" engineRating="300" engineType="standard"/>
@@ -822,16 +891,34 @@
         <mech model="dragonfire_DGR-3F" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="dragonfire_DGR-4F" engineRating="300" engineType="XL" endoSteel="true"/>
 
-        <mech model="dragoon_AEM-01" engineRating="280" engineType="XL" ferroFibrous="true"/>
-        <mech model="dragoon_AEM-02" engineRating="350" engineType="XL" ferroFibrous="true"/>
-        <mech model="dragoon_AEM-03" engineRating="280" engineType="XL" ferroFibrous="true"/>
-        <mech model="dragoon_AEM-04" engineRating="280" engineType="XL" ferroFibrous="true"/>
+        <hardpoints id="dragoon">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+        </hardpoints>
 
-        <mech model="ebon_jaguar_EBJ-A" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ebon_jaguar_EBJ-B" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ebon_jaguar_EBJ-C" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ebon_jaguar_EBJ-D" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ebon_jaguar_EBJ-Prime" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="dragoon_AEM-01" engineRating="280" engineType="XL" ferroFibrous="true" apply="dragoon"/>
+        <mech model="dragoon_AEM-02" engineRating="350" engineType="XL" ferroFibrous="true" apply="dragoon"/>
+        <mech model="dragoon_AEM-03" engineRating="280" engineType="XL" ferroFibrous="true" apply="dragoon"/>
+        <mech model="dragoon_AEM-04" engineRating="280" engineType="XL" ferroFibrous="true" apply="dragoon"/>
+
+        <hardpoints id="ebon_jaguar">
+            <add-hardpoint location="Head" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="ebon_jaguar_EBJ-A" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
+        <mech model="ebon_jaguar_EBJ-B" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
+        <mech model="ebon_jaguar_EBJ-C" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
+        <mech model="ebon_jaguar_EBJ-D" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
+        <mech model="ebon_jaguar_EBJ-Prime" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
 
         <mech model="emperor_EMP-1A" engineRating="325" engineType="standard"/>
         <mech model="emperor_EMP-5A" engineRating="270" engineType="standard"/>
@@ -886,12 +973,18 @@
         <mech model="falcon_hawk_FNHK-9K" engineRating="175" engineType="XL" ferroFibrous="true"/>
         <mech model="falcon_hawk_FNHK-9K1A" engineRating="175" engineType="XL" ferroFibrous="true"/>
 
-        <mech model="fire_falcon_FF-A" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="fire_falcon_FF-B" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="fire_falcon_FF-C" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="fire_falcon_FF-D" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="fire_falcon_FF-E" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="fire_falcon_FF-Prime" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="fire_falcon">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="fire_falcon_FF-A" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
+        <mech model="fire_falcon_FF-B" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
+        <mech model="fire_falcon_FF-C" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
+        <mech model="fire_falcon_FF-D" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
+        <mech model="fire_falcon_FF-E" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
+        <mech model="fire_falcon_FF-Prime" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
 
         <mech model="firebee_FRB-1E" engineRating="210" engineType="standard"/>
         <mech model="firebee_FRB-2E" engineRating="175" engineType="standard"/>
@@ -920,18 +1013,37 @@
         <mech model="gallowglas_GAL-WD" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="gallowglas_GAL-WD1" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
 
-        <mech model="gargoyle_GAR-A" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-B" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-C" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-D" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-D2" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-E" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-E2" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-F2" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-G2" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-H" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-H2" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="gargoyle_GAR-Prime" engineRating="400" engineType="XL" techBase="Clan"/>
+        <hardpoints id="gargoyle">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="gargoyle_GAR-A" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="gargoyle_GAR-B" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+        </mech>
+        <mech model="gargoyle_GAR-C" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle">
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="gargoyle_GAR-D" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
+        <mech model="gargoyle_GAR-D2" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
+        <mech model="gargoyle_GAR-E" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
+        <mech model="gargoyle_GAR-E2" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
+        <mech model="gargoyle_GAR-F2" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle">
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        </mech>
+        <mech model="gargoyle_GAR-G2" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle">
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="gargoyle_GAR-H" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
+        <mech model="gargoyle_GAR-H2" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
+        <mech model="gargoyle_GAR-Prime" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
 
         <mech model="garm_GRM-01A" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="garm_GRM-01B" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
@@ -1181,29 +1293,48 @@
 
         <!-- HUNCHBACK GOES HERE -->
 
-        <mech model="huntsman_HMN-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="huntsman_HMN-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="huntsman_HMN-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="huntsman_HMN-D" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="huntsman_HMN-P" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="huntsman_HMN-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="huntsman">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Missile,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="huntsman_HMN-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="huntsman"/>
+        <mech model="huntsman_HMN-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="huntsman"/>
+        <mech model="huntsman_HMN-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="huntsman"/>
+        <mech model="huntsman_HMN-D" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="huntsman"/>
+        <mech model="huntsman_HMN-P" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="huntsman">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile"/>
+        </mech>
+        <mech model="huntsman_HMN-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="huntsman"/>
 
         <mech model="icarus_ICR-1X" engineRating="200" engineType="standard"/>
 
         <mech model="icarus_ii_ICR-1S" engineRating="160" engineType="standard"/>
 
-        <mech model="ice_ferret_IFR-A" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-A1" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-B" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-C" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-D" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-E" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-E2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-F2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-H" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-Prime" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-W" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="ice_ferret_IFR-W2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="ice_ferret">
+            <add-hardpoint location="Head" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="ice_ferret_IFR-A" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-A1" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-B" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-C" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-D" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-E" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-E2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-F2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-H" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-Prime" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-W" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
+        <mech model="ice_ferret_IFR-W2" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="ice_ferret"/>
 
         <mech model="incubus_INC-1" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="incubus_INC-2" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
@@ -1213,13 +1344,21 @@
 
         <mech model="initiate_INI-02" engineRating="160" engineType="standard" endoSteel="true"/>
 
-        <mech model="iron_cheetah_ICH-A" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="iron_cheetah_ICH-B" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="iron_cheetah_ICH-C" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="iron_cheetah_ICH-D" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="iron_cheetah_ICH-E" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="iron_cheetah_ICH-F" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="iron_cheetah_ICH-Prime" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="iron_cheetah">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="iron_cheetah_ICH-A" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
+        <mech model="iron_cheetah_ICH-B" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
+        <mech model="iron_cheetah_ICH-C" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
+        <mech model="iron_cheetah_ICH-D" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
+        <mech model="iron_cheetah_ICH-E" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
+        <mech model="iron_cheetah_ICH-F" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
+        <mech model="iron_cheetah_ICH-Prime" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
 
         <mech model="jagermech_JM6-A" engineRating="260" engineType="standard"/>
         <mech model="jagermech_JM6-ACE" engineRating="260" engineType="standard"/>
@@ -1265,13 +1404,23 @@
         <mech model="kingcrab_KGC-010" engineRating="300" engineType="standard" endoSteel="true" apply="kingcrab"/>
         <mech model="kingcrab_KGC-200" engineRating="300" engineType="standard" apply="kingcrab"/>
 
-        <mech model="kingfisher_KNF-A" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kingfisher_KNF-B" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kingfisher_KNF-C" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kingfisher_KNF-D" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kingfisher_KNF-F2" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kingfisher_KNF-H" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kingfisher_KNF-Prime" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="kingfisher">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="kingfisher_KNF-A" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher"/>
+        <mech model="kingfisher_KNF-B" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="kingfisher_KNF-C" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher"/>
+        <mech model="kingfisher_KNF-D" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher"/>
+        <mech model="kingfisher_KNF-F2" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher"/>
+        <mech model="kingfisher_KNF-H" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher"/>
+        <mech model="kingfisher_KNF-Prime" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kingfisher"/>
 
         <mech model="kintaro_KTO-18" engineRating="275" engineType="standard" ferroFibrous="true"/>
         <mech model="kintaro_KTO-18K" engineRating="275" engineType="standard" ferroFibrous="true"/>
@@ -1283,26 +1432,39 @@
         <mech model="kintaro_KTO-C" engineRating="275" engineType="standard" ferroFibrous="true"/>
         <mech model="kintaro_KTO-K" engineRating="275" engineType="standard" ferroFibrous="true"/>
 
-        <mech model="kit_fox_KF-A" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-B" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-C" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-D" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-E" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-E2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-F2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-F3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-G" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-G2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-H" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-J" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-M1" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-M2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-M3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-Prime" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-S" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-V" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-W" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="kit_fox_KF-XP" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="kit_fox_M-series">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
+        </hardpoints>
+
+        <hardpoints id="kit_fox">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Missile,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="kit_fox_KF-A" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-B" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-C" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-D" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-E" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-E2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-F2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-F3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-G" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-G2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-H" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-J" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-M1" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox_M-series"/>
+        <mech model="kit_fox_KF-M2" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox_M-series"/>
+        <mech model="kit_fox_KF-M3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox_M-series"/>
+        <mech model="kit_fox_KF-Prime" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-S" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-V" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-W" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-XP" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
 
         <mech model="kodiak_KDK-1" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="kodiak_KDK-5" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
@@ -1560,31 +1722,77 @@
         <mech model="nightstar_NSR-9J" engineRating="285" engineType="XL"/>
         <mech model="nightstar_NSR-9JC" engineRating="275" engineType="standard" endoSteel="true"/>
 
-        <mech model="nova_cat_NCT-A" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-B" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-C" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-D" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-PA" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-PJ" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-Prime" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="nova_cat_NCT-PW" engineRating="280" engineType="XL" techBase="Clan"/>
+        <hardpoints id="nova_cat">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </hardpoints>
 
-        <mech model="nova_NVA-A" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-B" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-C" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-D" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-E" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-E2" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-F2" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-G2" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-H" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-P1" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-Prime" engineRating="250" engineType="XL" techBase="Clan"/>
-        <mech model="nova_NVA-S" engineRating="250" engineType="XL" techBase="Clan"/>
+        <mech model="nova_cat_NCT-A" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat"/>
+        <mech model="nova_cat_NCT-B" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile"/>
+        </mech>
+        <mech model="nova_cat_NCT-C" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat"/>
+        <mech model="nova_cat_NCT-D" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat"/>
+        <mech model="nova_cat_NCT-PA" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat"/>
+        <mech model="nova_cat_NCT-PJ" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat"/>
+        <mech model="nova_cat_NCT-Prime" engineRating="280" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="nova_cat_NCT-PW" engineRating="280" engineType="XL" techBase="Clan" apply="nova_cat"/>
 
-        <mech model="omni-corvis_OCRV-A" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="omni-corvis_OCRV-B" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="omni-corvis_OCRV-Prime" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="nova">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </hardpoints>
+
+        <mech model="nova_NVA-A" engineRating="250" engineType="XL" techBase="Clan" apply="nova"/>
+        <mech model="nova_NVA-B" engineRating="250" engineType="XL" techBase="Clan" apply="nova"/>
+        <mech model="nova_NVA-C" engineRating="250" engineType="XL" techBase="Clan" apply="nova"/>
+        <mech model="nova_NVA-D" engineRating="250" engineType="XL" techBase="Clan" apply="nova">
+            <add-hardpoint location="RightArm" weaponMounts="Missile"/>
+        </mech>
+        <mech model="nova_NVA-E" engineRating="250" engineType="XL" techBase="Clan" apply="nova">
+            <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile"/>
+        </mech>
+        <mech model="nova_NVA-E2" engineRating="250" engineType="XL" techBase="Clan" apply="nova">
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="nova_NVA-F2" engineRating="250" engineType="XL" techBase="Clan" apply="nova"/>
+        <mech model="nova_NVA-G2" engineRating="250" engineType="XL" techBase="Clan" apply="nova"/>
+        <mech model="nova_NVA-H" engineRating="250" engineType="XL" techBase="Clan" apply="nova">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="nova_NVA-P1" engineRating="250" engineType="XL" techBase="Clan" apply="nova">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="nova_NVA-Prime" engineRating="250" engineType="XL" techBase="Clan" apply="nova">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="nova_NVA-S" engineRating="250" engineType="XL" techBase="Clan" apply="nova"/>
+
+        <hardpoints id="omni-corvis">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="omni-corvis_OCRV-A" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="omni-corvis"/>
+        <mech model="omni-corvis_OCRV-B" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="omni-corvis"/>
+        <mech model="omni-corvis_OCRV-Prime" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="omni-corvis"/>
 
         <mech model="orion_ON1-C" engineRating="355" engineType="standard"/>
         <mech model="orion_ON1-E" engineRating="300" engineType="standard"/>
@@ -1621,7 +1829,9 @@
         <mech model="ostscout_OTT-7J" engineRating="280" engineType="standard"/>
         <mech model="ostscout_OTT-7Jb" engineRating="280" engineType="standard"/>
         <mech model="ostscout_OTT-7JR" engineRating="280" engineType="standard"/>
-        <mech model="ostscout_OTT-7K" engineRating="280" engineType="standard"/>
+        <mech model="ostscout_OTT-7K" engineRating="280" engineType="standard">
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        </mech>
 
         <mech model="ostsol_OTL-4D" engineRating="300" engineType="standard"/>
         <mech model="ostsol_OTL-4DR" engineRating="300" engineType="standard"/>
@@ -1652,18 +1862,35 @@
         <mech model="penetrator_PTR-6M" engineRating="300" engineType="standard"/>
         <mech model="penetrator_PTR-6S" engineRating="300" engineType="standard"/>
 
-        <mech model="perseus_p1" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="perseus_p1a" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="perseus_p1b" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="perseus_p1c" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="perseus_p1d" engineRating="300" engineType="XL" endoSteel="true"/>
+        <hardpoints id="perseus">
+            <add-hardpoint location="Head" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Missile"/>
+        </hardpoints>
 
-        <mech model="phantom_PTM-A" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="phantom_PTM-B" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="phantom_PTM-C" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="phantom_PTM-D" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="phantom_PTM-E" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="phantom_PTM-Prime" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="perseus_p1" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
+        <mech model="perseus_p1a" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
+        <mech model="perseus_p1b" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
+        <mech model="perseus_p1c" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
+        <mech model="perseus_p1d" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
+
+        <hardpoints id="phantom">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="phantom_PTM-A" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="phantom"/>
+        <mech model="phantom_PTM-B" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="phantom"/>
+        <mech model="phantom_PTM-C" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="phantom"/>
+        <mech model="phantom_PTM-D" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="phantom"/>
+        <mech model="phantom_PTM-E" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="phantom"/>
+        <mech model="phantom_PTM-Prime" engineRating="360" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="phantom"/>
 
         <mech model="phoenix_PX-1R" engineRating="240" engineType="standard"/>
         <mech model="phoenix_PX-3R" engineRating="250" engineType="standard"/>
@@ -1673,13 +1900,30 @@
         <mech model="pillager_PLG-3Z" engineRating="300" engineType="XL"/>
         <mech model="pillager_PLG-3Z-EC" engineRating="300" engineType="XL" techBase="Clan"/>
 
-        <mech model="pouncer_PCR-A" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="pouncer_PCR-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="pouncer_PCR-C" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="pouncer_PCR-D" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="pouncer_PCR-E" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="pouncer_PCR-Prime" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="pouncer_PCR-X-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="pouncer">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="pouncer_PCR-A" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer">
+            <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
+        </mech>
+        <mech model="pouncer_PCR-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer"/>
+        <mech model="pouncer_PCR-C" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="pouncer_PCR-D" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="pouncer_PCR-E" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer"/>
+        <mech model="pouncer_PCR-Prime" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer"/>
+        <mech model="pouncer_PCR-X-B" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="pouncer">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile"/>
+        </mech>
 
         <mech model="predator_PCA-1" engineRating="300" engineType="XL" techBase="Clan"/>
 
@@ -1733,16 +1977,25 @@
         <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard"/>
         <mech model="sentinel_STN-3M" engineRating="240" engineType="standard"/>
 
-        <mech model="shadow_cat_SHC-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-M" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-TC" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-U" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-V" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-W" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="shadow_cat_SHC-X" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="shadow_cat">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="shadow_cat_SHC-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-M" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-TC" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-U" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-V" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-W" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-X" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
 
         <mech model="shadowhawk_SHD-1P" engineRating="275" engineType="standard"/>
         <mech model="shadowhawk_SHD-1R" engineRating="245" engineType="standard"/>
@@ -1794,7 +2047,10 @@
         <!-- stinger goes here -->
 
         <mech model="stone_rhino_SR-1" engineRating="300" engineType="XL" techBase="Clan"/>
-        <mech model="stone_rhino_SR-2" engineRating="300" engineType="XL" techBase="Clan"/>
+        <mech model="stone_rhino_SR-2" engineRating="300" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="AntiPersonnel"/>
+        </mech>
         <mech model="stone_rhino_SR-4" engineRating="300" engineType="XL" techBase="Clan"/>
         <mech model="stone_rhino_SR-5" engineRating="400" engineType="XL" techBase="Clan"/>
         <mech model="stone_rhino_SR-6" engineRating="400" engineType="XL" techBase="Clan"/>
@@ -1944,9 +2200,24 @@
         </mech>
         <mech model="summoner_SMN-Prime" engineRating="350" engineType="XL" ferroFibrous="true" techBase="Clan" apply="summoner"/>
 
-        <mech model="sun_bear_SBR-A" engineRating="275" engineType="XL" techBase="Clan"/>
-        <mech model="sun_bear_SBR-B" engineRating="275" engineType="XL" techBase="Clan"/>
-        <mech model="sun_bear_SBR-Prime" engineRating="275" engineType="XL" techBase="Clan"/>
+        <mech model="sun_bear_SBR-A" engineRating="275" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy"/>
+        </mech>
+        <mech model="sun_bear_SBR-B" engineRating="275" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
+        <mech model="sun_bear_SBR-Prime" engineRating="275" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy"/>
+        </mech>
 
         <hardpoints id="sun-spider">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy"/>
@@ -1975,11 +2246,12 @@
         </mech>
 
         <hardpoints id="sunder">
-            <add-hardpoint location="LeftArm" weaponMounts="Energy, Energy, AntiPersonnel"/>
-            <add-hardpoint location="LeftTorso" weaponMounts="Energy, Energy, Energy, Missile, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
-            <add-hardpoint location="CenterTorso" weaponMounts="Energy, Energy, Missile, AntiPersonnel, AntiPersonnel"/>
-            <add-hardpoint location="RightTorso" weaponMounts="Energy, Energy, Energy, Missile, Missile, Missile, AntiPersonnel, AntiPersonnel"/>
-            <add-hardpoint location="RightArm" weaponMounts="Energy, Energy, AntiPersonnel"/>
+            <add-hardpoint location="Head" weaponMounts="Missile"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile,Missile,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,AntiPersonnel"/>
         </hardpoints>
 
         <mech model="sunder_SD1-O" engineRating="360" engineType="XL" apply="sunder"/>
@@ -2083,34 +2355,74 @@
 
         <mech model="thunderhawk_TH-1" engineRating="270" engineType="XL"/>
 
-        <mech model="timber_wolf_TW-A" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-B" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-C" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-D" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-E" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-E2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-E3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-F2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-F3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-G" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-H" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-H2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-I" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-K" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-KH" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-KHCM" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-M_A" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-M_J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-M_W" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-N" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-Prime" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-S" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-SG" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-TC" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-WDR1" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-WDR2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="timber_wolf_TW-WDR3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="timber_wolf">
+            <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,AntiPersonnel,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Energy,Missile,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel"/>
+        </hardpoints>
+
+        <mech model="timber_wolf_TW-A" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-B" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-C" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-D" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-E" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-E2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-E3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-F2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-F3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-G" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-H" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-H2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-I" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-K" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile,Missile"/>
+        </mech>
+        <mech model="timber_wolf_TW-KH" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-KHCM" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-M_A" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-M_J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-M_W" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-N" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-Prime" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-S" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-SG" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-TC" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-WDR1" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,Missile,Missile,Missile,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,Missile,Missile,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="timber_wolf_TW-WDR2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,Missile"/>
+        </mech>
+        <mech model="timber_wolf_TW-WDR3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
 
         <mech model="titan_TI-1A" engineRating="300" engineType="standard"/>
         <mech model="titan_TI-1AD" engineRating="300" engineType="standard"/>
@@ -2120,16 +2432,28 @@
         <!-- TREBUCHET goes here -->
         <!-- TREBUCHET IIC goes here -->
 
-        <mech model="turkina_TKR-A" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-B" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-C" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-D" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-M" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-MCA" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-MCJ" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-MCW" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-Prime" engineRating="285" engineType="XL" techBase="Clan"/>
-        <mech model="turkina_TKR-X-B" engineRating="285" engineType="XL" techBase="Clan"/>
+        <hardpoints id="turkina">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="turkina_TKR-A" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-B" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-C" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-D" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile"/>
+        </mech>
+        <mech model="turkina_TKR-M" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-MCA" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-MCJ" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-MCW" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-Prime" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-X-B" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
 
         <!-- URBANMECH goes here -->
 
@@ -2214,19 +2538,33 @@
         <mech model="viper_VP-1" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="viper_VP-5" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
-        <mech model="viper_VPR-3X" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-A" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-B" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-C" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-D" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-E" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-E2" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-F2" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-Prime" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-S" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-V" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-W" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="viper_VPR-X" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <hardpoints id="viper_VPR">
+            <add-hardpoint location="Head" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy,AntiPersonnel"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        </hardpoints>
+
+        <mech model="viper_VPR-3X" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-A" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-B" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-C" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-D" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-E" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-E2" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="viper_VPR-F2" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-Prime" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-S" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-V" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR">
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </mech>
+        <mech model="viper_VPR-W" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-X" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
 
         <mech model="visionquest_VQ-1" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="visionquest_VQ-1NC" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
@@ -2320,13 +2658,32 @@
 
         <mech model="wolverine_iic_WVR-IIC" engineRating="275" engineType="XL" endoSteel="true" techBase="Clan" apply="wolverine"/>
 
-        <mech model="woodsman_WMN-A" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan"/>
-        <mech model="woodsman_WMN-B" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan"/>
-        <mech model="woodsman_WMN-Prime" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <hardpoints id="woodsman">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </hardpoints>
 
-        <mech model="woodsman_ii_WMN2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="woodsman_ii_WMN2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="woodsman_ii_WMN2-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="woodsman_WMN-A" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan" apply="woodsman"/>
+        <mech model="woodsman_WMN-B" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan" apply="woodsman"/>
+        <mech model="woodsman_WMN-Prime" engineRating="300" engineType="standard" endoSteel="true" techBase="Clan" apply="woodsman"/>
+
+        <hardpoints id="woodsman_ii">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy,Missile,AntiPersonnel"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        </hardpoints>
+
+        <mech model="woodsman_ii_WMN2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="woodsman_ii"/>
+        <mech model="woodsman_ii_WMN2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="woodsman_ii">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile"/>
+            <add-hardpoint location="RightArm" weaponMounts="Missile,Missile"/>
+        </mech>
+        <mech model="woodsman_ii_WMN2-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="woodsman_ii"/>
 
         <mech model="wraith_WRT-TR1" engineRating="385" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="wraith_WRT-TR2" engineRating="385" engineType="XL" endoSteel="true" ferroFibrous="true"/>
@@ -2334,11 +2691,7 @@
         <mech model="wyvern_WVE-5N" engineRating="180" engineType="standard" endoSteel="true"/>
         <mech model="wyvern_WVE-5Nb" engineRating="180" engineType="XL" endoSteel="true"/>
         <mech model="wyvern_WVE-5Nsl" engineRating="180" engineType="standard" endoSteel="true"/>
-        <mech model="wyvern_WVE-5UX" engineRating="180" engineType="standard" endoSteel="true">
-            <remove-inventory item="Gear_Supercharger"/>
-            <remove-inventory item="Weapon_VehicleGrenadeLauncher"/>
-            <remove-inventory item="Ammo_AmmunitionBox_Mortar"/>
-        </mech>
+        <mech model="wyvern_WVE-5UX" engineRating="180" engineType="standard" endoSteel="true"/>
         <mech model="wyvern_WVE-6N" engineRating="180" engineType="standard" endoSteel="true"/>
         <mech model="wyvern_WVE-9N" engineRating="180" engineType="standard" endoSteel="true"/>
 
