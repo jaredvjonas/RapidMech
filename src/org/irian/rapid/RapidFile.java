@@ -58,7 +58,10 @@ public class RapidFile {
             taskMap.put(taskList.id, taskList);
 
             for (var task : taskList.taskItems) {
-                if (task instanceof RemoveItem removeItem) {
+                if (task instanceof AddItem addItem) {
+                    System.out.printf("add-inventory item=%s\n", addItem.item);
+                }
+                else if (task instanceof RemoveItem removeItem) {
                     System.out.printf("remove-inventory item=%s\n", removeItem.item);
                 }
                 else if (task instanceof SwapItem swapItem) {
@@ -228,6 +231,9 @@ public class RapidFile {
         }
         else if (task instanceof SwapHardpoint) {
             swapHardpoint((SwapHardpoint) task, mech.chasisDef);
+        }
+        else if (task instanceof AddItem) {
+            addItem((AddItem) task, mech.mechDef);
         }
         else if (task instanceof RemoveItem) {
             removeItem((RemoveItem) task, mech.mechDef);
@@ -401,6 +407,23 @@ public class RapidFile {
 
     private void removeItem(RemoveItem task, MechDef def) {
         def.inventory.removeIf(item -> item.ComponentDefID.equals(task.item));
+    }
+
+    /**
+     *       "MountedLocation": "RightLeg",
+     *       "ComponentDefID": "Gear_JumpJet_Heavy",
+     *       "ComponentDefType": "JumpJet",
+     *       "HardpointSlot": -1,
+     *       "DamageLevel": "Functional"
+     */
+    private void addItem(AddItem task, MechDef def) {
+        Inventory inventoryItem = new Inventory();
+        inventoryItem.MountedLocation = task.location;
+        inventoryItem.ComponentDefID = task.item;
+        inventoryItem.ComponentDefType = task.itemType;
+        inventoryItem.HardpointSlot = -1;
+        inventoryItem.DamageLevel = "Functional";
+        def.inventory.add(inventoryItem);
     }
 
     private void updateLocation(UpdateLocation task, ChasisDef def) {

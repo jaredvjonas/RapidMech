@@ -82,6 +82,22 @@
         <remove-fixedEquipment item="Linked_Engine_Size_6"/>
         <remove-fixedEquipment item="Linked_Engine_Size_8"/>
 
+        <remove-fixedEquipment item="Quirk_ProtectedActuators"/>
+        <remove-fixedEquipment item="Gear_Armor_Stealth"/>
+        <remove-fixedEquipment item="Linked_Armor_Stealth"/>
+        <remove-fixedEquipment item="Gear_EWS"/>
+
+        <remove-fixedEquipment item="Quirk_Nimble"/>
+        <remove-fixedEquipment item="Unique_Gear_Armor_ChameleonLightPolarizationShield"/>
+        <remove-fixedEquipment item="Unique_Sensors_AR14"/>
+
+        <remove-fixedEquipment item="Gear_MASC_Clan"/>
+
+        <remove-fixedEquipment item="Gear_JumpJet_Assault"/>
+
+        <remove-fixedEquipment item="Quirk_AccurateWeaponCategory_Energy"/>
+        <remove-fixedEquipment item="Unique_Weapon_AMS_Laser_Prototype"/>
+
         <remove-quirk/>
         <remove-engine/>
         <remove-gyro/>
@@ -95,6 +111,7 @@
         <swap-inventory item="Gear_Cockpit_CommSuite" with="Gear_Cockpit_StarCorps_Improved"/>
         <swap-inventory item="Gear_Cockpit_Rangefinder_PlusPlus" with="Gear_Cockpit_Majesty_M_M_180KL"/>
         <swap-inventory item="Gear_ECM_Guardian" with="Gear_Guardian_ECM"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Gear_EWS" with="Gear_Nova_CEWS_CLAN"/>
         <swap-inventory item="Gear_Probe_BeagleActiveProbe" with="Gear_AP"/> <!-- Vanilla Plus -->
         <swap-inventory item="Gear_HeatSinkKit_Double" with="Gear_HeatSink_Engine_Double"/> <!-- Vanilla Plus -->
         <swap-inventory item="Gear_HeatSinkKit_Double_Clan" with="Gear_HeatSink_Engine_Double_Clan"/> <!-- Vanilla Plus -->
@@ -111,6 +128,7 @@
         <swap-inventory item="Weapon_AMS_Laser" with="Gear_AMS" itemType="Upgrade"/> <!-- Vanilla Plus -->
         <swap-inventory item="Weapon_AMS_Clan" with="Gear_AMS_CLAN" itemType="Upgrade"/> <!-- Vanilla Plus -->
         <swap-inventory item="Weapon_AMS_Laser_Clan" with="Gear_AMS_CLAN" itemType="Upgrade"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Unique_Weapon_AMS_Laser_Prototype" with="Gear_AMS_CLAN" itemType="Upgrade"/>
 
         <swap-inventory item="Gear_Actuator_Omni_Lower" with="Gear_Actuator_Omni_Lower"/> <!-- NEED TO IMPORT ACTUATORS FROM RT -->
         <swap-inventory item="Gear_FCS_Missile_Accuracy" with="Gear_FCS_Missile_Accuracy"/>
@@ -372,6 +390,8 @@
         <remove-inventory item="BoltOn_Weapon_Rocket_Chaff"/>
         <remove-inventory item="BoltOn_Weapon_RemoteSensor"/>
         <remove-inventory item="BoltOn_Weapon_AMS"/>
+        <remove-inventory item="Unique_Gear_Armor_ChameleonLightPolarizationShield"/>
+        <remove-inventory item="Unique_Sensors_AR14"/>
         <remove-engine/>
         <remove-gyro/>
         <remove-endosteel/>
@@ -664,7 +684,9 @@
         <mech model="caesar_CES-3KH" engineRating="280" engineType="XL" techBase="Clan"/>
         <mech model="caesar_CES-3R" engineRating="280" engineType="XL"/>
 
-        <mech model="cataphract_CTF-0X" engineRating="300" engineType="standard"/>
+        <mech model="cataphract_CTF-0X" engineRating="300" engineType="standard">
+            <add-inventory location="LeftTorso" item="Gear_Nova_CEWS_CLAN" itemType="Upgrade"/>
+        </mech>
         <mech model="cataphract_CTF-1X" engineRating="300" engineType="standard"/>
         <mech model="cataphract_CTF-2X" engineRating="300" engineType="standard"/>
         <mech model="cataphract_CTF-3D" engineRating="280" engineType="XL"/>
@@ -1994,16 +2016,30 @@
             <add-hardpoint location="RightArm" weaponMounts="Energy,Missile"/>
         </hardpoints>
 
-        <mech model="shadow_cat_SHC-A" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-B" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-C" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-M" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-Prime" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-TC" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-U" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-V" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-W" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
-        <mech model="shadow_cat_SHC-X" engineRating="250" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-A" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
+        <mech model="shadow_cat_SHC-B" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
+        <mech model="shadow_cat_SHC-C" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
+        <mech model="shadow_cat_SHC-M" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
+        <mech model="shadow_cat_SHC-Prime" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
+        <mech model="shadow_cat_SHC-TC" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
+        <mech model="shadow_cat_SHC-U" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-V" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-W" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat"/>
+        <mech model="shadow_cat_SHC-X" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow_cat">
+            <add-inventory location="LeftTorso" item="Gear_MASC_CLAN" itemType="Upgrade"/>
+        </mech>
 
         <mech model="shadowhawk_SHD-1P" engineRating="275" engineType="standard"/>
         <mech model="shadowhawk_SHD-1R" engineRating="245" engineType="standard"/>
@@ -2449,19 +2485,50 @@
             <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
         </hardpoints>
 
-        <mech model="turkina_TKR-A" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
-        <mech model="turkina_TKR-B" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
-        <mech model="turkina_TKR-C" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-A" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
+        <mech model="turkina_TKR-B" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
+        <mech model="turkina_TKR-C" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
         <mech model="turkina_TKR-D" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
             <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
             <add-hardpoint location="RightArm" weaponMounts="Missile"/>
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
         </mech>
-        <mech model="turkina_TKR-M" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-M" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
         <mech model="turkina_TKR-MCA" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
-        <mech model="turkina_TKR-MCJ" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-MCJ" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
         <mech model="turkina_TKR-MCW" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
-        <mech model="turkina_TKR-Prime" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
-        <mech model="turkina_TKR-X-B" engineRating="285" engineType="XL" techBase="Clan" apply="turkina"/>
+        <mech model="turkina_TKR-Prime" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
+        <mech model="turkina_TKR-X-B" engineRating="285" engineType="XL" techBase="Clan" apply="turkina">
+            <add-inventory location="LeftTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="CenterTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+            <add-inventory location="RightTorso" item="Gear_JumpJet_Generic_Assault" itemType="JumpJet"/>
+        </mech>
 
         <!-- URBANMECH goes here -->
 
@@ -2572,7 +2639,7 @@
             <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
         </mech>
         <mech model="viper_VPR-W" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
-        <mech model="viper_VPR-X" engineRating="320" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
+        <mech model="viper_VPR-X" engineRating="210" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="viper_VPR"/>
 
         <mech model="visionquest_VQ-1" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="visionquest_VQ-1NC" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
@@ -2626,7 +2693,9 @@
         <mech model="wolfhound_WLF-1A" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-1-KH" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-1R" engineRating="210" engineType="standard"/>
-        <mech model="wolfhound_WLF-1X" engineRating="240" engineType="XL" endoSteel="true"/>
+        <mech model="wolfhound_WLF-1X" engineRating="240" engineType="XL" endoSteel="true">
+            <add-inventory location="LeftTorso" item="Gear_AMS" itemType="Upgrade"/>
+        </mech>
         <mech model="wolfhound_WLF-2" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-3-WDR" engineRating="210" engineType="XL" ferroFibrous="true" techBase="Clan"/>
         <mech model="wolfhound_WLF-7S" engineRating="210" engineType="standard"/>
