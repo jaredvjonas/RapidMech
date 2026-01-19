@@ -184,6 +184,11 @@ public class RapidFile {
     }
 
     private void saveChassisDef(ChasisDef def, ChassisDefCmd chassisDefCmd) throws IOException {
+        if (def.HardpointDataDefID.equals("hardpointdatadef_cudragoon")) {
+            System.out.printf("WARNING: %s contains bad reference to HardpointDataDefID [%s]\n", def.Description.Id, def.HardpointDataDefID);
+            def.HardpointDataDefID = null;
+        }
+
         String fileName = def.Description.Id + ".json";
         File targetDir = buildPath(chassisDefCmd.dest);
         File outputFile = new File(targetDir, fileName);
