@@ -1,0 +1,118 @@
+[x] Rampage
+[x] Grizzly
+[x] Masakari
+[x] Daishi
+[x] Anvil
+[x] Hercules
+[x] War Dog
+[x] Akuma
+[x] Berserker
+[x] Solitaire
+[x] Deimos
+[x] Nexus II
+[x] Raptor II
+[x] Eisen Faust
+[x] Raijin II
+[x] Osprey
+[x] Deva
+[x] Lao Hu
+[x] Legacy
+[x] Seraph
+[x] Sagittaire
+[x] Arch Angel
+[x] Fafnir
+
+=== CLAN OMNIMECHS ===
+[x] Executioner        # 95 tons, 21 variants - Fast assault OmniMech, 380 XL engine, MASC capable
+[x] Blood Asp          # 90 tons, 12 variants - Dual Gauss Rifle platform, EndoSteel, Clan XL
+[x] Night Gyr          # 75 tons, 12 variants - ER PPCs + UAC/10, Combat Computer quirk
+[x] Naga               # 80 tons, 12 variants - Artillery OmniMech with Arrow IV (includes Naga II)
+[x] Avatar             # 70 tons, 14 variants - Clan OmniMech
+[x] Men Shen           # 55 tons, 10 variants - Capellan Clan-tech OmniMech
+[x] Mad Cat            # Already in file as timber_wolf (75 tons, 28 variants)
+[x] Mad Cat Mk II      # 90 tons, 9 variants - Assault OmniMech, 360 XL Clan engine
+[x] Mad Cat III        # 55 tons, 7 variants - Medium OmniMech, 330 XL Clan engine
+[x] Ryoken             # Already in file as stormcrow (55 tons, 12 variants)
+[x] Ryoken II          # 75 tons, 6 variants - Heavy OmniMech, 375 XL Clan engine
+[skip] Fire Scorpion   # 65 tons, 2 variants - Quad mech
+
+=== CLASSIC INNER SPHERE ===
+[x] Stalker            # 85 tons, 18 variants - Iconic assault, energy/missile boat
+[x] Hunchback          # 50 tons, 39 variants - Classic AC/20 carrier
+[x] Grasshopper        # 70 tons, 16 variants - Jump-capable energy heavy
+[x] Quickdraw          # 60 tons, 19 variants - Fast heavy with good hardpoints
+[x] Guillotine         # 70 tons, 13 variants - Balanced heavy mech
+[x] Trebuchet          # 50 tons, 20 variants - LRM carrier medium
+[x] Flashman           # 75 tons, 8 variants - Energy boat heavy
+[x] Black Knight       # 75 tons, 22 variants - Energy platform, Command Mech quirk
+[x] Phoenix Hawk       # 45 tons, 34 variants - Classic medium scout/striker
+[ ] Ion Raptor         # 70 tons, 1 variant - Ion Sparrow heavy mech (not found in RogueTech)
+[x] Raven              # 35 tons, 13 variants - Light ECM scout, electronic warfare
+[x] Tian-Zong          # 75 tons, 3 variants - Capellan heavy mech
+[x] Ti Ts'ang          # 60 tons, 5 variants - Capellan melee mech with TSM
+[x] Lamentor           # 60 tons, 6 variants - Melee brawler with sword
+[x] Falconer           # 75 tons, 2 variants - Heavy mech
+[x] Hellspawn          # 45 tons, 6 variants - Medium striker
+[x] Hammerhead         # 45 tons, 1 variant - Medium mech
+[x] Legionnaire        # 50 tons, 5 variants - Fast flanker with RAC/5
+
+=== LIGHT MECHS (EXCEPTIONS) ===
+[x] Pack Hunter        # 30 tons, 5 variants - Clan striker, Reinforced Legs quirk
+[x] Jackalope          # 30 tons, 7 variants - Clan scout, Narrow/Low Profile quirk, DarkAge era
+[x] Gunsmith           # 25 tons, 1 variant - Pursuit mech, DarkAge era
+
+=== HEAVY HITTERS ===
+[x] Hatamoto-Chi       # 80 tons, 23 variants - Kurita assault with diverse loadouts
+[x] Hauptmann          # 95 tons, 9 variants - Lyran assault mech
+[x] Shogun             # 85 tons, 9 variants - Heavy assault with missile focus
+[x] Maelstrom          # 75 tons, 5 variants - Heavy energy mech
+[x] Albatross          # 95 tons, 8 variants - Assault mech
+[x] Cerberus           # 100 tons, 5 variants - 100-ton assault
+[x] Hellstar           # 95 tons, 3 variants - Clan assault mech
+[x] Emperor            # 90 tons, 6 variants - Assault mech
+[skip] Goliath         # 80 tons, 9 variants - Quad assault mech
+
+=== CLAN IIC UPGRADES ===
+[x] Jenner IIC         # 35 tons, 6 variants - Fast striker with Clan tech
+[x] Hunchback IIC      # 50 tons, 11 variants - Clan upgrade of classic
+[x] Black Python       # 75 tons, 5 variants - Clan heavy mech
+[x] Hoplite            # 55 tons, 9 variants - Medium support mech
+[x] Phoenix Hawk IIC   # 45 tons, 10 variants - Clan upgrade with jump jets
+
+Notes for Claude:
+- All variants should be added (move-mechs.xml)
+- Components that do not exist in IrTech/rogueTech should be removed (aka remove-inventory)
+- Weapons that do not exist in IrTech/rogueTech should be replaced with something that does (aka swap-inventory)
+- The list of mechs should be alphabetically sorted
+- Light mechs (20-35 tons)
+- Medium mechs (40-55 tons)
+- Heavy mechs (60-75 tons)
+- Assault mechs (80-100 tons)
+
+Phase-2: [COMPLETE]
+- Validate Equipment for all mechs in this list
+- Added 56 remove-inventory entries for unsupported components
+- Verified components against IrianTech/rogueTech folder (484 available components)
+
+Phase-3: [COMPLETE]
+- Make sure all mechs in this list are now purchasable
+- Added mechdef entries to IrianTech/battleMech/itemCollections CSVs:
+  - btVariants_lightMechs.csv: +40 entries (pack_hunter, jackalope, gunsmith, raven, jenner_iic, solitaire, nexus_ii, raptor_ii)
+  - btVariants_mediumMechs.csv: +151 entries (phoenixhawk, hunchback, trebuchet, legionnaire, phoenixhawk_iic, hunchback_iic, men_shen, hoplite, hellspawn, hammerhead, raijin, osprey)
+  - btVariants_heavyMechs.csv: +144 entries (quickdraw, ti_tsang, lamentor, grasshopper, guillotine, flashman, blackknight, tian-zong, falconer, maelstrom, black_python, night_gyr, avatar, grizzly, hercules, war_dog, eisenfaust, laohu, deva, anvil)
+  - btVariants_assaultMechs.csv: +211 entries (akuma, albatross, archangel, berserker, blood_asp, cerberus, deimos, dire_wolf, emperor, executioner, fafnir, hatamoto-chi, hauptmann, hellstar, legacy, naga, naga_ii, rampage, sagittaire, seraph, shogun, stalker, warhawk)
+
+Completion Notes:
+- All mechs added to move-mechs.xml (alphabetically sorted)
+- Daishi already existed as dire_wolf entries
+- Anvil already existed
+- Masakari added as warhawk (Clan name)
+- Added additional variants for Grizzly (GRZ-2, GRZ-3) and Osprey (OSP-25, OSP-26)
+- Raijin (base) variants also added alongside Raijin II
+- Mad Cat = timber_wolf (Clan name), already imported
+- Ryoken = stormcrow (Clan name), already imported
+- Pack Hunter (30t), Jackalope (30t), Gunsmith (25t) - added as exceptions to 35 ton threshold
+- Loki mk 2 - not found in RogueTech
+- Ion Raptor - not found in RogueTech
+- Ti Ts'ang added alongside Tian-Zong (both Capellan mechs)
+- Naga II variants added alongside Naga

@@ -2,6 +2,10 @@
 <rapid>
     <dir id="btHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH"/>
     <dir id="clanInvasion" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/ClanInvasion3061"/>
+    <dir id="civilWar" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/CivilWar3062-3067"/>
+    <dir id="jihad" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/Jihad3068-3080"/>
+    <dir id="republic" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/Republic3081-3130"/>
+    <dir id="darkAge" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/DarkAge3131-"/>
     <dir id="irianTechHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH/mods/IrianTech"/>
     <dir id="target" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH/mods/IrianTech/battleMech"/>
 
@@ -34,11 +38,15 @@
         <dir path="${irianTechHome}/rogueTech/Heatsinks"/>
         <dir path="${irianTechHome}/rogueTech/Jumpjets"/>
         <dir path="${irianTechHome}/rogueTech/Munitions"/>
+        <dir path="${irianTechHome}/rogueTech/Munitions/AmmunitionBox"/>
+        <dir path="${irianTechHome}/rogueTech/Munitions/Artillery"/>
+        <dir path="${irianTechHome}/rogueTech/Munitions/Mortar"/>
         <dir path="${irianTechHome}/rogueTech/OmniTech"/>
         <dir path="${irianTechHome}/rogueTech/Primitive"/>
         <dir path="${irianTechHome}/rogueTech/Sensors"/>
         <dir path="${irianTechHome}/rogueTech/TargetTrackingSystem"/>
         <dir path="${irianTechHome}/rogueTech/Upgrade"/>
+        <dir path="${irianTechHome}/rogueTech/Gyro"/>
         <dir path="${irianTechHome}/rogueTech/Weapons"/>
         <dir path="${irianTechHome}/rogueTech/Unique/Weapons"/>
 
@@ -53,7 +61,6 @@
     <unsupported-list>
         <!-- Rogue Tech Custom Components -->
         <unsupported-inventory item="Linked_Armor_NullSignatureSystem"/>
-        <unsupported-inventory item="Gear_ECM_Angel"/>
         <unsupported-inventory item="Gear_Engine_XXL"/>
     </unsupported-list>
 
@@ -85,6 +92,8 @@
         <remove-fixedEquipment item="Quirk_ProtectedActuators"/>
         <remove-fixedEquipment item="Gear_Armor_Stealth"/>
         <remove-fixedEquipment item="Linked_Armor_Stealth"/>
+        <remove-fixedEquipment item="Linked_ArmorMod_SignatureDamper"/>
+        <remove-fixedEquipment item="Linked_Armor_VoidSignatureSystem"/>
         <remove-fixedEquipment item="Gear_EWS"/>
 
         <remove-fixedEquipment item="Quirk_Nimble"/>
@@ -186,6 +195,10 @@
 <!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Cluster" with="Ammo_AmmunitionBox_Generic_LB20X"/>-->
 <!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Cluster_Double" with="Ammo_AmmunitionBox_Generic_LB20X_Double"/>-->
 <!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Slug" with="Ammo_AmmunitionBox_Generic_LB20X"/>-->
+
+        <!-- LBX 2 special ammo (imported for Ryoken II) -->
+        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_HE" with="Ammo_AmmunitionBox_LBX_2_HE"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_SolidSlug" with="Ammo_AmmunitionBox_LBX_2_SolidSlug"/>
 
         <swap-inventory item="Ammo_AmmunitionBox_Gauss" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
         <swap-inventory item="Ammo_AmmunitionBox_Gauss_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/> <!-- Vanilla Plus -->
@@ -328,7 +341,6 @@
         <remove-inventory item="Ammo_AmmunitionBox_iNarc_Haywire"/>
 
         <!-- Rogue Tech components not supported by base game -->
-        <remove-inventory item="Gear_Gyro_Stability"/>
         <remove-inventory item="Gear_CASE"/>
         <remove-inventory item="Gear_CASE2"/>
         <remove-inventory item="Gear_CASE2_Clan"/>
@@ -345,8 +357,6 @@
         <remove-inventory item="Gear_AdvancedMaterials1"/>
         <remove-inventory item="Gear_AdvancedMaterials2"/>
         <remove-inventory item="Gear_EngineCooling_EmergencyCoolant_1"/>
-        <remove-inventory item="Gear_Gyro_Defense"/>
-        <remove-inventory item="Gear_Gyro_Melee_Plus"/>
         <remove-inventory item="Gear_ModularArmor_Mk1"/>
         <remove-inventory item="Gear_ModularArmor_Mk2"/>
         <remove-inventory item="Gear_ModularArmor_Mk3"/>
@@ -392,6 +402,215 @@
         <remove-inventory item="BoltOn_Weapon_AMS"/>
         <remove-inventory item="Unique_Gear_Armor_ChameleonLightPolarizationShield"/>
         <remove-inventory item="Unique_Sensors_AR14"/>
+        <remove-inventory item="Unique_FCS_BufferedVDNI"/>
+        <remove-inventory item="Unique_HandHeld_Melee_ChiKatana"/>
+        <remove-inventory item="Linked_HandHeld_Melee_ChiKatana"/>
+        <remove-inventory item="Unique_Weapon_TAG_Overlord"/>
+        <remove-inventory item="Weapon_LiftHoist_30ton"/>
+
+        <!-- Phase 2 additions - components NOT in IrianTech/rogueTech -->
+        <remove-inventory item="Gear_AdvancedMaterials3"/>
+        <remove-inventory item="Gear_Armor_AntiPenetrativeAblation"/>
+        <remove-inventory item="Gear_Armor_BallisticReinforced"/>
+        <remove-inventory item="Gear_Armor_Glazed_Clan"/>
+        <remove-inventory item="Gear_Armor_ImpactResistant"/>
+        <remove-inventory item="Gear_ArmorMod_ActiveCamouflage"/>
+        <remove-inventory item="Linked_ArmorMod_ActiveCamouflage"/>
+        <remove-inventory item="Gear_Attachment_Apollo"/>
+        <remove-inventory item="Gear_Attachment_ArtemisV"/>
+        <remove-inventory item="Gear_Attachment_PPCCapacitor"/>
+        <remove-inventory item="Gear_C3_Master_Boosted"/>
+        <remove-inventory item="Gear_C3_Slave_Boosted"/>
+        <remove-inventory item="Gear_Cockpit_ArmoredCowl_PlusPlus"/>
+        <remove-inventory item="Gear_Cockpit_CommandConsole_Armored"/>
+        <remove-inventory item="Gear_Cockpit_DNI"/>
+        <remove-inventory item="Gear_Cockpit_LifeSupportA_Guts"/>
+        <remove-inventory item="Gear_Cockpit_LifeSupportB_Guts"/>
+        <remove-inventory item="Gear_Cockpit_LifeSupportB_Piloting"/>
+        <remove-inventory item="Gear_Cockpit_Small_Advanced"/>
+        <remove-inventory item="Gear_Cockpit_Torsomount"/>
+        <remove-inventory item="Gear_Cooling_Flush"/>
+        <remove-inventory item="Gear_Engine_Compact"/>
+        <remove-inventory item="Gear_Engine_XXL"/>
+        <remove-inventory item="Gear_Engine_XXL_Clan"/>
+        <remove-inventory item="Gear_HeatSink_Compact"/>
+        <remove-inventory item="Gear_HeatSinkKit_Compact"/>
+        <remove-inventory item="Gear_HeatSinkKit_Radical_Clan"/>
+        <remove-inventory item="Gear_PartialWing_Clan"/>
+        <remove-inventory item="Gear_Pod_B"/>
+        <remove-inventory item="Gear_ProtectivePadding"/>
+        <remove-inventory item="Gear_Remote_Sensor_Dispenser"/>
+        <remove-inventory item="Gear_Structure_Reinforced"/>
+        <remove-inventory item="HandHeld_Weapon_Chainwhip"/>
+        <remove-inventory item="HandHeld_Weapon_Jackhammer"/>
+        <remove-inventory item="Linked_ActuatorEnhancementSystem_Legs"/>
+        <remove-inventory item="Lootable_Armor_Standard_Clan"/>
+        <remove-inventory item="Lootable_HeatSinkKit_Radical_RISC"/>
+        <remove-inventory item="Default_Cockpit_LifeSupportA_Torso"/>
+        <remove-inventory item="Default_Cockpit_LifeSupportB_Torso"/>
+        <remove-inventory item="Gear_ActuatorEnhancementSystem_Arms"/>
+        <remove-inventory item="Gear_ActuatorEnhancementSystem_Legs"/>
+
+        <!-- Phase 3 additions - Linked armor components to remove -->
+        <remove-inventory item="Linked_ArmorMod_SignatureDamper"/>
+        <remove-inventory item="Linked_Armor_VoidSignatureSystem"/>
+
+        <!-- Phase 3 additions - Armor components to import -->
+        <swap-inventory item="Gear_ArmorMod_SignatureDamper" with="Gear_ArmorMod_SignatureDamper"/>
+        <swap-inventory item="Gear_Armor_VoidSignatureSystem" with="Gear_Armor_VoidSignatureSystem"/>
+        <swap-inventory item="Gear_Armor_HeatDissipating_Clan" with="Gear_Armor_HeatDissipating_Clan"/>
+
+        <!-- Phase 3 additions - LRM Streak ammo -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Streak" with="Ammo_AmmunitionBox_LRM_Streak"/>
+
+        <!-- Phase 3 additions - Engine cores to remove -->
+        <remove-inventory item="Gear_EngineCore_150"/>
+        <remove-inventory item="Gear_EngineCore_175"/>
+        <remove-inventory item="Gear_EngineCore_180"/>
+        <remove-inventory item="Gear_EngineCore_200"/>
+        <remove-inventory item="Gear_EngineCore_225"/>
+        <remove-inventory item="Gear_EngineCore_240"/>
+        <remove-inventory item="Gear_EngineCore_250"/>
+        <remove-inventory item="Gear_EngineCore_255"/>
+        <remove-inventory item="Gear_EngineCore_270"/>
+        <remove-inventory item="Gear_EngineCore_280"/>
+        <remove-inventory item="Gear_EngineCore_285"/>
+        <remove-inventory item="Gear_EngineCore_290"/>
+        <remove-inventory item="Gear_EngineCore_300"/>
+        <remove-inventory item="Gear_EngineCore_315"/>
+        <remove-inventory item="Gear_EngineCore_320"/>
+        <remove-inventory item="Gear_EngineCore_325"/>
+        <remove-inventory item="Gear_EngineCore_335"/>
+        <remove-inventory item="Gear_EngineCore_340"/>
+        <remove-inventory item="Gear_EngineCore_350"/>
+        <remove-inventory item="Gear_EngineCore_375"/>
+        <remove-inventory item="Gear_EngineCore_400"/>
+
+        <!-- Phase 3 additions - Plasma weapons and ammo -->
+        <swap-inventory item="Weapon_Plasma_Rifle" with="Weapon_Plasma_Rifle"/>
+        <swap-inventory item="Weapon_Plasma_Cannon_Clan" with="Weapon_Plasma_Cannon_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Plasma" with="Ammo_AmmunitionBox_Plasma"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Plasma_Double" with="Ammo_AmmunitionBox_Plasma_Double"/>
+
+        <!-- Phase 3 additions - XPulse lasers -->
+        <swap-inventory item="Weapon_Laser_XPulse_Small" with="Weapon_Laser_XPulse_Small"/>
+        <swap-inventory item="Weapon_Laser_XPulse_Large" with="Weapon_Laser_XPulse_Large"/>
+
+        <!-- Phase 3 additions - MRM Apollo ammo (derived from base MRM) -->
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Apollo" with="Ammo_AmmunitionBox_MRM"/>
+
+        <!-- Phase 3 additions - ER Flamer -->
+        <swap-inventory item="Weapon_Flamer_ER" with="Weapon_Flamer_ER"/>
+
+        <!-- Phase 3 additions - VSPL lasers -->
+        <swap-inventory item="Weapon_Laser_VSPL_Small" with="Weapon_Laser_VSPL_Small"/>
+        <swap-inventory item="Weapon_Laser_VSPL_Medium" with="Weapon_Laser_VSPL_Medium"/>
+        <swap-inventory item="Weapon_Laser_VSPL_Large" with="Weapon_Laser_VSPL_Large"/>
+
+        <!-- Phase 3 additions - Clan Hyper Gauss -->
+        <swap-inventory item="Weapon_Gauss_Hyper_20_Clan" with="Weapon_Gauss_Hyper_20_Clan"/>
+        <swap-inventory item="Weapon_Gauss_Hyper_30_Clan" with="Weapon_Gauss_Hyper_30_Clan"/>
+        <swap-inventory item="Weapon_Gauss_Hyper_40_Clan" with="Weapon_Gauss_Hyper_40_Clan"/>
+
+        <!-- Phase 3 additions - ECM Angel -->
+        <swap-inventory item="Gear_ECM_Angel" with="Gear_ECM_Angel"/>
+
+        <!-- Phase 4 additions - Named laser weapons -->
+        <swap-inventory item="Weapon_Laser_ER_Medium_BrightBloom" with="Weapon_Laser_ER_Medium_BrightBloom"/>
+        <swap-inventory item="Weapon_Laser_Small_Magna" with="Weapon_Laser_Small_Magna"/>
+        <swap-inventory item="Weapon_Laser_Reengineered_Medium" with="Weapon_Laser_Reengineered_Medium"/>
+        <swap-inventory item="Weapon_Laser_Reengineered_Large" with="Weapon_Laser_Reengineered_Large"/>
+        <swap-inventory item="Weapon_Laser_ER_Small_BlazeFire" with="Weapon_Laser_ER_Small_BlazeFire"/>
+        <swap-inventory item="Weapon_Laser_ER_Large_BlazeFire" with="Weapon_Laser_ER_Large_BlazeFire"/>
+        <swap-inventory item="Weapon_Laser_ER_Large_Blankenburg25" with="Weapon_Laser_ER_Large_Blankenburg25"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Small_Maxell" with="Weapon_Laser_Pulse_Small_Maxell"/>
+        <swap-inventory item="Weapon_Laser_Pulse_Small_Magna200P" with="Weapon_Laser_Pulse_Small_Magna200P"/>
+        <swap-inventory item="Weapon_Laser_Large_DiverseOptics" with="Weapon_Laser_Large_DiverseOptics"/>
+
+        <!-- Phase 4 additions - Taser/TSEMP swap to laser (remove ammo) -->
+        <swap-inventory item="Weapon_Taser" with="Weapon_Laser_Large"/>
+        <swap-inventory item="Weapon_TSEMP" with="Weapon_Laser_ER_Large"/>
+        <remove-inventory item="Ammo_AmmunitionBox_Taser"/>
+
+        <!-- Phase 4 additions - Machine guns -->
+        <swap-inventory item="Weapon_MachineGun_Light" with="Weapon_MachineGun_Light"/>
+        <swap-inventory item="Weapon_MachineGun_Light_Array" with="Weapon_MachineGun_Light_Array"/>
+        <swap-inventory item="Weapon_MachineGun_Blackwell" with="Weapon_MachineGun_Blackwell"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Tracer" with="Ammo_AmmunitionBox_Generic_MG"/>
+
+        <!-- Phase 4 additions - LRM weapons and ammo swaps -->
+        <swap-inventory item="Weapon_LRM_10_Extended" with="Weapon_LRM_10_Extended"/>
+        <swap-inventory item="Weapon_LRM_15_Extended" with="Weapon_LRM_15_Extended"/>
+        <swap-inventory item="Weapon_LRM_15_Delta" with="Weapon_LRM_15_Delta"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Clan" with="Ammo_AmmunitionBox_LRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Narc" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_InfernoThunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_AugmentedThunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
+
+        <!-- Phase 4 additions - Thunderbolt ammo swaps to standard -->
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB20_HE" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB15_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB15_HE" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB20_Kinetic" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB20_Guided" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB15_Kinetic" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB15_Guided" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB10_HE" with="Ammo_AmmunitionBox_Thunderbolt_TB10"/>
+
+        <!-- Phase 4 additions - SRM oneshot and ammo swaps -->
+        <swap-inventory item="Weapon_SRM_2_Streak_Oneshot" with="Weapon_SRM_2_Streak_Oneshot"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Acid_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+
+        <!-- Phase 4 additions - Autocannon weapons and ammo swaps -->
+        <swap-inventory item="Weapon_Autocannon_AC_5_Light" with="Weapon_Autocannon_AC_5_Light"/>
+        <swap-inventory item="Weapon_Autocannon_AC_20_Mydron" with="Weapon_Autocannon_AC_20_Mydron"/>
+        <swap-inventory item="Weapon_Autocannon_AC_20_Defiance" with="Weapon_Autocannon_AC_20_Defiance"/>
+        <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Caseless" with="Ammo_AmmunitionBox_Generic_AC20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_5_Caseless" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_2_Half" with="Ammo_AmmunitionBox_Generic_AC2_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_20_Precision" with="Ammo_AmmunitionBox_Generic_AC20"/>
+
+        <!-- Phase 4 additions - Flamer hotshot and bolt-on pod -->
+        <swap-inventory item="Weapon_Flamer_Hotshot" with="Weapon_Flamer_Hotshot"/>
+        <remove-inventory item="BoltOn_Weapon_Pod_M"/>
+
+        <!-- Phase 4 additions - Remove engine cooling and spiked armor -->
+        <remove-inventory item="Gear_EngineCooling_EmergencyCoolant"/>
+        <remove-inventory item="Gear_Armor_Spiked"/>
+
+        <!-- Phase 4 additions - Gyro and sensors -->
+        <swap-inventory item="Gear_Gyro_Defense_Plus" with="Gear_Gyro_Defense_Plus"/>
+        <swap-inventory item="Gear_Sensors_Passive" with="Gear_Sensors_Passive"/>
+        <swap-inventory item="Gear_Sensors_DFA" with="Gear_Sensors_DFA"/>
+
+        <!-- Phase 6 additions - Recovered gyros, sensors, and ECM -->
+        <swap-inventory item="Gear_Gyro_Stability" with="Gear_Gyro_Stability"/>
+        <swap-inventory item="Gear_Gyro_Defense" with="Gear_Gyro_Defense"/>
+        <swap-inventory item="Gear_Gyro_Melee_Plus" with="Gear_Gyro_Melee_Plus"/>
+        <swap-inventory item="Gear_Gyro_Compact" with="Gear_Gyro_Compact"/>
+        <swap-inventory item="Gear_Gyro_Defense_PlusPlus" with="Gear_Gyro_Defense_PlusPlus"/>
+        <swap-inventory item="Gear_Gyro_HeavyDuty" with="Gear_Gyro_HeavyDuty"/>
+        <swap-inventory item="Gear_Gyro_Melee_PlusPlus" with="Gear_Gyro_Melee_PlusPlus"/>
+        <swap-inventory item="Gear_Gyro_Stability_Plus" with="Gear_Gyro_Stability_Plus"/>
+        <swap-inventory item="Gear_Gyro_Stability_PlusPlus" with="Gear_Gyro_Stability_PlusPlus"/>
+        <swap-inventory item="Gear_Gyro_Ultralight" with="Gear_Gyro_Ultralight"/>
+        <swap-inventory item="Gear_Gyro_XL" with="Gear_Gyro_XL"/>
+        <swap-inventory item="Gear_Sensors_AR12" with="Gear_Sensors_AR12"/>
+        <swap-inventory item="Gear_Sensors_BallisticRange" with="Gear_Sensors_BallisticRange"/>
+        <swap-inventory item="Gear_Sensors_Identify" with="Gear_Sensors_Identify"/>
+        <swap-inventory item="Gear_Sensors_Improved_Clan" with="Gear_Sensors_Improved_Clan"/>
+        <swap-inventory item="Gear_Sensors_Reinforced" with="Gear_Sensors_Reinforced"/>
+        <swap-inventory item="Gear_Sensors_VRPod" with="Gear_Sensors_VRPod"/>
+        <swap-inventory item="Gear_ECM_Angel_Clan" with="Gear_ECM_Angel_Clan"/>
+
+        <!-- Phase 5 additions - Mad Cat components -->
+        <swap-inventory item="Gear_HarJel3" with="Gear_HarJel3"/>
+        <swap-inventory item="Gear_Attachment_LaserInsulator" with="Gear_Attachment_LaserInsulator"/>
+        <swap-inventory item="Gear_Structure_EndoComposite_Clan" with="Gear_Structure_EndoComposite_Clan"/>
+        <swap-inventory item="Gear_EWS_NovaCEWS" with="Gear_EWS_NovaCEWS"/>
+
         <remove-engine/>
         <remove-gyro/>
         <remove-endosteel/>
@@ -436,10 +655,18 @@
         <mechdef source="${clanInvasion}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${clanInvasion}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Akuma - moved to FlashPoint blocks -->
+
+        <!-- Albatross (ClanInvasion only) -->
+        <mech model="albatross_ALB-3U" engineRating="380" engineType="XL"/>
+        <!-- Note: Other albatross variants moved to correct era blocks -->
+
         <mech model="anvil_ANV-3M" engineRating="300" engineType="standard" endoSteel="true"/>
         <mech model="anvil_ANV-5M" engineRating="300" engineType="standard" endoSteel="true"/>
         <mech model="anvil_ANV-6M" engineRating="300" engineType="standard" endoSteel="true"/>
         <mech model="anvil_ANV-8M" engineRating="240" engineType="standard" endoSteel="true"/>
+
+        <!-- Archangel - moved to Jihad era -->
 
         <mech model="arcas_ARS-1" engineRating="325" engineType="XL" endoSteel="true"/>
         <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true"/>
@@ -474,6 +701,16 @@
         <mech model="arctic_fox_af1d" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
 
         <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Avatar (ClanInvasion only) -->
+        <mech model="avatar_AV1-O" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OA" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OB" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OC" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OD" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OG" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OR" engineRating="280" engineType="XL"/>
+        <!-- Note: Other avatar variants moved to CivilWar/Jihad/Republic era blocks -->
 
         <hardpoints id="atlas">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel,AntiPersonnel"/>
@@ -529,6 +766,36 @@
         <mech model="banshee_BNC-4S" engineRating="295" engineType="standard" apply="banshee"/>
         <mech model="banshee_BNC-5-GD" engineRating="380" engineType="XL" apply="banshee"/>
         <mech model="banshee_BNC-5S" engineRating="380" engineType="XL" apply="banshee"/>
+
+        <!-- Black Knight (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="blackknight_BL-6-KNT" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-6-KNT-K" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-6b-KNT" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-7-KNT" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-7-KNT-L" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-7-KNT-P" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-7b-KNT" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-7W-KNT" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-8W-KNT" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BL-9-KNT" engineRating="300" engineType="standard"/>
+
+        <!-- Black Python -->
+        <mech model="black_python_BP-2" engineRating="375" engineType="XL" techBase="Clan"/>
+        <mech model="black_python_BP-3" engineRating="375" engineType="XL" techBase="Clan"/>
+        <mech model="black_python_BP-4" engineRating="375" engineType="XL" techBase="Clan"/>
+        <mech model="black_python_BP-5" engineRating="375" engineType="XL" techBase="Clan"/>
+        <mech model="black_python_BP-Prime" engineRating="375" engineType="XL" techBase="Clan"/>
+
+        <!-- Blood Asp (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="blood_asp_BAS-A" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-B" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-C" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-D" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-Prime" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Berserker -->
+        <mech model="berserker_BRZ-A3" engineRating="400" engineType="XL" endoSteel="true"/>
+        <mech model="berserker_BRZ-B3" engineRating="400" engineType="XL" endoSteel="true"/>
 
         <mech model="battle_cobra_BTC-A" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true">
             <set-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Energy,AntiPersonnel,AntiPersonnel,AntiPersonnel"/>
@@ -705,6 +972,10 @@
         <mech model="catapult_CPLT-K3" engineRating="260" engineType="standard"/>
         <mech model="catapult_CPLT-K5" engineRating="260" engineType="XL" endoSteel="true"/>
 
+        <!-- Cerberus (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="cerberus_MR-5M" engineRating="380" engineType="standard"/>
+        <mech model="cerberus_MR-V2" engineRating="380" engineType="standard"/>
+
         <mech model="centurion_CN9-B1" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="centurion_CN9-D" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="centurion_CN9-D3" engineRating="300" engineType="XL" endoSteel="true"/>
@@ -872,6 +1143,9 @@
 
         <mech model="dervish_iic_DV-IIC" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
+        <!-- Deimos - moved to Jihad era -->
+        <!-- Deva - moved to Jihad era -->
+
         <mech model="devastator_DVS-1D" engineRating="300" engineType="standard"/>
         <mech model="devastator_DVS-2" engineRating="300" engineType="XL"/>
         <mech model="devastator_DVS-2-EC" engineRating="300" engineType="XL"/>
@@ -950,6 +1224,7 @@
         <mech model="ebon_jaguar_EBJ-D" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
         <mech model="ebon_jaguar_EBJ-Prime" engineRating="325" engineType="XL" ferroFibrous="true" techBase="Clan" apply="ebon_jaguar"/>
 
+        <!-- Emperor (ClanInvasion only - others in era-specific blocks) -->
         <mech model="emperor_EMP-1A" engineRating="325" engineType="standard"/>
         <mech model="emperor_EMP-5A" engineRating="270" engineType="standard"/>
         <mech model="emperor_EMP-5B" engineRating="270" engineType="standard"/>
@@ -974,6 +1249,9 @@
 
         <mech model="enforcer_iii_ENF-6M" engineRating="250" engineType="XL" endoSteel="true"/>
 
+        <!-- Eisenfaust / Eisen Faust -->
+        <mech model="eisenfaust_EFT-4J" engineRating="135" engineType="standard"/>
+
         <mech model="excalibur_EXC-3BK" engineRating="350" engineType="XL" endoSteel="true"/>
         <mech model="excalibur_EXC-B1" engineRating="350" engineType="XL"/>
         <mech model="excalibur_EXC-B2" engineRating="350" engineType="XL"/>
@@ -981,7 +1259,20 @@
         <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="excalibur_EXC-C1" engineRating="350" engineType="XL"/>
 
-        <!-- EXECUTIONER GOES HERE -->
+        <!-- Executioner (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="executioner_EXE-A" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-B" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-C" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-D" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-E" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-H" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-N" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-O" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-Prime" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-Q" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-R" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-S" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-TC" engineRating="380" engineType="XL" techBase="Clan"/>
 
         <mech model="exterminator_EXT-4A" engineRating="325" engineType="standard"/>
         <mech model="exterminator_EXT-4C" engineRating="390" engineType="XL"/>
@@ -991,6 +1282,8 @@
         <mech model="exterminator_EXT-5E" engineRating="390" engineType="XL" endoSteel="true"/>
 
         <mech model="exterminator_iic_EXT-IIC" engineRating="390" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+
+        <!-- Fafnir - moved to CivilWar era -->
 
         <mech model="falcon_FLC-4N" engineRating="180" engineType="standard"/>
         <mech model="falcon_FLC-4Nb" engineRating="180" engineType="standard"/>
@@ -1002,6 +1295,9 @@
 
         <mech model="falcon_hawk_FNHK-9K" engineRating="175" engineType="XL" ferroFibrous="true"/>
         <mech model="falcon_hawk_FNHK-9K1A" engineRating="175" engineType="XL" ferroFibrous="true"/>
+
+        <!-- Falconer (ClanInvasion only - FLC-9R in Jihad block) -->
+        <mech model="falconer_FLC-8R" engineRating="375" engineType="XL"/>
 
         <hardpoints id="fire_falcon">
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
@@ -1031,6 +1327,12 @@
         <mech model="firefly_FFL-5B" engineRating="150" engineType="standard" endoSteel="true"/>
         <mech model="firefly_FFL-7A" engineRating="150" engineType="XL"/>
         <mech model="firefly_FFL-C" engineRating="150" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Flashman (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="flashman_FLS-7K" engineRating="375" engineType="standard"/>
+        <mech model="flashman_FLS-8K" engineRating="375" engineType="standard"/>
+        <mech model="flashman_FLS-8KH" engineRating="375" engineType="standard"/>
+        <mech model="flashman_FLS-9C" engineRating="375" engineType="standard"/>
 
         <mech model="fox_CS-1" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="fox_CS-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
@@ -1102,6 +1404,18 @@
         <mech model="grandtitan_T-IT-N10M" engineRating="400" engineType="XL" endoSteel="true"/>
         <mech model="grandtitan_T-IT-N11M" engineRating="400" engineType="XL" endoSteel="true"/>
 
+        <!-- Grasshopper (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="grasshopper_GHR-5H" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5HR" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5J" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5KDI" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5KH" engineRating="280" engineType="standard" techBase="Clan"/>
+        <mech model="grasshopper_GHR-5N" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5P" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5S" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-6H" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-C" engineRating="280" engineType="XL" techBase="Clan"/>
+
         <hardpoints id="grendel">
             <add-hardpoint location="Head" weaponMounts="Energy"/>
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
@@ -1153,6 +1467,15 @@
         <mech model="griffin_iic_GRF-IIC-4" engineRating="240" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="griffin-IIC"/>
         <mech model="griffin_iic_GRF-IIC-X" engineRating="240" engineType="XL" endoSteel="true" techBase="Clan" apply="griffin-IIC"/>
 
+        <!-- Guillotine (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="guillotine_GLT-3N" engineRating="280" engineType="standard"/>
+        <mech model="guillotine_GLT-4L" engineRating="280" engineType="standard"/>
+        <mech model="guillotine_GLT-4P" engineRating="280" engineType="standard"/>
+        <mech model="guillotine_GLT-5M" engineRating="280" engineType="XL"/>
+        <mech model="guillotine_GLT-C1" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="guillotine_GLT-IIC" engineRating="280" engineType="XL" techBase="Clan"/>
+
+        <!-- Grizzly (ClanInvasion only - GRZ-2 in CivilWar, GRZ-3 in DarkAge) -->
         <mech model="grizzly_GRZ-1" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, Energy"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Energy, Energy, Missile, Missile, AntiPersonnel"/>
@@ -1166,6 +1489,8 @@
 <!--        <mech model="gunslinger_GUN-2ERDr" engineRating="255" engineType="XL"/>-->
 <!--        <mech model="gunslinger_GUN-3ERD" engineRating="255" engineType="XL"/>-->
 
+        <!-- Gunsmith - moved to DarkAge era -->
+
         <mech model="hammer_HMR-3C" engineRating="150" engineType="standard" endoSteel="true"/>
         <mech model="hammer_HMR-3M" engineRating="150" engineType="standard" endoSteel="true"/>
         <mech model="hammer_HMR-3P" engineRating="150" engineType="standard" endoSteel="true"/>
@@ -1173,6 +1498,32 @@
 
         <mech model="hammerhands_HMH-3D" engineRating="225" engineType="standard"/>
         <mech model="hammerhands_HMH-4D" engineRating="225" engineType="standard"/>
+
+        <!-- Hammerhead - moved to DarkAge era -->
+
+        <!-- Hatamoto-Chi (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="hatamoto-chi_HTM-26T" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-27T" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-27U" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-27V" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-27W" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-27Y" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-28T" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-56K" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-56K2" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-60T" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-60U" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-60W" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-60Y" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-60Z" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-C" engineRating="320" engineType="standard" techBase="Clan"/>
+        <mech model="hatamoto-chi_HTM-CM" engineRating="320" engineType="standard" techBase="Clan"/>
+
+        <!-- Hauptmann (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="hauptmann_HA1-O" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OA" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OB" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OC" engineRating="285" engineType="standard"/>
 
         <hardpoints id="havoc">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -1254,6 +1605,9 @@
         <mech model="hellhound_HND-1" engineRating="300" engineType="XL" techBase="Clan"/>
         <mech model="hellhound_HND-2" engineRating="300" engineType="XL" techBase="Clan"/>
 
+        <!-- Hellspawn - moved to CivilWar era -->
+        <!-- Hellstar - moved to Jihad era -->
+
         <hardpoints id="hellion">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -1277,6 +1631,10 @@
             <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </mech>
+
+        <!-- Hercules -->
+        <mech model="hercules_HRC-LS-9000" engineRating="350" engineType="XL" ferroFibrous="true"/>
+        <mech model="hercules_HRC-LS-9001" engineRating="350" engineType="XL" ferroFibrous="true"/>
 
         <mech model="hermes_HER-1Sb" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="hermes_HER-3S" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true"/>
@@ -1321,7 +1679,59 @@
         <mech model="howler_HWR-4" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="howler_HWR-5" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
-        <!-- HUNCHBACK GOES HERE -->
+        <!-- Hoplite (ClanInvasion only - HOP-5C in DarkAge) -->
+        <mech model="hoplite_HOP-4A" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-4B" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-4Bb" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-4C" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-4Cb" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-4D" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-5W" engineRating="220" engineType="standard"/>
+        <mech model="hoplite_HOP-C" engineRating="220" engineType="XL" techBase="Clan"/>
+
+        <!-- Hunchback (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="hunchback_HBK-1G" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4A" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4E" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4G" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4G_gauss_prototype" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4Gb" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4G-EC" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4GK" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4GR" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4GW" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4H" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4J" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4Jb" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4K" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4MA" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4MJ" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4MW" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4N" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4P" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4SP" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4T" engineRating="250" engineType="standard"/>
+        <mech model="hunchback_HBK-4TD" engineRating="350" engineType="XL"/>
+        <mech model="hunchback_HBK-4U" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-5A" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-5J" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-5L" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-5M" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-5N" engineRating="200" engineType="XL"/>
+        <mech model="hunchback_HBK-5S" engineRating="200" engineType="XL"/>
+        <mech model="hunchback_HBK-5SU" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-6A" engineRating="200" engineType="XL"/>
+        <mech model="hunchback_HBK-6N" engineRating="200" engineType="XL"/>
+
+        <!-- Hunchback IIC (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="hunchback_iic_HBK-IIC-1" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-2" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-A" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-B" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-C" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-XA" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-XJ" engineRating="200" engineType="XL" techBase="Clan"/>
+        <mech model="hunchback_iic_HBK-IIC-XW" engineRating="200" engineType="XL" techBase="Clan"/>
 
         <hardpoints id="huntsman">
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
@@ -1390,6 +1800,8 @@
         <mech model="iron_cheetah_ICH-F" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
         <mech model="iron_cheetah_ICH-Prime" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="iron_cheetah"/>
 
+        <!-- Jackalope - moved to DarkAge era -->
+
         <mech model="jagermech_JM6-A" engineRating="260" engineType="standard"/>
         <mech model="jagermech_JM6-ACE" engineRating="260" engineType="standard"/>
         <mech model="jagermech_JM6-B" engineRating="260" engineType="standard"/>
@@ -1414,8 +1826,11 @@
 
         <mech model="jagermech_iii_JM6-D3" engineRating="325" engineType="XL" endoSteel="true" ferroFibrous="true"/>
 
-        <!-- JENNER GOES HERE -->
-        <!-- Jenner IIC goes here -->
+        <!-- Jenner IIC (ClanInvasion only - others in era-specific blocks) -->
+        <mech model="jenner_iic_JR7-IIC-1" engineRating="315" engineType="XL" techBase="Clan"/>
+        <mech model="jenner_iic_JR7-IIC-2" engineRating="315" engineType="XL" techBase="Clan"/>
+        <mech model="jenner_iic_JR7-IIC-3" engineRating="315" engineType="XL" techBase="Clan"/>
+        <mech model="jenner_iic_JR7-IIC-4" engineRating="315" engineType="XL" techBase="Clan"/>
 
         <hardpoints id="kingcrab">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -1512,6 +1927,13 @@
         <mech model="lancelot_LNC25-05" engineRating="360" engineType="XL"/>
         <mech model="lancelot_LNC25-C" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="lancelot_LNC25-C2" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Lamentor (LMT-1R only - later variants moved to Republic/DarkAge) -->
+        <mech model="lamentor_LMT-1R" engineRating="360" engineType="XL"/>
+
+        <!-- Lao Hu - moved to CivilWar era -->
+        <!-- Legacy - moved to CivilWar era -->
+        <!-- Legionnaire - moved to Jihad era -->
 
         <hardpoints id="liberator">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Energy, AntiPersonnel"/>
@@ -1664,6 +2086,10 @@
         <mech model="mad_dog_MDD-WDR1" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mdd-wdr"/>
         <mech model="mad_dog_MDD-WDR2" engineRating="300" engineType="XL" ferroFibrous="true" techBase="Clan" apply="mdd-wdr"/>
 
+        <!-- Maelstrom (ClanInvasion only - later variants moved to CivilWar/Republic) -->
+        <mech model="maelstrom_MTR-5K" engineRating="375" engineType="standard"/>
+        <mech model="maelstrom_MTR-RDBK" engineRating="375" engineType="standard"/>
+
         <mech model="marauder_ii_MAD-2K" engineRating="300" engineType="light"/>
         <mech model="marauder_ii_MAD-4A" engineRating="300" engineType="light"/>
         <mech model="marauder_ii_MAD-4B" engineRating="300" engineType="light"/>
@@ -1713,6 +2139,14 @@
         <mech model="mauler_MAL-2R" engineRating="270" engineType="XL" ferroFibrous="true"/>
         <mech model="mauler_MAL-C" engineRating="270" engineType="XL" ferroFibrous="true"/>
 
+        <!-- Men Shen (ClanInvasion only - later variants moved to Jihad/DarkAge) -->
+        <mech model="men_shen_MS1-O" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OA" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OB" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OC" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OD" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OT" engineRating="330" engineType="XL" endoSteel="true"/>
+
         <hardpoints id="merlin">
             <add-hardpoint location="LeftTorso" weaponMounts="Missile, AntiPersonnel"/>
             <add-hardpoint location="RightTorso" weaponMounts="Missile, AntiPersonnel"/>
@@ -1743,6 +2177,26 @@
         <mech model="mongoose_MON-C" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="mongoose_MON-C2" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
+        <!-- Naga (ClanInvasion only - NGA-T and NGA2-W moved to DarkAge) -->
+        <mech model="naga_NGA-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_NGA-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_NGA-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_NGA-D" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_NGA-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_ii_NGA2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_ii_NGA2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_ii_NGA2-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_ii_NGA2-H" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_ii_NGA2-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Night Gyr (ClanInvasion only - later variants moved to CivilWar/Jihad/DarkAge) -->
+        <mech model="night_gyr_NTG-A" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-B" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-C" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-D" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-E" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-Prime" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+
         <mech model="nighthawk_NTK-2Q" engineRating="210" engineType="XL"/>
         <mech model="nighthawk_NTK-2Q-EC" engineRating="210" engineType="XL" techBase="Clan"/>
         <mech model="nighthawk_NTK-2S" engineRating="210" engineType="XL"/>
@@ -1751,6 +2205,8 @@
         <mech model="nightstar_NSR-9FC" engineRating="380" engineType="XL"/>
         <mech model="nightstar_NSR-9J" engineRating="285" engineType="XL"/>
         <mech model="nightstar_NSR-9JC" engineRating="275" engineType="standard" endoSteel="true"/>
+
+        <!-- Nexus II - moved to CivilWar era -->
 
         <hardpoints id="nova_cat">
             <add-hardpoint location="Head" weaponMounts="Energy"/>
@@ -1844,6 +2300,7 @@
         <mech model="orion_iic_ON1-IIC-B" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="orion_iic_ON1-IIC-C" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
+        <!-- Osprey (ClanInvasion only - OSP-25/26 moved to Jihad) -->
         <mech model="osprey_OSP-15" engineRating="220" engineType="XL" endoSteel="true"/>
 
         <mech model="ostlord_OSL-9R" engineRating="320" engineType="standard"/>
@@ -1886,6 +2343,9 @@
         <mech model="panther_PNT-C" engineRating="145" engineType="standard" endoSteel="true"/>
         <mech model="panther_PNT-CA" engineRating="145" engineType="standard" endoSteel="true"/>
 
+        <!-- Pack Hunter (ClanInvasion only - later variants moved to CivilWar/Jihad/DarkAge) -->
+        <mech model="pack_hunter_PH-1" engineRating="210" engineType="XL" techBase="Clan"/>
+
         <mech model="penetrator_PTR-4D" engineRating="300" engineType="standard"/>
         <mech model="penetrator_PTR-4F" engineRating="300" engineType="standard"/>
         <mech model="penetrator_PTR-4FX" engineRating="300" engineType="standard"/>
@@ -1926,6 +2386,9 @@
         <mech model="phoenix_PX-3R" engineRating="250" engineType="standard"/>
         <mech model="phoenix_PX-4R" engineRating="250" engineType="standard"/>
 
+        <!-- Phoenix Hawk - moved to HeavyMetal blocks -->
+        <!-- Phoenix Hawk IIC - moved to HeavyMetal blocks -->
+
         <mech model="pillager_PLG-1N" engineRating="300" engineType="standard"/>
         <mech model="pillager_PLG-3Z" engineRating="300" engineType="XL"/>
         <mech model="pillager_PLG-3Z-EC" engineRating="300" engineType="XL" techBase="Clan"/>
@@ -1964,7 +2427,33 @@
         <mech model="pulverizer_PUL-3R" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="pulverizer_PUL-C" engineRating="360" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
-        <!-- Quickdraw goes here -->
+        <!-- Quickdraw (ClanInvasion only - later variants moved to CivilWar/Jihad/Republic/DarkAge) -->
+        <mech model="quickdraw_QKD-4G" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-4GR" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-4H" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-4P" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-5A" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-5K" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-5K2" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-5M" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-5P" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-6KH" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-C" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-IIC" engineRating="300" engineType="XL" techBase="Clan"/>
+
+        <!-- Raijin -->
+        <mech model="raijin_RJN-101-A" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="raijin_RJN-101-B" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <!-- Raijin II - moved to CivilWar era -->
+        <!-- Raven - moved to UrbanWarfare blocks -->
+
+        <!-- Rampage -->
+        <mech model="rampage_RMP-2G" engineRating="255" engineType="standard"/>
+        <mech model="rampage_RMP-4G" engineRating="340" engineType="XL" endoSteel="true"/>
+        <mech model="rampage_RMP-5G" engineRating="340" engineType="XL" endoSteel="true"/>
+
+        <!-- Raptor II - moved to Jihad era blocks -->
 
         <mech model="rifleman_iic_RFL-IIC-1" engineRating="195" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="rifleman_iic_RFL-IIC-2" engineRating="260" engineType="standard" endoSteel="true" techBase="Clan"/>
@@ -1976,6 +2465,8 @@
         <mech model="roughneck_RGH-1B" engineRating="260" engineType="standard"/>
         <mech model="roughneck_RGH-1C" engineRating="260" engineType="standard"/>
         <mech model="roughneck_RGH-3A" engineRating="260" engineType="standard"/>
+
+        <!-- Sagittaire - moved to CivilWar Urban Warfare -->
 
         <hardpoints id="savage-coyote">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -2006,6 +2497,8 @@
         <mech model="sentinel_STN-3Lb" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard"/>
         <mech model="sentinel_STN-3M" engineRating="240" engineType="standard"/>
+
+        <!-- Seraph - moved to Jihad era -->
 
         <hardpoints id="shadow_cat">
             <add-hardpoint location="Head" weaponMounts="Energy"/>
@@ -2076,12 +2569,35 @@
         <mech model="shadowhawk_iic_SHD-IIC-3" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
         <mech model="shadowhawk_iic_SHD-IIC-4" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
 
+        <!-- Shogun (ClanInvasion only - removed non-existent variants, C2/C3 moved to DarkAge) -->
+        <mech model="shogun_SHG-2E" engineRating="255" engineType="standard"/>
+        <mech model="shogun_SHG-2F" engineRating="255" engineType="standard"/>
+        <mech model="shogun_SHG-2H" engineRating="255" engineType="standard"/>
+        <mech model="shogun_SHG-2TT" engineRating="255" engineType="standard"/>
+        <mech model="shogun_SHG-4F" engineRating="255" engineType="XL" endoSteel="true"/>
+        <mech model="shogun_SHG-4W" engineRating="255" engineType="XL" endoSteel="true"/>
+        <mech model="shogun_SHG-C" engineRating="255" engineType="standard"/>
+
+        <!-- Solitaire - moved to CivilWar era -->
+
         <mech model="spartan_SPT-C" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="spartan_SPT-N1" engineRating="400" engineType="XL"/>
         <mech model="spartan_SPT-N2" engineRating="400" engineType="XL"/>
         <mech model="spartan_SPT-NF" engineRating="400" engineType="XL"/>
 
-        <!-- stalker goes here -->
+        <!-- Stalker (ClanInvasion only - removed non-existent variants, CivilWar/Jihad/DarkAge variants moved) -->
+        <mech model="stalker_STK-3F" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-3Fb" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-3Fk" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-3FR" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-3H" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-3W" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-4F" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-4H" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-4N" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-4P" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-5M" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-5S" engineRating="255" engineType="standard"/>
 
         <mech model="starslayer_STY-2C" engineRating="250" engineType="standard" ferroFibrous="true"/>
         <mech model="starslayer_STY-2C-EC" engineRating="250" engineType="standard" ferroFibrous="true"/>
@@ -2399,6 +2915,12 @@
 
         <mech model="thunderhawk_TH-1" engineRating="270" engineType="XL"/>
 
+        <!-- Ti Ts'ang (ClanInvasion only - removed non-existent variants, Jihad/Republic variants moved) -->
+        <mech model="ti_tsang_TSG-9H" engineRating="360" engineType="XL" endoSteel="true"/>
+        <mech model="ti_tsang_TSG-9J" engineRating="360" engineType="XL" endoSteel="true"/>
+
+        <!-- Tian-Zong - moved to DarkAge era -->
+
         <hardpoints id="timber_wolf">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Energy,Missile,Missile,AntiPersonnel"/>
@@ -2473,8 +2995,24 @@
         <mech model="titan_TI-1D" engineRating="300" engineType="XL"/>
         <mech model="titan_TI-2D" engineRating="300" engineType="XL"/>
 
-        <!-- TREBUCHET goes here -->
-        <!-- TREBUCHET IIC goes here -->
+        <!-- Trebuchet (ClanInvasion only - removed non-existent variants, Jihad/Republic/DarkAge variants moved) -->
+        <mech model="trebuchet_TBT-3C" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-4M" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5J" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5K" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5N" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5NR" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5P" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5S" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-5SP" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-6X" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-7A" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-7K" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-7KR" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-7M" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-8K" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-8KL" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-9K" engineRating="250" engineType="standard"/>
 
         <hardpoints id="turkina">
             <add-hardpoint location="Head" weaponMounts="Energy"/>
@@ -2645,6 +3183,10 @@
         <mech model="visionquest_VQ-1NC" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="visionquest_VQ-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
 
+        <!-- War Dog -->
+        <mech model="war_dog_WR-DG-02FC" engineRating="300" engineType="XL" ferroFibrous="true"/>
+        <mech model="war_dog_WR-DG-03WDR" engineRating="300" engineType="XL" ferroFibrous="true"/>
+
         <mech model="warhammer_WHM-6D" engineRating="280" engineType="standard"/>
         <mech model="warhammer_WHM-6DR" engineRating="280" engineType="standard"/>
         <mech model="warhammer_WHM-6G" engineRating="280" engineType="standard"/>
@@ -2676,7 +3218,23 @@
         <mech model="warhammer_iic_WMR-IIC-3" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="warhammer_iic_WMR-IIC-A" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
-        <!-- Warhawk goes here -->
+        <!-- Warhawk / Masakari -->
+        <mech model="warhawk_WHK-A" engineRating="340" engineType="XL" techBase="Clan"/>
+        <mech model="warhawk_WHK-B" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-C" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-C2" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-D" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-F" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-H" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-I" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-J" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-Prime" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-R" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-S" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-V" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-W" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-X" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+
         <!-- Wasp goes here -->
 
         <mech model="whitworth_WTH-0" engineRating="160" engineType="standard"/>
@@ -2806,21 +3364,666 @@
 <!--        <mech model="zeus-x_ZEU-X" engineRating="400" engineType="XXL"/>-->
     </copy>
 
+    <!-- ClanInvasion3061 FlashPoint mechs -->
     <copy>
-        <mechdef source="${clanInvasion}/Base FlashPoint/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <mechdef source="${clanInvasion}/Base FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${clanInvasion}/Base FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Akuma (ClanInvasion) -->
+        <mech model="akuma_AKU-1X" engineRating="330" engineType="XL"/>
+        <mech model="akuma_AKU-2XU" engineRating="330" engineType="XL"/>
     </copy>
 
+    <!-- CivilWar FlashPoint mechs -->
     <copy>
-        <mechdef source="${clanInvasion}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <mechdef source="${civilWar}/Base Flashpoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/Base Flashpoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Akuma (CivilWar) -->
+        <mech model="akuma_AKU-1XJ" engineRating="330" engineType="XL"/>
+    </copy>
+
+    <!-- Jihad FlashPoint mechs -->
+    <copy>
+        <mechdef source="${jihad}/Base Flashpoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${jihad}/Base Flashpoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Akuma (Jihad) -->
+        <mech model="akuma_AKU-2X" engineRating="330" engineType="XL"/>
+    </copy>
+
+    <!-- ClanInvasion3061 HeavyMetal mechs -->
+    <copy>
+        <mechdef source="${clanInvasion}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${clanInvasion}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Phoenix Hawk (ClanInvasion) -->
+        <mech model="phoenixhawk_PXH-1" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1b" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1bC" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1c" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1C_C" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1D" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1-EC" engineRating="270" engineType="standard" techBase="Clan"/>
+        <mech model="phoenixhawk_PXH-1GD" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1GS" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1K" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1Kk" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1KR" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1P" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1R" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-2" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-2K" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-2L" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-3D" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-3K" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-3M" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-3S" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-C" engineRating="270" engineType="XL" techBase="Clan"/>
+
+        <!-- Phoenix Hawk IIC (ClanInvasion) -->
+        <mech model="phoenixhawk_iic_PXH-IIC" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-2" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-9" engineRating="400" engineType="XL" techBase="Clan"/>
     </copy>
 
+    <!-- ClanInvasion3061 UrbanWarfare mechs -->
     <copy>
-        <mechdef source="${clanInvasion}/Base UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard"/>
+        <mechdef source="${clanInvasion}/Base UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${clanInvasion}/Base UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Raven (ClanInvasion) -->
+        <mech model="raven_RVN-1X" engineRating="210" engineType="XL"/>
+        <mech model="raven_RVN-2X" engineRating="210" engineType="XL"/>
+        <mech model="raven_RVN-3L" engineRating="210" engineType="XL"/>
+        <mech model="raven_RVN-3M" engineRating="210" engineType="XL"/>
+        <mech model="raven_RVN-4X" engineRating="210" engineType="XL"/>
+    </copy>
+
+    <!-- ========================================== -->
+    <!-- CivilWar3062-3067 Era Mechs               -->
+    <!-- ========================================== -->
+
+    <!-- CivilWar Base mechs -->
+    <copy>
+        <mechdef source="${civilWar}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Albatross (CivilWar) -->
+        <mech model="albatross_ALB-4U" engineRating="380" engineType="XL"/>
+
+        <!-- Avatar (CivilWar) -->
+        <mech model="avatar_AV1-OE" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OF" engineRating="280" engineType="XL"/>
+
+        <!-- Black Knight (CivilWar) -->
+        <mech model="blackknight_BL-12-KNT" engineRating="300" engineType="XL"/>
+        <mech model="blackknight_BL-13-KNT" engineRating="300" engineType="XL"/>
+        <mech model="blackknight_BL-15-KNT" engineRating="300" engineType="XL"/>
+        <mech model="blackknight_BL-16-KNT" engineRating="300" engineType="XL"/>
+
+        <!-- Blood Asp (CivilWar) -->
+        <mech model="blood_asp_BAS-E" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-U" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-X" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Cerberus (CivilWar) -->
+        <mech model="cerberus_MR-6B" engineRating="380" engineType="standard"/>
+        <mech model="cerberus_MR-V3" engineRating="380" engineType="standard"/>
+
+        <!-- Flashman (CivilWar) -->
+        <mech model="flashman_FLS-C" engineRating="375" engineType="standard" techBase="Clan"/>
+
+        <!-- Grasshopper (CivilWar) -->
+        <mech model="grasshopper_GHR-6K" engineRating="280" engineType="XL"/>
+
+        <!-- Guillotine (CivilWar) -->
+        <mech model="guillotine_GLT-8D" engineRating="280" engineType="XL"/>
+
+        <!-- Grizzly (CivilWar) -->
+        <mech model="grizzly_GRZ-2" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan"/>
+
+        <!-- Hunchback (CivilWar) -->
+        <!-- HBK-5E Refit: Replace Sniper Artillery (20t) + ammo (4t) with LRM 20 + MRM 20 + 2x Med Laser + ammo (4t) + DHS (1t) -->
+        <mech model="hunchback_HBK-5E" engineRating="200" engineType="standard">
+            <!-- Remove artillery -->
+            <remove-inventory item="Weapon_Artillery_Sniper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Inferno"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Shaped"/>
+            <!-- Add missile weapons to RightTorso -->
+            <add-inventory location="RightTorso" item="Weapon_LRM_20" itemType="Weapon"/>
+            <add-inventory location="RightTorso" item="Weapon_MRM_20" itemType="Weapon"/>
+            <add-inventory location="RightTorso" item="Weapon_Laser_Medium" itemType="Weapon"/>
+            <add-inventory location="RightTorso" item="Weapon_Laser_Medium" itemType="Weapon"/>
+            <!-- Add ammo and heat sink to LeftTorso -->
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Generic_LRM" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Generic_LRM" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_MRM" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_MRM" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double" itemType="HeatSink"/>
+            <!-- Set RightTorso hardpoints for missile + energy loadout -->
+            <set-hardpoint location="RightTorso" weaponMounts="Missile,Missile,Energy,Energy"/>
+        </mech>
+        <mech model="hunchback_HBK-5H" engineRating="200" engineType="XL"/>
+        <mech model="hunchback_HBK-6H" engineRating="200" engineType="XL"/>
+        <mech model="hunchback_HBK-6S" engineRating="200" engineType="XL"/>
+
+        <!-- Hunchback IIC (CivilWar) -->
+        <mech model="hunchback_iic_HBK-IIC-3" engineRating="200" engineType="XL" techBase="Clan"/>
+
+        <!-- Jenner IIC (CivilWar) -->
+        <mech model="jenner_iic_JR7-IIC-A" engineRating="315" engineType="XL" techBase="Clan"/>
+
+        <!-- Legacy -->
+        <mech model="legacy_LGC-01" engineRating="250" engineType="XL" endoSteel="true"/>
+        <mech model="legacy_LGC-02" engineRating="250" engineType="XL" endoSteel="true"/>
+
+        <!-- Mad Cat Mk II (CivilWar) -->
+        <mech model="mad_cat_mk_ii_MCII-1" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-A" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-B" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-FIS" engineRating="360" engineType="XL" techBase="Clan"/>
+
+        <!-- Maelstrom (CivilWar) -->
+        <mech model="maelstrom_MTR-6E" engineRating="375" engineType="standard"/>
+        <mech model="maelstrom_MTR-6K" engineRating="375" engineType="standard"/>
+
+        <!-- Solitaire -->
+        <mech model="solitaire_SIE-1" engineRating="250" engineType="XL" endoSteel="true"/>
+
+        <!-- Nexus II -->
+        <mech model="nexus_ii_NXS2-A" engineRating="250" engineType="XL" endoSteel="true"/>
+        <mech model="nexus_ii_NXS2-B" engineRating="250" engineType="XL" endoSteel="true"/>
+
+        <!-- Night Gyr (CivilWar) -->
+        <mech model="night_gyr_NTG-H" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Pack Hunter (CivilWar) -->
+        <mech model="pack_hunter_PH-2" engineRating="210" engineType="XL" techBase="Clan"/>
+
+        <!-- Quickdraw (CivilWar) -->
+        <mech model="quickdraw_QKD-8K" engineRating="300" engineType="standard"/>
+
+        <!-- Raijin II -->
+        <mech model="raijin_ii_RJN-200-A" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="raijin_ii_RJN-200-B" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="raijin_ii_RJN-200-C" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <!-- Stalker (CivilWar) -->
+        <mech model="stalker_STK-6M" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-7D" engineRating="255" engineType="standard"/>
+        <mech model="stalker_STK-8S" engineRating="255" engineType="standard"/>
+
+        <!-- Lao Hu -->
+        <mech model="laohu_LHU-2B" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="laohu_LHU-3B" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="laohu_LHU-3C" engineRating="280" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+
+        <!-- Fafnir (CivilWar only - 5WB/5X moved to Jihad) -->
+        <mech model="fafnir_FNR-5" engineRating="300" engineType="standard" endoSteel="true"/>
+        <mech model="fafnir_FNR-5B" engineRating="300" engineType="standard" endoSteel="true"/>
+        <mech model="fafnir_FNR-5C" engineRating="300" engineType="standard" endoSteel="true"/>
+
+        <!-- Hellspawn (CivilWar only - 8E/9F/10G/10SR moved to Jihad) -->
+        <mech model="hellspawn_HSN-7D" engineRating="270" engineType="XL"/>
+        <mech model="hellspawn_HSN-8D" engineRating="270" engineType="XL"/>
+    </copy>
+
+    <!-- CivilWar Heavy Metal mechs -->
+    <copy>
+        <mechdef source="${civilWar}/Base Heavy Metal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/Base Heavy Metal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Phoenix Hawk (CivilWar) -->
+        <mech model="phoenixhawk_PXH-3PL" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-4L" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-6D" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-7CS" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-7S" engineRating="270" engineType="XL"/>
+
+        <!-- Phoenix Hawk IIC (CivilWar) -->
+        <mech model="phoenixhawk_iic_PXH-IIC-3" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-4" engineRating="400" engineType="XL" techBase="Clan"/>
+    </copy>
+
+    <!-- CivilWar Urban Warfare mechs -->
+    <copy>
+        <mechdef source="${civilWar}/Base Urban Warfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/Base Urban Warfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Raven (CivilWar) -->
+        <mech model="raven_RVN-4L" engineRating="210" engineType="XL"/>
+        <mech model="raven_RVN-4LC" engineRating="210" engineType="XL"/>
+
+        <!-- Sagittaire -->
+        <mech model="sagittaire_SGT-8R" engineRating="250" engineType="XL" endoSteel="true"/>
+    </copy>
+
+    <!-- ========================================== -->
+    <!-- Jihad3068-3080 Era Mechs                  -->
+    <!-- ========================================== -->
+
+    <!-- Jihad Base mechs -->
+    <copy>
+        <mechdef source="${jihad}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${jihad}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Albatross (Jihad) -->
+        <mech model="albatross_ALB-3Ur" engineRating="380" engineType="XL"/>
+        <mech model="albatross_ALB-5W" engineRating="380" engineType="XL"/>
+
+        <!-- Avatar (Jihad) -->
+        <mech model="avatar_AV1-OCC" engineRating="280" engineType="XL" endoSteel="true"/>
+        <mech model="avatar_AV1-OH" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OI" engineRating="280" engineType="XL"/>
+
+        <!-- Black Knight (Jihad) -->
+        <!-- BL-10-KNT Refit: Replace Thumper SawedOff (12t) + ammo (2t) with Light Gauss (12t) + ammo (1t) -->
+        <mech model="blackknight_BL-10-KNT" engineRating="300" engineType="standard">
+            <remove-inventory item="Weapon_Artillery_Thumper_SawedOff"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper"/>
+            <add-inventory location="RightArm" item="Weapon_Gauss_Rifle_Light" itemType="Weapon"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Gauss_Light" itemType="AmmunitionBox"/>
+        </mech>
+
+        <!-- Blood Asp (Jihad) -->
+        <mech model="blood_asp_BAS-F" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-G" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Emperor (Jihad) -->
+        <mech model="emperor_EMP-6D" engineRating="270" engineType="XL"/>
+        <mech model="emperor_EMP-6L" engineRating="270" engineType="XL"/>
+        <mech model="emperor_EMP-6M" engineRating="270" engineType="XL"/>
+        <mech model="emperor_EMP-6S" engineRating="270" engineType="XL"/>
+        <mech model="emperor_EMP-7L" engineRating="270" engineType="XL"/>
+
+        <!-- Executioner (Jihad) -->
+        <mech model="executioner_EXE-K" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-P" engineRating="380" engineType="XL" techBase="Clan"/>
+
+        <!-- Falconer (Jihad) -->
+        <mech model="falconer_FLC-9R" engineRating="375" engineType="XL"/>
+
+        <!-- Fafnir (Jihad) -->
+        <mech model="fafnir_FNR-5WB" engineRating="300" engineType="standard" endoSteel="true"/>
+        <mech model="fafnir_FNR-5X" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <!-- Flashman (Jihad) -->
+        <mech model="flashman_FLS-9B" engineRating="375" engineType="standard"/>
+        <mech model="flashman_FLS-9M" engineRating="375" engineType="standard"/>
+
+        <!-- Grasshopper (Jihad) -->
+        <mech model="grasshopper_GHR-2I" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-5K" engineRating="280" engineType="standard"/>
+        <mech model="grasshopper_GHR-7K" engineRating="280" engineType="XL"/>
+        <mech model="grasshopper_GHR-7P" engineRating="280" engineType="XL"/>
+
+        <!-- Guillotine (Jihad) -->
+        <mech model="guillotine_GLT-6WB" engineRating="280" engineType="XL"/>
+        <mech model="guillotine_GLT-6WB2" engineRating="280" engineType="XL"/>
+        <mech model="guillotine_GLT-6WB3" engineRating="280" engineType="XL"/>
+        <mech model="guillotine_GLT-7MP" engineRating="280" engineType="XL"/>
+        <mech model="guillotine_GLT-IIC-2" engineRating="280" engineType="XL" techBase="Clan"/>
+
+        <!-- Hatamoto-Chi (Jihad) -->
+        <mech model="hatamoto-chi_HTM-28Tr" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-35K" engineRating="320" engineType="standard"/>
+
+        <!-- Hauptmann (Jihad) -->
+        <mech model="hauptmann_HA1-OD" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OE" engineRating="285" engineType="standard"/>
+
+        <!-- Hellspawn (Jihad) -->
+        <mech model="hellspawn_HSN-8E" engineRating="270" engineType="XL"/>
+        <mech model="hellspawn_HSN-9F" engineRating="270" engineType="XL"/>
+        <mech model="hellspawn_HSN-10G" engineRating="270" engineType="XL"/>
+        <mech model="hellspawn_HSN-10SR" engineRating="270" engineType="XL"/>
+
+        <!-- Hunchback IIC (Jihad) -->
+        <mech model="hunchback_iic_HBK-IIC-4" engineRating="200" engineType="XL" techBase="Clan"/>
+
+        <!-- Men Shen (Jihad) -->
+        <mech model="men_shen_MS1-OE" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OF" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OU" engineRating="330" engineType="XL" endoSteel="true"/>
+
+        <!-- Mad Cat III (Jihad) -->
+        <mech model="mad_cat_iii_MCIII-X" engineRating="330" engineType="XL" techBase="Clan"/>
+
+        <!-- Mad Cat Mk II (Jihad) -->
+        <mech model="mad_cat_mk_ii_MCII-2" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-ECD" engineRating="360" engineType="XL" techBase="Clan"/>
+
+        <!-- Night Gyr (Jihad) -->
+        <mech model="night_gyr_NTG-F" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-X" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Osprey (Jihad) -->
+        <mech model="osprey_OSP-25" engineRating="220" engineType="XL" endoSteel="true"/>
+        <mech model="osprey_OSP-26" engineRating="220" engineType="XL" endoSteel="true"/>
+
+        <!-- Pack Hunter (Jihad) -->
+        <mech model="pack_hunter_PH-3" engineRating="210" engineType="XL" techBase="Clan"/>
+        <mech model="pack_hunter_PH-4" engineRating="210" engineType="XL" techBase="Clan"/>
+
+        <!-- Quickdraw (Jihad) -->
+        <mech model="quickdraw_QKD-5Mr" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-7X" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-8X" engineRating="300" engineType="standard"/>
+
+        <!-- Ryoken II (Jihad) -->
+        <mech model="ryoken_ii_RYOII-1" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="ryoken_ii_RYOII-2" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="ryoken_ii_RYOII-3" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="ryoken_ii_RYOII-GB" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="ryoken_ii_RYOII-S" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Archangel -->
+        <mech model="archangel_C-ANG-O_invictus" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-OA_dominus" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-OB_infernus" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-OC_comminus" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-OD_luminos" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-OE_eminus" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-OS_caelestis" engineRating="300" engineType="standard" techBase="Clan"/>
+
+        <!-- Seraph -->
+        <mech model="seraph_C-SRP-O_invictus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-OA_dominus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-OB_infernus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-OC_comminus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-OD_luminos" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-OE_eminus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-OS_caelestis" engineRating="210" engineType="standard" techBase="Clan"/>
+
+        <!-- Stalker (Jihad) -->
+        <mech model="stalker_STK-7C3BS" engineRating="255" engineType="standard"/>
+
+        <!-- Ti Ts'ang (Jihad) -->
+        <mech model="ti_tsang_TSG-9C" engineRating="360" engineType="XL" endoSteel="true"/>
+        <mech model="ti_tsang_TSG-9DDC" engineRating="360" engineType="XL" endoSteel="true"/>
+
+        <!-- Trebuchet (Jihad) -->
+        <mech model="trebuchet_TBT-8B" engineRating="250" engineType="standard"/>
+
+        <!-- Deva -->
+        <mech model="deva_C-DVA-O_invictus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-OA_dominus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-OB_infernus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-OC_comminus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-OD_luminos" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-OE_eminus" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-OS_caelestis" engineRating="210" engineType="standard" techBase="Clan"/>
+
+        <!-- Hellstar -->
+        <mech model="hellstar_HST-1" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="hellstar_HST-2" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="hellstar_HST-3" engineRating="380" engineType="XL" techBase="Clan"/>
+
+        <!-- Deimos -->
+        <mech model="deimos_DEI-A" engineRating="210" engineType="XL" techBase="Clan"/>
+        <mech model="deimos_DEI-B" engineRating="210" engineType="XL" techBase="Clan"/>
+        <mech model="deimos_DEI-Prime" engineRating="210" engineType="XL" techBase="Clan"/>
+
+        <!-- Legionnaire (Jihad only - LGN-2K moved to Republic) -->
+        <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL"/>
+        <mech model="legionnaire_LGN-2F" engineRating="350" engineType="XL"/>
+        <mech model="legionnaire_LGN-2XA" engineRating="350" engineType="XL"/>
+        <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL"/>
+
+        <!-- Raptor II -->
+        <mech model="raptor_ii_RPT-2L" engineRating="240" engineType="XL"/>
+        <mech model="raptor_ii_RPT-2X" engineRating="240" engineType="XL"/>
+        <mech model="raptor_ii_RPT-2X1" engineRating="240" engineType="XL"/>
+        <mech model="raptor_ii_RPT-3X" engineRating="240" engineType="XL"/>
+        <mech model="raptor_ii_RPT-5X" engineRating="240" engineType="XL"/>
+    </copy>
+
+    <!-- Jihad HeavyMetal mechs -->
+    <copy>
+        <mechdef source="${jihad}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${jihad}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Phoenix Hawk (Jihad) -->
+        <mech model="phoenixhawk_PXH-4W" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-5L" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-7K" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-8CS" engineRating="270" engineType="XL"/>
+
+        <!-- Phoenix Hawk IIC (Jihad) -->
+        <mech model="phoenixhawk_iic_PXH-IIC-5" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-6" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-7" engineRating="400" engineType="XL" techBase="Clan"/>
+    </copy>
+
+    <!-- ========================================== -->
+    <!-- DarkAge3131- Era Mechs                    -->
+    <!-- ========================================== -->
+
+    <!-- DarkAge Base mechs -->
+    <copy>
+        <mechdef source="${darkAge}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${darkAge}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Albatross (DarkAge) -->
+        <mech model="albatross_ALB-6U" engineRating="380" engineType="XL"/>
+        <mech model="albatross_ALB-C" engineRating="380" engineType="XL"/>
+
+        <!-- Gunsmith -->
+        <mech model="gunsmith_CH11-NG" engineRating="250" engineType="XL"/>
+
+        <!-- Hammerhead -->
+        <mech model="hammerhead_HMD-Prime" engineRating="270" engineType="XL" techBase="Clan"/>
+
+        <!-- Jackalope -->
+        <mech model="jackalope_JLP-BD" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-C" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-IC" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-KA" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-KB" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-KW" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-NH" engineRating="240" engineType="XL" techBase="Clan"/>
+
+        <!-- Lament (DarkAge) -->
+        <mech model="lament_LMT-2D" engineRating="360" engineType="XL"/>
+        <mech model="lament_LMT-3C" engineRating="360" engineType="XL"/>
+        <mech model="lament_LMT-3R" engineRating="360" engineType="XL"/>
+        <mech model="lament_LMT-4RC" engineRating="360" engineType="XL"/>
+
+        <!-- Men Shen (DarkAge) -->
+        <mech model="men_shen_MS1-OG" engineRating="330" engineType="XL" endoSteel="true"/>
+
+        <!-- Mad Cat III (DarkAge) -->
+        <mech model="mad_cat_III-Z" engineRating="330" engineType="XL" techBase="Clan"/>
+
+        <!-- Mad Cat Mk II (DarkAge) -->
+        <mech model="mad_cat_mk_ii_MCII-6" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-7" engineRating="360" engineType="XL" techBase="Clan"/>
+
+        <!-- Naga (DarkAge) -->
+        <mech model="naga_NGA-T" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_ii_NGA2-W" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Night Gyr (DarkAge) -->
+        <mech model="night_gyr_NTG-G" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-T" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-TT" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Pack Hunter (DarkAge) -->
+        <mech model="pack_hunter_PH-5" engineRating="210" engineType="XL" techBase="Clan"/>
+
+        <!-- Quickdraw (DarkAge) -->
+        <mech model="quickdraw_QKD-9G" engineRating="300" engineType="standard"/>
+
+        <!-- Shogun (DarkAge) -->
+        <mech model="shogun_SHG-C2" engineRating="255" engineType="standard"/>
+        <mech model="shogun_SHG-C3" engineRating="255" engineType="standard"/>
+
+        <!-- Stalker (DarkAge) -->
+        <mech model="stalker_STK-9F" engineRating="255" engineType="standard"/>
+        <mech model="stalker_ii_STK-9A" engineRating="255" engineType="XL"/>
+
+        <!-- Tian-Zong (DarkAge only - N1/N2 moved to Republic) -->
+        <mech model="tian-zong_TNZ-N3" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <!-- Trebuchet (DarkAge) -->
+        <mech model="trebuchet_TBT-9N" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-9R" engineRating="250" engineType="standard"/>
+
+        <!-- Black Knight (DarkAge) -->
+        <mech model="blackknight_BLK-NT-5H" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_iic_BL-IIC-KNT" engineRating="300" engineType="XL" techBase="Clan"/>
+
+        <!-- Blood Asp (DarkAge) -->
+        <mech model="blood_asp_BAS-I" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-T" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+
+        <!-- Executioner (DarkAge) -->
+        <mech model="executioner_EXE-T" engineRating="380" engineType="XL" techBase="Clan"/>
+
+        <!-- Flashman (DarkAge) -->
+        <mech model="flashman_FLS-10E" engineRating="375" engineType="XL"/>
+
+        <!-- Grizzly (DarkAge) -->
+        <mech model="grizzly_GRZ-3" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan"/>
+
+        <!-- Hatamoto-Chi (DarkAge) -->
+        <mech model="hatamoto-chi_HTM-30S" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-30T" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-30Z" engineRating="320" engineType="standard"/>
+
+        <!-- Hauptmann (DarkAge) -->
+        <mech model="hauptmann_HA1-OT" engineRating="285" engineType="standard"/>
+
+        <!-- Hoplite (DarkAge) -->
+        <mech model="hoplite_HOP-5C" engineRating="220" engineType="standard"/>
+
+        <!-- Hunchback (DarkAge) -->
+        <mech model="hunchback_HBK-7S" engineRating="200" engineType="XL"/>
+
+        <!-- Jenner IIC (DarkAge) -->
+        <mech model="jenner_iic_JR7-IIC-5" engineRating="315" engineType="XL" techBase="Clan"/>
+    </copy>
+
+    <!-- DarkAge HeavyMetal mechs -->
+    <copy>
+        <mechdef source="${darkAge}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${darkAge}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Phoenix Hawk (DarkAge) -->
+        <mech model="phoenixhawk_PXH-9" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-C2" engineRating="270" engineType="XL" techBase="Clan"/>
+
+        <!-- Phoenix Hawk IIC (DarkAge) -->
+        <mech model="phoenixhawk_iic_PXH-IIC-10" engineRating="400" engineType="XL" techBase="Clan"/>
+    </copy>
+
+    <!-- ========================================== -->
+    <!-- Republic3081-3130 Era Mechs               -->
+    <!-- ========================================== -->
+
+    <!-- Republic Base mechs -->
+    <copy>
+        <mechdef source="${republic}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${republic}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Albatross (Republic) -->
+        <mech model="albatross_ALB-4Ur" engineRating="380" engineType="XL"/>
+        <mech model="albatross_ALB-5U" engineRating="380" engineType="XL"/>
+
+        <!-- Avatar (Republic) -->
+        <mech model="avatar_AV1-OBLO" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="avatar_AV1-OJ" engineRating="280" engineType="XL" techBase="Clan"/>
+
+        <!-- Black Knight (Republic) -->
+        <mech model="blackknight_BL-18-KNT" engineRating="300" engineType="XL"/>
+        <mech model="blackknight_BLK-NT-2Y" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BLK-NT-3A" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BLK-NT-3B" engineRating="300" engineType="standard"/>
+        <mech model="blackknight_BLK-NT-4D" engineRating="300" engineType="standard"/>
+
+        <!-- Cerberus (Republic) -->
+        <mech model="cerberus_MR-7K" engineRating="380" engineType="standard"/>
+
+        <!-- Emperor (Republic) -->
+        <mech model="emperor_EMP-8L" engineRating="270" engineType="XL"/>
+
+        <!-- Executioner (Republic) -->
+        <mech model="executioner_EXE-F" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-G" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-I" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-J" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-L" engineRating="380" engineType="XL" techBase="Clan"/>
+
+        <!-- Grasshopper (Republic) -->
+        <mech model="grasshopper_GHR-8K" engineRating="280" engineType="XL"/>
+
+        <!-- Guillotine (Republic) -->
+        <mech model="guillotine_GLT-7M" engineRating="280" engineType="XL"/>
+
+        <!-- Hatamoto-Chi (Republic) -->
+        <mech model="hatamoto-chi_HTM-27V2" engineRating="320" engineType="standard"/>
+        <mech model="hatamoto-chi_HTM-27W2" engineRating="320" engineType="standard"/>
+
+        <!-- Hauptmann (Republic) -->
+        <mech model="hauptmann_HA1-OF" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OM" engineRating="285" engineType="standard"/>
+
+        <!-- Legionnaire (Republic) -->
+        <mech model="legionnaire_LGN-2K" engineRating="350" engineType="XL"/>
+
+        <!-- Hunchback (Republic) -->
+        <mech model="hunchback_HBK-6K" engineRating="200" engineType="XL"/>
+        <mech model="hunchback_HBK-7R" engineRating="200" engineType="XL"/>
+
+        <!-- Hunchback IIC (Republic) -->
+        <mech model="hunchback_iic_HBK-IIC-5" engineRating="200" engineType="XL" techBase="Clan"/>
+
+        <!-- Lament (Republic) -->
+        <mech model="lament_LMT-2R" engineRating="360" engineType="XL"/>
+
+        <!-- Mad Cat III (Republic) -->
+        <mech model="mad_cat_iii_MCIII-1" engineRating="330" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_iii_MCIII-2" engineRating="330" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_iii_MCIII-3" engineRating="330" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_iii_MCIII-4" engineRating="330" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_iii_MCIII-5" engineRating="330" engineType="XL" techBase="Clan"/>
+
+        <!-- Mad Cat Mk II (Republic) -->
+        <mech model="mad_cat_mk_ii_MCII-3" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-4" engineRating="360" engineType="XL" techBase="Clan"/>
+        <mech model="mad_cat_mk_ii_MCII-5" engineRating="360" engineType="XL" techBase="Clan"/>
+
+        <!-- Maelstrom (Republic) -->
+        <mech model="maelstrom_MTR-7K" engineRating="375" engineType="XL"/>
+
+        <!-- Quickdraw (Republic) -->
+        <mech model="quickdraw_QKD-8P" engineRating="300" engineType="standard"/>
+        <mech model="quickdraw_QKD-9M" engineRating="300" engineType="standard"/>
+
+        <!-- Ti Ts'ang (Republic) -->
+        <mech model="ti_tsang_TSG-10L" engineRating="360" engineType="XL" endoSteel="true"/>
+
+        <!-- Trebuchet (Republic) -->
+        <mech model="trebuchet_TBT-K7R" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-XK7" engineRating="250" engineType="standard"/>
+
+        <!-- Tian-Zong (Republic) -->
+        <mech model="tian-zong_TNZ-N1" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="tian-zong_TNZ-N2" engineRating="300" engineType="XL" endoSteel="true"/>
+    </copy>
+
+    <!-- Republic Heavy Metal mechs -->
+    <copy>
+        <mechdef source="${republic}/Base Heavy Metal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${republic}/Base Heavy Metal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+
+        <!-- Phoenix Hawk (Republic) -->
+        <mech model="phoenixhawk_PXH-4M" engineRating="270" engineType="XL"/>
+
+        <!-- Phoenix Hawk IIC (Republic) -->
+        <mech model="phoenixhawk_iic_PXH-IIC-8" engineRating="400" engineType="XL" techBase="Clan"/>
     </copy>
 </rapid>
