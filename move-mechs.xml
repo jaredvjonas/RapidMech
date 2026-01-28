@@ -107,6 +107,15 @@
         <remove-fixedEquipment item="Quirk_AccurateWeaponCategory_Energy"/>
         <remove-fixedEquipment item="Unique_Weapon_AMS_Laser_Prototype"/>
 
+        <!-- Remove unsupported equipment from chassis -->
+        <remove-fixedEquipment item="Weapon_LiftHoist_30ton"/>
+        <remove-fixedEquipment item="Gear_EngineCore_255"/>
+        <remove-fixedEquipment item="Gear_EngineCore_280"/>
+        <remove-fixedEquipment item="Gear_Engine_Compact"/>
+        <remove-fixedEquipment item="Gear_TSM_Standard"/>
+        <remove-fixedEquipment item="Unique_HandHeld_Melee_ChiKatana"/>
+        <remove-fixedEquipment item="Linked_HandHeld_Melee_ChiKatana"/>
+
         <remove-quirk/>
         <remove-engine/>
         <remove-gyro/>
@@ -162,6 +171,7 @@
         <swap-inventory item="Weapon_Flamer_Vehicle" with="Weapon_Flamer_Heavy"/>
         <swap-inventory item="Weapon_Artillery_TAG_Barrage" with="Weapon_Laser_Medium"/>
         <swap-inventory item="Weapon_Mine_20" with="Weapon_Rocket_20"/>
+        <swap-inventory item="Unique_Weapon_TAG_Overlord" with="Weapon_TAG"/>
 
         <swap-inventory item="Ammo_AmmunitionBox_AC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_2_Half" with="Ammo_AmmunitionBox_Generic_AC2_Half"/>
@@ -402,10 +412,8 @@
         <remove-inventory item="BoltOn_Weapon_AMS"/>
         <remove-inventory item="Unique_Gear_Armor_ChameleonLightPolarizationShield"/>
         <remove-inventory item="Unique_Sensors_AR14"/>
-        <remove-inventory item="Unique_FCS_BufferedVDNI"/>
         <remove-inventory item="Unique_HandHeld_Melee_ChiKatana"/>
         <remove-inventory item="Linked_HandHeld_Melee_ChiKatana"/>
-        <remove-inventory item="Unique_Weapon_TAG_Overlord"/>
         <remove-inventory item="Weapon_LiftHoist_30ton"/>
 
         <!-- Phase 2 additions - components NOT in IrianTech/rogueTech -->
@@ -611,6 +619,13 @@
         <swap-inventory item="Gear_Structure_EndoComposite_Clan" with="Gear_Structure_EndoComposite_Clan"/>
         <swap-inventory item="Gear_EWS_NovaCEWS" with="Gear_EWS_NovaCEWS"/>
 
+        <!-- Remove unsupported equipment -->
+        <remove-inventory item="Weapon_LiftHoist_30ton"/>
+        <remove-inventory item="Gear_EngineCore_255"/>
+        <remove-inventory item="Gear_EngineCore_280"/>
+        <remove-inventory item="Gear_Engine_Compact"/>
+        <remove-inventory item="Gear_TSM_Standard"/>
+
         <remove-engine/>
         <remove-gyro/>
         <remove-endosteel/>
@@ -651,9 +666,133 @@
         <remove-inventory item="Gear_Attachment_ArtemisIV"/>
     </task-list>
 
+    <task-list id="clan-early">
+        <!-- Clan Early mechs use IS Artemis ammo but need Clan ammo for CE weapons -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Half" with="Ammo_AmmunitionBox_LRM_Clan_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_SRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Half" with="Ammo_AmmunitionBox_SRM_Clan_Half"/>
+    </task-list>
+
     <copy>
         <mechdef source="${clanInvasion}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${clanInvasion}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+    <!-- Extra hardpoints for OmniMech variants -->
+    <hardpoints id="archangel-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+    </hardpoints>
+
+    <hardpoints id="avatar-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+
+    <hardpoints id="blood_asp-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Missile,Energy,Energy"/>
+    </hardpoints>
+
+    <hardpoints id="deimos-extra">
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile"/>
+    </hardpoints>
+
+    <hardpoints id="deva-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+    </hardpoints>
+
+    <hardpoints id="executioner-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy,Energy,Energy,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+
+    <hardpoints id="hauptmann-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+
+    <hardpoints id="men_shen-extra">
+        <add-hardpoint location="Head" weaponMounts="AntiPersonnel,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+    </hardpoints>
+
+    <hardpoints id="naga-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="AntiPersonnel"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+
+    <hardpoints id="naga_ii-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,AntiPersonnel"/>
+    </hardpoints>
+
+    <hardpoints id="night_gyr-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+    </hardpoints>
+
+    <hardpoints id="raptor_ii-extra">
+        <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="AntiPersonnel"/>
+    </hardpoints>
+
+    <hardpoints id="seraph-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="AntiPersonnel,Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+
+    <hardpoints id="trebuchet-extra">
+        <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+    </hardpoints>
+
+    <hardpoints id="warhawk-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Missile,Missile,AntiPersonnel,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy,Energy,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,Missile"/>
+    </hardpoints>
+
 
         <!-- Akuma - moved to FlashPoint blocks -->
 
@@ -703,13 +842,13 @@
         <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
 
         <!-- Avatar (ClanInvasion only) -->
-        <mech model="avatar_AV1-O" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OA" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OB" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OC" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OD" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OG" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OR" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-O" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OA" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OB" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OC" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OD" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OG" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OR" engineRating="280" engineType="XL" apply="avatar-extra"/>
         <!-- Note: Other avatar variants moved to CivilWar/Jihad/Republic era blocks -->
 
         <hardpoints id="atlas">
@@ -787,11 +926,11 @@
         <mech model="black_python_BP-Prime" engineRating="375" engineType="XL" techBase="Clan"/>
 
         <!-- Blood Asp (ClanInvasion only - others in era-specific blocks) -->
-        <mech model="blood_asp_BAS-A" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-B" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-C" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-D" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-Prime" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-A" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-B" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-C" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-D" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-Prime" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
 
         <!-- Berserker -->
         <mech model="berserker_BRZ-A3" engineRating="400" engineType="XL" endoSteel="true"/>
@@ -1195,6 +1334,7 @@
         <mech model="dragonfire_DGR-3F" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="dragonfire_DGR-4F" engineRating="300" engineType="XL" endoSteel="true"/>
 
+        <!-- Dragoon uses CAB-CU hardpoints - disabled
         <hardpoints id="dragoon">
             <add-hardpoint location="Head" weaponMounts="Energy"/>
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
@@ -1208,6 +1348,7 @@
         <mech model="dragoon_AEM-02" engineRating="350" engineType="XL" ferroFibrous="true" apply="dragoon"/>
         <mech model="dragoon_AEM-03" engineRating="280" engineType="XL" ferroFibrous="true" apply="dragoon"/>
         <mech model="dragoon_AEM-04" engineRating="280" engineType="XL" ferroFibrous="true" apply="dragoon"/>
+        -->
 
         <hardpoints id="ebon_jaguar">
             <add-hardpoint location="Head" weaponMounts="Energy,Missile,AntiPersonnel"/>
@@ -1260,19 +1401,19 @@
         <mech model="excalibur_EXC-C1" engineRating="350" engineType="XL"/>
 
         <!-- Executioner (ClanInvasion only - others in era-specific blocks) -->
-        <mech model="executioner_EXE-A" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-B" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-C" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-D" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-E" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-H" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-N" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-O" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-Prime" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-Q" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-R" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-S" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-TC" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-A" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-B" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-C" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-D" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-E" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-H" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-N" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-O" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-Prime" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-Q" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-R" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-S" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-TC" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
 
         <mech model="exterminator_EXT-4A" engineRating="325" engineType="standard"/>
         <mech model="exterminator_EXT-4C" engineRating="390" engineType="XL"/>
@@ -1328,11 +1469,12 @@
         <mech model="firefly_FFL-7A" engineRating="150" engineType="XL"/>
         <mech model="firefly_FFL-C" engineRating="150" engineType="XL" endoSteel="true" techBase="Clan"/>
 
-        <!-- Flashman (ClanInvasion only - others in era-specific blocks) -->
+        <!-- Flashman uses CAB-CU hardpoints - disabled
         <mech model="flashman_FLS-7K" engineRating="375" engineType="standard"/>
         <mech model="flashman_FLS-8K" engineRating="375" engineType="standard"/>
         <mech model="flashman_FLS-8KH" engineRating="375" engineType="standard"/>
         <mech model="flashman_FLS-9C" engineRating="375" engineType="standard"/>
+        -->
 
         <mech model="fox_CS-1" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="fox_CS-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
@@ -1520,10 +1662,10 @@
         <mech model="hatamoto-chi_HTM-CM" engineRating="320" engineType="standard" techBase="Clan"/>
 
         <!-- Hauptmann (ClanInvasion only - others in era-specific blocks) -->
-        <mech model="hauptmann_HA1-O" engineRating="285" engineType="standard"/>
-        <mech model="hauptmann_HA1-OA" engineRating="285" engineType="standard"/>
-        <mech model="hauptmann_HA1-OB" engineRating="285" engineType="standard"/>
-        <mech model="hauptmann_HA1-OC" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-O" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
+        <mech model="hauptmann_HA1-OA" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
+        <mech model="hauptmann_HA1-OB" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
+        <mech model="hauptmann_HA1-OC" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
 
         <hardpoints id="havoc">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -2140,12 +2282,12 @@
         <mech model="mauler_MAL-C" engineRating="270" engineType="XL" ferroFibrous="true"/>
 
         <!-- Men Shen (ClanInvasion only - later variants moved to Jihad/DarkAge) -->
-        <mech model="men_shen_MS1-O" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OA" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OB" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OC" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OD" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OT" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-O" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OA" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OB" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OC" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OD" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OT" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
 
         <hardpoints id="merlin">
             <add-hardpoint location="LeftTorso" weaponMounts="Missile, AntiPersonnel"/>
@@ -2178,24 +2320,24 @@
         <mech model="mongoose_MON-C2" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <!-- Naga (ClanInvasion only - NGA-T and NGA2-W moved to DarkAge) -->
-        <mech model="naga_NGA-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_NGA-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_NGA-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_NGA-D" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_NGA-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_ii_NGA2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_ii_NGA2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_ii_NGA2-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_ii_NGA2-H" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_ii_NGA2-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_NGA-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_NGA-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_NGA-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_NGA-D" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_NGA-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_ii_NGA2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
+        <mech model="naga_ii_NGA2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
+        <mech model="naga_ii_NGA2-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
+        <mech model="naga_ii_NGA2-H" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
+        <mech model="naga_ii_NGA2-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
 
         <!-- Night Gyr (ClanInvasion only - later variants moved to CivilWar/Jihad/DarkAge) -->
-        <mech model="night_gyr_NTG-A" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-B" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-C" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-D" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-E" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-Prime" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-A" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-B" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-C" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-D" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-E" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-Prime" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
 
         <mech model="nighthawk_NTK-2Q" engineRating="210" engineType="XL"/>
         <mech model="nighthawk_NTK-2Q-EC" engineRating="210" engineType="XL" techBase="Clan"/>
@@ -2459,7 +2601,9 @@
         <mech model="rifleman_iic_RFL-IIC-2" engineRating="260" engineType="standard" endoSteel="true" techBase="Clan"/>
         <mech model="rifleman_iic_RFL-IIC-A" engineRating="270" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
+        <!-- Rifleman III uses CAB-CU hardpoints - disabled
         <mech model="rifleman_iii_RF2-A" engineRating="180" engineType="XL"/>
+        -->
 
         <mech model="roughneck_RGH-1A" engineRating="260" engineType="standard"/>
         <mech model="roughneck_RGH-1B" engineRating="260" engineType="standard"/>
@@ -2868,7 +3012,7 @@
         <mech model="thorn_THE-N" engineRating="120" engineType="standard" endoSteel="true"/>
         <mech model="thorn_THE-N1" engineRating="120" engineType="standard" endoSteel="true"/>
         <mech model="thorn_THE-Nb" engineRating="120" engineType="standard" endoSteel="true"/>
-        <mech model="thorn_THE-N-EC" engineRating="120" engineType="standard" endoSteel="true" techBase="Clan"/>
+        <mech model="thorn_THE-N-EC" engineRating="120" engineType="standard" endoSteel="true" techBase="Clan" tasks="clan-early"/>
         <mech model="thorn_THE-S" engineRating="120" engineType="standard" endoSteel="true"/>
         <mech model="thorn_THE-T" engineRating="120" engineType="standard" endoSteel="true"/>
 
@@ -3219,21 +3363,21 @@
         <mech model="warhammer_iic_WMR-IIC-A" engineRating="320" engineType="light" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <!-- Warhawk / Masakari -->
-        <mech model="warhawk_WHK-A" engineRating="340" engineType="XL" techBase="Clan"/>
-        <mech model="warhawk_WHK-B" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-C" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-C2" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-D" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-F" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-H" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-I" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-J" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-Prime" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-R" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-S" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-V" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-W" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
-        <mech model="warhawk_WHK-X" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan"/>
+        <mech model="warhawk_WHK-A" engineRating="340" engineType="XL" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-B" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-C" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-C2" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-D" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-F" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-H" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-I" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-J" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-Prime" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-R" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-S" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-V" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-W" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
+        <mech model="warhawk_WHK-X" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
 
         <!-- Wasp goes here -->
 
@@ -3449,12 +3593,36 @@
         <mechdef source="${civilWar}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${civilWar}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Extra hardpoints for OmniMech variants -->
+    <hardpoints id="avatar-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+    <hardpoints id="blood_asp-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Missile,Energy,Energy"/>
+    </hardpoints>
+    <hardpoints id="night_gyr-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+    </hardpoints>
+
         <!-- Albatross (CivilWar) -->
         <mech model="albatross_ALB-4U" engineRating="380" engineType="XL"/>
 
         <!-- Avatar (CivilWar) -->
-        <mech model="avatar_AV1-OE" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OF" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OE" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OF" engineRating="280" engineType="XL" apply="avatar-extra"/>
 
         <!-- Black Knight (CivilWar) -->
         <mech model="blackknight_BL-12-KNT" engineRating="300" engineType="XL"/>
@@ -3463,16 +3631,17 @@
         <mech model="blackknight_BL-16-KNT" engineRating="300" engineType="XL"/>
 
         <!-- Blood Asp (CivilWar) -->
-        <mech model="blood_asp_BAS-E" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-U" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-X" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-E" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-U" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-X" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
 
         <!-- Cerberus (CivilWar) -->
         <mech model="cerberus_MR-6B" engineRating="380" engineType="standard"/>
         <mech model="cerberus_MR-V3" engineRating="380" engineType="standard"/>
 
-        <!-- Flashman (CivilWar) -->
+        <!-- Flashman uses CAB-CU hardpoints - disabled
         <mech model="flashman_FLS-C" engineRating="375" engineType="standard" techBase="Clan"/>
+        -->
 
         <!-- Grasshopper (CivilWar) -->
         <mech model="grasshopper_GHR-6K" engineRating="280" engineType="XL"/>
@@ -3537,7 +3706,7 @@
         <mech model="nexus_ii_NXS2-B" engineRating="250" engineType="XL" endoSteel="true"/>
 
         <!-- Night Gyr (CivilWar) -->
-        <mech model="night_gyr_NTG-H" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-H" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
 
         <!-- Pack Hunter (CivilWar) -->
         <mech model="pack_hunter_PH-2" engineRating="210" engineType="XL" techBase="Clan"/>
@@ -3609,14 +3778,93 @@
         <mechdef source="${jihad}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${jihad}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Extra hardpoints for OmniMech variants -->
+    <hardpoints id="archangel-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+    </hardpoints>
+    <hardpoints id="avatar-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+    <hardpoints id="blood_asp-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Missile,Energy,Energy"/>
+    </hardpoints>
+    <hardpoints id="deimos-extra">
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile"/>
+    </hardpoints>
+    <hardpoints id="deva-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy"/>
+    </hardpoints>
+    <hardpoints id="executioner-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy,Energy,Energy,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+    <hardpoints id="hauptmann-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+    <hardpoints id="men_shen-extra">
+        <add-hardpoint location="Head" weaponMounts="AntiPersonnel,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+    </hardpoints>
+    <hardpoints id="night_gyr-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+    </hardpoints>
+    <hardpoints id="raptor_ii-extra">
+        <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="AntiPersonnel"/>
+    </hardpoints>
+    <hardpoints id="seraph-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="AntiPersonnel,Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+
         <!-- Albatross (Jihad) -->
         <mech model="albatross_ALB-3Ur" engineRating="380" engineType="XL"/>
         <mech model="albatross_ALB-5W" engineRating="380" engineType="XL"/>
 
         <!-- Avatar (Jihad) -->
-        <mech model="avatar_AV1-OCC" engineRating="280" engineType="XL" endoSteel="true"/>
-        <mech model="avatar_AV1-OH" engineRating="280" engineType="XL"/>
-        <mech model="avatar_AV1-OI" engineRating="280" engineType="XL"/>
+        <mech model="avatar_AV1-OCC" engineRating="280" engineType="XL" endoSteel="true" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OH" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OI" engineRating="280" engineType="XL" apply="avatar-extra"/>
 
         <!-- Black Knight (Jihad) -->
         <!-- BL-10-KNT Refit: Replace Thumper SawedOff (12t) + ammo (2t) with Light Gauss (12t) + ammo (1t) -->
@@ -3629,8 +3877,8 @@
         </mech>
 
         <!-- Blood Asp (Jihad) -->
-        <mech model="blood_asp_BAS-F" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-G" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-F" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-G" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
 
         <!-- Emperor (Jihad) -->
         <mech model="emperor_EMP-6D" engineRating="270" engineType="XL"/>
@@ -3640,8 +3888,8 @@
         <mech model="emperor_EMP-7L" engineRating="270" engineType="XL"/>
 
         <!-- Executioner (Jihad) -->
-        <mech model="executioner_EXE-K" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-P" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-K" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-P" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
 
         <!-- Falconer (Jihad) -->
         <mech model="falconer_FLC-9R" engineRating="375" engineType="XL"/>
@@ -3650,9 +3898,10 @@
         <mech model="fafnir_FNR-5WB" engineRating="300" engineType="standard" endoSteel="true"/>
         <mech model="fafnir_FNR-5X" engineRating="300" engineType="XL" endoSteel="true"/>
 
-        <!-- Flashman (Jihad) -->
+        <!-- Flashman uses CAB-CU hardpoints - disabled
         <mech model="flashman_FLS-9B" engineRating="375" engineType="standard"/>
         <mech model="flashman_FLS-9M" engineRating="375" engineType="standard"/>
+        -->
 
         <!-- Grasshopper (Jihad) -->
         <mech model="grasshopper_GHR-2I" engineRating="280" engineType="standard"/>
@@ -3672,8 +3921,8 @@
         <mech model="hatamoto-chi_HTM-35K" engineRating="320" engineType="standard"/>
 
         <!-- Hauptmann (Jihad) -->
-        <mech model="hauptmann_HA1-OD" engineRating="285" engineType="standard"/>
-        <mech model="hauptmann_HA1-OE" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OD" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
+        <mech model="hauptmann_HA1-OE" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
 
         <!-- Hellspawn (Jihad) -->
         <mech model="hellspawn_HSN-8E" engineRating="270" engineType="XL"/>
@@ -3685,9 +3934,9 @@
         <mech model="hunchback_iic_HBK-IIC-4" engineRating="200" engineType="XL" techBase="Clan"/>
 
         <!-- Men Shen (Jihad) -->
-        <mech model="men_shen_MS1-OE" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OF" engineRating="330" engineType="XL" endoSteel="true"/>
-        <mech model="men_shen_MS1-OU" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OE" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OF" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
+        <mech model="men_shen_MS1-OU" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
 
         <!-- Mad Cat III (Jihad) -->
         <mech model="mad_cat_iii_MCIII-X" engineRating="330" engineType="XL" techBase="Clan"/>
@@ -3697,8 +3946,8 @@
         <mech model="mad_cat_mk_ii_MCII-ECD" engineRating="360" engineType="XL" techBase="Clan"/>
 
         <!-- Night Gyr (Jihad) -->
-        <mech model="night_gyr_NTG-F" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-X" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-F" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-X" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
 
         <!-- Osprey (Jihad) -->
         <mech model="osprey_OSP-25" engineRating="220" engineType="XL" endoSteel="true"/>
@@ -3721,22 +3970,22 @@
         <mech model="ryoken_ii_RYOII-S" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
 
         <!-- Archangel -->
-        <mech model="archangel_C-ANG-O_invictus" engineRating="300" engineType="standard" techBase="Clan"/>
-        <mech model="archangel_C-ANG-OA_dominus" engineRating="300" engineType="standard" techBase="Clan"/>
-        <mech model="archangel_C-ANG-OB_infernus" engineRating="300" engineType="standard" techBase="Clan"/>
-        <mech model="archangel_C-ANG-OC_comminus" engineRating="300" engineType="standard" techBase="Clan"/>
-        <mech model="archangel_C-ANG-OD_luminos" engineRating="300" engineType="standard" techBase="Clan"/>
-        <mech model="archangel_C-ANG-OE_eminus" engineRating="300" engineType="standard" techBase="Clan"/>
-        <mech model="archangel_C-ANG-OS_caelestis" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="archangel_C-ANG-O_invictus" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
+        <mech model="archangel_C-ANG-OA_dominus" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
+        <mech model="archangel_C-ANG-OB_infernus" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
+        <mech model="archangel_C-ANG-OC_comminus" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
+        <mech model="archangel_C-ANG-OD_luminos" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
+        <mech model="archangel_C-ANG-OE_eminus" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
+        <mech model="archangel_C-ANG-OS_caelestis" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
 
         <!-- Seraph -->
-        <mech model="seraph_C-SRP-O_invictus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="seraph_C-SRP-OA_dominus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="seraph_C-SRP-OB_infernus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="seraph_C-SRP-OC_comminus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="seraph_C-SRP-OD_luminos" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="seraph_C-SRP-OE_eminus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="seraph_C-SRP-OS_caelestis" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="seraph_C-SRP-O_invictus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OA_dominus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OB_infernus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OC_comminus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OD_luminos" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OE_eminus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OS_caelestis" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
 
         <!-- Stalker (Jihad) -->
         <mech model="stalker_STK-7C3BS" engineRating="255" engineType="standard"/>
@@ -3749,13 +3998,13 @@
         <mech model="trebuchet_TBT-8B" engineRating="250" engineType="standard"/>
 
         <!-- Deva -->
-        <mech model="deva_C-DVA-O_invictus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="deva_C-DVA-OA_dominus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="deva_C-DVA-OB_infernus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="deva_C-DVA-OC_comminus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="deva_C-DVA-OD_luminos" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="deva_C-DVA-OE_eminus" engineRating="210" engineType="standard" techBase="Clan"/>
-        <mech model="deva_C-DVA-OS_caelestis" engineRating="210" engineType="standard" techBase="Clan"/>
+        <mech model="deva_C-DVA-O_invictus" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
+        <mech model="deva_C-DVA-OA_dominus" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
+        <mech model="deva_C-DVA-OB_infernus" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
+        <mech model="deva_C-DVA-OC_comminus" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
+        <mech model="deva_C-DVA-OD_luminos" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
+        <mech model="deva_C-DVA-OE_eminus" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
+        <mech model="deva_C-DVA-OS_caelestis" engineRating="210" engineType="standard" techBase="Clan" apply="deva-extra"/>
 
         <!-- Hellstar -->
         <mech model="hellstar_HST-1" engineRating="380" engineType="XL" techBase="Clan"/>
@@ -3763,9 +4012,9 @@
         <mech model="hellstar_HST-3" engineRating="380" engineType="XL" techBase="Clan"/>
 
         <!-- Deimos -->
-        <mech model="deimos_DEI-A" engineRating="210" engineType="XL" techBase="Clan"/>
-        <mech model="deimos_DEI-B" engineRating="210" engineType="XL" techBase="Clan"/>
-        <mech model="deimos_DEI-Prime" engineRating="210" engineType="XL" techBase="Clan"/>
+        <mech model="deimos_DEI-A" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
+        <mech model="deimos_DEI-B" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
+        <mech model="deimos_DEI-Prime" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
 
         <!-- Legionnaire (Jihad only - LGN-2K moved to Republic) -->
         <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL"/>
@@ -3774,11 +4023,11 @@
         <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL"/>
 
         <!-- Raptor II -->
-        <mech model="raptor_ii_RPT-2L" engineRating="240" engineType="XL"/>
-        <mech model="raptor_ii_RPT-2X" engineRating="240" engineType="XL"/>
-        <mech model="raptor_ii_RPT-2X1" engineRating="240" engineType="XL"/>
-        <mech model="raptor_ii_RPT-3X" engineRating="240" engineType="XL"/>
-        <mech model="raptor_ii_RPT-5X" engineRating="240" engineType="XL"/>
+        <mech model="raptor_ii_RPT-2L" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
+        <mech model="raptor_ii_RPT-2X" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
+        <mech model="raptor_ii_RPT-2X1" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
+        <mech model="raptor_ii_RPT-3X" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
+        <mech model="raptor_ii_RPT-5X" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
     </copy>
 
     <!-- Jihad HeavyMetal mechs -->
@@ -3807,6 +4056,56 @@
         <mechdef source="${darkAge}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${darkAge}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Extra hardpoints for OmniMech variants -->
+    <hardpoints id="blood_asp-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Missile,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Missile,Energy,Energy"/>
+    </hardpoints>
+    <hardpoints id="executioner-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy,Energy,Energy,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+    <hardpoints id="hauptmann-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+    <hardpoints id="men_shen-extra">
+        <add-hardpoint location="Head" weaponMounts="AntiPersonnel,Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile,AntiPersonnel"/>
+    </hardpoints>
+    <hardpoints id="naga-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="AntiPersonnel"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+    <hardpoints id="naga_ii-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,AntiPersonnel"/>
+    </hardpoints>
+    <hardpoints id="night_gyr-extra">
+        <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
+        <add-hardpoint location="Head" weaponMounts="Energy,Missile"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile,Missile,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
+    </hardpoints>
+
         <!-- Albatross (DarkAge) -->
         <mech model="albatross_ALB-6U" engineRating="380" engineType="XL"/>
         <mech model="albatross_ALB-C" engineRating="380" engineType="XL"/>
@@ -3833,7 +4132,7 @@
         <mech model="lament_LMT-4RC" engineRating="360" engineType="XL"/>
 
         <!-- Men Shen (DarkAge) -->
-        <mech model="men_shen_MS1-OG" engineRating="330" engineType="XL" endoSteel="true"/>
+        <mech model="men_shen_MS1-OG" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
 
         <!-- Mad Cat III (DarkAge) -->
         <mech model="mad_cat_III-Z" engineRating="330" engineType="XL" techBase="Clan"/>
@@ -3843,13 +4142,13 @@
         <mech model="mad_cat_mk_ii_MCII-7" engineRating="360" engineType="XL" techBase="Clan"/>
 
         <!-- Naga (DarkAge) -->
-        <mech model="naga_NGA-T" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="naga_ii_NGA2-W" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="naga_NGA-T" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_ii_NGA2-W" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
 
         <!-- Night Gyr (DarkAge) -->
-        <mech model="night_gyr_NTG-G" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-T" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="night_gyr_NTG-TT" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="night_gyr_NTG-G" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-T" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
+        <mech model="night_gyr_NTG-TT" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan" apply="night_gyr-extra"/>
 
         <!-- Pack Hunter (DarkAge) -->
         <mech model="pack_hunter_PH-5" engineRating="210" engineType="XL" techBase="Clan"/>
@@ -3877,14 +4176,15 @@
         <mech model="blackknight_iic_BL-IIC-KNT" engineRating="300" engineType="XL" techBase="Clan"/>
 
         <!-- Blood Asp (DarkAge) -->
-        <mech model="blood_asp_BAS-I" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
-        <mech model="blood_asp_BAS-T" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="blood_asp_BAS-I" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
+        <mech model="blood_asp_BAS-T" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
 
         <!-- Executioner (DarkAge) -->
-        <mech model="executioner_EXE-T" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-T" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
 
-        <!-- Flashman (DarkAge) -->
+        <!-- Flashman uses CAB-CU hardpoints - disabled
         <mech model="flashman_FLS-10E" engineRating="375" engineType="XL"/>
+        -->
 
         <!-- Grizzly (DarkAge) -->
         <mech model="grizzly_GRZ-3" engineRating="280" engineType="standard" endoSteel="true" techBase="Clan"/>
@@ -3895,7 +4195,7 @@
         <mech model="hatamoto-chi_HTM-30Z" engineRating="320" engineType="standard"/>
 
         <!-- Hauptmann (DarkAge) -->
-        <mech model="hauptmann_HA1-OT" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OT" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
 
         <!-- Hoplite (DarkAge) -->
         <mech model="hoplite_HOP-5C" engineRating="220" engineType="standard"/>
@@ -3929,13 +4229,39 @@
         <mechdef source="${republic}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
         <chassisdef source="${republic}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
+        <!-- Extra hardpoints for OmniMech variants -->
+    <hardpoints id="avatar-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Missile,Energy,Energy"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+    <hardpoints id="executioner-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile,Missile,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Missile,Energy,Energy,Energy,Energy,Energy,Energy,Energy"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Energy,Missile"/>
+    </hardpoints>
+    <hardpoints id="hauptmann-extra">
+        <add-hardpoint location="Head" weaponMounts="Energy"/>
+        <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel,Missile"/>
+        <add-hardpoint location="RightArm" weaponMounts="Energy,Energy,Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile,Energy"/>
+    </hardpoints>
+    <hardpoints id="trebuchet-extra">
+        <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+    </hardpoints>
+
         <!-- Albatross (Republic) -->
         <mech model="albatross_ALB-4Ur" engineRating="380" engineType="XL"/>
         <mech model="albatross_ALB-5U" engineRating="380" engineType="XL"/>
 
         <!-- Avatar (Republic) -->
-        <mech model="avatar_AV1-OBLO" engineRating="280" engineType="XL" techBase="Clan"/>
-        <mech model="avatar_AV1-OJ" engineRating="280" engineType="XL" techBase="Clan"/>
+        <mech model="avatar_AV1-OBLO" engineRating="280" engineType="XL" techBase="Clan" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OJ" engineRating="280" engineType="XL" techBase="Clan" apply="avatar-extra"/>
 
         <!-- Black Knight (Republic) -->
         <mech model="blackknight_BL-18-KNT" engineRating="300" engineType="XL"/>
@@ -3951,11 +4277,11 @@
         <mech model="emperor_EMP-8L" engineRating="270" engineType="XL"/>
 
         <!-- Executioner (Republic) -->
-        <mech model="executioner_EXE-F" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-G" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-I" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-J" engineRating="380" engineType="XL" techBase="Clan"/>
-        <mech model="executioner_EXE-L" engineRating="380" engineType="XL" techBase="Clan"/>
+        <mech model="executioner_EXE-F" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-G" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-I" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-J" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
+        <mech model="executioner_EXE-L" engineRating="380" engineType="XL" techBase="Clan" apply="executioner-extra"/>
 
         <!-- Grasshopper (Republic) -->
         <mech model="grasshopper_GHR-8K" engineRating="280" engineType="XL"/>
@@ -3968,8 +4294,8 @@
         <mech model="hatamoto-chi_HTM-27W2" engineRating="320" engineType="standard"/>
 
         <!-- Hauptmann (Republic) -->
-        <mech model="hauptmann_HA1-OF" engineRating="285" engineType="standard"/>
-        <mech model="hauptmann_HA1-OM" engineRating="285" engineType="standard"/>
+        <mech model="hauptmann_HA1-OF" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
+        <mech model="hauptmann_HA1-OM" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
 
         <!-- Legionnaire (Republic) -->
         <mech model="legionnaire_LGN-2K" engineRating="350" engineType="XL"/>
@@ -4007,7 +4333,7 @@
         <mech model="ti_tsang_TSG-10L" engineRating="360" engineType="XL" endoSteel="true"/>
 
         <!-- Trebuchet (Republic) -->
-        <mech model="trebuchet_TBT-K7R" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-K7R" engineRating="250" engineType="standard" apply="trebuchet-extra"/>
         <mech model="trebuchet_TBT-XK7" engineRating="250" engineType="standard"/>
 
         <!-- Tian-Zong (Republic) -->
