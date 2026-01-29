@@ -2615,12 +2615,15 @@
         <mech model="quickdraw_QKD-C" engineRating="300" engineType="standard"/>
         <mech model="quickdraw_QKD-IIC" engineRating="300" engineType="XL" techBase="Clan"/>
 
-        <!-- Raijin -->
+        <!-- Raijin - source has LT+RT missiles, add LA only -->
         <mech model="raijin_RJN-101-A" engineRating="300" engineType="XL" endoSteel="true">
             <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
         </mech>
+        <!-- Raijin - source has no missiles, add all 3 -->
         <mech model="raijin_RJN-101-B" engineRating="300" engineType="XL" endoSteel="true">
             <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </mech>
 
         <!-- Raijin II - moved to CivilWar era -->
@@ -3755,12 +3758,17 @@
         <mech model="quickdraw_QKD-8K" engineRating="300" engineType="standard"/>
 
         <!-- Raijin II -->
+        <!-- Raijin II - source has LA+LT missiles, add RT only -->
         <mech model="raijin_ii_RJN-200-A" engineRating="300" engineType="XL" endoSteel="true">
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </mech>
+        <!-- Raijin II - source has no missiles, add all 3 -->
         <mech model="raijin_ii_RJN-200-B" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </mech>
+        <!-- Raijin II - source has no missiles, add all 3 -->
         <mech model="raijin_ii_RJN-200-C" engineRating="300" engineType="XL" endoSteel="true">
             <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
