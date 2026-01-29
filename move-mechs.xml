@@ -2616,8 +2616,12 @@
         <mech model="quickdraw_QKD-IIC" engineRating="300" engineType="XL" techBase="Clan"/>
 
         <!-- Raijin -->
-        <mech model="raijin_RJN-101-A" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="raijin_RJN-101-B" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="raijin_RJN-101-A" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+        </mech>
+        <mech model="raijin_RJN-101-B" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+        </mech>
 
         <!-- Raijin II - moved to CivilWar era -->
         <!-- Raven - moved to UrbanWarfare blocks -->
@@ -3751,9 +3755,15 @@
         <mech model="quickdraw_QKD-8K" engineRating="300" engineType="standard"/>
 
         <!-- Raijin II -->
-        <mech model="raijin_ii_RJN-200-A" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="raijin_ii_RJN-200-B" engineRating="300" engineType="XL" endoSteel="true"/>
-        <mech model="raijin_ii_RJN-200-C" engineRating="300" engineType="XL" endoSteel="true"/>
+        <mech model="raijin_ii_RJN-200-A" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+        </mech>
+        <mech model="raijin_ii_RJN-200-B" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+        </mech>
+        <mech model="raijin_ii_RJN-200-C" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+        </mech>
 
         <!-- Stalker (CivilWar) -->
         <mech model="stalker_STK-6M" engineRating="255" engineType="standard"/>
