@@ -226,6 +226,9 @@ public class RapidFile {
         else if (task instanceof RemoveFixedEquipment) {
             removeFixedEquipment((RemoveFixedEquipment) task, mech.chasisDef);
         }
+        else if (task instanceof MoveFixedEquipment) {
+            moveFixedEquipment((MoveFixedEquipment) task, mech);
+        }
         else if (task instanceof RemoveQuirk) {
             removeQuirk((RemoveQuirk) task, mech.chasisDef);
         }
@@ -319,6 +322,42 @@ public class RapidFile {
 
     private void removeFixedEquipment(RemoveFixedEquipment task, ChasisDef def) {
         def.FixedEquipment.removeIf(item -> item.ComponentDefID.equals(task.item));
+    }
+
+    private void moveFixedEquipment(MoveFixedEquipment task, Mech mech) {
+        // Find all matching items in chassis FixedEquipment
+        List<Equipment> matches = new ArrayList<>();
+        for (var equipment : mech.chasisDef.FixedEquipment) {
+            if (equipment.ComponentDefID.equals(task.item)) {
+                matches.add(equipment);
+                if (!task.all) {
+                    break;  // only find first match if all=false
+                }
+            }
+        }
+
+        if (matches.isEmpty()) {
+            System.out.printf("WARNING: move-fixedEquipment - item not found in FixedEquipment: %s\n", task.item);
+            return;
+        }
+
+        // Move each matching item
+        for (var found : matches) {
+            // Remove from chassis FixedEquipment
+            mech.chasisDef.FixedEquipment.remove(found);
+
+            // Add to mech inventory with the replacement item
+            Inventory inventoryItem = new Inventory();
+            inventoryItem.MountedLocation = found.MountedLocation;
+            inventoryItem.ComponentDefID = task.with;
+            inventoryItem.ComponentDefType = (task.itemType != null) ? task.itemType : found.ComponentDefType;
+            inventoryItem.HardpointSlot = found.HardpointSlot;
+            inventoryItem.DamageLevel = "Functional";
+            mech.mechDef.inventory.add(inventoryItem);
+
+            System.out.printf("Moved %s from FixedEquipment to inventory as %s at %s\n",
+                    task.item, task.with, found.MountedLocation);
+        }
     }
 
     private void removeEngine(RemoveEngine task, Mech mech, boolean isChassis) {

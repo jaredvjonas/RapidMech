@@ -842,13 +842,28 @@
         <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
 
         <!-- Avatar (ClanInvasion only) -->
-        <mech model="avatar_AV1-O" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OA" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OB" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OC" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OD" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OG" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OR" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <!-- Avatar Refit: Move fixed CT Medium Lasers to inventory -->
+        <mech model="avatar_AV1-O" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OA" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OB" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OC" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OD" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OG" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OR" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
         <!-- Note: Other avatar variants moved to CivilWar/Jihad/Republic era blocks -->
 
         <hardpoints id="atlas">
@@ -1385,7 +1400,10 @@
         <mech model="enforcer_ENF-5D" engineRating="250" engineType="XL" ferroFibrous="true"/>
         <mech model="enforcer_ENF-5DR" engineRating="250" engineType="XL" endoSteel="true"/>
         <mech model="enforcer_ENF-5P" engineRating="250" engineType="XL"/>
-        <mech model="enforcer_ENF-7S" engineRating="225" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <!-- ENF-7S Refit: Move fixed Gauss Prototype to inventory -->
+        <mech model="enforcer_ENF-7S" engineRating="225" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <move-fixedEquipment item="Unique_Weapon_Gauss_Prototype" with="Unique_Weapon_Gauss_Prototype" itemType="Weapon"/>
+        </mech>
         <mech model="enforcer_ENF-NAIS-WC" engineRating="250" engineType="XL" ferroFibrous="true"/>
 
         <mech model="enforcer_iii_ENF-6M" engineRating="250" engineType="XL" endoSteel="true"/>
@@ -1836,7 +1854,10 @@
         <mech model="hunchback_HBK-4A" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4E" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4G" engineRating="200" engineType="standard"/>
-        <mech model="hunchback_HBK-4G_gauss_prototype" engineRating="200" engineType="standard"/>
+        <!-- HBK-4G Gauss Prototype Refit: Move fixed Gauss Prototype to inventory -->
+        <mech model="hunchback_HBK-4G_gauss_prototype" engineRating="200" engineType="standard">
+            <move-fixedEquipment item="Unique_Weapon_Gauss_Prototype" with="Unique_Weapon_Gauss_Prototype" itemType="Weapon"/>
+        </mech>
         <mech model="hunchback_HBK-4Gb" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4G-EC" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4GK" engineRating="200" engineType="standard"/>
@@ -2320,11 +2341,22 @@
         <mech model="mongoose_MON-C2" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <!-- Naga (ClanInvasion only - NGA-T and NGA2-W moved to DarkAge) -->
-        <mech model="naga_NGA-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
-        <mech model="naga_NGA-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
-        <mech model="naga_NGA-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
-        <mech model="naga_NGA-D" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
-        <mech model="naga_NGA-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <!-- Naga Refit: Move fixed Arrow IV weapons to inventory -->
+        <mech model="naga_NGA-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
+        </mech>
+        <mech model="naga_NGA-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
+        </mech>
+        <mech model="naga_NGA-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
+        </mech>
+        <mech model="naga_NGA-D" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
+        </mech>
+        <mech model="naga_NGA-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
+        </mech>
         <mech model="naga_ii_NGA2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
         <mech model="naga_ii_NGA2-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
         <mech model="naga_ii_NGA2-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
@@ -3621,8 +3653,12 @@
         <mech model="albatross_ALB-4U" engineRating="380" engineType="XL"/>
 
         <!-- Avatar (CivilWar) -->
-        <mech model="avatar_AV1-OE" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OF" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OE" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OF" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
 
         <!-- Black Knight (CivilWar) -->
         <mech model="blackknight_BL-12-KNT" engineRating="300" engineType="XL"/>
@@ -3862,9 +3898,17 @@
         <mech model="albatross_ALB-5W" engineRating="380" engineType="XL"/>
 
         <!-- Avatar (Jihad) -->
-        <mech model="avatar_AV1-OCC" engineRating="280" engineType="XL" endoSteel="true" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OH" engineRating="280" engineType="XL" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OI" engineRating="280" engineType="XL" apply="avatar-extra"/>
+        <!-- AV1-OCC Refit: Move missing Unique_Weapon_TAG_Overlord and fixed Medium Lasers to inventory -->
+        <mech model="avatar_AV1-OCC" engineRating="280" engineType="XL" endoSteel="true" apply="avatar-extra">
+            <move-fixedEquipment item="Unique_Weapon_TAG_Overlord" with="Weapon_TAG" itemType="Weapon"/>
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OH" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OI" engineRating="280" engineType="XL" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
 
         <!-- Black Knight (Jihad) -->
         <!-- BL-10-KNT Refit: Replace Thumper SawedOff (12t) + ammo (2t) with Light Gauss (12t) + ammo (1t) -->
@@ -4142,7 +4186,9 @@
         <mech model="mad_cat_mk_ii_MCII-7" engineRating="360" engineType="XL" techBase="Clan"/>
 
         <!-- Naga (DarkAge) -->
-        <mech model="naga_NGA-T" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra"/>
+        <mech model="naga_NGA-T" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
+        </mech>
         <mech model="naga_ii_NGA2-W" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
 
         <!-- Night Gyr (DarkAge) -->
@@ -4260,8 +4306,12 @@
         <mech model="albatross_ALB-5U" engineRating="380" engineType="XL"/>
 
         <!-- Avatar (Republic) -->
-        <mech model="avatar_AV1-OBLO" engineRating="280" engineType="XL" techBase="Clan" apply="avatar-extra"/>
-        <mech model="avatar_AV1-OJ" engineRating="280" engineType="XL" techBase="Clan" apply="avatar-extra"/>
+        <mech model="avatar_AV1-OBLO" engineRating="280" engineType="XL" techBase="Clan" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
+        <mech model="avatar_AV1-OJ" engineRating="280" engineType="XL" techBase="Clan" apply="avatar-extra">
+            <move-fixedEquipment item="Weapon_Laser_Medium_DiverseOptics" with="Weapon_Laser_Medium_DiverseOptics" itemType="Weapon"/>
+        </mech>
 
         <!-- Black Knight (Republic) -->
         <mech model="blackknight_BL-18-KNT" engineRating="300" engineType="XL"/>
