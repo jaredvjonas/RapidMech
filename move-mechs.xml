@@ -3762,6 +3762,8 @@
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </mech>
         <mech model="raijin_ii_RJN-200-C" engineRating="300" engineType="XL" endoSteel="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Missile"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </mech>
 
