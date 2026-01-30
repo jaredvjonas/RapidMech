@@ -1,0 +1,277 @@
+================================================================================
+MISSILE HARDPOINT RECOMMENDATIONS - IrianTech Mod
+================================================================================
+
+Analysis of mechs with limited missile hardpoints (only 1-2 variants with missiles)
+Recommendations based on: weight class, battlefield role, and design philosophy
+
+Criteria:
+- Support/artillery mechs SHOULD have missile capability
+- Assault/Heavy mechs typically support 2-4 missile hardpoints (torso preferred)
+- Scout/recon mechs should AVOID missiles (energy weapon focus)
+
+Status: Updated in move-mechs.xml on 2026-01-29
+
+================================================================================
+HIGH PRIORITY - STRONGLY RECOMMENDED
+================================================================================
+
+JAGERMECH_IIC (65t Heavy) - "Fire Support"
+  Current: Only JM7-IIC has 1 missile hardpoint
+  Problem: Fire Support mech with minimal missile capability is contradictory
+  Recommendation: Add 2-4 missile hardpoints to torso locations on all variants
+  Variants updated:
+    [x] JM6-IIC - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] JM7-IIC2 - Added 4 missile hardpoints (2 LT, 2 RT)
+
+RIFLEMAN_IIC (65t Heavy) - "Direct-Fire Support"
+  Current: Only RFL-IIC-1 and RFL-IIC-2 have 1 missile each
+  Problem: Fire support role should include indirect fire options
+  Recommendation: Add 2 missile hardpoints (torso) to RFL-IIC-A variant
+  Variants updated:
+    [x] RFL-IIC-A - Added 2 missile hardpoints (1 LT, 1 RT)
+
+STONE_RHINO (100t Assault) - "Slow Juggernaut"
+  Current: Only SR-4 has 4 missile hardpoints; 6 variants have ZERO
+  Problem: 100-ton Clan assault should have missile options across variants
+  Recommendation: Add 2-4 missile hardpoints (torso) to most variants
+  Variants updated:
+    [x] SR-1 - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] SR-2 - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] SR-5 - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] SR-6 - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] SR-7 - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] SR-N - Added 4 missile hardpoints (2 LT, 2 RT)
+
+CERBERUS (95t Assault) - "Brawler"
+  Current: Only MR-V3 has 1 missile hardpoint; 4 variants have ZERO
+  Problem: 95-ton brawler should have SRM capability for close combat
+  Recommendation: Add 2 missile hardpoints (torso) for SRM support
+  Variants updated:
+    [x] MR-5M - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MR-6B - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MR-7K - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MR-V2 - Added 2 missile hardpoints (1 LT, 1 RT)
+
+DEVASTATOR (100t Assault) - "Juggernaut"
+  Current: Only DVS-3 has 1 missile hardpoint; 3 variants have ZERO
+  Problem: 100-ton juggernaut severely limited in loadout flexibility
+  Recommendation: Add 2-4 missile hardpoints (torso) across variants
+  Variants updated:
+    [x] DVS-1D - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] DVS-2 - Added 4 missile hardpoints (2 LT, 2 RT)
+    [x] DVS-2-EC - Added 4 missile hardpoints (2 LT, 2 RT)
+
+================================================================================
+MEDIUM PRIORITY - RECOMMENDED
+================================================================================
+
+NIGHTSTAR (95t Assault) - "Heavy Brawler"
+  Current: Only NSR-9J has 1 missile hardpoint; 3 variants have ZERO
+  Problem: Heavy assault brawler lacks flexibility
+  Recommendation: Add 2 missile hardpoints (torso) for SRM support
+  Variants updated:
+    [x] NSR-7J - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] NSR-9FC - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] NSR-9JC - Added 2 missile hardpoints (1 LT, 1 RT)
+
+MARAUDER_II (100t Assault) - "Sniper & Ranged Assault"
+  Current: MAD-2K has 1, MAD-4HB has 9; 7 variants have ZERO
+  Problem: Ranged assault role could benefit from LRM capability
+  Recommendation: Add 2 missile hardpoints (torso) for LRM options
+  Variants updated:
+    [x] MAD-4A - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MAD-4B - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MAD-5A - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MAD-5B - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MAD-5C - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MAD-5V - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MAD-6W - Added 2 missile hardpoints (1 LT, 1 RT)
+
+PILLAGER (100t Assault) - "Breach & Close Assault"
+  Current: Only PLG-1N and PLG-3Z have 1 missile each
+  Problem: Close assault benefits from SRM support
+  Recommendation: Add 1-2 missile hardpoints to PLG-3Z-EC
+  Variants updated:
+    [x] PLG-3Z-EC - Added 2 missile hardpoints (1 LT, 1 RT)
+
+HELLSTAR (95t Assault) - "Sniper"
+  Current: Only HST-2 has 3 missile hardpoints; HST-1, HST-3 have ZERO
+  Problem: Sniper role pairs well with LRM indirect fire
+  Recommendation: Add 2 missile hardpoints (torso) to other variants
+  Variants updated:
+    [x] HST-1 - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] HST-3 - Added 2 missile hardpoints (1 LT, 1 RT)
+
+GALLOWGLAS (70t Heavy) - "Brawler"
+  Current: GAL-2GLS has 3, GAL-WD has 1; 2 variants have ZERO
+  Problem: Heavy brawler could use SRM options
+  Recommendation: Add 2 missile hardpoints (torso)
+  Variants updated:
+    [x] GAL-1GLS - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] GAL-WD1 - Added 2 missile hardpoints (1 LT, 1 RT)
+
+SUPERNOVA (90t Assault) - "Juggernaut & Heavy Cavalry"
+  Current: SNV-1 has 1, SNV-A has 4; SNV-C has ZERO
+  Problem: Assault juggernaut should have consistent missile options
+  Recommendation: Add 2 missile hardpoints to SNV-C
+  Variants updated:
+    [x] SNV-C - Added 2 missile hardpoints (1 LT, 1 RT)
+
+RAMPAGE (85t Assault) - "Juggernaut"
+  Current: RMP-2G has 1, RMP-5G has 4; RMP-4G has ZERO
+  Problem: Juggernaut role benefits from missile support
+  Recommendation: Add 2 missile hardpoints (torso)
+  Variants updated:
+    [x] RMP-4G - Added 2 missile hardpoints (1 LT, 1 RT)
+
+================================================================================
+LOW PRIORITY - CONSIDER BASED ON VARIANT THEME
+================================================================================
+
+PENETRATOR (75t Heavy) - "Skirmisher & Heavy Flanker"
+  Current: Only PTR-4F and PTR-4FX have 2 missiles each
+  Problem: Energy-focused design, but heavy flanker could use SRMs
+  Recommendation: Consider adding 1-2 missile hardpoints to 1-2 variants
+  Variants updated:
+    [x] PTR-4D - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] PTR-6M - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] PTR-6S - Added 2 missile hardpoints (1 LT, 1 RT)
+
+MAELSTROM (75t Heavy) - "Skirmisher"
+  Current: MTR-5K and MTR-7K have 1 each; 3 variants have ZERO
+  Problem: Heavy skirmisher could benefit from flexibility
+  Recommendation: Consider adding 1-2 missile hardpoints
+  Variants updated:
+    [x] MTR-6E - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MTR-6K - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] MTR-RDBK - Added 2 missile hardpoints (1 LT, 1 RT)
+
+LANCELOT (60t Heavy) - "Skirmisher"
+  Current: Only LNC25-01 and LNC25-01sl have 1 missile; 8 variants have ZERO
+  Problem: Historically energy-focused, but some variants could diversify
+  Recommendation: Add 1-2 missile hardpoints to 2-3 select variants
+  Variants updated:
+    [x] LNC25-02 - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] LNC25-03 - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] LNC25-04 - Added 2 missile hardpoints (1 LT, 1 RT)
+
+ANVIL (60t Heavy) - "Skirmisher"
+  Current: ANV-3M and ANV-8M have 1 each; ANV-5M, ANV-6M have ZERO
+  Problem: Inconsistent loadout options
+  Recommendation: Add 1-2 missile hardpoints for consistency
+  Variants updated:
+    [x] ANV-5M - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] ANV-6M - Added 2 missile hardpoints (1 LT, 1 RT)
+
+VISIONQUEST (60t Heavy) - "Brawler"
+  Current: Only VQ-1 has 1 missile hardpoint
+  Problem: Heavy brawler limited in close combat options
+  Recommendation: Add 1-2 missile hardpoints
+  Variants updated:
+    [x] VQ-1NC - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] VQ-2 - Added 2 missile hardpoints (1 LT, 1 RT)
+
+TEMPLAR (65t Heavy) - "Brawler"
+  Current: CRD-1G has 2, CRD-1R has 4; CRD-6T has ZERO
+  Problem: One brawler variant lacks any missile capability
+  Recommendation: Add 2 missile hardpoints to CRD-6T
+  Variants updated:
+    [x] CRD-6T - Added 2 missile hardpoints (1 LT, 1 RT)
+
+SUN_BEAR (55t Medium) - "Skirmisher"
+  Current: Only SBR-B has 4 missiles; SBR-A, SBR-Prime have ZERO
+  Problem: Medium Clan mech with inconsistent loadouts
+  Recommendation: Consider adding 1-2 missile hardpoints
+  Variants updated:
+    [x] SBR-A - Added 2 missile hardpoints (1 LT, 1 RT)
+    [x] SBR-Prime - Added 2 missile hardpoints (1 LT, 1 RT)
+
+================================================================================
+NOT RECOMMENDED - SCOUT/RECON MECHS (Energy Weapon Focus)
+================================================================================
+
+The following mechs are scouts or light strikers that traditionally favor
+energy weapons over ammunition-dependent missiles. NO CHANGES MADE:
+
+- HERMES (30t Light) - "Scout" - Fast recon, energy focus
+- OSTSCOUT (35t Light) - "Scout" - Dedicated scout, speed over firepower
+- INCUBUS (30t Light) - "Light and Protomech Hunter" - Light hunter
+- PACK_HUNTER (30t Light) - "Striker" - Light striker, energy preferred
+- DART (25t Light) - "Extremely Maneuverable Scout" - Speed focus
+- FALCON (30t Light) - "Scout" - Light scout
+- HORNED_OWL (35t Light) - "Striker" - Light striker
+- NIGHTHAWK (35t Light) - "Striker" - Covert ops, energy weapons
+- TALON (35t Light) - "Striker" - Light striker
+- VENOM (35t Light) - "Extremely Maneuverable Scout" - Scout role
+- ENFIELD (50t Medium) - "Skirmisher" - Medium skirmisher, energy viable
+
+================================================================================
+SUMMARY
+================================================================================
+
+HIGH PRIORITY (5 mechs, 16 variants updated):
+  [x] JAGERMECH_IIC (2 variants)
+  [x] RIFLEMAN_IIC (1 variant)
+  [x] STONE_RHINO (6 variants)
+  [x] CERBERUS (4 variants)
+  [x] DEVASTATOR (3 variants)
+
+MEDIUM PRIORITY (7 mechs, 17 variants updated):
+  [x] NIGHTSTAR (3 variants)
+  [x] MARAUDER_II (7 variants)
+  [x] PILLAGER (1 variant)
+  [x] HELLSTAR (2 variants)
+  [x] GALLOWGLAS (2 variants)
+  [x] SUPERNOVA (1 variant)
+  [x] RAMPAGE (1 variant)
+
+LOW PRIORITY (7 mechs, 14 variants updated):
+  [x] PENETRATOR (3 variants)
+  [x] MAELSTROM (3 variants)
+  [x] LANCELOT (3 variants)
+  [x] ANVIL (2 variants)
+  [x] VISIONQUEST (2 variants)
+  [x] TEMPLAR (1 variant)
+  [x] SUN_BEAR (2 variants)
+
+NOT RECOMMENDED (11 mechs):
+  Scout and light striker mechs - maintain energy weapon focus
+
+TOTAL: 47 variants updated with missile hardpoints
+
+TYPICAL HARDPOINT PLACEMENT:
+  - Torso (Left/Right): Primary location for missile racks (LRM/SRM)
+  - Center Torso: Secondary option for single missile system
+  - Arms: Occasionally for lighter mechs or specific designs
+  - Legs: Rare, only for specialized variants
+
+================================================================================
+IMPLEMENTATION NOTES
+================================================================================
+
+All changes implemented in: move-mechs.xml
+Hardpoint definitions added: Lines 795-895 (approx)
+
+Hardpoint IDs created:
+  - jagermech_iic-missiles
+  - rifleman_iic-missiles
+  - stone_rhino-missiles
+  - cerberus-missiles
+  - devastator-missiles
+  - nightstar-missiles
+  - marauder_ii-missiles
+  - pillager-missiles
+  - hellstar-missiles
+  - gallowglas-missiles
+  - supernova-missiles
+  - rampage-missiles
+  - penetrator-missiles
+  - maelstrom-missiles
+  - lancelot-missiles
+  - anvil-missiles
+  - visionquest-missiles
+  - templar-missiles
+  - sun_bear-missiles
+
+================================================================================
