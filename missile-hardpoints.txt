@@ -10,7 +10,7 @@ Criteria:
 - Assault/Heavy mechs typically support 2-4 missile hardpoints (torso preferred)
 - Scout/recon mechs should AVOID missiles (energy weapon focus)
 
-Status: Updated in move-mechs.xml on 2026-01-29
+Status: Updated in move-mechs.xml on 2026-01-31
 
 ================================================================================
 HIGH PRIORITY - STRONGLY RECOMMENDED
@@ -210,41 +210,315 @@ energy weapons over ammunition-dependent missiles. NO CHANGES MADE:
 SUMMARY
 ================================================================================
 
-HIGH PRIORITY (5 mechs, 16 variants updated):
-  [x] JAGERMECH_IIC (2 variants)
-  [x] RIFLEMAN_IIC (1 variant)
-  [x] STONE_RHINO (6 variants)
-  [x] CERBERUS (4 variants)
-  [x] DEVASTATOR (3 variants)
+INITIAL PASS (19 mechs, 47 variants):
+  HIGH PRIORITY (5 mechs, 16 variants updated):
+    [x] JAGERMECH_IIC (2 variants)
+    [x] RIFLEMAN_IIC (1 variant)
+    [x] STONE_RHINO (6 variants)
+    [x] CERBERUS (4 variants)
+    [x] DEVASTATOR (3 variants)
 
-MEDIUM PRIORITY (7 mechs, 17 variants updated):
-  [x] NIGHTSTAR (3 variants)
-  [x] MARAUDER_II (7 variants)
-  [x] PILLAGER (1 variant)
-  [x] HELLSTAR (2 variants)
-  [x] GALLOWGLAS (2 variants)
-  [x] SUPERNOVA (1 variant)
-  [x] RAMPAGE (1 variant)
+  MEDIUM PRIORITY (7 mechs, 17 variants updated):
+    [x] NIGHTSTAR (3 variants)
+    [x] MARAUDER_II (7 variants)
+    [x] PILLAGER (1 variant)
+    [x] HELLSTAR (2 variants)
+    [x] GALLOWGLAS (2 variants)
+    [x] SUPERNOVA (1 variant)
+    [x] RAMPAGE (1 variant)
 
-LOW PRIORITY (7 mechs, 14 variants updated):
-  [x] PENETRATOR (3 variants)
-  [x] MAELSTROM (3 variants)
-  [x] LANCELOT (3 variants)
-  [x] ANVIL (2 variants)
-  [x] VISIONQUEST (2 variants)
-  [x] TEMPLAR (1 variant)
-  [x] SUN_BEAR (2 variants)
+  LOW PRIORITY (7 mechs, 14 variants updated):
+    [x] PENETRATOR (3 variants)
+    [x] MAELSTROM (3 variants)
+    [x] LANCELOT (3 variants)
+    [x] ANVIL (2 variants)
+    [x] VISIONQUEST (2 variants)
+    [x] TEMPLAR (1 variant)
+    [x] SUN_BEAR (2 variants)
+
+SESSION 2026-01-31 (12 mechs, 69 variants):
+  [x] SHADOW HAWK (19 variants) - +1 to +2 RT missiles
+  [x] THUNDER HAWK (4 variants) - +3 to +5 missiles
+  [x] LONGBOW (11 variants) - +1 to +4 missiles
+  [x] CATAPULT (3 variants) - +1 to +2 missiles
+  [x] GRAND CRUSADER (6 variants) - +4 missiles
+  [x] STORM GIANT (2 variants) - +4 missiles
+  [x] BOWMAN (3 variants) - +4 missiles
+  [x] KODIAK (5 variants) - +4 missiles
+  [x] FAFNIR (5 variants) - +4 missiles
+  [x] MAD CAT MK II (11 variants) - +4 missiles
+  [x] YMIR (2 variants) - +2 missiles
+  [x] RYOKEN II (3 variants) - +2 to +4 missiles
+
+FIXES APPLIED (3 variants):
+  [x] DEVASTATOR DVS-3 - missing apply attribute
+  [x] PILLAGER PLG-1N - missing apply attribute
+  [x] PILLAGER PLG-3Z - missing apply attribute
 
 NOT RECOMMENDED (11 mechs):
   Scout and light striker mechs - maintain energy weapon focus
 
-TOTAL: 47 variants updated with missile hardpoints
+GRAND TOTAL: 214 variants updated with missile hardpoints
+  - Initial Pass: 47 variants
+  - Session 2026-01-31: 69 variants
+  - Session 2026-02-01 (Part 1): 53 variants
+  - Session 2026-02-01 (Part 2): 45 variants
 
 TYPICAL HARDPOINT PLACEMENT:
   - Torso (Left/Right): Primary location for missile racks (LRM/SRM)
   - Center Torso: Secondary option for single missile system
   - Arms: Occasionally for lighter mechs or specific designs
   - Legs: Rare, only for specialized variants
+
+================================================================================
+SESSION 2026-01-31: MISSILE HARDPOINT ADDITIONS
+================================================================================
+
+SHADOW HAWK (55t Medium) - "Striker/Skirmisher"
+  Problem: Most variants had only 1 missile hardpoint
+  Hardpoint definitions added:
+    - shadowhawk-missiles: +1 RT missile
+    - shadowhawk-missiles-2: +2 RT missiles
+  Variants updated (19 total):
+    [x] SHD-1P, SHD-2D, SHD-2D2, SHD-2GD, SHD-2H, SHD-2Hb, SHD-2Hb-EC, SHD-2HR
+    [x] SHD-2I, SHD-2K, SHD-2Ki, SHD-2P, SHD-3H, SHD-5M, SHD-C (+1 missile each)
+    [x] SHD-5S, SHD-5S2, SHD-5SF (+2 missiles each)
+    [x] SHD-IIC-2, SHD-IIC-3 (+1 missile each)
+
+THUNDER HAWK (100t Assault) - "Sniper/Fire Support"
+  Problem: 100T assault with limited missile capability
+  Hardpoint definitions added:
+    - thunderhawk-7kma-missiles: +5 missiles (2 LT, 3 RT)
+    - thunderhawk-7x-missiles: +4 missiles (2 LT, 2 RT)
+    - thunderhawk-7y-missiles: +3 missiles (2 LT, 1 RT)
+    - thunderhawk-th1-missiles: +4 missiles (2 LT, 2 RT)
+  Variants updated (4 total):
+    [x] TDK-7KMA - 5 missiles added
+    [x] TDK-7X - 4 missiles added
+    [x] TDK-7Y - 3 missiles added
+    [x] TH-1 - 4 missiles added
+
+LONGBOW (85t Assault) - "THE Iconic Missile Boat"
+  Problem: The quintessential missile boat needed more missile flexibility
+  Hardpoint definitions added:
+    - longbow-missiles-4: +4 missiles (2 LT, 2 RT)
+    - longbow-missiles-2: +2 missiles (1 LT, 1 RT)
+    - longbow-missiles-lt1: +1 missile (1 LT)
+    - longbow-missiles-3: +3 missiles (1 LT, 2 RT)
+  Variants updated (11 total):
+    [x] LGB-0C, LGB-7V, LGB-8C, LGB-10C, LGB-12U, LGB-OW (+4 missiles)
+    [x] LGB-0W, LGB-7Q, LGB-7W (+2 missiles)
+    [x] LGB-0W2 (+1 missile)
+    [x] LGB-12C (+3 missiles)
+
+CATAPULT (65t Heavy) - "Fire Support"
+  Problem: Classic missile boat variants needed more hardpoints
+  Hardpoint definitions added:
+    - catapult-c1-missiles: +2 missiles (1 LT, 1 RT)
+    - catapult-c5-missiles: +1 missile (1 LA)
+  Variants updated (3 total):
+    [x] CPLT-C1 - 2 missiles added
+    [x] CPLT-C1b - 2 missiles added
+    [x] CPLT-C5 - 1 missile added
+
+GRAND CRUSADER (80t Assault) - "Missile Boat"
+  Problem: Missile boat role with insufficient hardpoints
+  Hardpoint definition added:
+    - grandcrusader-missiles: +4 missiles (2 LT, 2 RT)
+  Variants updated (6 total):
+    [x] GRN-D-01, GRN-D-01-U, GRN-D-01-X
+    [x] GRN-D-02, GRN-D-02-B, GRN-D-02-W
+
+STORM GIANT (100t Assault) - "Missile Boat"
+  Problem: 100T Clan missile boat needed more hardpoints
+  Hardpoint definition added:
+    - stormgiant-missiles: +4 missiles (2 LT, 2 RT)
+  Variants updated (2 total):
+    [x] STG-1, STG-2
+
+BOWMAN (70t Heavy) - "Missile Boat"
+  Problem: Clan missile boat needed more hardpoints
+  Hardpoint definition added:
+    - bowman-missiles: +4 missiles (2 LT, 2 RT)
+  Variants updated (3 total):
+    [x] BWM-1, BWM-2, BWM-4
+
+KODIAK (100t Assault) - "Juggernaut"
+  Problem: 100T Clan assault with 0-2 missiles
+  Hardpoint definition added:
+    - kodiak: +4 missiles (2 LT, 2 RT)
+  Variants updated (5 total):
+    [x] KDK-1, KDK-5, KDK-GB, KDK-P1, KDK-P2
+
+FAFNIR (100t Assault) - "Juggernaut"
+  Problem: 100T assault with 0-2 missiles
+  Hardpoint definition added:
+    - fafnir: +4 missiles (2 LT, 2 RT)
+  Variants updated (5 total):
+    [x] FNR-5, FNR-5B, FNR-5C (CivilWar)
+    [x] FNR-5WB, FNR-5X (Jihad)
+
+MAD CAT MK II (90t Assault) - "Heavy Brawler"
+  Problem: 90T Clan assault with only 2-4 missiles
+  Hardpoint definition added:
+    - mad_cat_mk_ii: +4 missiles (2 LT, 2 RT)
+  Variants updated (11 total):
+    [x] MCII-1, MCII-A, MCII-B, MCII-FIS (CivilWar)
+    [x] MCII-2, MCII-ECD (Jihad)
+    [x] MCII-6, MCII-7 (DarkAge)
+    [x] MCII-3, MCII-4, MCII-5 (Republic)
+
+YMIR (90t Assault) - "Missile Boat variants"
+  Problem: Missile boat variants needed more RT missiles
+  Hardpoint definition added:
+    - ymir-missiles: +2 missiles (2 RT)
+  Variants updated (2 total):
+    [x] BWP-2B, BWP-X1
+
+RYOKEN II (75t Heavy) - "Fire Support variants"
+  Problem: Fire support variants needed missile capability
+  Hardpoint definitions added:
+    - ryoken-ii-missiles-4: +4 missiles (2 LT, 2 RT)
+    - ryoken-ii-missiles-2: +2 missiles (1 LT, 1 RT)
+  Variants updated (3 total):
+    [x] RYOII-1 - 4 missiles added
+    [x] RYOII-GB - 4 missiles added
+    [x] RYOII-S - 2 missiles added
+
+================================================================================
+SESSION 2026-01-31: FIXES APPLIED
+================================================================================
+
+Missing apply attributes fixed:
+  [x] DEVASTATOR DVS-3: Was missing apply="devastator-missiles"
+  [x] PILLAGER PLG-1N: Was missing apply="pillager-missiles"
+  [x] PILLAGER PLG-3Z: Was missing apply="pillager-missiles"
+
+================================================================================
+SESSION 2026-01-31: NO CHANGES NEEDED
+================================================================================
+
+TIMBER WOLF (75t Heavy, Clan OmniMech) - IrianTech
+  Variants: 28 (TW-Prime, TW-A through TW-N, TW-S, TW-SG, TW-TC, TW-WDR1/2/3, etc.)
+  Current missiles: 4 base (2 LT, 2 RT) + 4 from timber_wolf hardpoints = 8 total
+  Special variants:
+    - TW-K: +8 arm missiles = 16 total
+    - TW-WDR1: +9 missiles (custom definition) = 13 total
+  Assessment: ALREADY WELL-EQUIPPED - No changes needed
+
+ANNIHILATOR (100t Assault) - JK_BTMods (not IrianTech)
+  Variants: ANH-1A, ANH-1E, ANH-JH
+  Current missiles: 0 (all variants)
+  Role: Juggernaut / Siege Mech
+  Assessment: Could benefit from 4 missiles, but SKIPPED per user request
+  Note: Located in JK_BTMods, not managed by RapidMech
+
+KING CRAB (100t Assault) - 7-10 missiles after kingcrab hardpoints
+ATLAS (100t Assault) - 14-16 missiles after atlas hardpoints
+DIRE WOLF (100t Assault) - Already has generous missile loadout
+
+================================================================================
+SESSION 2026-02-01: CAVALRY MECH MISSILE ADDITIONS
+================================================================================
+
+Focus: Heavy/Assault mechs with "Cavalry" roles that had insufficient missiles
+
+EMPEROR (90t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: 12 variants with 0-1 missiles - woefully inadequate for 90T assault
+  Hardpoint definition added:
+    - emperor: +6 missiles (3 LT, 3 RT)
+  Variants updated (12 total):
+    [x] EMP-1A, EMP-5A, EMP-5B, EMP-6A, EMP-6A-EC, EMP-EC (ClanInvasion)
+    [x] EMP-6D, EMP-6L, EMP-6M, EMP-6S, EMP-7L (Jihad)
+    [x] EMP-8L (Republic)
+  Result: 0 → 6 missiles, EMP-6L: 1 → 7 missiles
+
+GRAND TITAN (100t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: 3 variants with only 1-3 missiles - 100T mech with LRM lore
+  Hardpoint definition added:
+    - grandtitan: +6 missiles (3 LT, 3 RT)
+  Variants updated (3 total):
+    [x] T-IT-N10M, T-IT-N11M, T-IT-N11M2
+  Result: T-IT-N10M: 3→9, T-IT-N11M: 2→8, T-IT-N11M2: 1→7
+
+TITAN (100t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: 4 variants with 5-6 missiles
+  Assessment: ADEQUATE - Lore describes "four SRM-4s and an SRM-6" (5 launchers)
+  Result: NO CHANGES - 5-6 missiles matches design intent
+
+HIGHLANDER (90t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: Standard variants had only 2 missiles; IIC had 3 missiles
+  Hardpoint definitions added/updated:
+    - highlander: +4 missiles (2 LT, 2 RT) - NEW
+    - highlander-IIC: +4 missiles (2 LT, 2 RT) - UPDATED existing definition
+  Variants updated (10 total):
+    Standard (6): HGN-732, HGN-732b, HGN-733, HGN-733C, HGN-733P, HGN-736
+    IIC (4): HGN-IIC-1, HGN-IIC-A, HGN-IIC-B, HGN-IIC-C
+  Result: Standard: 2→6 missiles, IIC: 3→7 missiles
+
+MAULER (90t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: 7 variants with only 2 missiles - primarily ballistic platform
+  Hardpoint definition added:
+    - mauler: +2 missiles (1 LT, 1 RT)
+  Variants updated (7 total):
+    [x] MAL-1P, MAL-1R, MAL-1X-AFFC, MAL-1Y, MAL-2P, MAL-2R, MAL-C
+  Result: 2 → 4 missiles (conservative - ballistic-focused design)
+
+VIKING (90t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: VKG-2F had 4 missiles (okay), VKG-2G had only 1 missile (missile boat!)
+  Hardpoint definition added:
+    - viking: +4 missiles (2 LT, 2 RT)
+  Variants updated (2 total):
+    [x] VKG-2F, VKG-2G
+  Result: VKG-2F: 4→8 missiles, VKG-2G: 1→5 missiles
+
+GRASSHOPPER (70t Heavy) - "Heavy Skirmisher & Cavalry"
+  Problem: 16 variants with 0-2 missiles - energy-focused design
+  Assessment: Low missiles intentional (energy boat), but cavalry role benefits
+  Hardpoint definition added:
+    - grasshopper: +2 missiles (1 LT, 1 RT)
+  Variants updated (16 total):
+    ClanInvasion (10): GHR-5H, GHR-5HR, GHR-5J, GHR-5KDI, GHR-5KH, GHR-5N,
+                       GHR-5P, GHR-5S, GHR-6H, GHR-C
+    CivilWar (1): GHR-6K
+    Jihad (4): GHR-2I, GHR-5K, GHR-7K, GHR-7P
+    Republic (1): GHR-8K
+  Result: 0→2, 1→3, 2→4 missiles (light addition preserves energy identity)
+
+VICTOR (80t Assault) - "Juggernaut & Heavy Cavalry"
+  Problem: Had only 2 missiles before existing victor hardpoint definition
+  Hardpoint definition updated:
+    - victor: Added +2 missiles (1 LT, 1 RT) to existing definition
+  Variants affected: All Victor variants using victor hardpoint
+  Result: +2 missiles to all variants (now 4 total)
+
+================================================================================
+SESSION 2026-02-01: SUMMARY
+================================================================================
+
+Mechs updated: 8
+Variants updated: 53
+  - Emperor: 12 variants (+6 missiles each)
+  - Grand Titan: 3 variants (+6 missiles each)
+  - Highlander: 6 standard variants (+4 missiles each)
+  - Highlander IIC: 4 variants (+4 missiles each)
+  - Mauler: 7 variants (+2 missiles each)
+  - Viking: 2 variants (+4 missiles each)
+  - Grasshopper: 16 variants (+2 missiles each)
+  - Victor: 3+ variants (+2 missiles each via updated definition)
+
+Mechs analyzed but not changed: 1
+  - Titan: 4 variants (5-6 missiles already adequate)
+
+Hardpoint IDs created/updated:
+  - emperor (NEW)
+  - grandtitan (NEW)
+  - highlander (NEW)
+  - highlander-IIC (UPDATED - added missiles)
+  - mauler (NEW)
+  - viking (NEW)
+  - grasshopper (NEW)
+  - victor (UPDATED - added missiles)
 
 ================================================================================
 IMPLEMENTATION NOTES
@@ -254,24 +528,178 @@ All changes implemented in: move-mechs.xml
 Hardpoint definitions added: Lines 795-895 (approx)
 
 Hardpoint IDs created:
-  - jagermech_iic-missiles
-  - rifleman_iic-missiles
-  - stone_rhino-missiles
-  - cerberus-missiles
-  - devastator-missiles
-  - nightstar-missiles
-  - marauder_ii-missiles
-  - pillager-missiles
-  - hellstar-missiles
-  - gallowglas-missiles
-  - supernova-missiles
-  - rampage-missiles
-  - penetrator-missiles
-  - maelstrom-missiles
-  - lancelot-missiles
-  - anvil-missiles
-  - visionquest-missiles
-  - templar-missiles
-  - sun_bear-missiles
+  Initial Pass:
+    - jagermech_iic-missiles
+    - rifleman_iic-missiles
+    - stone_rhino-missiles
+    - cerberus-missiles
+    - devastator-missiles
+    - nightstar-missiles
+    - marauder_ii-missiles
+    - pillager-missiles
+    - hellstar-missiles
+    - gallowglas-missiles
+    - supernova-missiles
+    - rampage-missiles
+    - penetrator-missiles
+    - maelstrom-missiles
+    - lancelot-missiles
+    - anvil-missiles
+    - visionquest-missiles
+    - templar-missiles
+    - sun_bear-missiles
+
+  Session 2026-01-31:
+    - shadowhawk-missiles
+    - shadowhawk-missiles-2
+    - thunderhawk-7kma-missiles
+    - thunderhawk-7x-missiles
+    - thunderhawk-7y-missiles
+    - thunderhawk-th1-missiles
+    - longbow-missiles-4
+    - longbow-missiles-2
+    - longbow-missiles-lt1
+    - longbow-missiles-3
+    - catapult-c1-missiles
+    - catapult-c5-missiles
+    - grandcrusader-missiles
+    - stormgiant-missiles
+    - bowman-missiles
+    - kodiak
+    - fafnir
+    - mad_cat_mk_ii
+    - ymir-missiles
+    - ryoken-ii-missiles-4
+    - ryoken-ii-missiles-2
+
+  Session 2026-02-01:
+    - emperor (NEW)
+    - grandtitan (NEW)
+    - highlander (NEW)
+    - highlander-IIC (UPDATED - added missiles to existing)
+    - mauler (NEW)
+    - viking (NEW)
+    - grasshopper (NEW)
+    - victor (UPDATED - added missiles to existing)
+
+  Session 2026-02-01 (Part 2) - Striker/Cavalry Mediums & Heavies:
+    - ostroc (NEW)
+    - ostsol (NEW)
+    - quickdraw (NEW)
+    - vapor_eagle (NEW)
+    - mad_cat_iii (NEW)
+    - wraith (NEW)
+    - ostwar (NEW)
+
+================================================================================
+SESSION 2026-02-01 (PART 2): STRIKER CAVALRY MISSILE ADDITIONS
+================================================================================
+
+Focus: 55-60T Medium/Heavy mechs with "Striker Cavalry" and "Skirmisher & Cavalry"
+       roles that had insufficient missiles for their tonnage
+
+WOLVERINE (55t Medium) - "Skirmisher & Cavalry"
+  Current: Already has 6 missiles (3 LT, 1 CT, 2 RT) from existing chassis
+  Assessment: ALREADY ADEQUATE - No changes needed
+  Note: Wolverine hardpoint definition exists but chassis already has missiles
+
+OSTROC (60t Heavy) - "Striker Cavalry"
+  Problem: Only 1 missile (RT) - energy-focused with single SRM-4
+  Hardpoint definition added:
+    - ostroc: +2 missiles (1 LT, 1 RT)
+  Variants updated (7 total):
+    [x] OSR-2C, OSR-2CB, OSR-2CR, OSR-2D, OSR-2L, OSR-2M, OSR-3C
+  Result: 1 → 3 missiles
+
+OSTSOL (60t Heavy) - "Striker Cavalry"
+  Problem: 0 missiles - "all-energy weapons payload" design
+  Hardpoint definition added:
+    - ostsol: +2 missiles (1 LT, 1 RT)
+  Variants updated (4 total):
+    [x] OTL-4D, OTL-4DR, OTL-4F, OTL-5M
+  Result: 0 → 2 missiles
+
+QUICKDRAW (60t Heavy) - "Striker Cavalry"
+  Problem: Only 2 missiles (1 LT, 1 CT) - maneuverable heavy limited in loadouts
+  Hardpoint definition added:
+    - quickdraw: +2 missiles (1 LT, 1 RT)
+  Variants updated (19 total):
+    ClanInvasion (12): QKD-4G, QKD-4GR, QKD-4H, QKD-4P, QKD-5A, QKD-5K,
+                       QKD-5K2, QKD-5M, QKD-5P, QKD-6KH, QKD-C, QKD-IIC
+    CivilWar (1): QKD-8K
+    Jihad (3): QKD-5Mr, QKD-7X, QKD-8X
+    Republic (2): QKD-8P, QKD-9M
+    DarkAge (1): QKD-9G
+  Result: 2 → 4 missiles
+
+VAPOR EAGLE (55t Medium Clan) - "Skirmisher & Cavalry"
+  Problem: Only 2 missiles (1 LT, 1 RT) - fast Clan mech with Streak SRMs
+  Hardpoint definition added:
+    - vapor_eagle: +2 missiles (1 LT, 1 RT)
+  Variants updated (4 total):
+    [x] VGL-1, VGL-2, VGL-5, VGL-6
+  Result: 2 → 4 missiles
+
+MAD CAT III (55t Medium Clan) - "Striker Cavalry"
+  Problem: Only 2 missiles (1 LT, 1 RT) - smaller sibling to iconic Mad Cat
+  Hardpoint definition added:
+    - mad_cat_iii: +2 missiles (1 LT, 1 RT)
+  Variants updated (6 total):
+    Jihad (1): MCIII-X
+    Republic (5): MCIII-1, MCIII-2, MCIII-3, MCIII-4, MCIII-5
+  Result: 2 → 4 missiles
+
+WRAITH (55t Medium) - "Skirmisher & Cavalry"
+  Problem: 0-2 missiles - fast energy/ballistic focused design
+  Hardpoint definition added:
+    - wraith: +2 missiles (1 LT, 1 RT)
+  Variants updated (2 total):
+    [x] WRT-TR1, WRT-TR2
+  Result: TR1: 0→2 missiles, TR2: 2→4 missiles
+
+OSTWAR (65t Heavy) - "Juggernaut / Heavy Fire Support"
+  Problem: OWR-2M has 4 missiles but OWR-2MB and OWR-2MX only have 2
+  Lore: Original designed around LRM-20 + twin SRM-4s - a missile platform
+  Hardpoint definition added:
+    - ostwar: +2 missiles (1 LT, 1 RT)
+  Variants updated (3 total):
+    [x] OWR-2M, OWR-2MB, OWR-2MX
+  Result: OWR-2M: 4→6, OWR-2MB: 2→4, OWR-2MX: 2→4 missiles
+
+================================================================================
+SESSION 2026-02-01 (PART 2): SUMMARY
+================================================================================
+
+Mechs analyzed: 8
+Mechs updated: 7
+Mechs skipped: 1 (Wolverine - already adequate)
+
+Variants updated: 45
+  - Ostroc: 7 variants (+2 missiles each)
+  - Ostsol: 4 variants (+2 missiles each)
+  - Quickdraw: 19 variants (+2 missiles each)
+  - Vapor Eagle: 4 variants (+2 missiles each)
+  - Mad Cat III: 6 variants (+2 missiles each)
+  - Wraith: 2 variants (+2 missiles each)
+  - Ostwar: 3 variants (+2 missiles each)
+
+Hardpoint IDs created:
+  - ostroc (NEW)
+  - ostsol (NEW)
+  - quickdraw (NEW)
+  - vapor_eagle (NEW)
+  - mad_cat_iii (NEW)
+  - wraith (NEW)
+  - ostwar (NEW)
+
+================================================================================
+UPDATED GRAND TOTAL
+================================================================================
+
+Total variants updated with missile hardpoints: 214
+  - Initial Pass: 47 variants
+  - Session 2026-01-31: 69 variants
+  - Session 2026-02-01 (Part 1): 53 variants
+  - Session 2026-02-01 (Part 2): 45 variants
 
 ================================================================================
