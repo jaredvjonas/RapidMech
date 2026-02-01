@@ -884,6 +884,12 @@
         <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
     </hardpoints>
 
+    <hardpoints id="arcas-missiles">
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="CenterTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+    </hardpoints>
+
     <hardpoints id="visionquest-missiles">
         <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
         <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
@@ -987,7 +993,7 @@
         <!-- Archangel - moved to Jihad era -->
 
         <mech model="arcas_ARS-1" engineRating="325" engineType="XL" endoSteel="true"/>
-        <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true"/>
+        <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true" apply="arcas-missiles"/>
 
         <hardpoints id="arctic_cheetah">
             <add-hardpoint location="Head" weaponMounts="Missile"/>
