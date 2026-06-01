@@ -635,6 +635,7 @@
         <recalc-tonnage/>
         <recalc-movement/>
         <recalc-cost apply="mechGear"/>
+        <recalc-armor apply="mechGear"/>
     </task-list>
 
     <task-list id="artemis">

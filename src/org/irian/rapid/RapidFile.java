@@ -271,6 +271,18 @@ public class RapidFile {
 
             mech.recalculateCost(resourceScanner);
         }
+        else if (task instanceof RecalcArmor) {
+            String apply = ((RecalcArmor) task).apply;
+            var resourceScanner = resourceCache.get(apply);
+            if (resourceScanner == null) {
+                var resource = resourceMap.get(apply);
+                var files = buildResourceList(resource.getPaths());
+                resourceScanner = new ResourceScanner(files);
+                resourceCache.put(apply, resourceScanner);
+            }
+
+            mech.recalculateArmor(resourceScanner);
+        }
     }
 
     private void addHardpoint(AddHardpoint task, ChasisDef def) {
