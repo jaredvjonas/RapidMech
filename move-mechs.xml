@@ -189,23 +189,6 @@
         <swap-inventory item="Ammo_AmmunitionBox_AC_20" with="Ammo_AmmunitionBox_Generic_AC20"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_20_Double" with="Ammo_AmmunitionBox_Generic_AC20_Double"/>
 
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_2" with="Weapon_Autocannon_LB2X_0-STOCK"/>-->
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_5" with="Weapon_Autocannon_LB5X_0-STOCK"/>-->
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_10" with="Weapon_Autocannon_LB10X_0-STOCK"/>-->
-<!--        <swap-inventory item="Weapon_Autocannon_LBX_20" with="Weapon_Autocannon_LB20X_0-STOCK"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_Cluster" with="Ammo_AmmunitionBox_Generic_LB2X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_Slug" with="Ammo_AmmunitionBox_Generic_LB2X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Cluster_Half" with="Ammo_AmmunitionBox_Generic_LB5X_Half"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Cluster" with="Ammo_AmmunitionBox_Generic_LB5X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Slug_Half" with="Ammo_AmmunitionBox_Generic_LB5X_Half"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_5_Slug" with="Ammo_AmmunitionBox_Generic_LB5X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Cluster" with="Ammo_AmmunitionBox_Generic_LB10X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Cluster_Half" with="Ammo_AmmunitionBox_Generic_LB10X_Half"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Slug" with="Ammo_AmmunitionBox_Generic_LB10X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Cluster" with="Ammo_AmmunitionBox_Generic_LB20X"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Cluster_Double" with="Ammo_AmmunitionBox_Generic_LB20X_Double"/>-->
-<!--        <swap-inventory item="Ammo_AmmunitionBox_LBX_20_Slug" with="Ammo_AmmunitionBox_Generic_LB20X"/>-->
-
         <!-- LBX 2 special ammo (imported for Ryoken II) -->
         <swap-inventory item="Ammo_AmmunitionBox_LBX_2_HE" with="Ammo_AmmunitionBox_LBX_2_HE"/>
         <swap-inventory item="Ammo_AmmunitionBox_LBX_2_SolidSlug" with="Ammo_AmmunitionBox_LBX_2_SolidSlug"/>
