@@ -4460,7 +4460,10 @@
         <mech model="jackalope_JLP-C" engineRating="240" engineType="XL" techBase="Clan"/>
         <mech model="jackalope_JLP-IC" engineRating="240" engineType="XL" techBase="Clan"/>
         <mech model="jackalope_JLP-KA" engineRating="240" engineType="XL" techBase="Clan"/>
-        <mech model="jackalope_JLP-KB" engineRating="240" engineType="XL" techBase="Clan"/>
+        <mech model="jackalope_JLP-KB" engineRating="240" engineType="XL" techBase="Clan">
+            <!-- vanilla 1-slot head can't fit the 2-slot Advanced AMS; move it to the torso with its ammo -->
+            <move-inventory item="Weapon_AMS_Advanced" location="LeftTorso"/>
+        </mech>
         <mech model="jackalope_JLP-KW" engineRating="240" engineType="XL" techBase="Clan"/>
         <mech model="jackalope_JLP-NH" engineRating="240" engineType="XL" techBase="Clan"/>
 

@@ -24,6 +24,7 @@ public class TaskList {
             // Mech Def Commands
             @XmlElement(name = "add-inventory", type = AddItem.class),
             @XmlElement(name = "remove-inventory", type = RemoveItem.class),
+            @XmlElement(name = "move-inventory", type = MoveItem.class),
             @XmlElement(name = "swap-inventory", type = SwapItem.class),
             @XmlElement(name = "remove-engine", type = RemoveEngine.class),
             @XmlElement(name = "remove-gyro", type = RemoveGyro.class),

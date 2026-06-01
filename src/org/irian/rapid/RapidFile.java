@@ -241,6 +241,9 @@ public class RapidFile {
         else if (task instanceof RemoveItem) {
             removeItem((RemoveItem) task, mech.mechDef);
         }
+        else if (task instanceof MoveItem) {
+            moveItem((MoveItem) task, mech.mechDef);
+        }
         else if (task instanceof SwapItem) {
             swapItem((SwapItem) task, mech.mechDef);
         }
@@ -458,6 +461,19 @@ public class RapidFile {
 
     private void removeItem(RemoveItem task, MechDef def) {
         def.inventory.removeIf(item -> item.ComponentDefID.equals(task.item));
+    }
+
+    private void moveItem(MoveItem task, MechDef def) {
+        boolean found = false;
+        for (var item : def.inventory) {
+            if (item.ComponentDefID.equals(task.item)) {
+                item.MountedLocation = task.location;
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.printf("move-inventory: item not found in inventory: %s\n", task.item);
+        }
     }
 
     /**
