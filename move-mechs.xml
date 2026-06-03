@@ -19,6 +19,7 @@
 
         <!-- IrianTech -->
         <dir path="${irianTechHome}/ammunitionBox"/>
+        <dir path="${irianTechHome}/customAmmo/ammunitionBox"/>
         <dir path="${irianTechHome}/customWeapon"/>
         <dir path="${irianTechHome}/heatsinks"/>
         <dir path="${irianTechHome}/jumpjets"/>
@@ -210,8 +211,7 @@
         <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/> <!-- LRM_Swarm (full) is handled above; this is the half box (was wrongly -> Generic_SRM_Half) -->
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_Generic_SRM"/>
@@ -224,8 +224,8 @@
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Half" with="Ammo_AmmunitionBox_Half_SRM_Streak"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem" with="Ammo_AmmunitionBox_Generic_SRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun" with="Ammo_AmmunitionBox_Generic_MG"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Half" with="Ammo_AmmunitionBox_Generic_MG_Half"/> <!-- Vanilla Plus -->
@@ -622,22 +622,11 @@
     </task-list>
 
     <task-list id="artemis">
-        <!-- Handle Gear_Attachment_ArtemisIV and convert to launcher paired with Artemis ammo -->
-        <swap-inventory item="Weapon_LRM_5_Artemis" with="Weapon_LRM_5" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_10_Artemis" with="Weapon_LRM_10" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_15_Artemis" with="Weapon_LRM_15" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_20_Artemis" with="Weapon_LRM_20" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_5_Clan_Artemis" with="Weapon_LRM_5_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_10_Clan_Artemis" with="Weapon_LRM_10_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_15_Clan_Artemis" with="Weapon_LRM_15_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_LRM_20_Clan_Artemis" with="Weapon_LRM_20_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_2_Artemis" with="Weapon_SRM_2" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_4_Artemis" with="Weapon_SRM_4" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_6_Artemis" with="Weapon_SRM_6" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_2_Clan_Artemis" with="Weapon_SRM_2_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_4_Clan_Artemis" with="Weapon_SRM_4_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-        <swap-inventory item="Weapon_SRM_6_Clan_Artemis" with="Weapon_SRM_6_Clan" whenAttachment="Gear_Attachment_ArtemisIV"/>
-
+        <!-- This mod has no attachment support, so model Artemis as a missile type: convert each base
+             launcher that carries an Artemis IV attachment into its dedicated Artemis weapon variant
+             (handled in code; only IS launchers with a real Artemis variant are converted - Clan is
+             skipped, it keeps standard Clan ammo). Then strip any remaining Artemis attachment. -->
+        <upgrade-artemis apply="mechGear"/>
         <remove-inventory item="Gear_Attachment_ArtemisIV"/>
     </task-list>
 
@@ -651,11 +640,12 @@
     </task-list>
 
     <task-list id="clan-early">
-        <!-- Clan Early mechs use IS Artemis ammo but need Clan ammo for CE weapons -->
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Clan"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Half" with="Ammo_AmmunitionBox_LRM_Clan_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_SRM_Clan"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Half" with="Ammo_AmmunitionBox_SRM_Clan_Half"/>
+        <!-- Clan Early mechs have an Artemis FCS on Clan CE launchers: route IS Artemis ammo to
+             the Clan Artemis ammo (Clan category + the Artemis accuracy/evasion bonus). -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Artemis_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Half" with="Ammo_AmmunitionBox_LRM_Artemis_Clan_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_SRM_Artemis_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Half" with="Ammo_AmmunitionBox_SRM_Artemis_Clan_Half"/>
     </task-list>
 
     <copy>
@@ -1565,8 +1555,12 @@
         <mech model="emperor_EMP-5A" engineRating="270" engineType="standard" apply="emperor"/>
         <mech model="emperor_EMP-5B" engineRating="270" engineType="standard" apply="emperor"/>
         <mech model="emperor_EMP-6A" engineRating="270" engineType="XL" apply="emperor"/>
-        <mech model="emperor_EMP-6A-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor"/>
-        <mech model="emperor_EMP-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor"/>
+        <mech model="emperor_EMP-6A-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+        </mech>
+        <mech model="emperor_EMP-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+        </mech>
 
         <mech model="enfield_END-6J" engineRating="250" engineType="XL" endoSteel="true"/>
         <mech model="enfield_END-6J-EC" engineRating="250" engineType="XL" endoSteel="true"/>
@@ -1595,7 +1589,9 @@
         <mech model="excalibur_EXC-B1" engineRating="350" engineType="XL"/>
         <mech model="excalibur_EXC-B2" engineRating="350" engineType="XL"/>
         <mech model="excalibur_EXC-B2b" engineRating="350" engineType="XL" endoSteel="true"/>
-        <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan">
+            <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Artemis_Clan"/> <!-- CE Clan LRM weapon w/ Artemis FCS; route to Clan Artemis ammo (carries the bonus) -->
+        </mech>
         <mech model="excalibur_EXC-C1" engineRating="350" engineType="XL"/>
 
         <!-- Executioner (ClanInvasion only - others in era-specific blocks) -->
@@ -1674,7 +1670,9 @@
         <mech model="flashman_FLS-9C" engineRating="375" engineType="standard"/>
         -->
 
-        <mech model="fox_CS-1" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="fox_CS-1" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan">
+            <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Clan"/> <!-- CE Clan LRM weapon (mech also has an IS Streak weapon - leave its streak box alone) -->
+        </mech>
         <mech model="fox_CS-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
         <mech model="galahad_GLH-1D" engineRating="150" engineType="standard" endoSteel="true"/>
@@ -2664,7 +2662,10 @@
         <mech model="orion_ON1-E" engineRating="300" engineType="standard"/>
         <mech model="orion_ON1-H" engineRating="285" engineType="standard"/>
         <mech model="orion_ON1-K" engineRating="300" engineType="standard"/>
-        <mech model="orion_ON1-K-CE" engineRating="300" engineType="standard" techBase="Clan"/>
+        <mech model="orion_ON1-K-CE" engineRating="300" engineType="standard" techBase="Clan">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Clan"/> <!-- CE Clan SRM weapon -->
+            <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Clan"/> <!-- CE Clan LRM weapon -->
+        </mech>
         <mech model="orion_ON1-KR" engineRating="300" engineType="standard"/>
         <mech model="orion_ON1-M" engineRating="300" engineType="standard"/>
         <mech model="orion_ON1-MA" engineRating="300" engineType="standard"/>
@@ -2904,7 +2905,9 @@
         <mech model="sentinel_STN-3KB" engineRating="240" engineType="standard"/>
         <mech model="sentinel_STN-3L" engineRating="240" engineType="standard"/>
         <mech model="sentinel_STN-3Lb" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true"/>
-        <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard"/>
+        <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+        </mech>
         <mech model="sentinel_STN-3M" engineRating="240" engineType="standard"/>
 
         <!-- Seraph - moved to Jihad era -->
@@ -2950,7 +2953,9 @@
         <mech model="shadowhawk_SHD-2GD" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
         <mech model="shadowhawk_SHD-2H" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
         <mech model="shadowhawk_SHD-2Hb" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
-        <mech model="shadowhawk_SHD-2Hb-EC" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadowhawk-missiles"/>
+        <mech model="shadowhawk_SHD-2Hb-EC" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadowhawk-missiles">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+        </mech>
         <mech model="shadowhawk_SHD-2HR" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
         <mech model="shadowhawk_SHD-2Ht" engineRating="275" engineType="standard"/>
         <mech model="shadowhawk_SHD-2I" engineRating="270" engineType="standard" apply="shadowhawk-missiles"/>
@@ -3009,7 +3014,9 @@
         <mech model="stalker_STK-5S" engineRating="255" engineType="standard"/>
 
         <mech model="starslayer_STY-2C" engineRating="250" engineType="standard" ferroFibrous="true"/>
-        <mech model="starslayer_STY-2C-EC" engineRating="250" engineType="standard" ferroFibrous="true"/>
+        <mech model="starslayer_STY-2C-EC" engineRating="250" engineType="standard" ferroFibrous="true">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+        </mech>
         <mech model="starslayer_STY-3C" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="starslayer_STY-3D" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
 
@@ -3532,7 +3539,9 @@
         <mech model="victor_VTR-9A1" engineRating="320" engineType="standard" apply="victor"/>
         <mech model="victor_VTR-9B(C)" engineRating="320" engineType="standard" techBase="Clan" apply="victor"/>
         <mech model="victor_VTR-9B" engineRating="320" engineType="standard" apply="victor"/>
-        <mech model="victor_VTR-9B-CE" engineRating="320" engineType="standard" techBase="Clan" apply="victor"/>
+        <mech model="victor_VTR-9B-CE" engineRating="320" engineType="standard" techBase="Clan" apply="victor">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Clan"/> <!-- CE Clan SRM weapon -->
+        </mech>
         <mech model="victor_VTR-9BR" engineRating="320" engineType="standard" apply="victor"/>
         <mech model="victor_VTR-9D" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
         <mech model="victor_VTR-9D-2" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
@@ -3699,7 +3708,9 @@
         <mech model="wolverine_WVR-6M" engineRating="275" engineType="XL" apply="wolverine"/>
         <mech model="wolverine_WVR-6MR" engineRating="275" engineType="XL" apply="wolverine"/>
         <mech model="wolverine_WVR-6R" engineRating="275" engineType="XL" apply="wolverine"/>
-        <mech model="wolverine_WVR-6R-CE" engineRating="275" engineType="XL" techBase="Clan" apply="wolverine"/>
+        <mech model="wolverine_WVR-6R-CE" engineRating="275" engineType="XL" techBase="Clan" apply="wolverine">
+            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Clan"/> <!-- CE Clan SRM weapon -->
+        </mech>
         <mech model="wolverine_WVR-6RR" engineRating="275" engineType="XL" apply="wolverine"/>
         <mech model="wolverine_WVR-6SL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" apply="wolverine"/>
         <mech model="wolverine_WVR-6T" engineRating="275" engineType="XL" apply="wolverine"/>

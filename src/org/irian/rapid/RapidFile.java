@@ -276,15 +276,57 @@ public class RapidFile {
         }
         else if (task instanceof RecalcArmor) {
             String apply = ((RecalcArmor) task).apply;
-            var resourceScanner = resourceCache.get(apply);
-            if (resourceScanner == null) {
-                var resource = resourceMap.get(apply);
-                var files = buildResourceList(resource.getPaths());
-                resourceScanner = new ResourceScanner(files);
-                resourceCache.put(apply, resourceScanner);
-            }
+            mech.recalculateArmor(getResourceScanner(apply));
+        }
+        else if (task instanceof UpgradeArtemis) {
+            upgradeArtemis((UpgradeArtemis) task, mech.mechDef);
+        }
+    }
 
-            mech.recalculateArmor(resourceScanner);
+    private ResourceScanner getResourceScanner(String apply) {
+        var resourceScanner = resourceCache.get(apply);
+        if (resourceScanner == null) {
+            var resource = resourceMap.get(apply);
+            var files = buildResourceList(resource.getPaths());
+            resourceScanner = new ResourceScanner(files);
+            resourceCache.put(apply, resourceScanner);
+        }
+        return resourceScanner;
+    }
+
+    /**
+     * Converts base missile launchers that carry a Gear_Attachment_ArtemisIV into their dedicated
+     * Artemis weapon variant (id + "_Artemis"). Only weapons actually targeted by an Artemis
+     * attachment are touched, and only when the variant def exists, so unrelated launchers are
+     * never affected. Clan weapons are skipped: this conversion has no Artemis-Clan ammo category,
+     * so the Clan launcher keeps using its standard Clan ammo. The attachment itself is removed by
+     * the accompanying remove-inventory task.
+     */
+    private void upgradeArtemis(UpgradeArtemis task, MechDef def) {
+        ResourceScanner scanner = getResourceScanner(task.apply);
+        for (var attachment : def.inventory) {
+            if (!"Gear_Attachment_ArtemisIV".equals(attachment.ComponentDefID)) continue;
+            String guid = attachment.TargetComponentGUID;
+            if (guid == null) continue;
+
+            for (var weapon : def.inventory) {
+                if (!guid.equals(weapon.LocalGUID)) continue;
+
+                if (weapon.ComponentDefID.contains("_Clan")) {
+                    System.out.printf("upgrade-artemis: skipping Clan weapon %s (no Clan Artemis ammo category)\n", weapon.ComponentDefID);
+                    continue;
+                }
+
+                String artemis = weapon.ComponentDefID + "_Artemis";
+                if (scanner.scanDirectories(artemis + ".json") == null) {
+                    System.out.printf("upgrade-artemis: no Artemis variant for %s - leaving base weapon\n", weapon.ComponentDefID);
+                    continue;
+                }
+
+                System.out.printf("upgrade-artemis: %s -> %s\n", weapon.ComponentDefID, artemis);
+                weapon.ComponentDefID = artemis;
+                weapon.LocalGUID = null;
+            }
         }
     }
 
