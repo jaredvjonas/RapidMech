@@ -27,3 +27,19 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Claude Code ###
+.claude/
+
+### IntelliJ project metadata ###
+.idea/
+
+### Local run scripts & generated artifacts ###
+run.bat
+nul
+*.log
+regen_output.txt
+last_run*.txt
+run_*.txt
+validation_output.txt
+*output.txt
