@@ -2033,7 +2033,7 @@
         <mech model="howler_HWR-4" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="howler_HWR-5" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
-        <!-- Hoplite (ClanInvasion only - HOP-5C in DarkAge) -->
+        <!-- Hoplite (ClanInvasion only - HOP-5C in DarkAge) - disabled
         <mech model="hoplite_HOP-4A" engineRating="220" engineType="standard"/>
         <mech model="hoplite_HOP-4B" engineRating="220" engineType="standard"/>
         <mech model="hoplite_HOP-4Bb" engineRating="220" engineType="standard"/>
@@ -2042,6 +2042,7 @@
         <mech model="hoplite_HOP-4D" engineRating="220" engineType="standard"/>
         <mech model="hoplite_HOP-5W" engineRating="220" engineType="standard"/>
         <mech model="hoplite_HOP-C" engineRating="220" engineType="XL" techBase="Clan"/>
+        -->
 
         <!-- Hunchback (ClanInvasion only - others in era-specific blocks) -->
         <mech model="hunchback_HBK-1G" engineRating="200" engineType="standard"/>
@@ -2983,7 +2984,7 @@
         <mech model="shadowhawk_iic_SHD-IIC-3" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC,shadowhawk-missiles"/>
         <mech model="shadowhawk_iic_SHD-IIC-4" engineRating="270" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadow-hawk-IIC"/>
 
-        <!-- Shogun (ClanInvasion only - removed non-existent variants, C2/C3 moved to DarkAge) -->
+        <!-- Shogun (ClanInvasion) - disabled (removed from IrTech 2026-06-14)
         <mech model="shogun_SHG-2E" engineRating="255" engineType="standard"/>
         <mech model="shogun_SHG-2F" engineRating="255" engineType="standard"/>
         <mech model="shogun_SHG-2H" engineRating="255" engineType="standard"/>
@@ -2991,6 +2992,7 @@
         <mech model="shogun_SHG-4F" engineRating="255" engineType="XL" endoSteel="true"/>
         <mech model="shogun_SHG-4W" engineRating="255" engineType="XL" endoSteel="true"/>
         <mech model="shogun_SHG-C" engineRating="255" engineType="standard"/>
+        -->
 
         <!-- Solitaire - moved to CivilWar era -->
 
@@ -4511,9 +4513,10 @@
         <!-- Quickdraw (DarkAge) -->
         <mech model="quickdraw_QKD-9G" engineRating="300" engineType="standard" apply="quickdraw"/>
 
-        <!-- Shogun (DarkAge) -->
+        <!-- Shogun (DarkAge) - disabled (removed from IrTech 2026-06-14)
         <mech model="shogun_SHG-C2" engineRating="255" engineType="standard"/>
         <mech model="shogun_SHG-C3" engineRating="255" engineType="standard"/>
+        -->
 
         <!-- Stalker (DarkAge) -->
         <mech model="stalker_STK-9F" engineRating="255" engineType="standard"/>
@@ -4552,8 +4555,9 @@
         <!-- Hauptmann (DarkAge) -->
         <mech model="hauptmann_HA1-OT" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
 
-        <!-- Hoplite (DarkAge) -->
+        <!-- Hoplite (DarkAge) - disabled
         <mech model="hoplite_HOP-5C" engineRating="220" engineType="standard"/>
+        -->
 
         <!-- Hunchback (DarkAge) -->
         <mech model="hunchback_HBK-7S" engineRating="200" engineType="XL"/>
