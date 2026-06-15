@@ -88,6 +88,7 @@ public class RapidFile {
             for (var mechCmd : copy.mechs) {
                 System.out.printf("mech model=[%s]\n", mechCmd.model);
 
+              try { // a malformed RT source def (null engine/structure, bad numbers, etc.) shouldn't kill the whole run
                 var mech = loadMech(mechCmd, copy.chassisDefCmd, copy.mechDefCmd);
                 processTaskList(mechCmd.taskList, mech, false); // process child elements
 
@@ -115,6 +116,9 @@ public class RapidFile {
 
                 validateInventory(mech);
                 saveMech(mech, copy.chassisDefCmd, copy.mechDefCmd);
+              } catch (Exception e) {
+                System.out.printf("SKIPPED model=[%s]: %s %s\n", mechCmd.model, e.getClass().getSimpleName(), e.getMessage());
+              }
             }
         }
 
@@ -410,7 +414,7 @@ public class RapidFile {
     private void swapHardpoint(SwapHardpoint task, ChasisDef def) {
         for (var location : def.Locations) {
             for (var hardpoint : location.Hardpoints) {
-                if (hardpoint.WeaponMountID.equals(task.weaponMount)) {
+                if (task.weaponMount.equals(hardpoint.WeaponMountID)) { // null-safe: some RT source hardpoints have a null WeaponMountID
                     hardpoint.WeaponMountID = task.with;
                 }
             }

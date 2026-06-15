@@ -1,5 +1,6 @@
 package org.irian.rapid.defs;
 
+import com.google.gson.annotations.JsonAdapter;
 import org.irian.rapid.defs.chassis.*;
 import org.irian.rapid.defs.shared.Tags;
 
@@ -24,6 +25,7 @@ public class ChasisDef {
     public String weightClass;
     public long BattleValue;
     public int Heatsinks;
+    @JsonAdapter(LenientInt.class)
     public int TopSpeed;
     public int TurnRadius;
     public int MaxJumpjets;

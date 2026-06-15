@@ -250,6 +250,64 @@
         <remove-inventory item="Lootable_HandHeld_Melee_VibroSword_8tons"/>
         <!-- ============ end TKT-032 ============ -->
 
+        <!-- ===== TKT-039 IS-import reconciliation (RT-only components -> IrTech equivalents / strip) ===== -->
+        <swap-inventory item="Ammo_AmmunitionBox_AC_10_Inferno" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Flamer_Heavy_AOE" with="Ammo_AmmunitionBox_Generic_Flamer"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Flamer_Heavy_Sticky" with="Ammo_AmmunitionBox_Generic_Flamer"/>
+        <swap-inventory item="Weapon_Gauss_Silverbullet" with="Weapon_Gauss_Rifle" itemType="Weapon"/>
+        <swap-inventory item="Weapon_MachineGun_Heavy_Array" with="Weapon_MachineGun_Heavy" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Autocannon_AC_2_Light" with="Weapon_Autocannon_AC_2" itemType="Weapon"/>
+        <remove-inventory item="Special_AddOn_JumpBooster_3"/>
+        <remove-inventory item="BoltOn_Weapon_Rocket_20_Inferno_x3"/>
+        <remove-inventory item="BoltOn_Weapon_AMS_Flare"/>
+        <remove-inventory item="HandHeld_Weapon_Lance_8tons"/>
+        <remove-inventory item="Gear_Searchlight"/>
+        <!-- TKT-039 bulk reconciliation (full IS set) -->
+        <swap-inventory item="Ammo_AmmunitionBox_AC_2_AP" with="Ammo_AmmunitionBox_Generic_AC2"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_Caseless" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Chaff_Half" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL_Half" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_ListenKill_Half" with="Ammo_AmmunitionBox_Generic_LRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Acid_Half" with="Ammo_AmmunitionBox_MRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Airburst" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Fascam" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Inferno" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ProtoAC_8" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Plasma_Half" with="Ammo_AmmunitionBox_Plasma"/>
+        <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Artillery_Thumper" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Artillery_Thumper" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Autocannon_ProtoAC_8_Clan" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Gauss_Magshot" with="Weapon_MachineGun" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Laser_Reengineered_Small" with="Weapon_Laser_Small" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Mortar_8_Clan" with="Weapon_Mortar_8" itemType="Weapon"/>
+        <remove-inventory item="Ammo_AmmunitionBox_Fluid_Paint"/>
+        <remove-inventory item="Gear_EngineCooling_EmergencyCoolant_2"/>
+        <remove-inventory item="Gear_EngineCooling_EmergencyCoolant_3"/>
+        <remove-inventory item="Gear_EngineCooling_EmergencyCoolant_6"/>
+        <remove-inventory item="Gear_EngineCooling_LaserHeatsinks_3"/>
+        <remove-inventory item="Gear_HeatSinkKit_RadicalCompact"/>
+        <remove-inventory item="Gear_HeatSinkKit_Laser"/>
+        <remove-inventory item="Gear_BlueShield"/>
+        <remove-inventory item="Gear_Armor_ReactivePlating"/>
+        <remove-inventory item="Linked_ArmorMod_NullSignatureSystem_Clan"/>
+        <remove-inventory item="Gear_ArmorMod_NullSignatureSystem_Clan"/>
+        <remove-inventory item="Linked_ArmorMod_MistwalkerVeilSystem"/>
+        <remove-inventory item="Gear_ArmorMod_MistwalkerVeilSystem"/>
+        <remove-inventory item="Linked_JumpJet_Mechanical_5"/>
+        <remove-inventory item="Gear_JumpJet_Mechanical_5"/>
+        <remove-inventory item="Lootable_HandHeld_Shield_2tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Sword_5tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Hatchet_8tons"/>
+        <remove-inventory item="HandHeld_Weapon_Lance_3tons"/>
+        <remove-inventory item="HandHeld_Weapon_Chainsword"/>
+        <!-- ============ end TKT-039 ============ -->
+
         <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Half" with="Ammo_AmmunitionBox_LRM_Standard_IS"/> <!-- Vanilla Plus -->
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Double" with="Ammo_AmmunitionBox_LRM_Standard_IS"/> <!-- Vanilla Plus -->
@@ -4867,6 +4925,411 @@
         <mech model="scylla_SCY-1"/>
         <mech model="scylla_SCY-2"/>
         <mech model="scylla_SCY-3"/>
+        <!-- ===== IS roster additions 2026-06-14 (TKT-039: RT-only own-geometry IS mechs, user-curated) ===== -->
+        <!-- argus -->
+        <mech model="argus_AGS-1X"/>
+        <mech model="argus_AGS-2D"/>
+        <mech model="argus_AGS-3D"/>
+        <mech model="argus_AGS-4D"/>
+        <mech model="argus_AGS-5D"/>
+        <mech model="argus_AGS-6F"/>
+        <mech model="argus_AGS-8DX"/>
+        <!-- balar -->
+        <mech model="balar_BL1-O"/>
+        <mech model="balar_BL1-OA"/>
+        <mech model="balar_BL1-OB"/>
+        <mech model="balar_BL1-OC"/>
+        <mech model="balar_BL1-OD"/>
+        <mech model="balar_BL1-OR"/>
+        <mech model="balar_BL1-OR-P"/>
+        <!-- black_heart -->
+        <mech model="black_heart_BH-1"/>
+        <!-- broadside -->
+        <mech model="broadside_BS-1D"/>
+        <mech model="broadside_BS-2D"/>
+        <!-- buccaneer -->
+        <mech model="buccaneer_BCN-3R"/>
+        <mech model="buccaneer_BCN-5W"/>
+        <mech model="buccaneer_BCN-6W"/>
+        <!-- carronade -->
+        <mech model="carronade_CRN-7M"/>
+        <!-- champion -->
+        <mech model="champion_CHP-1N"/>
+        <mech model="champion_CHP-1N2"/>
+        <mech model="champion_CHP-1N2I"/>
+        <mech model="champion_CHP-1Nb"/>
+        <mech model="champion_CHP-2N"/>
+        <mech model="champion_CHP-3N"/>
+        <mech model="champion_CHP-3P"/>
+        <mech model="champion_CHP-C"/>
+        <mech model="champion_CHP-INV"/>
+        <!-- chimera -->
+        <mech model="chimera_CMA-1S"/>
+        <mech model="chimera_CMA-2K"/>
+        <mech model="chimera_CMA-C"/>
+        <!-- cossack -->
+        <mech model="cossack_C-1FC"/>
+        <mech model="cossack_C-SK1"/>
+        <!-- crosscut -->
+        <mech model="crosscut_ED-X2M"/>
+        <mech model="crosscut_ED-X4X"/>
+        <mech model="crosscut_ED-X5M"/>
+        <!-- crosscut_iic -->
+        <mech model="crosscut_iic_ED-IIC"/>
+        <!-- daikyu -->
+        <mech model="daikyu_DAI-01"/>
+        <mech model="daikyu_DAI-01r"/>
+        <mech model="daikyu_DAI-02"/>
+        <mech model="daikyu_DAI-03"/>
+        <!-- doloire -->
+        <mech model="doloire_DLR-O"/>
+        <mech model="doloire_DLR-OA"/>
+        <mech model="doloire_DLR-OB"/>
+        <mech model="doloire_DLR-OBLO"/>
+        <mech model="doloire_DLR-OC"/>
+        <mech model="doloire_DLR-OD"/>
+        <!-- duan_gung -->
+        <mech model="duan_gung_D9-G10"/>
+        <mech model="duan_gung_D9-G9"/>
+        <mech model="duan_gung_D9-VHN"/>
+        <!-- eris -->
+        <mech model="eris_ERS-2H"/>
+        <mech model="eris_ERS-2N"/>
+        <mech model="eris_ERS-3R"/>
+        <!-- fafnir_ii -->
+        <mech model="fafnir_ii_FNR2-5-B"/>
+        <mech model="fafnir_ii_FNR2-5-C"/>
+        <!-- ferdelance -->
+        <mech model="ferdelance_FDL-1"/>
+        <mech model="ferdelance_FDL-2"/>
+        <mech model="ferdelance_FDL-3"/>
+        <mech model="ferdelance_FDL-4"/>
+        <!-- fireball -->
+        <mech model="fireball_ALM-10D"/>
+        <mech model="fireball_ALM-7D"/>
+        <mech model="fireball_ALM-8D"/>
+        <mech model="fireball_ALM-9D"/>
+        <mech model="fireball_ALM-XF"/>
+        <!-- foxfire_FXR-4R dropped: malformed RT source (float TopSpeed + null mount ID) crashes regen -->
+        <!-- freedom -->
+        <mech model="freedom_FREE-1A4"/>
+        <mech model="freedom_FREE-1A5"/>
+        <mech model="freedom_FREE-2B"/>
+        <mech model="freedom_FREE-2Br"/>
+        <mech model="freedom_FREE-2F"/>
+        <!-- ghost -->
+        <mech model="ghost_GST-10"/>
+        <mech model="ghost_GST-11"/>
+        <mech model="ghost_GST-50"/>
+        <mech model="ghost_GST-90"/>
+        <!-- grasshopper_ii -->
+        <mech model="grasshopper_ii_GHR-2"/>
+        <!-- gun -->
+        <!-- gun_GN-2O dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <!-- gun_GN-2OA dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <!-- gun_GN-2OB dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <!-- gun_GN-2OC dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <!-- gun_GN-2OD dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <!-- gun_GN-2OR dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <!-- gurkha -->
+        <mech model="gurkha_GUR-2G"/>
+        <mech model="gurkha_GUR-4G"/>
+        <mech model="gurkha_GUR-6G"/>
+        <mech model="gurkha_GUR-8G"/>
+        <!-- helepolis -->
+        <mech model="helepolis_HEP-0H">
+            <swap-inventory item="Weapon_Artillery_HowitzerRifle" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        </mech>
+        <mech model="helepolis_HEP-1H"/>
+        <mech model="helepolis_HEP-2H"/>
+        <mech model="helepolis_HEP-3H"/>
+        <mech model="helepolis_HEP-4A"/>
+        <mech model="helepolis_HEP-4H"/>
+        <mech model="helepolis_HEP-7H"/>
+        <!-- hornet -->
+        <mech model="hornet_HNT-151"/>
+        <mech model="hornet_HNT-152"/>
+        <mech model="hornet_HNT-161"/>
+        <mech model="hornet_HNT-171"/>
+        <mech model="hornet_HNT-172"/>
+        <mech model="hornet_HNT-181"/>
+        <mech model="hornet_HNT-182"/>
+        <!-- hussar -->
+        <mech model="hussar_HSR-200-D"/>
+        <mech model="hussar_HSR-200-Db"/>
+        <mech model="hussar_HSR-300-D"/>
+        <mech model="hussar_HSR-350-D"/>
+        <mech model="hussar_HSR-400-D"/>
+        <mech model="hussar_HSR-450-D"/>
+        <mech model="hussar_HSR-500-D"/>
+        <mech model="hussar_HSR-900-D"/>
+        <mech model="hussar_HSR-950-D"/>
+        <!-- ionraptor -->
+        <mech model="ionraptor_ION-2R"/>
+        <mech model="ionraptor_ION-3R"/>
+        <mech model="ionraptor_ION-4R"/>
+        <mech model="ionraptor_ION-5R"/>
+        <!-- jackrabbit -->
+        <mech model="jackrabbit_JKR-8T"/>
+        <mech model="jackrabbit_JKR-9R"/>
+        <mech model="jackrabbit_JKR-9W"/>
+        <!-- jinggau -->
+        <mech model="jinggau_JN-G7L"/>
+        <mech model="jinggau_JN-G7Lr"/>
+        <mech model="jinggau_JN-G8A"/>
+        <mech model="jinggau_JN-G8Ar"/>
+        <mech model="jinggau_JN-G8BX_Rush"/>
+        <!-- jinggau_JN-G9B dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <mech model="jinggau_JN-G9CC"/>
+        <mech model="jinggau_JN-G9CCr"/>
+        <!-- juggernaut -->
+        <mech model="juggernaut_JG-JYN"/>
+        <mech model="juggernaut_JG-R9T1"/>
+        <mech model="juggernaut_JG-R9T14"/>
+        <mech model="juggernaut_JG-R9T2"/>
+        <mech model="juggernaut_JG-R9T3">
+            <swap-inventory item="Ammo_AmmunitionBox_Magshot" with="Ammo_AmmunitionBox_Generic_MG"/>
+        </mech>
+        <!-- komodo -->
+        <mech model="komodo_KIM-2"/>
+        <mech model="komodo_KIM-2A"/>
+        <mech model="komodo_KIM-2C"/>
+        <mech model="komodo_KIM-3C"/>
+        <!-- komodo_iic -->
+        <mech model="komodo_iic_KIM-IIC"/>
+        <!-- kyudo -->
+        <mech model="kyudo_KY2-D-01"/>
+        <mech model="kyudo_KY2-D-02"/>
+        <mech model="kyudo_KY2-D-03"/>
+        <!-- liberty -->
+        <mech model="liberty_LBR-A2"/>
+        <mech model="liberty_LBR-A5"/>
+        <mech model="liberty_LBR-D4"/>
+        <mech model="liberty_LBR-E12"/>
+        <!-- lynx -->
+        <mech model="lynx_LNX-8Q"/>
+        <mech model="lynx_LNX-9C"/>
+        <mech model="lynx_LNX-9Q"/>
+        <mech model="lynx_LNX-9R"/>
+        <mech model="lynx_LNX-C"/>
+        <!-- mackie -->
+        <mech model="mackie_MSK-10E"/>
+        <mech model="mackie_MSK-5S"/>
+        <mech model="mackie_MSK-5U"/>
+        <mech model="mackie_MSK-6S"/>
+        <mech model="mackie_MSK-6S2"/>
+        <mech model="mackie_MSK-7A"/>
+        <mech model="mackie_MSK-8B"/>
+        <mech model="mackie_MSK-9H"/>
+        <mech model="mackie_MSK-9HKR"/>
+        <mech model="mackie_MSK-9Hb"/>
+        <mech model="mackie_MSK-9Hc"/>
+        <!-- mantis -->
+        <mech model="mantis_MTS-L"/>
+        <mech model="mantis_MTS-S"/>
+        <mech model="mantis_MTS-T"/>
+        <mech model="mantis_MTS-T2"/>
+        <mech model="mantis_MTS-T3"/>
+        <mech model="mantis_SA-MN"/>
+        <!-- mercury -->
+        <mech model="mercury_MCY-100P"/>
+        <mech model="mercury_MCY-102"/>
+        <mech model="mercury_MCY-104"/>
+        <mech model="mercury_MCY-105"/>
+        <mech model="mercury_MCY-96"/>
+        <mech model="mercury_MCY-97"/>
+        <mech model="mercury_MCY-98"/>
+        <mech model="mercury_MCY-99"/>
+        <!-- mite -->
+        <!-- mite_MTE-12C dropped: malformed RT source (null mount ID + null engine/structure) crashes regen -->
+        <!-- mongoose_ii -->
+        <mech model="mongoose_ii_MON-266"/>
+        <mech model="mongoose_ii_MON-267"/>
+        <mech model="mongoose_ii_MON-268"/>
+        <!-- naginata -->
+        <mech model="naginata_NG-C3A"/>
+        <mech model="naginata_NG-C3Ar"/>
+        <mech model="naginata_NG-C3B"/>
+        <mech model="naginata_NG-C3C"/>
+        <!-- osiris -->
+        <mech model="osiris_OSR-1P"/>
+        <mech model="osiris_OSR-1V"/>
+        <mech model="osiris_OSR-2V"/>
+        <mech model="osiris_OSR-3D"/>
+        <mech model="osiris_OSR-4C"/>
+        <mech model="osiris_OSR-4D"/>
+        <mech model="osiris_OSR-5D"/>
+        <mech model="osiris_OSR-SE"/>
+        <!-- osteon -->
+        <mech model="osteon_OTN-A"/>
+        <mech model="osteon_OTN-B"/>
+        <mech model="osteon_OTN-C"/>
+        <mech model="osteon_OTN-D"/>
+        <mech model="osteon_OTN-E"/>
+        <mech model="osteon_OTN-F"/>
+        <mech model="osteon_OTN-G"/>
+        <mech model="osteon_OTN-J"/>
+        <mech model="osteon_OTN-Prime"/>
+        <!-- owens -->
+        <mech model="owens_OW-1"/>
+        <mech model="owens_OW-1A"/>
+        <mech model="owens_OW-1Ar"/>
+        <mech model="owens_OW-1B"/>
+        <mech model="owens_OW-1C"/>
+        <mech model="owens_OW-1D"/>
+        <mech model="owens_OW-1E"/>
+        <mech model="owens_OW-1F"/>
+        <mech model="owens_OW-1G"/>
+        <mech model="owens_OW-1R"/>
+        <!-- prometheus -->
+        <mech model="prometheus_PTS-01"/>
+        <!-- rakshasa -->
+        <mech model="rakshasa_MDG-1A"/>
+        <mech model="rakshasa_MDG-1Ar"/>
+        <mech model="rakshasa_MDG-2A"/>
+        <mech model="rakshasa_MDG-X"/>
+        <!-- raptor -->
+        <mech model="raptor_RTX1-O"/>
+        <mech model="raptor_RTX1-OA"/>
+        <mech model="raptor_RTX1-OB"/>
+        <mech model="raptor_RTX1-OC"/>
+        <mech model="raptor_RTX1-OD"/>
+        <mech model="raptor_RTX1-OE"/>
+        <mech model="raptor_RTX1-OF"/>
+        <mech model="raptor_RTX1-OG"/>
+        <mech model="raptor_RTX1-OR"/>
+        <mech model="raptor_RTX1-OT"/>
+        <!-- raven_ii -->
+        <mech model="raven_ii_RVN-5X"/>
+        <!-- razorback -->
+        <mech model="razorback_RZK-10S"/>
+        <mech model="razorback_RZK-10T"/>
+        <mech model="razorback_RZK-11T"/>
+        <mech model="razorback_RZK-9S"/>
+        <mech model="razorback_RZK-9T"/>
+        <!-- reptar -->
+        <mech model="reptar_EPT-C-1"/>
+        <!-- rifleman_ii -->
+        <mech model="rifleman_ii_RFL-3N-2"/>
+        <mech model="rifleman_ii_RFL-3N-2_LK"/>
+        <mech model="rifleman_ii_RFL-3N-2_LK2"/>
+        <!-- salamander -->
+        <mech model="salamander_PPR-5S"/>
+        <mech model="salamander_PPR-5T"/>
+        <mech model="salamander_PPR-6S"/>
+        <mech model="salamander_PPR-6T"/>
+        <mech model="salamander_PPR-6U"/>
+        <mech model="salamander_PPR-7S"/>
+        <mech model="salamander_PPR-7T"/>
+        <!-- salamander SMR-* variants dropped: engine rating not in RapidMech's FusionEngine table (PPR-* variants kept) -->
+        <!-- shootist -->
+        <mech model="shootist_ST-8A"/>
+        <mech model="shootist_ST-8A2"/>
+        <mech model="shootist_ST-8C"/>
+        <mech model="shootist_ST-9C"/>
+        <!-- sling -->
+        <mech model="sling_SL-1G"/>
+        <mech model="sling_SL-1H"/>
+        <!-- sorcerer -->
+        <mech model="sorcerer_SRC-1A"/>
+        <mech model="sorcerer_SRC-1B"/>
+        <mech model="sorcerer_SRC-1C"/>
+        <mech model="sorcerer_SRC-1CC"/>
+        <mech model="sorcerer_SRC-1X"/>
+        <mech model="sorcerer_SRC-2D"/>
+        <mech model="sorcerer_SRC-2L"/>
+        <!-- spector -->
+        <mech model="spector_SPR-4F"/>
+        <mech model="spector_SPR-5F"/>
+        <mech model="spector_SPR-5S"/>
+        <mech model="spector_SPR-6F"/>
+        <mech model="spector_SPR-7L"/>
+        <mech model="spector_SPR-8L"/>
+        <mech model="spector_SPR-ST"/>
+        <!-- stag -->
+        <mech model="stag_ST-14G"/>
+        <!-- stag_ii -->
+        <mech model="stag_ii_ST-24G"/>
+        <!-- strider -->
+        <mech model="strider_SR1-O"/>
+        <mech model="strider_SR1-OA"/>
+        <mech model="strider_SR1-OB"/>
+        <mech model="strider_SR1-OC"/>
+        <mech model="strider_SR1-OD"/>
+        <mech model="strider_SR1-OE"/>
+        <mech model="strider_SR1-OF"/>
+        <mech model="strider_SR1-OG"/>
+        <mech model="strider_SR1-OH"/>
+        <mech model="strider_SR1-OR"/>
+        <mech model="strider_SR1-OX"/>
+        <!-- templar_iii -->
+        <!-- templar_iii_TLR2-J dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
+        <mech model="templar_iii_TLR2-O"/>
+        <mech model="templar_iii_TLR2-OA"/>
+        <mech model="templar_iii_TLR2-OB"/>
+        <mech model="templar_iii_TLR2-OC"/>
+        <mech model="templar_iii_TLR2-OD"/>
+        <mech model="templar_iii_TLR2-OT"/>
+        <!-- thunder -->
+        <mech model="thunder_THR-1L"/>
+        <mech model="thunder_THR-2L"/>
+        <mech model="thunder_THR-3L"/>
+        <mech model="thunder_THR-C4"/>
+        <!-- titan_ii -->
+        <mech model="titan_ii_TI-2P"/>
+        <mech model="titan_ii_TI-2PA"/>
+        <!-- toro -->
+        <mech model="toro_TR-A-1"/>
+        <mech model="toro_TR-A-11"/>
+        <mech model="toro_TR-A-6"/>
+        <mech model="toro_TR-A-8"/>
+        <mech model="toro_TR-B-12"/>
+        <mech model="toro_TR-B-9"/>
+        <!-- toyama -->
+        <mech model="toyama_TYM-1A"/>
+        <mech model="toyama_TYM-1B"/>
+        <mech model="toyama_TYM-1C"/>
+        <!-- uziel -->
+        <mech model="uziel_UZL-2S"/>
+        <mech model="uziel_UZL-2SJ"/>
+        <mech model="uziel_UZL-2SJII"/>
+        <mech model="uziel_UZL-3S"/>
+        <mech model="uziel_UZL-4L"/>
+        <mech model="uziel_UZL-8S"/>
+        <!-- valiant -->
+        <mech model="valiant_V4-LNT-J3"/>
+        <mech model="valiant_V4-LNT-K7"/>
+        <mech model="valiant_VAL-NT-JX"/>
+        <mech model="valiant_VLN-3T"/>
+        <mech model="valiant_VLT-3E"/>
+        <!-- vanquisher -->
+        <mech model="vanquisher_VQR-2A"/>
+        <mech model="vanquisher_VQR-2B"/>
+        <mech model="vanquisher_VQR-5V"/>
+        <mech model="vanquisher_VQR-7U"/>
+        <mech model="vanquisher_VQR-7V"/>
+        <!-- von_rohrs -->
+        <mech model="von_rohrs_VON-4RH-5"/>
+        <mech model="von_rohrs_VON-4RH-6"/>
+        <!-- vulcan_ii -->
+        <mech model="vulcan_ii_VLC-N3"/>
+        <mech model="vulcan_ii_VLC-N4M"/>
+        <!-- wight -->
+        <mech model="wight_WGT-1LAW-SC"/>
+        <mech model="wight_WGT-1LAW-SC3"/>
+        <mech model="wight_WGT-2LAW"/>
+        <mech model="wight_WGT-2LAWC3"/>
+        <mech model="wight_WGT-2SC"/>
+        <mech model="wight_WGT-3SC"/>
+        <mech model="wight_WGT-4NC"/>
+        <!-- zeus-x -->
+        <mech model="zeus-x_ZEU-9WD"/>
+        <mech model="zeus-x_ZEU-9WD_Stacy"/>
+        <mech model="zeus-x_ZEU-X"/>
+        <mech model="zeus-x_ZEU-X2"/>
+        <mech model="zeus-x_ZEU-X3"/>
+        <mech model="zeus-x_ZEU-X4"/>
         <!-- shadow_cat_ii -->
         <mech model="shadow_cat_ii_SHCII-1"/>
         <mech model="shadow_cat_ii_SHCII-2"/>
