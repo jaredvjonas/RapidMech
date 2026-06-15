@@ -4774,6 +4774,10 @@
         <mech model="dragonfire_DGR-6FC"/>
         <mech model="dragonfire_DGR-7K"/>
         <mech model="dragonfire_DGR-9D"/>
+        <!-- Dangling-ref audit fixes (TKT-023 class): own-geometry variants already referenced in btVariants but never generated -->
+        <mech model="raven_RVN-H"/>
+        <mech model="stalker_STK-M"/>
+        <mech model="trebuchet_TBT-LG"/>
     </copy>
 
     <!-- Republic Heavy Metal mechs -->
