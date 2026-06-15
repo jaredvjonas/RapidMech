@@ -4778,6 +4778,121 @@
         <mech model="raven_RVN-H"/>
         <mech model="stalker_STK-M"/>
         <mech model="trebuchet_TBT-LG"/>
+        <!-- ===== Clan roster additions 2026-06-14 (TKT-038: own-geometry Clan mechs, research-world gated) ===== -->
+        <!-- annihilator_iic -->
+        <mech model="annihilator_iic_ANH-IIC"/>
+        <!-- archer_iic -->
+        <mech model="archer_iic_ARC-IIC-1"/>
+        <!-- arctic_wolf_ii -->
+        <mech model="arctic_wolf_ii_ACWII-A"/>
+        <mech model="arctic_wolf_ii_ACWII-B"/>
+        <mech model="arctic_wolf_ii_ACWII-C"/>
+        <mech model="arctic_wolf_ii_ACWII-Prime"/>
+        <!-- bane -->
+        <mech model="bane_B-1"/>
+        <mech model="bane_B-2"/>
+        <mech model="bane_B-3"/>
+        <mech model="bane_B-4"/>
+        <mech model="bane_B-5"/>
+        <!-- bane_B-6: 10x ProtoMech AC/2 (not in IrTech) -> 2x Clan RAC/5 (one per 8-slot arm); ProtoAC ammo -> AC5 (user choice) -->
+        <mech model="bane_B-6">
+            <remove-inventory item="Weapon_Autocannon_ProtoAC_2_Clan"/>
+            <add-inventory location="LeftArm" item="Weapon_Autocannon_RAC_5_Clan" itemType="Weapon"/>
+            <add-inventory location="RightArm" item="Weapon_Autocannon_RAC_5_Clan" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_ProtoAC_2" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        </mech>
+        <mech model="bane_B-7"/>
+        <mech model="bane_B-LRM"/>
+        <!-- bane_B-RU / bane_B-XR dropped: hard structural deps not in IrTech (XXL gyro, tactical life-support, laser heatsinks) -->
+        <mech model="bane_B-SRM"/>
+        <!-- battlemaster_iic -->
+        <mech model="battlemaster_iic_BLR-IIC"/>
+        <!-- bruin -->
+        <mech model="bruin_BRN-1"/>
+        <mech model="bruin_BRN-2"/>
+        <!-- canis -->
+        <mech model="canis_CAS-1"/>
+        <mech model="canis_CAS-2"/>
+        <!-- cougar_x -->
+        <mech model="cougar_x_COX-2"/>
+        <mech model="cougar_x_COX-3"/>
+        <mech model="cougar_x_COX-Prime"/>
+        <!-- dark_crow -->
+        <mech model="dark_crow_DCW-1"/>
+        <mech model="dark_crow_DCW-2"/>
+        <mech model="dark_crow_DCW-3"/>
+        <mech model="dark_crow_DCW-4"/>
+        <!-- flamberge -->
+        <mech model="flamberge_FLM-2"/>
+        <mech model="flamberge_FLM-3"/>
+        <mech model="flamberge_FLM-A"/>
+        <mech model="flamberge_FLM-B"/>
+        <mech model="flamberge_FLM-C"/>
+        <mech model="flamberge_FLM-D"/>
+        <mech model="flamberge_FLM-Prime"/>
+        <!-- glassspider -->
+        <mech model="glassspider_GLS-1"/>
+        <mech model="glassspider_GLS-2"/>
+        <mech model="glassspider_GLS-3"/>
+        <mech model="glassspider_GLS-4"/>
+        <!-- jade_phoenix -->
+        <mech model="jade_phoenix_JPH-A"/>
+        <mech model="jade_phoenix_JPH-B"/>
+        <mech model="jade_phoenix_JPH-C"/>
+        <mech model="jade_phoenix_JPH-D"/>
+        <mech model="jade_phoenix_JPH-E"/>
+        <mech model="jade_phoenix_JPH-Prime"/>
+        <!-- kodiak_ii -->
+        <mech model="kodiak_ii_KDK2-1"/>
+        <mech model="kodiak_ii_KDK2-2"/>
+        <mech model="kodiak_ii_KDK2-3"/>
+        <!-- lupus -->
+        <mech model="lupus_LUPUS-A"/>
+        <mech model="lupus_LUPUS-B"/>
+        <mech model="lupus_LUPUS-C"/>
+        <mech model="lupus_LUPUS-D"/>
+        <mech model="lupus_LUPUS-Prime"/>
+        <!-- minsk -->
+        <mech model="minsk_MNK-1"/>
+        <mech model="minsk_MNK-101"/>
+        <!-- minsk_MNK-2: Clan Mortar 6 (not in IrTech) -> Mortar 6; Airburst ammo -> generic mortar -->
+        <mech model="minsk_MNK-2">
+            <swap-inventory item="Weapon_Mortar_6_Clan" with="Weapon_Mortar_6" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Mortar_Airburst" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
+        </mech>
+        <!-- omen -->
+        <mech model="omen_OM-1"/>
+        <mech model="omen_OM-2"/>
+        <!-- scylla -->
+        <mech model="scylla_SCY-1"/>
+        <mech model="scylla_SCY-2"/>
+        <mech model="scylla_SCY-3"/>
+        <!-- shadow_cat_ii -->
+        <mech model="shadow_cat_ii_SHCII-1"/>
+        <mech model="shadow_cat_ii_SHCII-2"/>
+        <mech model="shadow_cat_ii_SHCII-3"/>
+        <mech model="shadow_cat_ii_SHCII-4"/>
+        <!-- shadow_cat_iii -->
+        <mech model="shadow_cat_iii_SHCIII-A"/>
+        <mech model="shadow_cat_iii_SHCIII-B"/>
+        <mech model="shadow_cat_iii_SHCIII-C"/>
+        <mech model="shadow_cat_iii_SHCIII-Prime"/>
+        <!-- sidewinder -->
+        <mech model="sidewinder_SW-Prime"/>
+        <!-- spider_iic -->
+        <mech model="spider_iic_SDR-IIC"/>
+        <!-- thunderbolt_iic -->
+        <mech model="thunderbolt_iic_TDR-IIC-1"/>
+        <mech model="thunderbolt_iic_TDR-IIC-2"/>
+        <!-- tiburon -->
+        <mech model="tiburon_TBR-1"/>
+        <!-- tiburon_TBR-1-J dropped: tactical life-support not in IrTech -->
+        <mech model="tiburon_TBR-2"/>
+        <!-- trebuchet_iic -->
+        <mech model="trebuchet_iic_TBT-IIC-1"/>
+        <mech model="trebuchet_iic_TBT-IIC-2"/>
+        <mech model="trebuchet_iic_TBT-IIC-3"/>
+        <mech model="trebuchet_iic_TBT-IIC-4"/>
     </copy>
 
     <!-- Republic Heavy Metal mechs -->
