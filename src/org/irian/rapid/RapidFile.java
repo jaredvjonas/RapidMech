@@ -27,6 +27,7 @@ public class RapidFile {
     private final Map<String, ResourceScanner> resourceCache = new HashMap<>();
     private final Map<String, TaskList> taskMap = new HashMap<>();
     private static final List<String> NonPortableEquipment = new ArrayList<>();
+    private Map<String, File> _searchIndex = null; // lazily built filename -> File index under ${searchRoot}
 
     public RapidFile(File file) {
         this._file = file;
@@ -139,12 +140,13 @@ public class RapidFile {
 
     private MechDef loadMechDef(String model, MechDefCmd mechDefCmd) throws IOException {
         String fileName = replaceProperty("mechdef_${model}.json", "model", model);
-        File srcDir = buildPath(mechDefCmd.source);
-        File inputFile = new File(srcDir, fileName);
+        File inputFile = resolveSource(mechDefCmd.source, fileName);
+        if (inputFile == null) {
+            System.out.printf("File not found: %s (declared source + searchRoot)\n", fileName);
+            return null;
+        }
         try (var stream = new FileInputStream(inputFile)) {
             return ReaderWriter.readMech(stream);
-        } catch (FileNotFoundException e) {
-            System.out.printf("File not found: %s\n", inputFile);
         } catch (IOException e) {
             System.out.printf("Error reading file: %s\n", inputFile);
         }
@@ -153,16 +155,62 @@ public class RapidFile {
 
     private ChasisDef loadChassisDef(String model, ChassisDefCmd chassisDefCmd) throws IOException {
         String fileName = replaceProperty("chassisdef_${model}.json", "model", model);
-        File srcDir = buildPath(chassisDefCmd.source);
-        File inputFile = new File(srcDir, fileName);
+        File inputFile = resolveSource(chassisDefCmd.source, fileName);
+        if (inputFile == null) {
+            System.out.printf("File not found: %s (declared source + searchRoot)\n", fileName);
+            return null;
+        }
         try (var stream = new FileInputStream(inputFile)) {
             return ReaderWriter.readChassis(stream);
-        } catch (FileNotFoundException e) {
-            System.out.printf("File not found: %s\n", inputFile);
         } catch (IOException e) {
             System.out.printf("Error reading file: %s\n", inputFile);
         }
         return null;
+    }
+
+    // Resolve a def file: try the declared <copy> source dir first, then fall back to a
+    // filename lookup under ${searchRoot}. Handles RT moving mechs between eras / renaming
+    // subfolders upstream; safe because def filenames are unique across the Eras tree.
+    private File resolveSource(String source, String fileName) throws IOException {
+        File srcDir = buildPath(source);
+        if (srcDir != null) {
+            File f = new File(srcDir, fileName);
+            if (f.exists()) {
+                return f;
+            }
+        }
+        return findInSearchRoot(fileName);
+    }
+
+    private File findInSearchRoot(String fileName) throws IOException {
+        if (_searchIndex == null) {
+            _searchIndex = new HashMap<>();
+            if (variables.containsKey("searchRoot")) {
+                File root = buildPath("${searchRoot}");
+                if (root != null) {
+                    indexDefFiles(root, _searchIndex);
+                    System.out.printf("searchRoot index built: %d def files\n", _searchIndex.size());
+                }
+            }
+        }
+        return _searchIndex.get(fileName);
+    }
+
+    private void indexDefFiles(File dir, Map<String, File> index) {
+        File[] entries = dir.listFiles();
+        if (entries == null) {
+            return;
+        }
+        for (File entry : entries) {
+            if (entry.isDirectory()) {
+                indexDefFiles(entry, index);
+            } else {
+                String name = entry.getName();
+                if (name.startsWith("mechdef_") || name.startsWith("chassisdef_")) {
+                    index.putIfAbsent(name, entry);
+                }
+            }
+        }
     }
 
     private void saveMech(Mech mech, ChassisDefCmd chassisDefCmd, MechDefCmd mechDefCmd) throws IOException {

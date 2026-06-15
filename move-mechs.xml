@@ -6,6 +6,8 @@
     <dir id="jihad" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/Jihad3068-3080"/>
     <dir id="republic" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/Republic3081-3130"/>
     <dir id="darkAge" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/DarkAge3131-"/>
+    <!-- searchRoot: fallback for loadMechDef/loadChassisDef when a mech moved era/subfolder upstream (TKT-032); def filenames are unique across the Eras tree -->
+    <dir id="searchRoot" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras"/>
     <dir id="irianTechHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH/mods/IrianTech"/>
     <dir id="target" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH/mods/IrianTech/battleMech"/>
 
@@ -196,37 +198,86 @@
 
         <swap-inventory item="Ammo_AmmunitionBox_Gauss" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
         <swap-inventory item="Ammo_AmmunitionBox_Gauss_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/> <!-- Vanilla Plus -->
+        <!-- RT-master renamed Gauss boxes Gauss -> Gauss_Rifle (TKT-032) -->
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Rifle" with="Ammo_AmmunitionBox_Generic_GAUSS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Rifle_Double" with="Ammo_AmmunitionBox_Generic_GAUSS_Double"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Gauss_Rifle_Half" with="Ammo_AmmunitionBox_Generic_GAUSS_Half"/>
 
-        <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Double" with="Ammo_AmmunitionBox_Generic_LRM_Double"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_ER" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Improved" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_ListenKill" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_SAM" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clearance" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/> <!-- LRM_Swarm (full) is handled above; this is the half box (was wrongly -> Generic_SRM_Half) -->
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Double" with="Ammo_AmmunitionBox_Generic_SRM_Double"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Acid" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_AMS" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Half" with="Ammo_AmmunitionBox_Half_SRM_Streak"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem" with="Ammo_AmmunitionBox_Generic_SRM"/>
+        <!-- ============ TKT-032 RT-master reconciliation 2026-06-14 ============ -->
+        <!-- New/renamed master ammo boxes -> existing IrianTech generics (size-matched; variants collapse to base) -->
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_5" with="Ammo_AmmunitionBox_Thunderbolt_TB5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_5_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_10" with="Ammo_AmmunitionBox_Thunderbolt_TB10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_10_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_15" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_15_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_15_Kinetic" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_15_Guided" with="Ammo_AmmunitionBox_Thunderbolt_TB15"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_20" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_20_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_20_Kinetic" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_20_Guided" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ArrowIV_HEAP" with="Ammo_AmmunitionBox_ArrowIV"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ArrowIV_Homing" with="Ammo_AmmunitionBox_ArrowIV"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LBX_2_Dragons_Breath" with="Ammo_AmmunitionBox_LBX_2_Cluster"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Dragons_Breath" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_Thumper"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_Inferno" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <!-- New master gear/weapons with no IrianTech equivalent: stripped per user (drop, don't import) -->
+        <remove-inventory item="Gear_ArmorMod_VoidSignatureSystem"/>
+        <remove-inventory item="Linked_ArmorMod_VoidSignatureSystem"/>
+        <remove-inventory item="Gear_ArmorMod_ChameleonLightPolarizationShield"/>
+        <remove-inventory item="Linked_ArmorMod_ChameleonLightPolarizationShield"/>
+        <remove-inventory item="Gear_ArmorMod_NullSignatureSystem"/>
+        <remove-inventory item="Linked_ArmorMod_NullSignatureSystem"/>
+        <remove-inventory item="Gear_ArmorMod_HardenedSpikeCladding"/>
+        <remove-inventory item="Linked_ArmorMod_HardenedSpikeCladding"/>
+        <remove-inventory item="Weapon_C3_Master_TAG"/>
+        <remove-inventory item="Gear_TargetingTrackingSystem_Convergence"/>
+        <remove-inventory item="Gear_Actuator_OneBIGArm"/>
+        <remove-inventory item="Gear_RemoteDroneCommandConsole"/>
+        <remove-inventory item="Gear_Armor_HeatDissipating"/>
+        <remove-inventory item="HandHeld_Weapon_Lance_6tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Hatchet_3tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Hatchet_9tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Hatchet_10tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Mace_4tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Sword_7tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_Sword_10tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_VibroSword_7tons"/>
+        <remove-inventory item="Lootable_HandHeld_Melee_VibroSword_8tons"/>
+        <!-- ============ end TKT-032 ============ -->
+
+        <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Half" with="Ammo_AmmunitionBox_LRM_Standard_IS"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Double" with="Ammo_AmmunitionBox_LRM_Standard_IS"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_ER" with="Ammo_AmmunitionBox_LRM_ER_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Improved" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary" with="Ammo_AmmunitionBox_LRM_Inferno_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Incendiary_Half" with="Ammo_AmmunitionBox_LRM_Inferno_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_ListenKill" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_SAM" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Clearance" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire" with="Ammo_AmmunitionBox_LRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Deadfire_Half" with="Ammo_AmmunitionBox_LRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Half" with="Ammo_AmmunitionBox_LRM_Standard_IS"/> <!-- LRM_Swarm (full) is handled above; this is the half box (was wrongly -> Generic_SRM_Half) -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Half" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Half" with="Ammo_AmmunitionBox_SRM_Standard_IS"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Double" with="Ammo_AmmunitionBox_SRM_Standard_IS"/> <!-- Vanilla Plus -->
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Acid" with="Ammo_AmmunitionBox_SRM_AP_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_AMS" with="Ammo_AmmunitionBox_SRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire" with="Ammo_AmmunitionBox_SRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno" with="Ammo_AmmunitionBox_SRM_Inferno_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Half" with="Ammo_AmmunitionBox_SRM_Inferno_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill" with="Ammo_AmmunitionBox_SRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_ListenKill_Half" with="Ammo_AmmunitionBox_SRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak_Half" with="Ammo_AmmunitionBox_STREAKSRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem" with="Ammo_AmmunitionBox_SRM_HE_IS"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun" with="Ammo_AmmunitionBox_Generic_MG"/>
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Half" with="Ammo_AmmunitionBox_Generic_MG_Half"/> <!-- Vanilla Plus -->
         <swap-inventory item="Ammo_AmmunitionBox_MachineGun_Double" with="Ammo_AmmunitionBox_Generic_MG_Double"/> <!-- Vanilla Plus -->
@@ -243,10 +294,12 @@
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5_AP" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_RAC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
 
-        <swap-inventory item="Ammo_AmmunitionBox_MRM_Acid" with="Ammo_AmmunitionBox_MRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem" with="Ammo_AmmunitionBox_MRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem_Half" with="Ammo_AmmunitionBox_MRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_MRM_Incendiary_Half" with="Ammo_AmmunitionBox_MRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Acid" with="Ammo_AmmunitionBox_MRM_AP_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM" with="Ammo_AmmunitionBox_MRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Half" with="Ammo_AmmunitionBox_MRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem" with="Ammo_AmmunitionBox_MRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Tandem_Half" with="Ammo_AmmunitionBox_MRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Incendiary_Half" with="Ammo_AmmunitionBox_MRM_Inferno_IS"/>
 
         <!-- Rogue Tech Autocannon Clan Variants -->
         <swap-inventory item="Ammo_AmmunitionBox_UAC_2" with="Ammo_AmmunitionBox_Generic_AC2"/>
@@ -264,9 +317,9 @@
         <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Half" with="Ammo_AmmunitionBox_Generic_AC20_Half"/>
         <swap-inventory item="Ammo_AmmunitionBox_UAC_20_Double" with="Ammo_AmmunitionBox_Generic_AC20_Double"/>
 
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Clan" with="Ammo_AmmunitionBox_LRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Swarm_Clan" with="Ammo_AmmunitionBox_LRM_Standard_Clan"/>
 
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Clan" with="Ammo_AmmunitionBox_SRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Inferno_Clan" with="Ammo_AmmunitionBox_SRM_Inferno_Clan"/>
 
         <!-- Rogue Tech Magshot -->
         <swap-inventory item="Ammo_AmmunitionBox_Magshot_Half" with="Ammo_AmmunitionBox_Magshot_Half"/>
@@ -275,12 +328,12 @@
         <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB5_Thermo" with="Ammo_AmmunitionBox_Thunderbolt_TB5"/>
 
         <!-- Rogue Tech Narc -->
-        <swap-inventory item="Ammo_AmmunitionBox_Narc_Beacon" with="Ammo_AmmunitionBox_Generic_Narc"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Narc_Explosive" with="Ammo_AmmunitionBox_Generic_Narc"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Narc_Beacon" with="Ammo_AmmunitionBox_NARC_Beacon_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Narc_Explosive" with="Ammo_AmmunitionBox_NARC_Explosive_IS"/>
 
-        <swap-inventory item="Ammo_AmmunitionBox_ATM" with="Ammo_AmmunitionBox_ATM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_ATM_ER_Half" with="Ammo_AmmunitionBox_ATM_ER_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_ATM_HE" with="Ammo_AmmunitionBox_ATM_HE"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ATM" with="Ammo_AmmunitionBox_ATM_Standard_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ATM_ER_Half" with="Ammo_AmmunitionBox_ATM_ER_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ATM_HE" with="Ammo_AmmunitionBox_ATM_HE_Clan"/>
 
         <swap-inventory item="Ammo_AmmunitionBox_Rifle_Heavy_APFSDS" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
 
@@ -452,7 +505,7 @@
         <swap-inventory item="Gear_Armor_HeatDissipating_Clan" with="Gear_Armor_HeatDissipating_Clan"/>
 
         <!-- Phase 3 additions - LRM Streak ammo -->
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Streak" with="Ammo_AmmunitionBox_LRM_Streak"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Streak" with="Ammo_AmmunitionBox_STREAKLRM_Standard_IS"/>
 
         <!-- Phase 3 additions - Engine cores to remove -->
         <remove-inventory item="Gear_EngineCore_150"/>
@@ -488,7 +541,7 @@
         <swap-inventory item="Weapon_Laser_XPulse_Large" with="Weapon_Laser_XPulse_Large"/>
 
         <!-- Phase 3 additions - MRM Apollo ammo (derived from base MRM) -->
-        <swap-inventory item="Ammo_AmmunitionBox_MRM_Apollo" with="Ammo_AmmunitionBox_MRM"/>
+        <swap-inventory item="Ammo_AmmunitionBox_MRM_Apollo" with="Ammo_AmmunitionBox_MRM_Artemis_IS"/>
 
         <!-- Phase 3 additions - ER Flamer -->
         <swap-inventory item="Weapon_Flamer_ER" with="Weapon_Flamer_ER"/>
@@ -533,10 +586,10 @@
         <swap-inventory item="Weapon_LRM_10_Extended" with="Weapon_LRM_10_Extended"/>
         <swap-inventory item="Weapon_LRM_15_Extended" with="Weapon_LRM_15_Extended"/>
         <swap-inventory item="Weapon_LRM_15_Delta" with="Weapon_LRM_15_Delta"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Clan" with="Ammo_AmmunitionBox_LRM_Clan"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Narc" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_InfernoThunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_AugmentedThunder_Half" with="Ammo_AmmunitionBox_Generic_LRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Thunder_Clan" with="Ammo_AmmunitionBox_LRM_Standard_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Narc" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_InfernoThunder_Half" with="Ammo_AmmunitionBox_LRM_Inferno_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_AugmentedThunder_Half" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
 
         <!-- Phase 4 additions - Thunderbolt ammo swaps to standard -->
         <swap-inventory item="Ammo_AmmunitionBox_Thunderbolt_TB20_HE" with="Ammo_AmmunitionBox_Thunderbolt_TB20"/>
@@ -550,9 +603,9 @@
 
         <!-- Phase 4 additions - SRM oneshot and ammo swaps -->
         <swap-inventory item="Weapon_SRM_2_Streak_Oneshot" with="Weapon_SRM_2_Streak_Oneshot"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Acid_Half" with="Ammo_AmmunitionBox_Generic_SRM_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Deadfire_Half" with="Ammo_AmmunitionBox_SRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Tandem_Half" with="Ammo_AmmunitionBox_SRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Acid_Half" with="Ammo_AmmunitionBox_SRM_AP_IS"/>
 
         <!-- Phase 4 additions - Autocannon weapons and ammo swaps -->
         <swap-inventory item="Weapon_Autocannon_AC_5_Light" with="Weapon_Autocannon_AC_5_Light"/>
@@ -622,19 +675,21 @@
     </task-list>
 
     <task-list id="artemis">
-        <!-- This mod has no attachment support, so model Artemis as a missile type: convert each base
-             launcher that carries an Artemis IV attachment into its dedicated Artemis weapon variant
-             (handled in code; only IS launchers with a real Artemis variant are converted - Clan is
-             skipped, it keeps standard Clan ammo). Then strip any remaining Artemis attachment. -->
-        <upgrade-artemis apply="mechGear"/>
+        <!-- Artemis is now an ammo VARIANT, not a converted weapon: route any Artemis ammo box to the
+             graded Artemis variant (IS grade here; Clan handled by clan-early). Then strip the
+             now-unused Artemis IV attachment. -->
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Artemis_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Half" with="Ammo_AmmunitionBox_LRM_Artemis_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_SRM_Artemis_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Half" with="Ammo_AmmunitionBox_SRM_Artemis_IS"/>
         <remove-inventory item="Gear_Attachment_ArtemisIV"/>
     </task-list>
 
     <task-list id="drop-artemis">
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_Generic_LRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_Generic_SRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Clan" with="Ammo_AmmunitionBox_LRM_Clan"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Clan" with="Ammo_AmmunitionBox_SRM_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_SRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Clan" with="Ammo_AmmunitionBox_LRM_Standard_Clan"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Clan" with="Ammo_AmmunitionBox_SRM_Standard_Clan"/>
 
         <remove-inventory item="Gear_Attachment_ArtemisIV"/>
     </task-list>
@@ -643,9 +698,9 @@
         <!-- Clan Early mechs have an Artemis FCS on Clan CE launchers: route IS Artemis ammo to
              the Clan Artemis ammo (Clan category + the Artemis accuracy/evasion bonus). -->
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Artemis_Clan"/>
-        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Half" with="Ammo_AmmunitionBox_LRM_Artemis_Clan_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis_Half" with="Ammo_AmmunitionBox_LRM_Artemis_Clan"/>
         <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis" with="Ammo_AmmunitionBox_SRM_Artemis_Clan"/>
-        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Half" with="Ammo_AmmunitionBox_SRM_Artemis_Clan_Half"/>
+        <swap-inventory item="Ammo_AmmunitionBox_SRM_Artemis_Half" with="Ammo_AmmunitionBox_SRM_Artemis_Clan"/>
     </task-list>
 
     <copy>
@@ -1556,10 +1611,10 @@
         <mech model="emperor_EMP-5B" engineRating="270" engineType="standard" apply="emperor"/>
         <mech model="emperor_EMP-6A" engineRating="270" engineType="XL" apply="emperor"/>
         <mech model="emperor_EMP-6A-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
         </mech>
         <mech model="emperor_EMP-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
         </mech>
 
         <mech model="enfield_END-6J" engineRating="250" engineType="XL" endoSteel="true"/>
@@ -1671,7 +1726,7 @@
         -->
 
         <mech model="fox_CS-1" engineRating="300" engineType="XL" endoSteel="true" techBase="Clan">
-            <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Clan"/> <!-- CE Clan LRM weapon (mech also has an IS Streak weapon - leave its streak box alone) -->
+            <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Standard_Clan"/> <!-- CE Clan LRM weapon (mech also has an IS Streak weapon - leave its streak box alone) -->
         </mech>
         <mech model="fox_CS-2" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
@@ -2664,8 +2719,8 @@
         <mech model="orion_ON1-H" engineRating="285" engineType="standard"/>
         <mech model="orion_ON1-K" engineRating="300" engineType="standard"/>
         <mech model="orion_ON1-K-CE" engineRating="300" engineType="standard" techBase="Clan">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Clan"/> <!-- CE Clan SRM weapon -->
-            <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Clan"/> <!-- CE Clan LRM weapon -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Standard_Clan"/> <!-- CE Clan SRM weapon -->
+            <swap-inventory item="Ammo_AmmunitionBox_LRM" with="Ammo_AmmunitionBox_LRM_Standard_Clan"/> <!-- CE Clan LRM weapon -->
         </mech>
         <mech model="orion_ON1-KR" engineRating="300" engineType="standard"/>
         <mech model="orion_ON1-M" engineRating="300" engineType="standard"/>
@@ -2758,11 +2813,7 @@
             <add-hardpoint location="RightArm" weaponMounts="Energy,Missile"/>
         </hardpoints>
 
-        <mech model="perseus_p1" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
-        <mech model="perseus_p1a" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
-        <mech model="perseus_p1b" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
-        <mech model="perseus_p1c" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
-        <mech model="perseus_p1d" engineRating="300" engineType="XL" endoSteel="true" apply="perseus"/>
+        <!-- perseus p1/p1a/p1b/p1c/p1d: deleted upstream in RT-master, removed for migration (TKT-032) -->
 
         <hardpoints id="phantom">
             <add-hardpoint location="LeftArm" weaponMounts="Energy,Energy,Energy,Energy,Missile"/>
@@ -2907,7 +2958,7 @@
         <mech model="sentinel_STN-3L" engineRating="240" engineType="standard"/>
         <mech model="sentinel_STN-3Lb" engineRating="240" engineType="XL" endoSteel="true" ferroFibrous="true"/>
         <mech model="sentinel_STN-3L-EC" engineRating="240" engineType="standard">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
         </mech>
         <mech model="sentinel_STN-3M" engineRating="240" engineType="standard"/>
 
@@ -2955,7 +3006,7 @@
         <mech model="shadowhawk_SHD-2H" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
         <mech model="shadowhawk_SHD-2Hb" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
         <mech model="shadowhawk_SHD-2Hb-EC" engineRating="275" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="shadowhawk-missiles">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
         </mech>
         <mech model="shadowhawk_SHD-2HR" engineRating="275" engineType="standard" apply="shadowhawk-missiles"/>
         <mech model="shadowhawk_SHD-2Ht" engineRating="275" engineType="standard"/>
@@ -3017,7 +3068,7 @@
 
         <mech model="starslayer_STY-2C" engineRating="250" engineType="standard" ferroFibrous="true"/>
         <mech model="starslayer_STY-2C-EC" engineRating="250" engineType="standard" ferroFibrous="true">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_SRM_Streak_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
         </mech>
         <mech model="starslayer_STY-3C" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="starslayer_STY-3D" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
@@ -3542,7 +3593,7 @@
         <mech model="victor_VTR-9B(C)" engineRating="320" engineType="standard" techBase="Clan" apply="victor"/>
         <mech model="victor_VTR-9B" engineRating="320" engineType="standard" apply="victor"/>
         <mech model="victor_VTR-9B-CE" engineRating="320" engineType="standard" techBase="Clan" apply="victor">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Clan"/> <!-- CE Clan SRM weapon -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Standard_Clan"/> <!-- CE Clan SRM weapon -->
         </mech>
         <mech model="victor_VTR-9BR" engineRating="320" engineType="standard" apply="victor"/>
         <mech model="victor_VTR-9D" engineRating="320" engineType="standard" endoSteel="true" apply="victor"/>
@@ -3711,7 +3762,7 @@
         <mech model="wolverine_WVR-6MR" engineRating="275" engineType="XL" apply="wolverine"/>
         <mech model="wolverine_WVR-6R" engineRating="275" engineType="XL" apply="wolverine"/>
         <mech model="wolverine_WVR-6R-CE" engineRating="275" engineType="XL" techBase="Clan" apply="wolverine">
-            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Clan"/> <!-- CE Clan SRM weapon -->
+            <swap-inventory item="Ammo_AmmunitionBox_SRM" with="Ammo_AmmunitionBox_SRM_Standard_Clan"/> <!-- CE Clan SRM weapon -->
         </mech>
         <mech model="wolverine_WVR-6RR" engineRating="275" engineType="XL" apply="wolverine"/>
         <mech model="wolverine_WVR-6SL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true" apply="wolverine"/>
@@ -3808,8 +3859,8 @@
 
     <!-- ClanInvasion3061 FlashPoint mechs -->
     <copy>
-        <mechdef source="${clanInvasion}/Base FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/Base FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${clanInvasion}/FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${clanInvasion}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Akuma (ClanInvasion) -->
         <mech model="akuma_AKU-1X" engineRating="330" engineType="XL"/>
@@ -3818,8 +3869,8 @@
 
     <!-- CivilWar FlashPoint mechs -->
     <copy>
-        <mechdef source="${civilWar}/Base Flashpoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/Base Flashpoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${civilWar}/FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Akuma (CivilWar) -->
         <mech model="akuma_AKU-1XJ" engineRating="330" engineType="XL"/>
@@ -3827,8 +3878,8 @@
 
     <!-- Jihad FlashPoint mechs -->
     <copy>
-        <mechdef source="${jihad}/Base Flashpoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${jihad}/Base Flashpoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${jihad}/FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${jihad}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Akuma (Jihad) -->
         <mech model="akuma_AKU-2X" engineRating="330" engineType="XL"/>
@@ -3836,8 +3887,8 @@
 
     <!-- ClanInvasion3061 HeavyMetal mechs -->
     <copy>
-        <mechdef source="${clanInvasion}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${clanInvasion}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${clanInvasion}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Phoenix Hawk (ClanInvasion) -->
         <mech model="phoenixhawk_PXH-1" engineRating="270" engineType="standard"/>
@@ -3871,8 +3922,8 @@
 
     <!-- ClanInvasion3061 UrbanWarfare mechs -->
     <copy>
-        <mechdef source="${clanInvasion}/Base UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/Base UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${clanInvasion}/UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${clanInvasion}/UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Raven (ClanInvasion) -->
         <mech model="raven_RVN-1X" engineRating="210" engineType="XL"/>
@@ -3971,8 +4022,8 @@
             <!-- Add ammo and heat sink to LeftTorso -->
             <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Generic_LRM" itemType="AmmunitionBox"/>
             <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Generic_LRM" itemType="AmmunitionBox"/>
-            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_MRM" itemType="AmmunitionBox"/>
-            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_MRM" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_MRM_Standard_IS" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_MRM_Standard_IS" itemType="AmmunitionBox"/>
             <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double" itemType="HeatSink"/>
             <!-- Set RightTorso hardpoints for missile + energy loadout -->
             <set-hardpoint location="RightTorso" weaponMounts="Missile,Missile,Energy,Energy"/>
@@ -4067,8 +4118,8 @@
 
     <!-- CivilWar Heavy Metal mechs -->
     <copy>
-        <mechdef source="${civilWar}/Base Heavy Metal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/Base Heavy Metal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${civilWar}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Phoenix Hawk (CivilWar) -->
         <mech model="phoenixhawk_PXH-3PL" engineRating="270" engineType="XL"/>
@@ -4084,8 +4135,8 @@
 
     <!-- CivilWar Urban Warfare mechs -->
     <copy>
-        <mechdef source="${civilWar}/Base Urban Warfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/Base Urban Warfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${civilWar}/UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${civilWar}/UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Raven (CivilWar) -->
         <mech model="raven_RVN-4L" engineRating="210" engineType="XL"/>
@@ -4203,13 +4254,7 @@
 
         <!-- Black Knight (Jihad) -->
         <!-- BL-10-KNT Refit: Replace Thumper SawedOff (12t) + ammo (2t) with Light Gauss (12t) + ammo (1t) -->
-        <mech model="blackknight_BL-10-KNT" engineRating="300" engineType="standard">
-            <remove-inventory item="Weapon_Artillery_Thumper_SawedOff"/>
-            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Shaped"/>
-            <remove-inventory item="Ammo_AmmunitionBox_Thumper"/>
-            <add-inventory location="RightArm" item="Weapon_Gauss_Rifle_Light" itemType="Weapon"/>
-            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Gauss_Light" itemType="AmmunitionBox"/>
-        </mech>
+        <!-- blackknight_BL-10-KNT: deleted upstream in RT-master, removed for migration (TKT-032) -->
 
         <!-- Blood Asp (Jihad) -->
         <mech model="blood_asp_BAS-F" engineRating="360" engineType="XL" endoSteel="true" techBase="Clan" apply="blood_asp-extra"/>
@@ -4317,7 +4362,7 @@
         <mech model="ryoken_ii_RYOII-2" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="ryoken_ii_RYOII-3" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="ryoken_ii_RYOII-GB" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan" apply="ryoken-ii-missiles-4"/>
-        <mech model="ryoken_ii_RYOII-S" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan" apply="ryoken-ii-missiles-2"/>
+        <!-- ryoken_ii_RYOII-S: deleted upstream in RT-master, removed for migration (TKT-032) -->
 
         <!-- Archangel -->
         <mech model="archangel_C-ANG-O_invictus" engineRating="300" engineType="standard" techBase="Clan" apply="archangel-extra"/>
@@ -4373,7 +4418,7 @@
         <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL"/>
 
         <!-- Raptor II -->
-        <mech model="raptor_ii_RPT-2L" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
+        <!-- raptor_ii_RPT-2L: deleted upstream in RT-master, removed for migration (TKT-032) -->
         <mech model="raptor_ii_RPT-2X" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
         <mech model="raptor_ii_RPT-2X1" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
         <mech model="raptor_ii_RPT-3X" engineRating="240" engineType="XL" apply="raptor_ii-extra"/>
@@ -4382,8 +4427,8 @@
 
     <!-- Jihad HeavyMetal mechs -->
     <copy>
-        <mechdef source="${jihad}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${jihad}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${jihad}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${jihad}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Phoenix Hawk (Jihad) -->
         <mech model="phoenixhawk_PXH-4W" engineRating="270" engineType="XL"/>
@@ -4490,7 +4535,7 @@
         <mech model="men_shen_MS1-OG" engineRating="330" engineType="XL" endoSteel="true" apply="men_shen-extra"/>
 
         <!-- Mad Cat III (DarkAge) -->
-        <mech model="mad_cat_III-Z" engineRating="330" engineType="XL" techBase="Clan"/>
+        <!-- mad_cat_III-Z: deleted upstream in RT-master, removed for migration (TKT-032) -->
 
         <!-- Mad Cat Mk II (DarkAge) -->
         <mech model="mad_cat_mk_ii_MCII-6" engineRating="360" engineType="XL" techBase="Clan" apply="mad_cat_mk_ii"/>
@@ -4568,8 +4613,8 @@
 
     <!-- DarkAge HeavyMetal mechs -->
     <copy>
-        <mechdef source="${darkAge}/Base HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${darkAge}/Base HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${darkAge}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${darkAge}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Phoenix Hawk (DarkAge) -->
         <mech model="phoenixhawk_PXH-9" engineRating="270" engineType="XL"/>
@@ -4707,8 +4752,8 @@
 
     <!-- Republic Heavy Metal mechs -->
     <copy>
-        <mechdef source="${republic}/Base Heavy Metal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${republic}/Base Heavy Metal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <mechdef source="${republic}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
+        <chassisdef source="${republic}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Phoenix Hawk (Republic) -->
         <mech model="phoenixhawk_PXH-4M" engineRating="270" engineType="XL"/>
