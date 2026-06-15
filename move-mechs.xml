@@ -4926,6 +4926,44 @@
         <mech model="scylla_SCY-2"/>
         <mech model="scylla_SCY-3"/>
         <!-- ===== IS roster additions 2026-06-14 (TKT-039: RT-only own-geometry IS mechs, user-curated) ===== -->
+        <!-- ===== jkVariants imports 2026-06-15 (TKT-035: RT-available variants, replacing JK_BTMods) ===== -->
+        <mech model="annihilator_ANH-1E"/>
+        <mech model="archer_ARC-2K"/>
+        <mech model="archer_ARC-2W"/>
+        <mech model="assassin_ASN-SB"/>
+        <mech model="atlas_AS7-A"/>
+        <mech model="atlas_AS7-D-DC"/>
+        <mech model="atlas_AS7-LL"/>
+        <mech model="atlas_AS7-RS"/>
+        <mech model="awesome_AWS-8R"/>
+        <mech model="awesome_AWS-8V"/>
+        <mech model="banshee_BNC-3Q"/>
+        <mech model="battlemaster_BLR-1D"/>
+        <mech model="battlemaster_BLR-1G-DC"/>
+        <mech model="blackjack_BJ-1DC"/>
+        <mech model="blackjack_BJ-1X"/>
+        <mech model="blackjack_BJ-3"/>
+        <mech model="centurion_CN9-AH"/>
+        <mech model="commando_COM-1C"/>
+        <mech model="commando_COM-1D"/>
+        <mech model="commando_COM-3A"/>
+        <mech model="crab_CRB-20"/>
+        <mech model="enforcer_ENF-3R"/>
+        <mech model="firestarter_FS9-A"/>
+        <mech model="firestarter_FS9-K"/>
+        <mech model="firestarter_FS9-M"/>
+        <!-- flea_FLE-14 dropped: engine rating below RapidMech FusionEngine table -->
+        <mech model="flea_FLE-16"/>
+        <mech model="hatchetman_HCT-3G"/>
+        <mech model="hatchetman_HCT-3NH"/>
+        <mech model="jenner_JR7-A"/>
+        <mech model="jenner_JR7-F"/>
+        <mech model="locust_LCT-1L"/>
+        <mech model="locust_LCT-3V"/>
+        <mech model="raven_RVN-3X"/>
+        <mech model="spider_SDR-5D"/>
+        <!-- urbanmech_UM-R60C dropped: engine rating below RapidMech FusionEngine table -->
+        <!-- urbanmech_UM-R60X dropped: engine rating below RapidMech FusionEngine table -->
         <!-- argus -->
         <mech model="argus_AGS-1X"/>
         <mech model="argus_AGS-2D"/>
