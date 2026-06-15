@@ -223,6 +223,8 @@
         <swap-inventory item="Ammo_AmmunitionBox_LBX_10_Dragons_Breath" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
         <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_Thumper"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_5_Inferno" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_5_Half" with="Ammo_AmmunitionBox_Generic_AC5_Half"/> <!-- RAC uses base AC (TKT-007); sentinel STN-4D -->
+        <swap-inventory item="Ammo_AmmunitionBox_RAC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <!-- New master gear/weapons with no IrianTech equivalent: stripped per user (drop, don't import) -->
         <remove-inventory item="Gear_ArmorMod_VoidSignatureSystem"/>
         <remove-inventory item="Linked_ArmorMod_VoidSignatureSystem"/>
@@ -4748,6 +4750,30 @@
         <!-- Tian-Zong (Republic) -->
         <mech model="tian-zong_TNZ-N1" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="tian-zong_TNZ-N2" engineRating="300" engineType="XL" endoSteel="true"/>
+
+        <!-- ===== RT-master roster additions 2026-06-14: NEW variants only (these mechs were already partially imported) ===== -->
+        <!-- Hector HOR-2B (new; HOR-1B/1C already in roster): RT HowitzerRifle (10t, not in IrTech) -> AC/10 (Ballistic, fits hardpoint); rifle ammo -> 2 AC10 boxes -->
+        <mech model="hector_HOR-2B">
+            <swap-inventory item="Weapon_Artillery_HowitzerRifle" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Rifle_Medium"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Rifle_Medium_APFSDS"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Generic_AC10" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Generic_AC10" itemType="AmmunitionBox"/>
+        </mech>
+        <!-- Sentinel (40t medium) new variants (STN-1S/3K/3KA/3KB/3L/3Lb/3L-EC/3M already in roster) -->
+        <mech model="sentinel_STN-4D"/>
+        <mech model="sentinel_STN-5WB"/>
+        <mech model="sentinel_STN-6EX"/>
+        <mech model="sentinel_STN-6K"/>
+        <mech model="sentinel_STN-6S"/>
+        <mech model="sentinel_STN-7K"/>
+        <mech model="sentinel_STN-C"/>
+        <!-- Dragon Fire (75t heavy) new variants (DGR-3F/4F already in roster; _gregory hero skipped) -->
+        <mech model="dragonfire_DGR-46N"/>
+        <mech model="dragonfire_DGR-5F"/>
+        <mech model="dragonfire_DGR-6FC"/>
+        <mech model="dragonfire_DGR-7K"/>
+        <mech model="dragonfire_DGR-9D"/>
     </copy>
 
     <!-- Republic Heavy Metal mechs -->
