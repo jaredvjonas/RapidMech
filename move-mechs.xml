@@ -182,6 +182,7 @@
         <swap-inventory item="Ammo_AmmunitionBox_AC_2_Flak" with="Ammo_AmmunitionBox_Generic_AC2"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_2_Precision" with="Ammo_AmmunitionBox_Generic_AC2"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_5" with="Ammo_AmmunitionBox_Generic_AC5"/>
+        <swap-inventory item="Ammo_AmmunitionBox_AC_5_Half" with="Ammo_AmmunitionBox_Generic_AC5_Half"/> <!-- TKT-041: rifleman RFL-9T -->
         <swap-inventory item="Ammo_AmmunitionBox_AC_5_Double" with="Ammo_AmmunitionBox_Generic_AC5_Double"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_5_AP" with="Ammo_AmmunitionBox_Generic_AC5"/>
         <swap-inventory item="Ammo_AmmunitionBox_AC_5_Incendiary" with="Ammo_AmmunitionBox_Generic_AC5"/>
@@ -5248,6 +5249,40 @@
         <mech model="razorback_RZK-9T"/>
         <!-- reptar -->
         <mech model="reptar_EPT-C-1"/>
+        <!-- rifleman (IS classic, TKT-040 workhorse import) -->
+        <mech model="rifleman_RFL-3N"/>
+        <!-- rifleman: rest of IS line, TKT-041 (standard riflemanBase variants, customs/IIC-geo skipped) -->
+        <mech model="rifleman_RFL-1LK"/>
+        <mech model="rifleman_RFL-1N"/>
+        <mech model="rifleman_RFL-2N"/>
+        <mech model="rifleman_RFL-3-WDR"/>
+        <mech model="rifleman_RFL-3B"/>
+        <mech model="rifleman_RFL-3C"/>
+        <mech model="rifleman_RFL-3Cr"/>
+        <mech model="rifleman_RFL-3K"/>
+        <mech model="rifleman_RFL-3KH"/>
+        <mech model="rifleman_RFL-3N-KH"/>
+        <mech model="rifleman_RFL-3NR"/>
+        <mech model="rifleman_RFL-4D"/>
+        <mech model="rifleman_RFL-4L"/>
+        <mech model="rifleman_RFL-4R"/>
+        <mech model="rifleman_RFL-5CS"/>
+        <mech model="rifleman_RFL-5D"/>
+        <mech model="rifleman_RFL-5M"/>
+        <mech model="rifleman_RFL-6D"/>
+        <mech model="rifleman_RFL-6X"/>
+        <mech model="rifleman_RFL-7G"/>
+        <mech model="rifleman_RFL-7M"/>
+        <mech model="rifleman_RFL-7N"/>
+        <mech model="rifleman_RFL-7N2"/>
+        <mech model="rifleman_RFL-7X"/>
+        <mech model="rifleman_RFL-8D"/>
+        <mech model="rifleman_RFL-8X"/>
+        <mech model="rifleman_RFL-9T"/>
+        <mech model="rifleman_RFL-C2"/>
+        <mech model="rifleman_RFL-C3"/>
+        <mech model="rifleman_RFL-DB"/>
+        <mech model="rifleman_RFL-X3"/>
         <!-- rifleman_ii -->
         <mech model="rifleman_ii_RFL-3N-2"/>
         <mech model="rifleman_ii_RFL-3N-2_LK"/>
