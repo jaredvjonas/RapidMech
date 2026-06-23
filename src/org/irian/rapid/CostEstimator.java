@@ -121,10 +121,10 @@ public class CostEstimator {
     private double engineBaseCost(EngineType engineType) {
         return switch (engineType) {
             case Fusion_Standard -> 5000.0f;
-            case Fusion_Compact -> 10000.0f;
-            case Fusion_Light -> 15000.0f;
-            case Fusion_XL -> 20000.0f;
-            case Fusion_XXL -> 100000.0f;
+            case Fusion_Compact -> 8000.0f;
+            case Fusion_Light -> 12000.0f;
+            case Fusion_XL -> 16000.0f;
+            case Fusion_XXL -> 21000.0f;
         };
     }
 
