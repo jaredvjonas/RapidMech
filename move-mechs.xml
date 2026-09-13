@@ -83,6 +83,39 @@
         <remove-fixedEquipment item="Lootable_Structure_Standard"/>
         <remove-fixedEquipment item="Lootable_Engine_ICE"/>
         <remove-fixedEquipment item="Unique_Cockpit_Dual"/>
+        <!-- valiant VAL-NT-JX 'Hot Knife': RT source mounts a Ceres TSM Hotseat cockpit whose
+             activatable TSM mode + Gear_Cockpit_Hotseat lootable aren't supported in IrianTech,
+             so it resolves to a CustomComponents NULL (store card crash). Strip it; the chassis
+             falls back to the default cockpit like its sibling Valiant variants. -->
+        <remove-fixedEquipment item="Unique_Cockpit_Ceres_TSM"/>
+
+        <!-- CASE: RT ammo-explosion gear not supported in IrianTech (no def; already stripped from
+             mech inventory in mech-standard). Some RT chassis (balar/strider, 18 defs) carry it as
+             FixedEquipment on the chassisdef, which remove-inventory can't reach, so it dangles ->
+             CustomComponents NULL (store-card crash). Strip it here too. Mirrors the mech-standard
+             remove-inventory CASE triplet; CASE2/CASE2_Clan added defensively (no-op if absent). -->
+        <remove-fixedEquipment item="Gear_CASE"/>
+        <remove-fixedEquipment item="Gear_CASE2"/>
+        <remove-fixedEquipment item="Gear_CASE2_Clan"/>
+
+        <!-- RT gear IrianTech doesn't support, ALREADY stripped from mech inventory by the
+             mech-standard remove-inventory block but left dangling in chassisdef FixedEquipment
+             (CustomComponents NULL -> store-card crash). Strip from FixedEquipment too. 2026-09-13. -->
+        <remove-fixedEquipment item="Gear_Structure_EndoComposite"/>
+        <remove-fixedEquipment item="Gear_Structure_Reinforced"/>
+        <remove-fixedEquipment item="Gear_Structure_Composite"/>
+        <remove-fixedEquipment item="Gear_Armor_FerroLamellor_Clan"/>
+        <remove-fixedEquipment item="Gear_Cockpit_Torsomount"/>
+        <remove-fixedEquipment item="Default_Cockpit_LifeSupportA_Torso"/>
+        <remove-fixedEquipment item="Default_Cockpit_LifeSupportB_Torso"/>
+        <remove-fixedEquipment item="Gear_PartialWing_Clan"/>
+        <remove-fixedEquipment item="Linked_PartialWing_LTslot"/>
+
+        <!-- owens (10 variants): C3+BAP "Sensor Sentinel" not usable in IrianTech (C3 network has no
+             other user); strip it, mechs keep their normal weapons. OW-1Ar's off-board TAG Barrage
+             uses an unregistered OffBoardTAG category (spawn-crash risk, TKT-028) -> strip too. 2026-09-13. -->
+        <remove-fixedEquipment item="Unique_Sensors_C3BAP_Owens"/>
+        <remove-fixedEquipment item="Weapon_Artillery_TAG_Barrage"/>
 
         <remove-fixedEquipment item="Linked_Engine_Size_1"/>
         <remove-fixedEquipment item="Linked_Engine_Size_2"/>
@@ -5009,12 +5042,14 @@
         <!-- cossack -->
         <mech model="cossack_C-1FC"/>
         <mech model="cossack_C-SK1"/>
-        <!-- crosscut -->
+        <!-- crosscut - disabled (removed from IrTech 2026-09-13; chainsaw forestry mech)
+        crosscut:
         <mech model="crosscut_ED-X2M"/>
         <mech model="crosscut_ED-X4X"/>
         <mech model="crosscut_ED-X5M"/>
-        <!-- crosscut_iic -->
+        crosscut_iic:
         <mech model="crosscut_iic_ED-IIC"/>
+        -->
         <!-- daikyu -->
         <mech model="daikyu_DAI-01"/>
         <mech model="daikyu_DAI-01r"/>
