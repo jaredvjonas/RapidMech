@@ -4597,6 +4597,12 @@
         <add-hardpoint location="RightTorso" weaponMounts="Energy,Energy,Missile"/>
     </hardpoints>
 
+    <!-- JLP-KB moves its 2-slot Advanced AMS out of the 1-slot head into the LeftTorso (see the
+         mech entry below), but the torso has no AntiPersonnel mount to receive it. -->
+    <hardpoints id="jackalope-KB-extra">
+        <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel"/>
+    </hardpoints>
+
         <!-- Albatross (DarkAge) -->
         <mech model="albatross_ALB-6U" engineRating="380" engineType="XL"/>
         <mech model="albatross_ALB-C" engineRating="380" engineType="XL"/>
@@ -4612,7 +4618,7 @@
         <mech model="jackalope_JLP-C" engineRating="240" engineType="XL" techBase="Clan"/>
         <mech model="jackalope_JLP-IC" engineRating="240" engineType="XL" techBase="Clan"/>
         <mech model="jackalope_JLP-KA" engineRating="240" engineType="XL" techBase="Clan"/>
-        <mech model="jackalope_JLP-KB" engineRating="240" engineType="XL" techBase="Clan">
+        <mech model="jackalope_JLP-KB" engineRating="240" engineType="XL" techBase="Clan" apply="jackalope-KB-extra">
             <!-- vanilla 1-slot head can't fit the 2-slot Advanced AMS; move it to the torso with its ammo -->
             <move-inventory item="Weapon_AMS_Advanced" location="LeftTorso"/>
         </mech>
@@ -4752,6 +4758,13 @@
     </hardpoints>
     <hardpoints id="trebuchet-extra">
         <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+    </hardpoints>
+
+    <!-- RFL-3N-KH carries a Weapon_Pod_A (AntiPersonnel) in each side torso, but the chassis
+         provides no AntiPersonnel mount there. -->
+    <hardpoints id="rifleman-3N-KH-extra">
+        <add-hardpoint location="LeftTorso" weaponMounts="AntiPersonnel"/>
+        <add-hardpoint location="RightTorso" weaponMounts="AntiPersonnel"/>
     </hardpoints>
 
         <!-- Albatross (Republic) -->
@@ -5296,7 +5309,7 @@
         <mech model="rifleman_RFL-3Cr"/>
         <mech model="rifleman_RFL-3K"/>
         <mech model="rifleman_RFL-3KH"/>
-        <mech model="rifleman_RFL-3N-KH"/>
+        <mech model="rifleman_RFL-3N-KH" apply="rifleman-3N-KH-extra"/>
         <mech model="rifleman_RFL-3NR"/>
         <mech model="rifleman_RFL-4D"/>
         <mech model="rifleman_RFL-4L"/>
