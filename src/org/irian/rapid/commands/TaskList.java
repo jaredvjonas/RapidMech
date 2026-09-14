@@ -20,6 +20,7 @@ public class TaskList {
             @XmlElement(name = "remove-fixedEquipment", type = RemoveFixedEquipment.class),
             @XmlElement(name = "move-fixedEquipment", type = MoveFixedEquipment.class),
             @XmlElement(name = "swap-hardpoint", type = SwapHardpoint.class),
+            @XmlElement(name = "ensure-ap-hardpoints", type = EnsureApHardpoints.class),
 
             // Mech Def Commands
             @XmlElement(name = "add-inventory", type = AddItem.class),

@@ -287,6 +287,9 @@ public class RapidFile {
         else if (task instanceof SwapHardpoint) {
             swapHardpoint((SwapHardpoint) task, mech.chasisDef);
         }
+        else if (task instanceof EnsureApHardpoints) {
+            ensureApHardpoints((EnsureApHardpoints) task, mech.chasisDef);
+        }
         else if (task instanceof AddItem) {
             addItem((AddItem) task, mech.mechDef);
         }
@@ -407,6 +410,48 @@ public class RapidFile {
                     hardpoint.Omni = false;
                     location.Hardpoints.add(hardpoint);
                 }
+            }
+        }
+    }
+
+    /**
+     * Tops up AntiPersonnel hardpoints so AMS / support weapons have somewhere to go beyond the
+     * single head mount most RT chassis ship with. Clan chassis get the full spread, IS chassis the
+     * torso subset (both configurable on the task). Idempotent: a location that already has an AP
+     * hardpoint is skipped, so repeated regens never stack duplicates.
+     */
+    private void ensureApHardpoints(EnsureApHardpoints task, ChasisDef def) {
+        boolean clan = def.ChassisTags != null
+                && def.ChassisTags.items != null
+                && def.ChassisTags.items.contains("ClanMech");
+
+        var wanted = (clan ? task.clanLocations : task.isLocations).split(",");
+
+        for (var name : wanted) {
+            var target = name.trim();
+            if (target.isEmpty()) {
+                continue;
+            }
+
+            for (var location : def.Locations) {
+                if (!target.equals(location.Location)) {
+                    continue;
+                }
+
+                if (location.Hardpoints == null) {
+                    location.Hardpoints = new ArrayList<>();
+                }
+
+                boolean alreadyHasAp = location.Hardpoints.stream()
+                        .anyMatch(h -> "AntiPersonnel".equals(h.WeaponMountID));
+                if (alreadyHasAp) {
+                    continue;
+                }
+
+                var hardpoint = new Hardpoint();
+                hardpoint.WeaponMountID = "AntiPersonnel";
+                hardpoint.Omni = false;
+                location.Hardpoints.add(hardpoint);
             }
         }
     }

@@ -68,6 +68,11 @@
     </unsupported-list>
 
     <task-list id="chassis-standard">
+        <!-- AMS / support weapons need somewhere to go: most RT chassis ship a single AP
+             hardpoint (often head-only). Clan chassis get AP in every major weapon location,
+             IS chassis get the torso subset. Tops up only - never stacks duplicates. -->
+        <ensure-ap-hardpoints/>
+
         <update-location name="Head" property="InventorySlots" value="1"/>
         <update-location name="RightArm" property="InventorySlots" value="8"/>
         <update-location name="RightTorso" property="InventorySlots" value="10"/>
@@ -958,6 +963,22 @@
 
     <hardpoints id="marauder_ii-missiles">
         <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+    </hardpoints>
+
+    <!-- Marauder IIC: the model has a missile rack mount on BOTH side torsos, so every
+         variant gets one in each. Three blocks because the RT source already supplies
+         one side on some variants (IIC-8 has LT, IIC-9 has RT) and add-hardpoint stacks. -->
+    <hardpoints id="marauder_iic-missiles">
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+        <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+    </hardpoints>
+
+    <hardpoints id="marauder_iic-missiles-LT">
+        <add-hardpoint location="LeftTorso" weaponMounts="Missile"/>
+    </hardpoints>
+
+    <hardpoints id="marauder_iic-missiles-RT">
         <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
     </hardpoints>
 
@@ -2612,10 +2633,10 @@
         <mech model="marauder_ii_MAD-5V" engineRating="300" engineType="XL" apply="marauder_ii-missiles"/>
         <mech model="marauder_ii_MAD-6W" engineRating="300" engineType="XL" techBase="Clan" apply="marauder_ii-missiles"/>
 
-        <mech model="marauder_iic_MAD-IIC-1" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="marauder_iic_MAD-IIC-8" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="marauder_iic_MAD-IIC-9" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="marauder_iic_MAD-IIC-A" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="marauder_iic_MAD-IIC-1" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="marauder_iic-missiles"/>
+        <mech model="marauder_iic_MAD-IIC-8" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="marauder_iic-missiles-RT"/>
+        <mech model="marauder_iic_MAD-IIC-9" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="marauder_iic-missiles-LT"/>
+        <mech model="marauder_iic_MAD-IIC-A" engineRating="340" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="marauder_iic-missiles"/>
 
         <mech model="marauder_MAD-1R" engineRating="300" engineType="standard"/>
         <mech model="marauder_MAD-2R" engineRating="300" engineType="standard"/>
