@@ -2537,8 +2537,14 @@
         <!-- LOCUST IIC goes here -->
 
         <mech model="longbow_LGB-0C" engineRating="325" engineType="standard" apply="longbow-missiles-4"/>
-        <mech model="longbow_LGB-0W" engineRating="340" engineType="standard" apply="longbow-missiles-2"/>
-        <mech model="longbow_LGB-0W2" engineRating="340" engineType="standard" apply="longbow-missiles-lt1"/>
+        <mech model="longbow_LGB-0W" engineRating="340" engineType="standard" apply="longbow-missiles-2">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="longbow_LGB-0W2" engineRating="340" engineType="standard" apply="longbow-missiles-lt1">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="longbow_LGB-7Q" engineRating="255" engineType="standard" apply="longbow-missiles-2"/>
         <mech model="longbow_LGB-7V" engineRating="255" engineType="XL" apply="longbow-missiles-4"/>
         <mech model="longbow_LGB-7W" engineRating="255" engineType="standard" apply="longbow-missiles-2"/>
@@ -3231,7 +3237,11 @@
             <add-hardpoint location="RightArm" weaponMounts="Energy"/>
         </mech>
 
-        <mech model="storm_giant_STG-1" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="stormgiant-missiles"/>
+        <mech model="storm_giant_STG-1" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="stormgiant-missiles">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        </mech>
         <mech model="storm_giant_STG-2" engineRating="400" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="stormgiant-missiles"/>
 
         <hardpoints id="storm-crow">
@@ -4032,7 +4042,10 @@
         <!-- Phoenix Hawk IIC (ClanInvasion) -->
         <mech model="phoenixhawk_iic_PXH-IIC" engineRating="400" engineType="XL" techBase="Clan"/>
         <mech model="phoenixhawk_iic_PXH-IIC-2" engineRating="400" engineType="XL" techBase="Clan"/>
-        <mech model="phoenixhawk_iic_PXH-IIC-9" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-9" engineRating="400" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
     </copy>
 
     <!-- ClanInvasion3061 UrbanWarfare mechs -->
@@ -4552,7 +4565,10 @@
         <mech model="phoenixhawk_PXH-8CS" engineRating="270" engineType="XL"/>
 
         <!-- Phoenix Hawk IIC (Jihad) -->
-        <mech model="phoenixhawk_iic_PXH-IIC-5" engineRating="400" engineType="XL" techBase="Clan"/>
+        <mech model="phoenixhawk_iic_PXH-IIC-5" engineRating="400" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="phoenixhawk_iic_PXH-IIC-6" engineRating="400" engineType="XL" techBase="Clan"/>
         <mech model="phoenixhawk_iic_PXH-IIC-7" engineRating="400" engineType="XL" techBase="Clan"/>
     </copy>
@@ -4915,9 +4931,18 @@
         <mech model="arctic_wolf_ii_ACWII-C"/>
         <mech model="arctic_wolf_ii_ACWII-Prime"/>
         <!-- bane -->
-        <mech model="bane_B-1"/>
-        <mech model="bane_B-2"/>
-        <mech model="bane_B-3"/>
+        <mech model="bane_B-1">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="bane_B-2">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="bane_B-3">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="bane_B-4"/>
         <mech model="bane_B-5"/>
         <!-- bane_B-6: 10x ProtoMech AC/2 (not in IrTech) -> 2x Clan RAC/5 (one per 8-slot arm); ProtoAC ammo -> AC5 (user choice) -->
@@ -4928,9 +4953,15 @@
             <swap-inventory item="Ammo_AmmunitionBox_ProtoAC_2" with="Ammo_AmmunitionBox_Generic_AC5"/>
         </mech>
         <mech model="bane_B-7"/>
-        <mech model="bane_B-LRM"/>
+        <mech model="bane_B-LRM">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <!-- bane_B-RU / bane_B-XR dropped: hard structural deps not in IrTech (XXL gyro, tactical life-support, laser heatsinks) -->
-        <mech model="bane_B-SRM"/>
+        <mech model="bane_B-SRM">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <!-- battlemaster_iic -->
         <mech model="battlemaster_iic_BLR-IIC"/>
         <!-- bruin -->
@@ -4971,7 +5002,12 @@
         <!-- kodiak_ii -->
         <mech model="kodiak_ii_KDK2-1"/>
         <mech model="kodiak_ii_KDK2-2"/>
-        <mech model="kodiak_ii_KDK2-3"/>
+        <mech model="kodiak_ii_KDK2-3">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+            <add-hardpoint location="LeftTorso" weaponMounts="Energy"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
+        </mech>
         <!-- lupus -->
         <mech model="lupus_LUPUS-A"/>
         <mech model="lupus_LUPUS-B"/>
@@ -5121,10 +5157,16 @@
         <!-- foxfire_FXR-4R dropped: malformed RT source (float TopSpeed + null mount ID) crashes regen -->
         <!-- freedom -->
         <mech model="freedom_FREE-1A4"/>
-        <mech model="freedom_FREE-1A5"/>
+        <mech model="freedom_FREE-1A5">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="freedom_FREE-2B"/>
         <mech model="freedom_FREE-2Br"/>
-        <mech model="freedom_FREE-2F"/>
+        <mech model="freedom_FREE-2F">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <!-- ghost -->
         <mech model="ghost_GST-10"/>
         <mech model="ghost_GST-11"/>
