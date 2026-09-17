@@ -1168,7 +1168,10 @@
         <mech model="arctic_fox_af1c" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
         <mech model="arctic_fox_af1d" engineRating="180" engineType="XL" endoSteel="true" techBase="Clan" apply="arctic_fox"/>
 
-        <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="arctic_wolf_ACW-2" engineRating="280" engineType="XL" endoSteel="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
 
         <!-- Avatar (ClanInvasion only) -->
         <!-- Avatar Refit: Move fixed CT Medium Lasers to inventory -->
@@ -1429,7 +1432,11 @@
 
         <mech model="bowman_BWM-1" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles"/>
         <mech model="bowman_BWM-2" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles"/>
-        <mech model="bowman_BWM-4" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles"/>
+        <mech model="bowman_BWM-4" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        </mech>
 
         <mech model="brigand_LDT-1" engineRating="150" engineType="standard" endoSteel="true"/>
 
@@ -1449,7 +1456,10 @@
         <mech model="cataphract_CTF-3L" engineRating="280" engineType="XL"/>
         <mech model="cataphract_CTF-4X" engineRating="225" engineType="standard"/>
 
-        <mech model="catapult_CPLT-A1" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-A1" engineRating="260" engineType="standard">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="catapult_CPLT-C1" engineRating="260" engineType="standard" apply="catapult-c1-missiles"/>
         <mech model="catapult_CPLT-C1b" engineRating="260" engineType="standard" ferroFibrous="true" apply="catapult-c1-missiles"/>
         <mech model="catapult_CPLT-C3" engineRating="260" engineType="standard"/>
@@ -1465,7 +1475,10 @@
         <mech model="cerberus_MR-5M" engineRating="380" engineType="standard" apply="cerberus-missiles"/>
         <mech model="cerberus_MR-V2" engineRating="380" engineType="standard" apply="cerberus-missiles"/>
 
-        <mech model="centurion_CN9-B1" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="centurion_CN9-B1" engineRating="200" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="centurion_CN9-D" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="centurion_CN9-D3" engineRating="300" engineType="XL" endoSteel="true"/>
         <mech model="centurion_CN9-D3D" engineRating="300" engineType="XL" endoSteel="true" ferroFibrous="true"/>
@@ -1622,7 +1635,10 @@
         <mech model="dart_DRT-4S" engineRating="225" engineType="standard"/>
         <mech model="dart_DRT-6S" engineRating="225" engineType="standard" ferroFibrous="true"/>
 
-        <mech model="dervish_DV-1S" engineRating="265" engineType="standard"/>
+        <mech model="dervish_DV-1S" engineRating="265" engineType="standard">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="dervish_DV-6M" engineRating="275" engineType="standard"/>
         <mech model="dervish_DV-6MD" engineRating="275" engineType="XL"/>
         <mech model="dervish_DV-6MRU" engineRating="275" engineType="standard"/>
@@ -1757,8 +1773,14 @@
 
         <mech model="excalibur_EXC-3BK" engineRating="350" engineType="XL" endoSteel="true"/>
         <mech model="excalibur_EXC-B1" engineRating="350" engineType="XL"/>
-        <mech model="excalibur_EXC-B2" engineRating="350" engineType="XL"/>
-        <mech model="excalibur_EXC-B2b" engineRating="350" engineType="XL" endoSteel="true"/>
+        <mech model="excalibur_EXC-B2" engineRating="350" engineType="XL">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="excalibur_EXC-B2b" engineRating="350" engineType="XL" endoSteel="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="excalibur_EXC-B2b-EC" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan">
             <swap-inventory item="Ammo_AmmunitionBox_LRM_Artemis" with="Ammo_AmmunitionBox_LRM_Artemis_Clan"/> <!-- CE Clan LRM weapon w/ Artemis FCS; route to Clan Artemis ammo (carries the bonus) -->
         </mech>
@@ -1817,7 +1839,10 @@
         <mech model="fire_falcon_FF-E" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
         <mech model="fire_falcon_FF-Prime" engineRating="200" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="fire_falcon"/>
 
-        <mech model="firebee_FRB-1E" engineRating="210" engineType="standard"/>
+        <mech model="firebee_FRB-1E" engineRating="210" engineType="standard">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="firebee_FRB-2E" engineRating="175" engineType="standard"/>
         <mech model="firebee_FRB-2Ep" engineRating="175" engineType="standard"/>
 
@@ -1885,7 +1910,11 @@
         <mech model="gargoyle_GAR-H2" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
         <mech model="gargoyle_GAR-Prime" engineRating="400" engineType="XL" techBase="Clan" apply="gargoyle"/>
 
-        <mech model="garm_GRM-01A" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
+        <mech model="garm_GRM-01A" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        </mech>
         <mech model="garm_GRM-01B" engineRating="175" engineType="standard" endoSteel="true" ferroFibrous="true"/>
 
         <mech model="gladiator_GLD-1R" engineRating="265" engineType="standard"/>
@@ -2196,10 +2225,17 @@
         <mech model="highlander_iic_HGN-IIC-C" engineRating="280" engineType="XL" ferroFibrous="true" techBase="Clan" apply="highlander-IIC"/>
 
         <mech model="horned_owl_HOW-1" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
-        <mech model="horned_owl_HOW-2" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="horned_owl_HOW-2" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="horned_owl_HOW-3" engineRating="210" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
-        <mech model="howler_HWR-1" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
+        <mech model="howler_HWR-1" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        </mech>
         <mech model="howler_HWR-4" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
         <mech model="howler_HWR-5" engineRating="140" engineType="standard" endoSteel="true" ferroFibrous="true" techBase="Clan"/>
 
@@ -2355,7 +2391,10 @@
         <mech model="jagermech_iii_JM6-D3" engineRating="325" engineType="XL" endoSteel="true" ferroFibrous="true"/>
 
         <!-- Jenner IIC (ClanInvasion only - others in era-specific blocks) -->
-        <mech model="jenner_iic_JR7-IIC-1" engineRating="315" engineType="XL" techBase="Clan"/>
+        <mech model="jenner_iic_JR7-IIC-1" engineRating="315" engineType="XL" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="jenner_iic_JR7-IIC-2" engineRating="315" engineType="XL" techBase="Clan"/>
         <mech model="jenner_iic_JR7-IIC-3" engineRating="315" engineType="XL" techBase="Clan"/>
         <mech model="jenner_iic_JR7-IIC-4" engineRating="315" engineType="XL" techBase="Clan"/>
@@ -3046,7 +3085,10 @@
 
         <mech model="roughneck_RGH-1A" engineRating="260" engineType="standard"/>
         <mech model="roughneck_RGH-1B" engineRating="260" engineType="standard"/>
-        <mech model="roughneck_RGH-1C" engineRating="260" engineType="standard"/>
+        <mech model="roughneck_RGH-1C" engineRating="260" engineType="standard">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="roughneck_RGH-3A" engineRating="260" engineType="standard"/>
 
         <!-- Sagittaire - moved to CivilWar Urban Warfare -->
@@ -3432,7 +3474,10 @@
         <mech model="talon_TLN-5W" engineRating="280" engineType="XL"/>
         <mech model="talon_TLN-5W-EC" engineRating="280" engineType="XL"/>
 
-        <mech model="talos_TLS-1B" engineRating="200" engineType="standard"/>
+        <mech model="talos_TLS-1B" engineRating="200" engineType="standard">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="talos_TLS-1P" engineRating="200" engineType="standard"/>
         <mech model="talos_TLS-4A" engineRating="200" engineType="standard"/>
         <mech model="talos_TLS-4B" engineRating="200" engineType="standard"/>
@@ -3599,7 +3644,10 @@
         <mech model="trebuchet_TBT-5P" engineRating="250" engineType="standard"/>
         <mech model="trebuchet_TBT-5S" engineRating="250" engineType="standard"/>
         <mech model="trebuchet_TBT-5SP" engineRating="250" engineType="standard"/>
-        <mech model="trebuchet_TBT-6X" engineRating="250" engineType="standard"/>
+        <mech model="trebuchet_TBT-6X" engineRating="250" engineType="standard">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="trebuchet_TBT-7A" engineRating="250" engineType="standard"/>
         <mech model="trebuchet_TBT-7K" engineRating="250" engineType="standard"/>
         <mech model="trebuchet_TBT-7KR" engineRating="250" engineType="standard"/>
@@ -4486,8 +4534,14 @@
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </hardpoints>
 
-        <mech model="ryoken_ii_RYOII-1" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan" apply="ryoken-ii-missiles-4"/>
-        <mech model="ryoken_ii_RYOII-2" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
+        <mech model="ryoken_ii_RYOII-1" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan" apply="ryoken-ii-missiles-4">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
+        <mech model="ryoken_ii_RYOII-2" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="ryoken_ii_RYOII-3" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan"/>
         <mech model="ryoken_ii_RYOII-GB" engineRating="375" engineType="XL" endoSteel="true" techBase="Clan" apply="ryoken-ii-missiles-4"/>
         <!-- ryoken_ii_RYOII-S: deleted upstream in RT-master, removed for migration (TKT-032) -->
@@ -4543,7 +4597,10 @@
         <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL"/>
         <mech model="legionnaire_LGN-2F" engineRating="350" engineType="XL"/>
         <mech model="legionnaire_LGN-2XA" engineRating="350" engineType="XL"/>
-        <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL"/>
+        <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
 
         <!-- Raptor II -->
         <!-- raptor_ii_RPT-2L: deleted upstream in RT-master, removed for migration (TKT-032) -->
@@ -5150,7 +5207,10 @@
         <mech model="ferdelance_FDL-4"/>
         <!-- fireball -->
         <mech model="fireball_ALM-10D"/>
-        <mech model="fireball_ALM-7D"/>
+        <mech model="fireball_ALM-7D">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="fireball_ALM-8D"/>
         <mech model="fireball_ALM-9D"/>
         <mech model="fireball_ALM-XF"/>
@@ -5221,7 +5281,10 @@
         <mech model="ionraptor_ION-4R"/>
         <mech model="ionraptor_ION-5R"/>
         <!-- jackrabbit -->
-        <mech model="jackrabbit_JKR-8T"/>
+        <mech model="jackrabbit_JKR-8T">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+        </mech>
         <mech model="jackrabbit_JKR-9R"/>
         <mech model="jackrabbit_JKR-9W"/>
         <!-- jinggau -->
@@ -5413,7 +5476,11 @@
         <mech model="shootist_ST-8C"/>
         <mech model="shootist_ST-9C"/>
         <!-- sling -->
-        <mech model="sling_SL-1G"/>
+        <mech model="sling_SL-1G">
+            <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
+            <add-hardpoint location="RightArm" weaponMounts="Energy"/>
+            <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
+        </mech>
         <mech model="sling_SL-1H"/>
         <!-- sorcerer -->
         <mech model="sorcerer_SRC-1A"/>
