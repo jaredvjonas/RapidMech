@@ -183,11 +183,10 @@
         <swap-inventory item="Gear_JumpJet_Assault" with="Gear_JumpJet_Generic_Assault"/>
         <swap-inventory item="Gear_MASC" with="Gear_MASC"/> <!-- Vanilla Plus -->
         <swap-inventory item="Gear_MASC_Clan" with="Gear_MASC_CLAN"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Weapon_AMS" with="Gear_AMS" itemType="Upgrade"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Weapon_AMS_Laser" with="Gear_AMS" itemType="Upgrade"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Weapon_AMS_Clan" with="Gear_AMS_CLAN" itemType="Upgrade"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Weapon_AMS_Laser_Clan" with="Gear_AMS_CLAN" itemType="Upgrade"/> <!-- Vanilla Plus -->
-        <swap-inventory item="Unique_Weapon_AMS_Laser_Prototype" with="Gear_AMS_CLAN" itemType="Upgrade"/>
+        <!-- Pre-CAC passive AMS (Gear_AMS/Gear_AMS_CLAN) deleted: CAC AMS weapons work now and the
+             AMS ammo bins were never stripped, so mechs keep their native RT AMS weapon and feed it. -->
+        <swap-inventory item="Unique_Weapon_AMS_Laser_Prototype" with="Weapon_AMS_Laser_Clan" itemType="Weapon"/>
+        <swap-inventory item="Weapon_AMS_Laser_Integrated" with="Weapon_AMS_Laser" itemType="Weapon"/> <!-- bundle-orphan LAMS -> standalone laser AMS (no ammo bin needed) -->
 
         <swap-inventory item="Gear_Actuator_Omni_Lower" with="Gear_Actuator_Omni_Lower"/> <!-- NEED TO IMPORT ACTUATORS FROM RT -->
         <swap-inventory item="Gear_FCS_Missile_Accuracy" with="Gear_FCS_Missile_Accuracy"/>
