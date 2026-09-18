@@ -22,6 +22,13 @@ public class OmnifyHardpoints implements TaskCmd {
     @XmlAttribute
     public String locations = "";
 
+    /**
+     * ChassisTag a chassis must carry to be touched. Empty converts unconditionally. Defaults to
+     * OmniMech so the task is safe to run globally: a non-omni chassis keeps its typed mounts.
+     */
+    @XmlAttribute
+    public String requiresTag = "OmniMech";
+
     /** Hardpoint types eligible for conversion. AntiPersonnel is deliberately absent. */
     @XmlAttribute
     public String weaponMounts = "Ballistic,Energy,Missile";

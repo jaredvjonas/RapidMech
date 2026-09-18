@@ -14,4 +14,11 @@ public class ChassisDefCmd {
 
     @XmlAttribute
     public String tasks;
+
+    /**
+     * Task lists run AFTER the per-mech <hardpoints apply="..."> block, so they see the final
+     * hardpoint set. `tasks` runs before it and would miss anything those blocks add.
+     */
+    @XmlAttribute
+    public String postTasks;
 }

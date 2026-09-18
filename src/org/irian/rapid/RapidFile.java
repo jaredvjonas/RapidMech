@@ -114,6 +114,12 @@ public class RapidFile {
                     processTaskList(hardpoints.tasks, mech, false);
                 }
 
+                // after the apply block, so these see every hardpoint the run will produce
+                for (var taskId : parseList(copy.chassisDefCmd.postTasks)) {
+                    TaskList postList = taskMap.get(taskId);
+                    processTaskList(postList.taskItems, mech, true);
+                }
+
                 validateInventory(mech);
                 saveMech(mech, copy.chassisDefCmd, copy.mechDefCmd);
               } catch (Exception e) {
@@ -465,6 +471,15 @@ public class RapidFile {
      * and skips anything already flagged Omni, so it is idempotent across regens.
      */
     private void omnifyHardpoints(OmnifyHardpoints task, ChasisDef def) {
+        if (!task.requiresTag.isEmpty()) {
+            boolean tagged = def.ChassisTags != null
+                    && def.ChassisTags.items != null
+                    && def.ChassisTags.items.contains(task.requiresTag);
+            if (!tagged) {
+                return;
+            }
+        }
+
         var wantedLocations = new HashSet<String>();
         for (var name : task.locations.split(",")) {
             var trimmed = name.trim();
@@ -763,6 +778,9 @@ public class RapidFile {
     }
 
     private static List<String> parseList(String arguments) {
+        if (arguments == null || arguments.isBlank()) { // optional attributes (postTasks) arrive null
+            return List.of();
+        }
         String[] split = arguments.split("\\s*,\\s*");
         return List.of(split);
     }

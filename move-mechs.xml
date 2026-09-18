@@ -67,6 +67,17 @@
         <unsupported-inventory item="Gear_Engine_XXL"/>
     </unsupported-list>
 
+    <!-- TKT-109: runs as chassisdef postTasks, i.e. AFTER the per-mech <hardpoints apply="...">
+         blocks, so it also catches the mounts those blocks add. OmniMech-gated, so a non-omni
+         chassis is untouched; AntiPersonnel is excluded so the ensure-ap mounts stay guaranteed
+         point defence on top of the pods. Never adds or removes a hardpoint - capacity is
+         unchanged - and skips anything already Omni, so regens are idempotent.
+         The IrTech -IR customs are hand-authored and absent from this file, so they are
+         excluded automatically. -->
+    <task-list id="chassis-omni">
+        <omnify-hardpoints/>
+    </task-list>
+
     <task-list id="chassis-standard">
         <!-- AMS / support weapons need somewhere to go: most RT chassis ship a single AP
              hardpoint (often head-only). Clan chassis get AP in every major weapon location,
@@ -803,7 +814,7 @@
 
     <copy>
         <mechdef source="${clanInvasion}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${clanInvasion}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
     <!-- Extra hardpoints for OmniMech variants -->
     <hardpoints id="archangel-extra">
         <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
@@ -4033,7 +4044,7 @@
     <!-- ClanInvasion3061 FlashPoint mechs -->
     <copy>
         <mechdef source="${clanInvasion}/FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${clanInvasion}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Akuma (ClanInvasion) -->
         <mech model="akuma_AKU-1X" engineRating="330" engineType="XL"/>
@@ -4043,7 +4054,7 @@
     <!-- CivilWar FlashPoint mechs -->
     <copy>
         <mechdef source="${civilWar}/FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${civilWar}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Akuma (CivilWar) -->
         <mech model="akuma_AKU-1XJ" engineRating="330" engineType="XL"/>
@@ -4052,7 +4063,7 @@
     <!-- Jihad FlashPoint mechs -->
     <copy>
         <mechdef source="${jihad}/FlashPoint/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${jihad}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${jihad}/FlashPoint/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Akuma (Jihad) -->
         <mech model="akuma_AKU-2X" engineRating="330" engineType="XL"/>
@@ -4061,7 +4072,7 @@
     <!-- ClanInvasion3061 HeavyMetal mechs -->
     <copy>
         <mechdef source="${clanInvasion}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${clanInvasion}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Phoenix Hawk (ClanInvasion) -->
         <mech model="phoenixhawk_PXH-1" engineRating="270" engineType="standard"/>
@@ -4099,7 +4110,7 @@
     <!-- ClanInvasion3061 UrbanWarfare mechs -->
     <copy>
         <mechdef source="${clanInvasion}/UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${clanInvasion}/UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${clanInvasion}/UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Raven (ClanInvasion) -->
         <mech model="raven_RVN-1X" engineRating="210" engineType="XL"/>
@@ -4116,7 +4127,7 @@
     <!-- CivilWar Base mechs -->
     <copy>
         <mechdef source="${civilWar}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${civilWar}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Extra hardpoints for OmniMech variants -->
     <hardpoints id="avatar-extra">
@@ -4295,7 +4306,7 @@
     <!-- CivilWar Heavy Metal mechs -->
     <copy>
         <mechdef source="${civilWar}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${civilWar}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Phoenix Hawk (CivilWar) -->
         <mech model="phoenixhawk_PXH-3PL" engineRating="270" engineType="XL"/>
@@ -4312,7 +4323,7 @@
     <!-- CivilWar Urban Warfare mechs -->
     <copy>
         <mechdef source="${civilWar}/UrbanWarfare/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${civilWar}/UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${civilWar}/UrbanWarfare/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Raven (CivilWar) -->
         <mech model="raven_RVN-4L" engineRating="210" engineType="XL"/>
@@ -4329,7 +4340,7 @@
     <!-- Jihad Base mechs -->
     <copy>
         <mechdef source="${jihad}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${jihad}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${jihad}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Extra hardpoints for OmniMech variants -->
     <hardpoints id="archangel-extra">
@@ -4613,7 +4624,7 @@
     <!-- Jihad HeavyMetal mechs -->
     <copy>
         <mechdef source="${jihad}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${jihad}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${jihad}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Phoenix Hawk (Jihad) -->
         <mech model="phoenixhawk_PXH-4W" engineRating="270" engineType="XL"/>
@@ -4637,7 +4648,7 @@
     <!-- DarkAge Base mechs -->
     <copy>
         <mechdef source="${darkAge}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${darkAge}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${darkAge}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Extra hardpoints for OmniMech variants -->
     <hardpoints id="blood_asp-extra">
@@ -4808,7 +4819,7 @@
     <!-- DarkAge HeavyMetal mechs -->
     <copy>
         <mechdef source="${darkAge}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${darkAge}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${darkAge}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Phoenix Hawk (DarkAge) -->
         <mech model="phoenixhawk_PXH-9" engineRating="270" engineType="XL"/>
@@ -4825,17 +4836,9 @@
     <!-- Republic Base mechs -->
     <copy>
         <mechdef source="${republic}/Base/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${republic}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${republic}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Extra hardpoints for OmniMech variants -->
-    <!-- TKT-108: the Arctic Wolf II configs carry no ballistic weapon at all, so its 4 plain
-         Ballistic mounts were dead capacity and the MechLab showed ballistic hardpoints on a
-         missile/laser mech. Converted to omni pods (same count, now type-agnostic); the 6
-         AntiPersonnel mounts are left alone. -->
-    <hardpoints id="arcticwolfii-omni">
-        <omnify-hardpoints weaponMounts="Ballistic"/>
-    </hardpoints>
-
     <hardpoints id="avatar-extra">
         <add-hardpoint location="Head" weaponMounts="Energy,AntiPersonnel"/>
         <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
@@ -4991,10 +4994,10 @@
         <!-- archer_iic -->
         <mech model="archer_iic_ARC-IIC-1"/>
         <!-- arctic_wolf_ii -->
-        <mech model="arctic_wolf_ii_ACWII-A" apply="arcticwolfii-omni"/>
-        <mech model="arctic_wolf_ii_ACWII-B" apply="arcticwolfii-omni"/>
-        <mech model="arctic_wolf_ii_ACWII-C" apply="arcticwolfii-omni"/>
-        <mech model="arctic_wolf_ii_ACWII-Prime" apply="arcticwolfii-omni"/>
+        <mech model="arctic_wolf_ii_ACWII-A"/>
+        <mech model="arctic_wolf_ii_ACWII-B"/>
+        <mech model="arctic_wolf_ii_ACWII-C"/>
+        <mech model="arctic_wolf_ii_ACWII-Prime"/>
         <!-- bane -->
         <mech model="bane_B-1">
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
@@ -5620,7 +5623,7 @@
     <!-- Republic Heavy Metal mechs -->
     <copy>
         <mechdef source="${republic}/HeavyMetal/mech" dest="${target}/mech" tasks="mech-standard,artemis,finalize-mech"/>
-        <chassisdef source="${republic}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
+        <chassisdef source="${republic}/HeavyMetal/chassis" dest="${target}/chassis" tasks="chassis-standard" postTasks="chassis-omni"/>
 
         <!-- Phoenix Hawk (Republic) -->
         <mech model="phoenixhawk_PXH-4M" engineRating="270" engineType="XL"/>
