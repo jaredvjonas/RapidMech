@@ -5157,10 +5157,11 @@
         <!-- broadside -->
         <mech model="broadside_BS-1D"/>
         <mech model="broadside_BS-2D"/>
-        <!-- buccaneer -->
+        <!-- buccaneer - disabled 2026-09-18, dropped from the import
         <mech model="buccaneer_BCN-3R"/>
         <mech model="buccaneer_BCN-5W"/>
         <mech model="buccaneer_BCN-6W"/>
+        -->
         <!-- carronade -->
         <mech model="carronade_CRN-7M"/>
         <!-- champion -->
