@@ -21,6 +21,7 @@ public class TaskList {
             @XmlElement(name = "move-fixedEquipment", type = MoveFixedEquipment.class),
             @XmlElement(name = "swap-hardpoint", type = SwapHardpoint.class),
             @XmlElement(name = "ensure-ap-hardpoints", type = EnsureApHardpoints.class),
+            @XmlElement(name = "omnify-hardpoints", type = OmnifyHardpoints.class),
 
             // Mech Def Commands
             @XmlElement(name = "add-inventory", type = AddItem.class),

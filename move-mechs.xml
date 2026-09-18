@@ -3905,7 +3905,8 @@
         <mech model="wolfhound_WLF-1-KH" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-1R" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-1X" engineRating="240" engineType="XL" endoSteel="true">
-            <add-inventory location="LeftTorso" item="Gear_AMS" itemType="Upgrade"/>
+            <!-- passive Gear_AMS was deleted 2026-09-17; WLF-1X keeps a real CAC laser AMS (no ammo bin needed) -->
+            <add-inventory location="LeftTorso" item="Weapon_AMS_Laser" itemType="Weapon" hardpointSlot="0"/>
         </mech>
         <mech model="wolfhound_WLF-2" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-3-WDR" engineRating="210" engineType="XL" ferroFibrous="true" techBase="Clan"/>
@@ -4827,6 +4828,14 @@
         <chassisdef source="${republic}/Base/chassis" dest="${target}/chassis" tasks="chassis-standard"/>
 
         <!-- Extra hardpoints for OmniMech variants -->
+    <!-- TKT-108: the Arctic Wolf II configs carry no ballistic weapon at all, so its 4 plain
+         Ballistic mounts were dead capacity and the MechLab showed ballistic hardpoints on a
+         missile/laser mech. Converted to omni pods (same count, now type-agnostic); the 6
+         AntiPersonnel mounts are left alone. -->
+    <hardpoints id="arcticwolfii-omni">
+        <omnify-hardpoints weaponMounts="Ballistic"/>
+    </hardpoints>
+
     <hardpoints id="avatar-extra">
         <add-hardpoint location="Head" weaponMounts="Energy,AntiPersonnel"/>
         <add-hardpoint location="CenterTorso" weaponMounts="Energy,Energy"/>
@@ -4982,10 +4991,10 @@
         <!-- archer_iic -->
         <mech model="archer_iic_ARC-IIC-1"/>
         <!-- arctic_wolf_ii -->
-        <mech model="arctic_wolf_ii_ACWII-A"/>
-        <mech model="arctic_wolf_ii_ACWII-B"/>
-        <mech model="arctic_wolf_ii_ACWII-C"/>
-        <mech model="arctic_wolf_ii_ACWII-Prime"/>
+        <mech model="arctic_wolf_ii_ACWII-A" apply="arcticwolfii-omni"/>
+        <mech model="arctic_wolf_ii_ACWII-B" apply="arcticwolfii-omni"/>
+        <mech model="arctic_wolf_ii_ACWII-C" apply="arcticwolfii-omni"/>
+        <mech model="arctic_wolf_ii_ACWII-Prime" apply="arcticwolfii-omni"/>
         <!-- bane -->
         <mech model="bane_B-1">
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>

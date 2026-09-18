@@ -39,6 +39,7 @@ public class MechCmd {
     @XmlElements({
             @XmlElement(name="add-hardpoint", type = AddHardpoint.class),
             @XmlElement(name="set-hardpoint", type = SetHardpoint.class),
+            @XmlElement(name="omnify-hardpoints", type = OmnifyHardpoints.class),
             @XmlElement(name="swap-inventory", type = SwapItem.class),
             @XmlElement(name="add-inventory", type = AddItem.class),
             @XmlElement(name="remove-inventory", type = RemoveItem.class),

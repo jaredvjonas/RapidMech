@@ -12,4 +12,8 @@ public class AddItem implements TaskCmd {
 
     @XmlAttribute
     public String itemType;
+
+    /** Prefab slot for the weapon model. Weapons want 0 (the mod-wide norm); equipment stays -1. */
+    @XmlAttribute
+    public int hardpointSlot = -1;
 }

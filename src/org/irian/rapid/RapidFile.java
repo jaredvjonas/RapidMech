@@ -290,6 +290,9 @@ public class RapidFile {
         else if (task instanceof EnsureApHardpoints) {
             ensureApHardpoints((EnsureApHardpoints) task, mech.chasisDef);
         }
+        else if (task instanceof OmnifyHardpoints) {
+            omnifyHardpoints((OmnifyHardpoints) task, mech.chasisDef);
+        }
         else if (task instanceof AddItem) {
             addItem((AddItem) task, mech.mechDef);
         }
@@ -452,6 +455,45 @@ public class RapidFile {
                 hardpoint.WeaponMountID = "AntiPersonnel";
                 hardpoint.Omni = false;
                 location.Hardpoints.add(hardpoint);
+            }
+        }
+    }
+
+    /**
+     * Converts typed weapon hardpoints into omni pods so the MechLab stops advertising mount types
+     * the chassis never carries. Never adds or removes a hardpoint - weapon capacity is unchanged -
+     * and skips anything already flagged Omni, so it is idempotent across regens.
+     */
+    private void omnifyHardpoints(OmnifyHardpoints task, ChasisDef def) {
+        var wantedLocations = new HashSet<String>();
+        for (var name : task.locations.split(",")) {
+            var trimmed = name.trim();
+            if (!trimmed.isEmpty()) {
+                wantedLocations.add(trimmed);
+            }
+        }
+
+        var wantedMounts = new HashSet<String>();
+        for (var name : task.weaponMounts.split(",")) {
+            var trimmed = name.trim();
+            if (!trimmed.isEmpty()) {
+                wantedMounts.add(trimmed);
+            }
+        }
+
+        for (var location : def.Locations) {
+            if (!wantedLocations.isEmpty() && !wantedLocations.contains(location.Location)) {
+                continue;
+            }
+            if (location.Hardpoints == null) {
+                continue;
+            }
+
+            for (var hardpoint : location.Hardpoints) {
+                // null-safe: some RT source hardpoints have a null WeaponMountID
+                if (!hardpoint.Omni && wantedMounts.contains(hardpoint.WeaponMountID)) {
+                    hardpoint.Omni = true;
+                }
             }
         }
     }
@@ -627,7 +669,7 @@ public class RapidFile {
         inventoryItem.MountedLocation = task.location;
         inventoryItem.ComponentDefID = task.item;
         inventoryItem.ComponentDefType = task.itemType;
-        inventoryItem.HardpointSlot = -1;
+        inventoryItem.HardpointSlot = task.hardpointSlot;
         inventoryItem.DamageLevel = "Functional";
         def.inventory.add(inventoryItem);
     }

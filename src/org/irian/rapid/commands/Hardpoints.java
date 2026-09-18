@@ -14,7 +14,8 @@ public class Hardpoints {
 
     @XmlElements({
             @XmlElement(name = "add-hardpoint", type = AddHardpoint.class),
-            @XmlElement(name = "set-hardpoint", type = SetHardpoint.class)
+            @XmlElement(name = "set-hardpoint", type = SetHardpoint.class),
+            @XmlElement(name = "omnify-hardpoints", type = OmnifyHardpoints.class)
     })
     public List<TaskCmd> tasks = new ArrayList<>();
 }
