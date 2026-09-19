@@ -574,7 +574,6 @@
         <swap-inventory item="Weapon_Autocannon_HVAC_10" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
         <swap-inventory item="Weapon_Autocannon_AC_10_KaliYama" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
         <swap-inventory item="Weapon_Autocannon_AC_5_Federated" with="Weapon_Autocannon_AC_5" itemType="Weapon"/>
-        <swap-inventory item="HandHeld_Weapon_Autocannon_RAC_2" with="Weapon_Autocannon_RAC_2" itemType="Weapon"/>
         <swap-inventory item="Ammo_AmmunitionBox_HVAC_10" with="Ammo_AmmunitionBox_Generic_AC10"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Tandem" with="Ammo_AmmunitionBox_LRM_HE_IS"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_MagPulse" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
@@ -1530,10 +1529,7 @@
             <!-- TKT-113: 2x MML-5 are its signature guns, so the missile FCS -->
             <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
         </mech>
-        <mech model="bushwacker_BSW-GTL2" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false">
-            <!-- its handheld RAC/2 becomes a real RAC/2, which unlike the handheld needs a feed -->
-            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Generic_AC2" itemType="AmmunitionBox"/>
-        </mech>
+        <mech model="bushwacker_BSW-GTL2" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
         <mech model="bushwacker_BSW-HR" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
         <mech model="bushwacker_BSW-L1" engineRating="275" engineType="light" endoSteel="true" ferroFibrous="false"/>
         <mech model="bushwacker_BSW-P1" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
