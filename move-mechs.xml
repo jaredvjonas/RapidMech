@@ -575,6 +575,24 @@
              variants become the base AC. -->
         <swap-inventory item="Weapon_Autocannon_AC_10_KaliYama" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
         <swap-inventory item="Weapon_Autocannon_AC_5_Federated" with="Weapon_Autocannon_AC_5" itemType="Weapon"/>
+
+        <!-- TKT-019 2026-09-19: artillery off the mech roster. The complaint was that enemies
+             flatten a base from outside the fight; the measurement said the Arrow IV wins on REACH,
+             not firepower - 100 damage for 15 tons is the worst damage-per-ton of any missile pack
+             here, but 3000m outranges the whole map. So the mechs keep their fire-support role at a
+             range the map can answer. Arrow IV is Category Missile, and so are both replacements,
+             so no hardpoint changes are needed.
+             Both grades take the Extended LRM-20 (14t, 66 damage, 300-1320m, indirect, feeds on the
+             standard LRM bins). RogueTech has no CLAN Extended LRM, and the Clan LRM-20 at 5t left the
+             Nagas 17t hollow, so the Clan hosts take the IS launcher too - weight match beats grade
+             purity on a purpose-built fire-support chassis.
+             Arrow IV ammo folds into the LRM bins: Inferno has a direct
+             counterpart, Fascam does not (no minefield mechanic here) so it becomes Standard. -->
+        <swap-inventory item="Weapon_Artillery_ArrowIV" with="Weapon_LRM_20_Extended" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_LRM_20_Extended" itemType="Weapon"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ArrowIV" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ArrowIV_Inferno" with="Ammo_AmmunitionBox_LRM_Inferno_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_ArrowIV_Fascam" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Tandem" with="Ammo_AmmunitionBox_LRM_HE_IS"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_MagPulse" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
         <swap-inventory item="Gear_JumpJet_Standard_LegUpper" with="Gear_JumpJet_Generic_Standard"/>
