@@ -167,10 +167,10 @@
         <remove-fixedEquipment item="Gear_TSM_Standard"/>
         <!-- activatable supercharger: same unsupported class as TSM/Hotseat (TKT-050, bushwacker GTL/GTL2) -->
         <remove-fixedEquipment item="Unique_Gear_Engine_XL_Supercharged"/>
-        <!-- bolt-on AMS has no def in IrianTech; as CHASSIS fixed equipment a dangling ref is a
-             CustomComponents NULL -> store-card crash, so strip it here too (TKT-050, bushwacker DC) -->
+        <!-- TKT-114: the DC carries its bolt-on AMS as CHASSIS fixed equipment upstream. A weapon
+             there is a known ModValidator warning class, so strip it from the chassis and give the
+             mech the same part in its mechdef instead (same LeftTorso mount as the source). -->
         <remove-fixedEquipment item="BoltOn_Weapon_AMS"/>
-        <remove-fixedEquipment item="BoltOn_Weapon_AMS_Flare"/>
         <remove-fixedEquipment item="Unique_HandHeld_Melee_ChiKatana"/>
         <remove-fixedEquipment item="Linked_HandHeld_Melee_ChiKatana"/>
 
@@ -314,7 +314,6 @@
         <swap-inventory item="Weapon_Autocannon_AC_2_Light" with="Weapon_Autocannon_AC_2" itemType="Weapon"/>
         <remove-inventory item="Special_AddOn_JumpBooster_3"/>
         <remove-inventory item="BoltOn_Weapon_Rocket_20_Inferno_x3"/>
-        <remove-inventory item="BoltOn_Weapon_AMS_Flare"/>
         <remove-inventory item="HandHeld_Weapon_Lance_8tons"/>
         <remove-inventory item="Gear_Searchlight"/>
         <!-- TKT-039 bulk reconciliation (full IS set) -->
@@ -560,7 +559,14 @@
         <remove-inventory item="Special_AddOn_UAV"/>
         <remove-inventory item="BoltOn_Weapon_Rocket_Chaff"/>
         <remove-inventory item="BoltOn_Weapon_RemoteSensor"/>
-        <remove-inventory item="BoltOn_Weapon_AMS"/>
+        <!-- TKT-114 2026-09-19: the bolt-on AMS pair is now IMPORTED (rogueTech/AMS) rather than
+             stripped. Verified against the installed DLLs first: IsAMS / AMSHitChance / AMSDamage /
+             Modes are all in CAC and are what IrianTech's own AMS weapons use, StartingAmmoCapacity
+             (300 / 50 rounds) is read by the base game so they stay self-feeding with no bin, and both
+             ammo categories (AntiMissileInternal, Rocket) are registered here. Two fixes were needed on
+             import: weaponCategoryID "Special" -> Category "AntiPersonnel" (Special is unregistered
+             here and every Special hardpoint is rewritten to Ballistic, so it would mount nowhere),
+             and a real Tonnage, because RT's InternalAmmoTonnage is read by nothing in this install. -->
         <remove-inventory item="BoltOn_Weapon_MachineGun_Minigun"/> <!-- TKT-050, bushwacker X5 -->
         <!-- TKT-050 bushwacker gaps: RT gear with no IrianTech counterpart, mapped to the closest
              shipped equivalent (HVAC-10 -> AC/10, handheld RAC/2 -> the real RAC/2, split leg jump
@@ -1517,7 +1523,9 @@
         <mech model="bushwacker_BSW-S2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X1" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
-        <mech model="bushwacker_BSW-DC" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-DC" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="false">
+            <add-inventory location="LeftTorso" item="BoltOn_Weapon_AMS" itemType="Weapon" hardpointSlot="0"/>
+        </mech>
         <mech model="bushwacker_BSW-GTL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true">
             <!-- TKT-113: 2x MML-5 are its signature guns, so the missile FCS -->
             <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
