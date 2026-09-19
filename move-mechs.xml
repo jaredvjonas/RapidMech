@@ -601,6 +601,21 @@
         <remove-inventory item="Gear_Actuator_Leg_DFA_SelfDmg_PlusPlus"/>
         <remove-inventory item="Gear_Actuator_Talons"/>
         <remove-inventory item="Gear_Blade"/>
+
+        <!-- TKT-113 phase 3 (2026-09-19): parts whose whole concept is dead here are retired and
+             their mounts re-parted, rather than given an invented effect. Every FCS/TTS def is
+             1t/1slot/100-110k, so these swaps are weight-, slot- and cost-neutral.
+             MultiTrack sold multi-target, which is free and ungated in this build; AntiAir and
+             Scatter sold mechanics that do not exist (no anti-air, no CAC miss-radius stat);
+             Melee/Bloodsports are CBTBE melee, and melee gear is out per TKT-113 decision 1.
+             Defaults below; the 7 mechs that need a different part carry a per-mech swap. -->
+        <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Energy_Accuracy"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_MultiTrack" with="Gear_TargetingTrackingSystem_Recoil"/>
+        <swap-inventory item="Gear_FCS_Scatter" with="Gear_FCS_Missile_Accuracy"/>
+        <swap-inventory item="Gear_FCS_Melee" with="Gear_FCS_Ballistic_Accuracy"/>
+        <swap-inventory item="Gear_FCS_AntiAir" with="Gear_FCS_Energy_Accuracy"/>
+        <swap-inventory item="Gear_FCS_Bloodsports" with="Gear_FCS_Energy_Accuracy"/>
+        <swap-inventory item="Gear_TargetingTrackingSystem_AA" with="Gear_TargetingTrackingSystem_Recoil"/>
         <remove-inventory item="Linked_HandHeld_Melee_ChiKatana"/>
         <remove-inventory item="Weapon_LiftHoist_30ton"/>
 
@@ -1503,7 +1518,10 @@
         <mech model="bushwacker_BSW-X1" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-DC" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="false"/>
-        <mech model="bushwacker_BSW-GTL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-GTL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true">
+            <!-- TKT-113: 2x MML-5 are its signature guns, so the missile FCS -->
+            <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
+        </mech>
         <mech model="bushwacker_BSW-GTL2" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false">
             <!-- its handheld RAC/2 becomes a real RAC/2, which unlike the handheld needs a feed -->
             <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Generic_AC2" itemType="AmmunitionBox"/>
@@ -1667,8 +1685,14 @@
 
         <mech model="crossbow_CRS-6B" engineRating="300" engineType="standard" apply="crossbow"/>
         <mech model="crossbow_CRS-6C" engineRating="300" engineType="standard" apply="crossbow"/>
-        <mech model="crossbow_CRS-A" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow"/>
-        <mech model="crossbow_CRS-B" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow"/>
+        <mech model="crossbow_CRS-A" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow">
+            <!-- TKT-113: missile platform, so the missile FCS rather than the energy default -->
+            <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
+        </mech>
+        <mech model="crossbow_CRS-B" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow">
+            <!-- TKT-113: missile platform, so the missile FCS rather than the energy default -->
+            <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
+        </mech>
         <mech model="crossbow_CRS-Prime" engineRating="325" engineType="standard" techBase="Clan" apply="crossbow"/>
         <mech model="crossbow_CRS-X" engineRating="300" engineType="standard" apply="crossbow"/>
 
@@ -1757,7 +1781,10 @@
         <mech model="dire_wolf_DW-F3" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
         <mech model="dire_wolf_DWF-C" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
         <mech model="dire_wolf_DWF-C2" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
-        <mech model="dire_wolf_DW-H" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
+        <mech model="dire_wolf_DW-H" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf">
+            <!-- TKT-113: already carries BC Recoil and BC Critical, so take BC Tracking instead -->
+            <swap-inventory item="Gear_TargetingTrackingSystem_MultiTrack" with="Gear_TargetingTrackingSystem_Evasion"/>
+        </mech>
         <mech model="dire_wolf_DW-Prime" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
         <mech model="dire_wolf_DW-S" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
         <mech model="dire_wolf_DW-W" engineRating="300" engineType="XL" techBase="Clan" apply="dire_wolf"/>
@@ -3011,7 +3038,10 @@
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
         </hardpoints>
 
-        <mech model="ostwar_OWR-2M" engineRating="250" engineType="standard" apply="ostwar"/>
+        <mech model="ostwar_OWR-2M" engineRating="250" engineType="standard" apply="ostwar">
+            <!-- TKT-113: LRM-20 + 2x SRM-4 platform, so the missile FCS -->
+            <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
+        </mech>
         <mech model="ostwar_OWR-2MB" engineRating="325" engineType="standard" apply="ostwar"/>
         <mech model="ostwar_OWR-2MX" engineRating="330" engineType="standard" apply="ostwar"/>
 
@@ -4098,6 +4128,8 @@
         <mech model="zeus_ZEU-9S2" engineRating="320" engineType="XL" ferroFibrous="true" apply="zeus"/>
         <mech model="zeus_ZEU-9S-DC" engineRating="320" engineType="standard" ferroFibrous="true" apply="zeus"/>
         <mech model="zeus_ZEU-IS" engineRating="320" engineType="standard" apply="zeus">
+            <!-- TKT-113: rocket-armed, so the missile FCS -->
+            <swap-inventory item="Gear_FCS_MultiTrack" with="Gear_FCS_Missile_Accuracy"/>
             <remove-inventory item="BoltOn_Weapon_GrenadeLauncher_5"/>
             <remove-inventory item="BoltOn_Weapon_Rocket_20_Super_x10"/>
         </mech>
@@ -5079,6 +5111,8 @@
         <mech model="bane_B-5"/>
         <!-- bane_B-6: 10x ProtoMech AC/2 (not in IrTech) -> 2x Clan RAC/5 (one per 8-slot arm); ProtoAC ammo -> AC5 (user choice) -->
         <mech model="bane_B-6">
+            <!-- TKT-113: already carries BC Recoil and BC Critical, so take BC Tracking instead -->
+            <swap-inventory item="Gear_TargetingTrackingSystem_MultiTrack" with="Gear_TargetingTrackingSystem_Evasion"/>
             <remove-inventory item="Weapon_Autocannon_ProtoAC_2_Clan"/>
             <add-inventory location="LeftArm" item="Weapon_Autocannon_RAC_5_Clan" itemType="Weapon"/>
             <add-inventory location="RightArm" item="Weapon_Autocannon_RAC_5_Clan" itemType="Weapon"/>
