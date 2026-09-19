@@ -577,6 +577,30 @@
         <remove-inventory item="Unique_Gear_Armor_ChameleonLightPolarizationShield"/>
         <remove-inventory item="Unique_Sensors_AR14"/>
         <remove-inventory item="Unique_HandHeld_Melee_ChiKatana"/>
+
+        <!-- TKT-113 phase 1 (2026-09-19): melee / DFA actuators. Every stat on these 18 defs is a
+             CBTBehaviorsEnhanced one, and CBTBE is not installed (only plain CBTBehaviors), so they
+             are pure slots and tonnage for nothing. Dropped per user decision; the actuators that DO
+             work (armored / hardened / recoil / hip / cooling jacket) stay, as do the live halves of
+             the partial ones. Def files moved to _tkt113_actuators_removed_2026-09-19\. -->
+        <remove-inventory item="Gear_Actuator_Arm_Lower_Melee"/>
+        <remove-inventory item="Gear_Actuator_Arm_Lower_Melee_Punch"/>
+        <remove-inventory item="Gear_Actuator_Arm_Lower_Melee_Weapon"/>
+        <remove-inventory item="Gear_Actuator_Arm_Upper_Spiked"/>
+        <remove-inventory item="Gear_Actuator_BattleFist"/>
+        <remove-inventory item="Gear_Actuator_BattleFist_Mk2"/>
+        <remove-inventory item="Gear_Actuator_BattleFist_Mk3"/>
+        <remove-inventory item="Gear_Actuator_CargoGrip"/>
+        <remove-inventory item="Gear_Actuator_Claws"/>
+        <remove-inventory item="Gear_Actuator_ExcavatorClaw"/>
+        <remove-inventory item="Gear_Actuator_Leg_DFA_Dmg"/>
+        <remove-inventory item="Gear_Actuator_Leg_DFA_Dmg_Plus"/>
+        <remove-inventory item="Gear_Actuator_Leg_DFA_Dmg_PlusPlus"/>
+        <remove-inventory item="Gear_Actuator_Leg_DFA_SelfDmg"/>
+        <remove-inventory item="Gear_Actuator_Leg_DFA_SelfDmg_Plus"/>
+        <remove-inventory item="Gear_Actuator_Leg_DFA_SelfDmg_PlusPlus"/>
+        <remove-inventory item="Gear_Actuator_Talons"/>
+        <remove-inventory item="Gear_Blade"/>
         <remove-inventory item="Linked_HandHeld_Melee_ChiKatana"/>
         <remove-inventory item="Weapon_LiftHoist_30ton"/>
 
