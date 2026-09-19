@@ -82,14 +82,19 @@ public class Mech {
             if (id == null) {
                 continue;
             }
-            if (id.startsWith("Gear_EngineCore_")) {
+            // Match on CONTAINS, not startsWith: RT prefixes some engines with "Unique_"
+            // (Unique_Gear_Engine_XL_Supercharged on the bushwacker GTL/GTL2,
+            // Unique_Gear_Engine_Light_Prototype on the apollo APL-3F). A missed engine silently
+            // fell back to Standard, whose extra weight then ate the mech's armor in the trim pass.
+            int coreAt = id.indexOf("Gear_EngineCore_");
+            if (coreAt >= 0) {
                 foundEngine = true;
                 try {
-                    rating = Integer.parseInt(id.substring("Gear_EngineCore_".length()));
+                    rating = Integer.parseInt(id.substring(coreAt + "Gear_EngineCore_".length()));
                 } catch (NumberFormatException ignored) {
                     // non-numeric engine core id; leave rating from attribute
                 }
-            } else if (id.startsWith("Gear_Engine_")) {
+            } else if (id.contains("Gear_Engine_")) {
                 if (id.contains("XXL")) engine = EngineType.Fusion_XXL;
                 else if (id.contains("XL")) engine = EngineType.Fusion_XL;
                 else if (id.contains("Light")) engine = EngineType.Fusion_Light;

@@ -165,6 +165,12 @@
         <remove-fixedEquipment item="Gear_EngineCore_280"/>
         <remove-fixedEquipment item="Gear_Engine_Compact"/>
         <remove-fixedEquipment item="Gear_TSM_Standard"/>
+        <!-- activatable supercharger: same unsupported class as TSM/Hotseat (TKT-050, bushwacker GTL/GTL2) -->
+        <remove-fixedEquipment item="Unique_Gear_Engine_XL_Supercharged"/>
+        <!-- bolt-on AMS has no def in IrianTech; as CHASSIS fixed equipment a dangling ref is a
+             CustomComponents NULL -> store-card crash, so strip it here too (TKT-050, bushwacker DC) -->
+        <remove-fixedEquipment item="BoltOn_Weapon_AMS"/>
+        <remove-fixedEquipment item="BoltOn_Weapon_AMS_Flare"/>
         <remove-fixedEquipment item="Unique_HandHeld_Melee_ChiKatana"/>
         <remove-fixedEquipment item="Linked_HandHeld_Melee_ChiKatana"/>
 
@@ -555,6 +561,19 @@
         <remove-inventory item="BoltOn_Weapon_Rocket_Chaff"/>
         <remove-inventory item="BoltOn_Weapon_RemoteSensor"/>
         <remove-inventory item="BoltOn_Weapon_AMS"/>
+        <remove-inventory item="BoltOn_Weapon_MachineGun_Minigun"/> <!-- TKT-050, bushwacker X5 -->
+        <!-- TKT-050 bushwacker gaps: RT gear with no IrianTech counterpart, mapped to the closest
+             shipped equivalent (HVAC-10 -> AC/10, handheld RAC/2 -> the real RAC/2, split leg jump
+             jets -> the generic standard jet, manufacturer AC variants -> the base AC). -->
+        <swap-inventory item="Weapon_Autocannon_HVAC_10" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Autocannon_AC_10_KaliYama" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+        <swap-inventory item="Weapon_Autocannon_AC_5_Federated" with="Weapon_Autocannon_AC_5" itemType="Weapon"/>
+        <swap-inventory item="HandHeld_Weapon_Autocannon_RAC_2" with="Weapon_Autocannon_RAC_2" itemType="Weapon"/>
+        <swap-inventory item="Ammo_AmmunitionBox_HVAC_10" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_Tandem" with="Ammo_AmmunitionBox_LRM_HE_IS"/>
+        <swap-inventory item="Ammo_AmmunitionBox_LRM_MagPulse" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
+        <swap-inventory item="Gear_JumpJet_Standard_LegUpper" with="Gear_JumpJet_Generic_Standard"/>
+        <swap-inventory item="Gear_JumpJet_Standard_LegLower" with="Gear_JumpJet_Generic_Standard"/>
         <remove-inventory item="Unique_Gear_Armor_ChameleonLightPolarizationShield"/>
         <remove-inventory item="Unique_Sensors_AR14"/>
         <remove-inventory item="Unique_HandHeld_Melee_ChiKatana"/>
@@ -1450,9 +1469,30 @@
 
         <mech model="brigand_LDT-1" engineRating="150" engineType="standard" endoSteel="true"/>
 
+        <!-- Bushwacker (55t medium, own geometry chrprfmech_bushwackerbase-001, portrait bushwacker.dds).
+             TKT-050 2026-09-19: the remaining 12 of RT's 15 variants imported. All 275-rated; attrs below
+             match each source def (auto-detect verifies). Exotic armor (LightFerro on X3/X5, HeatDissipating
+             on X4, Stealth on GTL2) is not modelled here, so those come across as Standard armor.
+             GTL/GTL2 are the outliers: omni gyro + TSM quirk + supercharged XL + (GTL2) stealth armor and a
+             handheld RAC/2 — the chassis task list strips that gear, plus the supercharger rule added there. -->
         <mech model="bushwacker_BSW-S2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X1" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-DC" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-GTL" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-GTL2" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false">
+            <!-- its handheld RAC/2 becomes a real RAC/2, which unlike the handheld needs a feed -->
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_Generic_AC2" itemType="AmmunitionBox"/>
+        </mech>
+        <mech model="bushwacker_BSW-HR" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-L1" engineRating="275" engineType="light" endoSteel="true" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-P1" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-P2" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-S2c" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-S2r" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+        <mech model="bushwacker_BSW-X3" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-X4" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
+        <mech model="bushwacker_BSW-X5" engineRating="275" engineType="XL" endoSteel="true" ferroFibrous="false"/>
 
         <mech model="caesar_CES-3KH" engineRating="280" engineType="XL" techBase="Clan"/>
         <mech model="caesar_CES-3R" engineRating="280" engineType="XL"/>
