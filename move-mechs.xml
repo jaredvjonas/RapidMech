@@ -569,12 +569,12 @@
              and a real Tonnage, because RT's InternalAmmoTonnage is read by nothing in this install. -->
         <remove-inventory item="BoltOn_Weapon_MachineGun_Minigun"/> <!-- TKT-050, bushwacker X5 -->
         <!-- TKT-050 bushwacker gaps: RT gear with no IrianTech counterpart, mapped to the closest
-             shipped equivalent (HVAC-10 -> AC/10, handheld RAC/2 -> the real RAC/2, split leg jump
-             jets -> the generic standard jet, manufacturer AC variants -> the base AC). -->
-        <swap-inventory item="Weapon_Autocannon_HVAC_10" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+             shipped equivalent. The HVAC-10 and handheld RAC/2 swaps that used to live here are gone:
+             both weapons are imported now (TKT-115 / TKT-114).
+             the split leg jump jets become the generic standard jet, and the manufacturer AC
+             variants become the base AC. -->
         <swap-inventory item="Weapon_Autocannon_AC_10_KaliYama" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
         <swap-inventory item="Weapon_Autocannon_AC_5_Federated" with="Weapon_Autocannon_AC_5" itemType="Weapon"/>
-        <swap-inventory item="Ammo_AmmunitionBox_HVAC_10" with="Ammo_AmmunitionBox_Generic_AC10"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Tandem" with="Ammo_AmmunitionBox_LRM_HE_IS"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_MagPulse" with="Ammo_AmmunitionBox_LRM_Standard_IS"/>
         <swap-inventory item="Gear_JumpJet_Standard_LegUpper" with="Gear_JumpJet_Generic_Standard"/>
