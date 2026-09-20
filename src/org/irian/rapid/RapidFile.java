@@ -287,6 +287,9 @@ public class RapidFile {
         else if (task instanceof MoveFixedEquipment) {
             moveFixedEquipment((MoveFixedEquipment) task, mech);
         }
+        else if (task instanceof ReplaceDetails) {
+            replaceDetails((ReplaceDetails) task, mech.mechDef);
+        }
         else if (task instanceof RemoveQuirk) {
             removeQuirk((RemoveQuirk) task, mech.chasisDef);
         }
@@ -617,6 +620,18 @@ public class RapidFile {
             inventory.removeIf(item -> item.ComponentDefID.equals("Gear_Structure_EndoSteel"));
             inventory.removeIf(item -> item.ComponentDefID.equals("Gear_Structure_EndoSteel_Clan"));
         }
+    }
+
+    private void replaceDetails(ReplaceDetails task, MechDef def) {
+        if (def == null || def.Description == null || def.Description.Details == null) return;
+        var details = def.Description.Details;
+        if (!details.contains(task.find)) {
+            // The passage is sourced from RogueTech; if an upstream sync reworded it the edit would
+            // silently stop applying and the stale weapon name would come back. Say so instead.
+            System.out.printf("WARNING: %s replace-details found no match for >> %s\n", def.Description.Id, task.find);
+            return;
+        }
+        def.Description.Details = details.replace(task.find, task.with == null ? "" : task.with);
     }
 
     private void removeQuirk(RemoveQuirk task, ChasisDef def) {

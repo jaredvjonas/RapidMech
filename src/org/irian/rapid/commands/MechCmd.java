@@ -44,7 +44,8 @@ public class MechCmd {
             @XmlElement(name="add-inventory", type = AddItem.class),
             @XmlElement(name="remove-inventory", type = RemoveItem.class),
             @XmlElement(name="move-inventory", type = MoveItem.class),
-            @XmlElement(name="move-fixedEquipment", type = MoveFixedEquipment.class)
+            @XmlElement(name="move-fixedEquipment", type = MoveFixedEquipment.class),
+            @XmlElement(name="replace-details", type = ReplaceDetails.class)
     })
     public List<TaskCmd> taskList = new ArrayList<>();
 }

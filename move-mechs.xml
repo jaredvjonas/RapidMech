@@ -1223,7 +1223,10 @@
         <mech model="anvil_ANV-3M" engineRating="300" engineType="standard" endoSteel="true"/>
         <mech model="anvil_ANV-5M" engineRating="300" engineType="standard" endoSteel="true" apply="anvil-missiles"/>
         <mech model="anvil_ANV-6M" engineRating="300" engineType="standard" endoSteel="true" apply="anvil-missiles"/>
-        <mech model="anvil_ANV-8M" engineRating="240" engineType="standard" endoSteel="true"/>
+        <mech model="anvil_ANV-8M" engineRating="240" engineType="standard" endoSteel="true">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="is armed with an Arrow IV and an ER Large Laser." with="is armed with an ELRM-20 and an ER Large Laser."/>
+        </mech>
 
         <!-- Archangel - moved to Jihad era -->
 
@@ -1521,9 +1524,15 @@
             <add-hardpoint location="RightTorso" weaponMounts="Missile,Missile"/>
         </hardpoints>
 
-        <mech model="bowman_BWM-1" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles"/>
+        <mech model="bowman_BWM-1" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="The primary armament on the Bowman is a Class 16 Arrow IV Artillery launcher." with="The primary armament on the Bowman is an ELRM-20 extended-range missile launcher."/>
+            <replace-details find="Though the original design incorporated two artillery pieces, the modern version" with="Though the original design incorporated two heavy launchers, the modern version"/>
+        </mech>
         <mech model="bowman_BWM-2" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles"/>
         <mech model="bowman_BWM-4" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="carrying a pair of Arrow IV missile artillery systems." with="carrying a pair of ELRM-20 extended-range missile systems."/>
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy"/>
             <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
@@ -1576,10 +1585,16 @@
         </mech>
         <mech model="catapult_CPLT-C1" engineRating="260" engineType="standard" apply="catapult-c1-missiles"/>
         <mech model="catapult_CPLT-C1b" engineRating="260" engineType="standard" ferroFibrous="true" apply="catapult-c1-missiles"/>
-        <mech model="catapult_CPLT-C3" engineRating="260" engineType="standard"/>
+        <mech model="catapult_CPLT-C3" engineRating="260" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="replacing them with an Arrow IV artillery system, allowing the Catapult to stay a safe distance from the battlefield." with="replacing them with a single ELRM-20, allowing the Catapult to stay a safe distance from the battlefield."/>
+        </mech>
         <mech model="catapult_CPLT-C4" engineRating="260" engineType="standard"/>
         <mech model="catapult_CPLT-C4C" engineRating="260" engineType="XL"/>
-        <mech model="catapult_CPLT-C5" engineRating="260" engineType="standard" endoSteel="true" apply="catapult-c5-missiles"/>
+        <mech model="catapult_CPLT-C5" engineRating="260" engineType="standard" endoSteel="true" apply="catapult-c5-missiles">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="It retains the Arrow IV artillery system, but" with="It retains the ELRM-20 launcher, but"/>
+        </mech>
         <mech model="catapult_CPLT-K2" engineRating="260" engineType="standard"/>
         <mech model="catapult_CPLT-K2K" engineRating="330" engineType="XL"/>
         <mech model="catapult_CPLT-K3" engineRating="260" engineType="standard"/>
@@ -1673,6 +1688,8 @@
         <mech model="corsair_COR-7A" engineRating="285" engineType="standard"/>
         <mech model="corsair_COR-7R" engineRating="285" engineType="standard"/>
         <mech model="corsair_COR-S7" engineRating="285" engineType="light">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="does this specific design sport a Thumper Artillery Piece and munitions from the Barrymore Munitions manufacturers" with="does this specific design sport an Ultra AC/10 and munitions from the Barrymore Munitions manufacturers"/>
             <!-- TKT-019: UAC/10 for the mixed-arms Corsair. Its mortar bins STAY: it also carries a Mortar Broadside, which is a 690m weapon, not artillery. -->
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_UAC_10" itemType="Weapon"/>
             <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_UAC_10" itemType="Weapon"/>
@@ -1876,7 +1893,10 @@
 
         <mech model="emperor_EMP-1A" engineRating="325" engineType="standard" apply="emperor"/>
         <mech model="emperor_EMP-5A" engineRating="270" engineType="standard" apply="emperor"/>
-        <mech model="emperor_EMP-5B" engineRating="270" engineType="standard" apply="emperor"/>
+        <mech model="emperor_EMP-5B" engineRating="270" engineType="standard" apply="emperor">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="Armed with the newly introduced Arrow IV launcher and a pair of large lasers" with="Armed with the newly introduced ELRM-20 launcher and a pair of large lasers"/>
+        </mech>
         <mech model="emperor_EMP-6A" engineRating="270" engineType="XL" apply="emperor"/>
         <mech model="emperor_EMP-6A-EC" engineRating="270" engineType="XL" techBase="Clan" apply="emperor">
             <swap-inventory item="Ammo_AmmunitionBox_SRM_Streak" with="Ammo_AmmunitionBox_STREAKSRM_Standard_Clan"/> <!-- CE Clan Streak weapon needs Clan streak ammo -->
@@ -2391,6 +2411,9 @@
         <mech model="hunchback_HBK-1G" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4A" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4E" engineRating="200" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="the 4E is a field refit that mounts a Thumper Artillery piece in place of the standard AC/20." with="the 4E is a field refit that mounts a hyper-velocity AC/10 in place of the standard AC/20."/>
+            <replace-details find="leveling it with repeated Thumper volleys in the middle of the night." with="leveling it with repeated hypervelocity volleys in the middle of the night."/>
             <!-- TKT-019: NOT an AC/20 - 23 of the 50 Hunchbacks already carry one. HVAC-10 at 840m makes the 4E the only long-reach Hunchback in the mod. -->
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
             <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
@@ -2428,7 +2451,12 @@
         <mech model="hunchback_HBK-4T" engineRating="250" engineType="standard"/>
         <mech model="hunchback_HBK-4TD" engineRating="350" engineType="XL"/>
         <mech model="hunchback_HBK-4U" engineRating="200" engineType="standard"/>
-        <mech model="hunchback_HBK-5A" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-5A" engineRating="200" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="the 5A takes advantage of the newly reintroduced Arrow IV and an Artemis IV FCS." with="the 5A takes advantage of the newly reintroduced ELRM-20 and an Artemis IV FCS."/>
+            <replace-details find="the 5A carries a mix of homing missiles and utility ammo; enabling it to bombard targets that have been tagged by supporting forces or deploying FASCAM and other speciality ammo as and when needed." with="the 5A carries a deep missile magazine, enabling it to bombard targets that have been tagged by supporting forces for as long as the fight lasts."/>
+            <replace-details find="where reliable and cheap Artillery assets are in high demand." with="where reliable and cheap fire-support assets are in high demand."/>
+        </mech>
         <mech model="hunchback_HBK-5J" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-5L" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-5M" engineRating="200" engineType="standard"/>
@@ -2625,7 +2653,10 @@
         <mech model="kit_fox_KF-M3" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox_M-series"/>
         <mech model="kit_fox_KF-Prime" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
         <mech model="kit_fox_KF-S" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
-        <mech model="kit_fox_KF-V" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
+        <mech model="kit_fox_KF-V" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="The Kit Fox V is armed with an Arrow IV." with="The Kit Fox V is armed with an ELRM-20."/>
+        </mech>
         <mech model="kit_fox_KF-W" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
         <mech model="kit_fox_KF-XP" engineRating="180" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="kit_fox"/>
 
@@ -2737,7 +2768,10 @@
         </mech>
         <mech model="longbow_LGB-7Q" engineRating="255" engineType="standard" apply="longbow-missiles-2"/>
         <mech model="longbow_LGB-7V" engineRating="255" engineType="XL" apply="longbow-missiles-4"/>
-        <mech model="longbow_LGB-7W" engineRating="255" engineType="standard" apply="longbow-missiles-2"/>
+        <mech model="longbow_LGB-7W" engineRating="255" engineType="standard" apply="longbow-missiles-2">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="mounts an Arrow IV artillery in each arm." with="mounts an ELRM-20 extended-range missile launcher in each arm."/>
+        </mech>
         <mech model="longbow_LGB-8C" engineRating="255" engineType="standard" apply="longbow-missiles-4"/>
         <mech model="longbow_LGB-10C" engineRating="255" engineType="standard" apply="longbow-missiles-4"/>
         <mech model="longbow_LGB-12C" engineRating="255" engineType="XL" apply="longbow-missiles-3"/>
@@ -2914,18 +2948,28 @@
         <!-- Naga (ClanInvasion only - NGA-T and NGA2-W moved to DarkAge) -->
         <!-- Naga Refit: Move fixed Arrow IV weapons to inventory -->
         <mech model="naga_NGA-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="taken up by a pair of fixed Arrow IV Artillery Systems." with="taken up by a pair of fixed ELRM-20 extended-range missile systems."/>
             <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
         </mech>
         <mech model="naga_NGA-B" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="taken up by a pair of fixed Arrow IV Artillery Systems." with="taken up by a pair of fixed ELRM-20 extended-range missile systems."/>
             <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
         </mech>
         <mech model="naga_NGA-C" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="taken up by a pair of fixed Arrow IV Artillery Systems." with="taken up by a pair of fixed ELRM-20 extended-range missile systems."/>
             <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
         </mech>
         <mech model="naga_NGA-D" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="taken up by a pair of fixed Arrow IV Artillery Systems." with="taken up by a pair of fixed ELRM-20 extended-range missile systems."/>
             <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
         </mech>
         <mech model="naga_NGA-Prime" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="taken up by a pair of fixed Arrow IV Artillery Systems." with="taken up by a pair of fixed ELRM-20 extended-range missile systems."/>
             <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
         </mech>
         <mech model="naga_ii_NGA2-A" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
@@ -3702,7 +3746,10 @@
         <mech model="thunderbolt_TDR-F4W" engineRating="195" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-F4X" engineRating="195" engineType="standard" apply="thunderbolt"/>
 
-        <mech model="thunderhawk_TDK-7KMA" engineRating="300" engineType="XL" apply="thunderhawk-7kma-missiles"/>
+        <mech model="thunderhawk_TDK-7KMA" engineRating="300" engineType="XL" apply="thunderhawk-7kma-missiles">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="armed with a pair of Gauss Rifles; and an Arrow IV Missile Launcher." with="armed with a pair of Gauss Rifles; and an ELRM-20 Missile Launcher."/>
+        </mech>
         <mech model="thunderhawk_TDK-7X" engineRating="300" engineType="XL" apply="thunderhawk-7x-missiles"/>
         <mech model="thunderhawk_TDK-7Y" engineRating="300" engineType="XL" apply="thunderhawk-7y-missiles"/>
 
@@ -4342,6 +4389,8 @@
         <!-- Hunchback (CivilWar) -->
         <!-- HBK-5E Refit: Replace Sniper Artillery (20t) + ammo (4t) with LRM 20 + MRM 20 + 2x Med Laser + ammo (4t) + DHS (1t) -->
         <mech model="hunchback_HBK-5E" engineRating="200" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="Installing an Endo Steel chassis enabled the designers to swap the Thumper for the much larger and more powerful Sniper Artillery Piece." with="Installing an Endo Steel chassis enabled the designers to swap the Thumper for a much heavier pairing of LRM-20 and MRM-20 racks."/>
             <!-- Remove artillery -->
             <remove-inventory item="Weapon_Artillery_Sniper"/>
             <remove-inventory item="Ammo_AmmunitionBox_Sniper"/>
@@ -4753,7 +4802,10 @@
         <!-- Legionnaire (Jihad only - LGN-2K moved to Republic) -->
         <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL"/>
         <mech model="legionnaire_LGN-2F" engineRating="350" engineType="XL"/>
-        <mech model="legionnaire_LGN-2XA" engineRating="350" engineType="XL"/>
+        <mech model="legionnaire_LGN-2XA" engineRating="350" engineType="XL">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="mounts an Arrow IV launcher in the right arm and torso." with="mounts an ELRM-20 launcher in the right arm and torso."/>
+        </mech>
         <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL">
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy"/>
@@ -4894,6 +4946,8 @@
 
         <!-- Naga (DarkAge) -->
         <mech model="naga_NGA-T" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="combines the characteristic Arrow IV in each arm with two Improved Heavy Medium Lasers, and a light TAG to improve the Arrow IV's performance." with="combines an ELRM-20 in each arm with two Improved Heavy Medium Lasers, and a light TAG to improve their indirect fire."/>
             <move-fixedEquipment item="Weapon_Artillery_ArrowIV_Clan" with="Weapon_Artillery_ArrowIV_Clan" itemType="Weapon"/>
         </mech>
         <mech model="naga_ii_NGA2-W" engineRating="400" engineType="XL" endoSteel="true" techBase="Clan" apply="naga_ii-extra"/>
@@ -5200,7 +5254,10 @@
         <mech model="flamberge_FLM-3"/>
         <mech model="flamberge_FLM-A"/>
         <mech model="flamberge_FLM-B"/>
-        <mech model="flamberge_FLM-C"/>
+        <mech model="flamberge_FLM-C">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="The Flamberge C is armed with an Arrow IV, paired Medium Pulse Lasers" with="The Flamberge C is armed with an ELRM-20, paired Medium Pulse Lasers"/>
+        </mech>
         <mech model="flamberge_FLM-D"/>
         <mech model="flamberge_FLM-Prime"/>
         <!-- glassspider -->
@@ -5412,6 +5469,8 @@
             <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Generic_AC10"/>
         </mech>
         <mech model="helepolis_HEP-1H">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="needed to completely stop to fire the Sniper artillery and then start moving again before counter-battery fire could destroy the unit." with="needed to completely stop to fire its heavy rifles and then start moving again before return fire could destroy the unit."/>
             <!-- TKT-019: the PRIMITIVE Helepolis. Rifles are the primitive-era ballistic, so two Rifle_Heavy rather than an autocannon - which also avoids cloning HEP-0H, the other primitive variant, which already carries the AC/10. -->
             <add-inventory location="RightArm" item="Weapon_Rifle_Heavy" itemType="Weapon" hardpointSlot="0"/>
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Rifle_Heavy" itemType="Weapon"/>
@@ -5428,6 +5487,8 @@
             <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
         </mech>
         <mech model="helepolis_HEP-2H">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="the Helepolis is a ponderous BattleMech designed to deliver artillery fire." with="the Helepolis is a ponderous BattleMech designed to deliver heavy fire support."/>
             <!-- TKT-019: basic rung of the 2H/3H/4H ladder - plain lasers, so a plain AC/10 at 600m. -->
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
             <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
@@ -5443,6 +5504,8 @@
             <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Generic_AC10"/>
         </mech>
         <mech model="helepolis_HEP-3H">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="The Helepolis is built around an Armstrong Industries Sniper Artillery Piece." with="The Helepolis is built around an Armstrong Industries autocannon, backed on this variant by an LRM-15 rack."/>
             <!-- TKT-019: AC/10 plus a second rack. Both its missile mounts were already taken (LRM-10 left torso, SRM-6 centre), so the right torso gains one - same idiom as TKT-103/104. -->
             <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
             <add-inventory location="RightTorso" item="Weapon_LRM_15" itemType="Weapon" hardpointSlot="0"/>
@@ -5459,7 +5522,10 @@
             <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
             <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Generic_AC10"/>
         </mech>
-        <mech model="helepolis_HEP-4A"/>
+        <mech model="helepolis_HEP-4A">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="A Helepolis refit that trades the Artillery Cannon for an Arrow IV System." with="A Helepolis refit that trades the Artillery Cannon for an ELRM-20 launcher, a rotary AC/2 and a pair of rocket packs."/>
+        </mech>
         <mech model="helepolis_HEP-4H">
             <!-- TKT-019: top rung - the most advanced variant gets the most advanced gun, HVAC-10 at 840m. -->
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
@@ -5476,6 +5542,8 @@
             <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_HVAC_10"/>
         </mech>
         <mech model="helepolis_HEP-7H">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="sports two monstrous Sniper Artillery Pieces and 5 tons of ammunition." with="sports two monstrous hyper-velocity autocannon backed by a third lighter piece, and a deep magazine to feed them."/>
             <!-- TKT-019 redesign: the siege gun the name implies. Two Artillery Snipers out, and with 10 -->
             <!-- ballistic mounts and 42.7t free it becomes the longest-reaching gun platform in the mod: -->
             <!-- 2x HVAC-10 plus an HVAC-5, 160 damage at 840-960m. A fourth gun was considered and cut - -->
@@ -5539,6 +5607,8 @@
         <mech model="jinggau_JN-G8A"/>
         <mech model="jinggau_JN-G8Ar"/>
         <mech model="jinggau_JN-G8BX_Rush">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="replaced with an experimental Sniper Cannon and four Medium X-Pulse Lasers." with="replaced with an experimental LB 10-X Autocannon and four Medium X-Pulse Lasers."/>
             <!-- TKT-019: it carries TAG, so it is a spotter - LB 10-X gives it a flexible mid-range gun. -->
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_LBX_10" itemType="Weapon"/>
             <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_LBX_10" itemType="Weapon"/>
@@ -5592,6 +5662,8 @@
         <mech model="mackie_MSK-5U"/>
         <mech model="mackie_MSK-6S"/>
         <mech model="mackie_MSK-6S2">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="replaced with a locally made knock off of the classic Thumper artillery piece, whilst" with="replaced with a locally made hyper-velocity autocannon, whilst"/>
             <!-- TKT-019: the long-range Mackie. HVAC-10 at 840m keeps that role; MSK-10E already has the Gauss. -->
             <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
             <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
@@ -5611,6 +5683,8 @@
         <mech model="mackie_MSK-9H"/>
         <mech model="mackie_MSK-9HKR"/>
         <mech model="mackie_MSK-9Hb">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="Equipped with 2 Thumper Artillery pieces and a cockpit command console, the 9Hb functions as both a command mech and an Artillery support platform." with="Equipped with a Gauss rifle, an LRM-15 rack and a cockpit command console, the 9Hb functions as both a command mech and a long-range fire support platform."/>
             <!-- TKT-019 redesign: the long-range half of a pair with the 9Hc. Gauss backbone plus an -->
             <!-- LRM-15 for indirect fire - 205 damage at 900/840/360m for only 33 heat, so unlike the -->
             <!-- 9Hc it can fire every single turn. The chassis has NO missile mount, so one is added. -->
@@ -5708,7 +5782,10 @@
         <mech model="osteon_OTN-D"/>
         <mech model="osteon_OTN-E"/>
         <mech model="osteon_OTN-F"/>
-        <mech model="osteon_OTN-G"/>
+        <mech model="osteon_OTN-G">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="carries two Arrow IV missile launchers with 5 tons of ammunition." with="carries two ELRM-20 extended-range missile launchers and the magazines to feed them."/>
+        </mech>
         <mech model="osteon_OTN-J"/>
         <mech model="osteon_OTN-Prime"/>
         <!-- owens -->
@@ -5852,7 +5929,10 @@
         <!-- thunder -->
         <mech model="thunder_THR-1L"/>
         <mech model="thunder_THR-2L"/>
-        <mech model="thunder_THR-3L"/>
+        <mech model="thunder_THR-3L">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="is armed with an Arrow IV along with two Extended-Range Medium Lasers" with="is armed with an ELRM-20 along with two Extended-Range Medium Lasers"/>
+        </mech>
         <mech model="thunder_THR-C4"/>
         <!-- titan_ii -->
         <mech model="titan_ii_TI-2P"/>

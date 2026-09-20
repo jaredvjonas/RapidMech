@@ -36,7 +36,8 @@ public class TaskList {
             @XmlElement(name = "recalc-movement", type = RecalcMovement.class),
             @XmlElement(name = "recalc-cost", type = RecalcCost.class),
             @XmlElement(name = "recalc-armor", type = RecalcArmor.class),
-            @XmlElement(name = "upgrade-artemis", type = UpgradeArtemis.class)
+            @XmlElement(name = "upgrade-artemis", type = UpgradeArtemis.class),
+            @XmlElement(name = "replace-details", type = ReplaceDetails.class)
     })
     public List<TaskCmd> taskItems = new ArrayList<>();
 }
