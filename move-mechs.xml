@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <rapid>
     <dir id="btHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH"/>
     <dir id="clanInvasion" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/ClanInvasion3061"/>
@@ -5623,7 +5623,7 @@
         <mech model="hornet_HNT-172"/>
         <mech model="hornet_HNT-181"/>
         <mech model="hornet_HNT-182"/>
-        <!-- hussar -->
+        <!-- hussar - disabled 2026-09-20, dropped from the import
         <mech model="hussar_HSR-200-D"/>
         <mech model="hussar_HSR-200-Db"/>
         <mech model="hussar_HSR-300-D"/>
@@ -5633,6 +5633,7 @@
         <mech model="hussar_HSR-500-D"/>
         <mech model="hussar_HSR-900-D"/>
         <mech model="hussar_HSR-950-D"/>
+        -->
         <!-- ionraptor -->
         <mech model="ionraptor_ION-2R"/>
         <mech model="ionraptor_ION-3R"/>
