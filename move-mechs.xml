@@ -44,7 +44,6 @@
         <dir path="${irianTechHome}/rogueTech/Munitions/AmmunitionBox"/>
         <dir path="${irianTechHome}/rogueTech/Munitions/Artillery"/>
         <dir path="${irianTechHome}/rogueTech/Munitions/Mortar"/>
-        <dir path="${irianTechHome}/rogueTech/OmniTech"/>
         <dir path="${irianTechHome}/rogueTech/Primitive"/>
         <dir path="${irianTechHome}/rogueTech/Sensors"/>
         <dir path="${irianTechHome}/rogueTech/TargetTrackingSystem"/>
@@ -205,7 +204,6 @@
         <swap-inventory item="Unique_Weapon_AMS_Laser_Prototype" with="Weapon_AMS_Laser_Clan" itemType="Weapon"/>
         <swap-inventory item="Weapon_AMS_Laser_Integrated" with="Weapon_AMS_Laser" itemType="Weapon"/> <!-- bundle-orphan LAMS -> standalone laser AMS (no ammo bin needed) -->
 
-        <swap-inventory item="Gear_Actuator_Omni_Lower" with="Gear_Actuator_Omni_Lower"/> <!-- NEED TO IMPORT ACTUATORS FROM RT -->
         <swap-inventory item="Gear_FCS_Missile_Accuracy" with="Gear_FCS_Missile_Accuracy"/>
         <swap-inventory item="Gear_FCS_AdvancedTC_Clan" with="Gear_FCS_AdvancedTC_Clan"/>
         <swap-inventory item="Gear_TargetingTrackingSystem_MultiTrack" with="Gear_TargetingTrackingSystem_MultiTrack"/>
@@ -628,10 +626,12 @@
         <!-- Same sweep, missed first time round because these two live in rogueTech\OmniTech\ rather
              than rogueTech\Actuators\ (user spotted them still in the MechLab as "OmniPod ..."):
              Gear_Actuator_Omni_Hand's only effect was CAEStoodUpRollMod, which nothing reads, so it
-             did literally nothing on 147 mechs - dropped. Gear_Actuator_Omni_Lower is a PARTIAL and
-             stays: its {location}.Accuracy is live; the 4 dead CBTBE/stand-up blocks were stripped
-             and it finally has a card. Def file moved to _omni_actuator_2026-09-20\. -->
+             did literally nothing on 147 mechs - dropped. Gear_Actuator_Omni_Lower followed it on
+             user request the same day - its {location}.Accuracy WAS live, so that one is a deliberate
+             balance cut, not dead weight: omni arms lose +1 accuracy and get a crit slot back (0t,
+             1 slot, 466 mounts). Def files moved to _omni_actuator_2026-09-20. -->
         <remove-inventory item="Gear_Actuator_Omni_Hand"/>
+        <remove-inventory item="Gear_Actuator_Omni_Lower"/>
 
         <!-- TKT-113 phase 3 (2026-09-19): parts whose whole concept is dead here are retired and
              their mounts re-parted, rather than given an invented effect. Every FCS/TTS def is
