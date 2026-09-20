@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <rapid>
     <dir id="btHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH"/>
     <dir id="clanInvasion" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/ClanInvasion3061"/>
@@ -1536,7 +1536,7 @@
              match each source def (auto-detect verifies). Exotic armor (LightFerro on X3/X5, HeatDissipating
              on X4, Stealth on GTL2) is not modelled here, so those come across as Standard armor.
              GTL/GTL2 are the outliers: omni gyro + TSM quirk + supercharged XL + (GTL2) stealth armor and a
-             handheld RAC/2 — the chassis task list strips that gear, plus the supercharger rule added there. -->
+             handheld RAC/2 â€” the chassis task list strips that gear, plus the supercharger rule added there. -->
         <mech model="bushwacker_BSW-S2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X1" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
         <mech model="bushwacker_BSW-X2" engineRating="275" engineType="XL" endoSteel="false" ferroFibrous="true"/>
@@ -1672,7 +1672,21 @@
         <mech model="corsair_COR-6R" engineRating="285" engineType="standard"/>
         <mech model="corsair_COR-7A" engineRating="285" engineType="standard"/>
         <mech model="corsair_COR-7R" engineRating="285" engineType="standard"/>
-        <mech model="corsair_COR-S7" engineRating="285" engineType="light"/>
+        <mech model="corsair_COR-S7" engineRating="285" engineType="light">
+            <!-- TKT-019: UAC/10 for the mixed-arms Corsair. Its mortar bins STAY: it also carries a Mortar Broadside, which is a 690m weapon, not artillery. -->
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_UAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_UAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_UAC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        </mech>
 
         <hardpoints id="cougar">
             <add-hardpoint location="Head" weaponMounts="Energy"/>
@@ -2376,7 +2390,21 @@
         <!-- Hunchback (ClanInvasion only - others in era-specific blocks) -->
         <mech model="hunchback_HBK-1G" engineRating="200" engineType="standard"/>
         <mech model="hunchback_HBK-4A" engineRating="200" engineType="standard"/>
-        <mech model="hunchback_HBK-4E" engineRating="200" engineType="standard"/>
+        <mech model="hunchback_HBK-4E" engineRating="200" engineType="standard">
+            <!-- TKT-019: NOT an AC/20 - 23 of the 50 Hunchbacks already carry one. HVAC-10 at 840m makes the 4E the only long-reach Hunchback in the mod. -->
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_HVAC_10"/>
+        </mech>
         <mech model="hunchback_HBK-4G" engineRating="200" engineType="standard"/>
         <!-- HBK-4G Gauss Prototype Refit: Move fixed Gauss Prototype to inventory -->
         <mech model="hunchback_HBK-4G_gauss_prototype" engineRating="200" engineType="standard">
@@ -5383,12 +5411,98 @@
             <swap-inventory item="Weapon_Artillery_HowitzerRifle" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
             <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Generic_AC10"/>
         </mech>
-        <mech model="helepolis_HEP-1H"/>
-        <mech model="helepolis_HEP-2H"/>
-        <mech model="helepolis_HEP-3H"/>
+        <mech model="helepolis_HEP-1H">
+            <!-- TKT-019: the PRIMITIVE Helepolis. Rifles are the primitive-era ballistic, so two Rifle_Heavy rather than an autocannon - which also avoids cloning HEP-0H, the other primitive variant, which already carries the AC/10. -->
+            <add-inventory location="RightArm" item="Weapon_Rifle_Heavy" itemType="Weapon" hardpointSlot="0"/>
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Rifle_Heavy" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Rifle_Heavy" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Rifle_Heavy" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Rifle_Heavy"/>
+        </mech>
+        <mech model="helepolis_HEP-2H">
+            <!-- TKT-019: basic rung of the 2H/3H/4H ladder - plain lasers, so a plain AC/10 at 600m. -->
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        </mech>
+        <mech model="helepolis_HEP-3H">
+            <!-- TKT-019: AC/10 plus a second rack. Both its missile mounts were already taken (LRM-10 left torso, SRM-6 centre), so the right torso gains one - same idiom as TKT-103/104. -->
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+            <add-inventory location="RightTorso" item="Weapon_LRM_15" itemType="Weapon" hardpointSlot="0"/>
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_Generic_AC10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_Generic_AC10"/>
+        </mech>
         <mech model="helepolis_HEP-4A"/>
-        <mech model="helepolis_HEP-4H"/>
-        <mech model="helepolis_HEP-7H"/>
+        <mech model="helepolis_HEP-4H">
+            <!-- TKT-019: top rung - the most advanced variant gets the most advanced gun, HVAC-10 at 840m. -->
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_HVAC_10"/>
+        </mech>
+        <mech model="helepolis_HEP-7H">
+            <!-- TKT-019 redesign: the siege gun the name implies. Two Artillery Snipers out, and with 10 -->
+            <!-- ballistic mounts and 42.7t free it becomes the longest-reaching gun platform in the mod: -->
+            <!-- 2x HVAC-10 plus an HVAC-5, 160 damage at 840-960m. A fourth gun was considered and cut - -->
+            <!-- four hungry autocannons left only 2.7t of ammo, about three volleys. -->
+            <remove-inventory item="Weapon_Artillery_Sniper"/>
+            <remove-inventory item="Weapon_Artillery_Thumper"/>
+            <add-inventory location="LeftArm" item="Weapon_Autocannon_HVAC_10" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightArm" item="Weapon_Autocannon_HVAC_10" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="LeftTorso" item="Weapon_Autocannon_HVAC_5" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_HVAC_10" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_HVAC_10" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_HVAC_10" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_HVAC_10" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_HVAC_10" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_HVAC_5" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_HVAC_5" itemType="AmmunitionBox"/>
+            <add-inventory location="CenterTorso" item="Ammo_AmmunitionBox_HVAC_5" itemType="AmmunitionBox"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Fascam"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Half"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Inferno"/>
+        </mech>
         <!-- hornet -->
         <mech model="hornet_HNT-151"/>
         <mech model="hornet_HNT-152"/>
@@ -5424,7 +5538,21 @@
         <mech model="jinggau_JN-G7Lr"/>
         <mech model="jinggau_JN-G8A"/>
         <mech model="jinggau_JN-G8Ar"/>
-        <mech model="jinggau_JN-G8BX_Rush"/>
+        <mech model="jinggau_JN-G8BX_Rush">
+            <!-- TKT-019: it carries TAG, so it is a spotter - LB 10-X gives it a flexible mid-range gun. -->
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_LBX_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_LBX_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_LBX_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_LBX_10_Cluster"/>
+        </mech>
         <!-- jinggau_JN-G9B dropped: structural dep (armored cockpit/gyro/tactical life-support) or overweight -->
         <mech model="jinggau_JN-G9CC"/>
         <mech model="jinggau_JN-G9CCr"/>
@@ -5463,13 +5591,80 @@
         <mech model="mackie_MSK-5S"/>
         <mech model="mackie_MSK-5U"/>
         <mech model="mackie_MSK-6S"/>
-        <mech model="mackie_MSK-6S2"/>
+        <mech model="mackie_MSK-6S2">
+            <!-- TKT-019: the long-range Mackie. HVAC-10 at 840m keeps that role; MSK-10E already has the Gauss. -->
+            <swap-inventory item="Weapon_Artillery_Thumper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Weapon_Artillery_Sniper_Cannon" with="Weapon_Autocannon_HVAC_10" itemType="Weapon"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Fascam" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Thumper_Shaped" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Shaped" with="Ammo_AmmunitionBox_HVAC_10"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Sniper_Inferno" with="Ammo_AmmunitionBox_HVAC_10"/>
+        </mech>
         <mech model="mackie_MSK-7A"/>
         <mech model="mackie_MSK-8B"/>
         <mech model="mackie_MSK-9H"/>
         <mech model="mackie_MSK-9HKR"/>
-        <mech model="mackie_MSK-9Hb"/>
-        <mech model="mackie_MSK-9Hc"/>
+        <mech model="mackie_MSK-9Hb">
+            <!-- TKT-019 redesign: the long-range half of a pair with the 9Hc. Gauss backbone plus an -->
+            <!-- LRM-15 for indirect fire - 205 damage at 900/840/360m for only 33 heat, so unlike the -->
+            <!-- 9Hc it can fire every single turn. The chassis has NO missile mount, so one is added. -->
+            <remove-inventory item="Weapon_Artillery_Thumper"/>
+            <remove-inventory item="Weapon_Artillery_Sniper"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+            <add-inventory location="LeftArm" item="Weapon_Gauss_Rifle" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightTorso" item="Weapon_LRM_15" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightArm" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="RightArm" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_LRM_Standard_IS" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_LRM_Standard_IS" itemType="AmmunitionBox"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Fascam"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Half"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Inferno"/>
+        </mech>
+        <mech model="mackie_MSK-9Hc">
+            <!-- TKT-019 redesign: the close-range half of a pair. Same Gauss backbone as the 9Hb, but -->
+            <!-- traded forward: AC/10 and an SRM-6 instead of the missile rack. Drops from five medium -->
+            <!-- lasers to two, which is what makes it a sibling of the 9Hb and cuts alpha heat 81 -> 36, -->
+            <!-- so it can actually fire every turn. 250 damage at 900/600/360m. -->
+            <remove-inventory item="Weapon_Artillery_Thumper"/>
+            <remove-inventory item="Weapon_Artillery_Sniper"/>
+            <remove-inventory item="Weapon_Laser_Medium"/>
+            <add-hardpoint location="RightTorso" weaponMounts="Missile"/>
+            <add-inventory location="LeftArm" item="Weapon_Gauss_Rifle" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightArm" item="Weapon_Autocannon_AC_10" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightTorso" item="Weapon_SRM_6" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="LeftTorso" item="Weapon_Laser_Medium" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="RightTorso" item="Weapon_Laser_Medium" itemType="Weapon" hardpointSlot="0"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_Gauss" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_AC10_Standard_IS" itemType="AmmunitionBox"/>
+            <add-inventory location="RightTorso" item="Ammo_AmmunitionBox_AC10_Standard_IS" itemType="AmmunitionBox"/>
+            <add-inventory location="LeftTorso" item="Ammo_AmmunitionBox_SRM_Standard_IS" itemType="AmmunitionBox"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Copperhead"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Fascam"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Thumper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Half"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Shaped"/>
+            <remove-inventory item="Ammo_AmmunitionBox_Sniper_Inferno"/>
+        </mech>
         <!-- mantis -->
         <mech model="mantis_MTS-L"/>
         <mech model="mantis_MTS-S"/>
