@@ -1453,7 +1453,10 @@
             <add-hardpoint location="RightArm" weaponMounts="Ballistic,Missile,AntiPersonnel"/>
         </mech>
 
-        <mech model="beowulf_BEO-12" engineRating="270" engineType="XL" endoSteel="false" ferroFibrous="true"/>
+        <mech model="beowulf_BEO-12" engineRating="270" engineType="XL" endoSteel="false" ferroFibrous="true">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="a TAG target designator allows the 'Mech to designate targets for artillery attacks." with="a TAG target designator allows the 'Mech to designate targets for the rest of its lance."/>
+        </mech>
 
         <hardpoints id="black_hawk-ku">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy"/>
@@ -1505,6 +1508,8 @@
             <set-hardpoint location="LeftArm" weaponMounts="Ballistic,Energy,Energy,Energy,Energy"/>
         </mech>
         <mech model="black_lanner_BKL-S" engineRating="385" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="and artillery support vehicles - all depending on" with="and missile support vehicles - all depending on"/>
             <set-hardpoint location="RightArm" weaponMounts="Ballistic,Ballistic,Energy,Energy,AntiPersonnel"/>
             <set-hardpoint location="RightTorso" weaponMounts="Ballistic,Energy,Missile,Missile,Missile,AntiPersonnel"/>
             <set-hardpoint location="LeftTorso" weaponMounts="Ballistic,Energy,Missile,Missile,AntiPersonnel"/>
@@ -1529,7 +1534,11 @@
             <replace-details find="The primary armament on the Bowman is a Class 16 Arrow IV Artillery launcher." with="The primary armament on the Bowman is an ELRM-20 extended-range missile launcher."/>
             <replace-details find="Though the original design incorporated two artillery pieces, the modern version" with="Though the original design incorporated two heavy launchers, the modern version"/>
         </mech>
-        <mech model="bowman_BWM-2" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles"/>
+        <mech model="bowman_BWM-2" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="This variant abandons any hope of the Bowman being an ArtilleryMech." with="This variant commits the Bowman fully to the direct fire-support role."/>
+            <replace-details find="The remaining artillery is replaced with a second LRM-20 launcher, three additional tons of ammunition, and an ER Large Laser." with="It carries a pair of LRM-20 launchers with deep magazines, backed by an ER Large Laser and three ER Medium Lasers."/>
+        </mech>
         <mech model="bowman_BWM-4" engineRating="350" engineType="XL" endoSteel="true" techBase="Clan" apply="bowman-missiles">
             <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
             <replace-details find="carrying a pair of Arrow IV missile artillery systems." with="carrying a pair of ELRM-20 extended-range missile systems."/>
@@ -1975,7 +1984,10 @@
         <mech model="falcon_FLC-4Nb-PP2" engineRating="180" engineType="standard"/>
         <mech model="falcon_FLC-4P" engineRating="180" engineType="standard"/>
         <mech model="falcon_FLC-5P2" engineRating="180" engineType="standard"/>
-        <mech model="falcon_FLC-5PW" engineRating="180" engineType="standard"/>
+        <mech model="falcon_FLC-5PW" engineRating="180" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="utilizing its TAG and C3 slave to scout out enemy foes for artillery strikes and indirect fire." with="utilizing its TAG and C3 slave to scout out enemy foes for indirect fire."/>
+        </mech>
 
         <mech model="falcon_hawk_FNHK-9K" engineRating="175" engineType="XL" ferroFibrous="true"/>
         <mech model="falcon_hawk_FNHK-9K1A" engineRating="175" engineType="XL" ferroFibrous="true"/>
@@ -2003,7 +2015,10 @@
         <mech model="firebee_FRB-2E" engineRating="175" engineType="standard"/>
         <mech model="firebee_FRB-2Ep" engineRating="175" engineType="standard"/>
 
-        <mech model="firefly_FFL-3A" engineRating="150" engineType="XL" ferroFibrous="true"/>
+        <mech model="firefly_FFL-3A" engineRating="150" engineType="XL" ferroFibrous="true">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="Target Acquisition Gear enhances its ability to spot for artillery, while" with="Target Acquisition Gear enhances its ability to spot for its lance, while"/>
+        </mech>
         <mech model="firefly_FFL-3PP" engineRating="150" engineType="XL" ferroFibrous="true"/>
         <mech model="firefly_FFL-3PP2" engineRating="150" engineType="XL"/>
         <mech model="firefly_FFL-3PP3" engineRating="150" engineType="XL"/>
@@ -3758,7 +3773,10 @@
         <mech model="thunderhawk_TH-1" engineRating="270" engineType="XL" apply="thunderhawk-th1-missiles"/>
 
         <!-- Ti Ts'ang (ClanInvasion only - removed non-existent variants, Jihad/Republic variants moved) -->
-        <mech model="ti_tsang_TSG-9H" engineRating="360" engineType="XL" endoSteel="true"/>
+        <mech model="ti_tsang_TSG-9H" engineRating="360" engineType="XL" endoSteel="true">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="allows the 'Mech to call in highly accurate missile or artillery strikes." with="allows the 'Mech to call in highly accurate missile strikes."/>
+        </mech>
         <mech model="ti_tsang_TSG-9J" engineRating="360" engineType="XL" endoSteel="true"/>
 
         <!-- Tian-Zong - moved to DarkAge era -->
@@ -4063,7 +4081,10 @@
         <mech model="warhammer_WHM-7A" engineRating="280" engineType="standard"/>
         <mech model="warhammer_WHM-7CS" engineRating="280" engineType="standard"/>
         <mech model="warhammer_WHM-7D" engineRating="280" engineType="standard"/>
-        <mech model="warhammer_WHM-7K" engineRating="280" engineType="standard"/>
+        <mech model="warhammer_WHM-7K" engineRating="280" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="while a TAG system allowed the 7K to spot for friendly artillery units." with="while a TAG system allowed the 7K to spot for friendly fire-support units."/>
+        </mech>
         <mech model="warhammer_WHM-7K2" engineRating="280" engineType="standard"/>
         <mech model="warhammer_WHM-7M" engineRating="280" engineType="standard"/>
         <mech model="warhammer_WHM-7M-DC" engineRating="280" engineType="standard"/>
@@ -4275,7 +4296,10 @@
         <!-- Phoenix Hawk (ClanInvasion) -->
         <mech model="phoenixhawk_PXH-1" engineRating="270" engineType="standard"/>
         <mech model="phoenixhawk_PXH-1b" engineRating="270" engineType="standard"/>
-        <mech model="phoenixhawk_PXH-1bC" engineRating="270" engineType="standard"/>
+        <mech model="phoenixhawk_PXH-1bC" engineRating="270" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="allow the Mech to spot for allied artillery and support assets, while" with="allow the Mech to spot for allied fire-support assets, while"/>
+        </mech>
         <mech model="phoenixhawk_PXH-1c" engineRating="270" engineType="standard"/>
         <mech model="phoenixhawk_PXH-1C_C" engineRating="270" engineType="standard"/>
         <mech model="phoenixhawk_PXH-1D" engineRating="270" engineType="standard"/>
@@ -4395,7 +4419,8 @@
         <!-- HBK-5E Refit: Replace Sniper Artillery (20t) + ammo (4t) with LRM 20 + MRM 20 + 2x Med Laser + ammo (4t) + DHS (1t) -->
         <mech model="hunchback_HBK-5E" engineRating="200" engineType="standard">
             <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
-            <replace-details find="Installing an Endo Steel chassis enabled the designers to swap the Thumper for the much larger and more powerful Sniper Artillery Piece." with="Installing an Endo Steel chassis enabled the designers to swap the Thumper for a much heavier pairing of LRM-20 and MRM-20 racks."/>
+            <replace-details find="Installing an Endo Steel chassis enabled the designers to swap the Thumper for the much larger and more powerful Sniper Artillery Piece." with="An Endo Steel chassis freed the tonnage for a much heavier pairing of LRM-20 and MRM-20 racks, making the 5E a dedicated missile platform."/>
+            <replace-details find="Popular with Hunchback pilots and Artillery units, the design is slated for continuous production" with="Popular with Hunchback pilots and fire-support units, the design is slated for continuous production"/>
             <!-- Remove artillery -->
             <remove-inventory item="Weapon_Artillery_Sniper"/>
             <remove-inventory item="Ammo_AmmunitionBox_Sniper"/>
@@ -4512,7 +4537,10 @@
         <mech model="phoenixhawk_PXH-3PL" engineRating="270" engineType="XL"/>
         <mech model="phoenixhawk_PXH-4L" engineRating="270" engineType="XL"/>
         <mech model="phoenixhawk_PXH-6D" engineRating="270" engineType="XL"/>
-        <mech model="phoenixhawk_PXH-7CS" engineRating="270" engineType="XL"/>
+        <mech model="phoenixhawk_PXH-7CS" engineRating="270" engineType="XL">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="allowing it mark enemy units for bombardment by artillery, as well as" with="allowing it mark enemy units for bombardment by the rest of its lance, as well as"/>
+        </mech>
         <mech model="phoenixhawk_PXH-7S" engineRating="270" engineType="XL"/>
 
         <!-- Phoenix Hawk IIC (CivilWar) -->
@@ -4768,7 +4796,10 @@
 
         <!-- Seraph -->
         <mech model="seraph_C-SRP-O_invictus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
-        <mech model="seraph_C-SRP-OA_dominus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
+        <mech model="seraph_C-SRP-OA_dominus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="while the Target Acquisition Gear threatens opponents with homing artillery." with="while the Target Acquisition Gear marks opponents for the rest of the lance."/>
+        </mech>
         <mech model="seraph_C-SRP-OB_infernus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
         <mech model="seraph_C-SRP-OC_comminus" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
         <mech model="seraph_C-SRP-OD_luminos" engineRating="210" engineType="standard" techBase="Clan" apply="seraph-extra"/>
@@ -5153,7 +5184,10 @@
 
         <!-- Quickdraw (Republic) -->
         <mech model="quickdraw_QKD-8P" engineRating="300" engineType="standard" apply="quickdraw"/>
-        <mech model="quickdraw_QKD-9M" engineRating="300" engineType="standard" apply="quickdraw"/>
+        <mech model="quickdraw_QKD-9M" engineRating="300" engineType="standard" apply="quickdraw">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="A TAG system allows it to call in artillery strikes." with="A TAG system allows it to mark targets for its lance."/>
+        </mech>
 
         <!-- Ti Ts'ang (Republic) -->
         <mech model="ti_tsang_TSG-10L" engineRating="360" engineType="XL" endoSteel="true"/>
@@ -5169,6 +5203,8 @@
         <!-- ===== RT-master roster additions 2026-06-14: NEW variants only (these mechs were already partially imported) ===== -->
         <!-- Hector HOR-2B (new; HOR-1B/1C already in roster): RT HowitzerRifle (10t, not in IrTech) -> AC/10 (Ballistic, fits hardpoint); rifle ammo -> 2 AC10 boxes -->
         <mech model="hector_HOR-2B">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="This specific version, while quite aged, was refitted over time to carry a low scale Artillery Cannon." with="This specific version, while quite aged, was refitted over time to carry an autocannon and a pair of heavy rocket racks."/>
             <swap-inventory item="Weapon_Artillery_HowitzerRifle" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
             <remove-inventory item="Ammo_AmmunitionBox_Rifle_Medium"/>
             <remove-inventory item="Ammo_AmmunitionBox_Rifle_Medium_APFSDS"/>
@@ -5470,6 +5506,9 @@
         <mech model="gurkha_GUR-8G"/>
         <!-- helepolis -->
         <mech model="helepolis_HEP-0H">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="Armed with a Howitzer in place of the iconic Sniper piece, it lacks the range and stopping power of the later versions," with="Armed with an autocannon and a battery of primitive lasers, it lacks the range and stopping power of the later versions,"/>
+            <replace-details find="Occasionally Helepolises in the periphery will be rebuilt along similar lines, the prized Sniper artillery pieces stripped off for other uses and local hardware retrofitted in its place." with="Occasionally Helepolises in the periphery will be rebuilt along similar lines, with local hardware retrofitted in place of the original factory fit."/>
             <swap-inventory item="Weapon_Artillery_HowitzerRifle" with="Weapon_Autocannon_AC_10" itemType="Weapon"/>
             <swap-inventory item="Ammo_AmmunitionBox_Rifle_Medium" with="Ammo_AmmunitionBox_Generic_AC10"/>
         </mech>
@@ -5529,7 +5568,7 @@
         </mech>
         <mech model="helepolis_HEP-4A">
             <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
-            <replace-details find="A Helepolis refit that trades the Artillery Cannon for an Arrow IV System." with="A Helepolis refit that trades the Artillery Cannon for an ELRM-20 launcher, a rotary AC/2 and a pair of rocket packs."/>
+            <replace-details find="A Helepolis refit that trades the Artillery Cannon for an Arrow IV System." with="A Helepolis refit built for sustained bombardment: an ELRM-20 launcher reaching well beyond visual range, a rotary AC/2 and a pair of rocket packs for closer work, with three ER Medium Lasers filling the gaps."/>
         </mech>
         <mech model="helepolis_HEP-4H">
             <!-- TKT-019: top rung - the most advanced variant gets the most advanced gun, HVAC-10 at 840m. -->
@@ -5855,7 +5894,10 @@
         <mech model="raptor_RTX1-OA"/>
         <mech model="raptor_RTX1-OB"/>
         <mech model="raptor_RTX1-OC"/>
-        <mech model="raptor_RTX1-OD"/>
+        <mech model="raptor_RTX1-OD">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate them for highly accurate artillery fire." with="designate them for highly accurate indirect fire."/>
+        </mech>
         <mech model="raptor_RTX1-OE"/>
         <mech model="raptor_RTX1-OF"/>
         <mech model="raptor_RTX1-OG"/>
