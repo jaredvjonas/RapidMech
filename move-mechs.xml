@@ -625,6 +625,14 @@
         <remove-inventory item="Gear_Actuator_Talons"/>
         <remove-inventory item="Gear_Blade"/>
 
+        <!-- Same sweep, missed first time round because these two live in rogueTech\OmniTech\ rather
+             than rogueTech\Actuators\ (user spotted them still in the MechLab as "OmniPod ..."):
+             Gear_Actuator_Omni_Hand's only effect was CAEStoodUpRollMod, which nothing reads, so it
+             did literally nothing on 147 mechs - dropped. Gear_Actuator_Omni_Lower is a PARTIAL and
+             stays: its {location}.Accuracy is live; the 4 dead CBTBE/stand-up blocks were stripped
+             and it finally has a card. Def file moved to _omni_actuator_2026-09-20\. -->
+        <remove-inventory item="Gear_Actuator_Omni_Hand"/>
+
         <!-- TKT-113 phase 3 (2026-09-19): parts whose whole concept is dead here are retired and
              their mounts re-parted, rather than given an invented effect. Every FCS/TTS def is
              1t/1slot/100-110k, so these swaps are weight-, slot- and cost-neutral.
