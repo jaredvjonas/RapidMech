@@ -3114,6 +3114,8 @@
         <mech model="ostscout_OTT-7Jb" engineRating="280" engineType="standard"/>
         <mech model="ostscout_OTT-7JR" engineRating="280" engineType="standard"/>
         <mech model="ostscout_OTT-7K" engineRating="280" engineType="standard">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="sacrificing its limited offensive capability to allow it to designate targets for Arrow IV artillery missiles." with="sacrificing its limited offensive capability to allow it to designate targets for its lance's missile fire."/>
             <add-hardpoint location="CenterTorso" weaponMounts="Energy"/>
         </mech>
 
@@ -3775,7 +3777,10 @@
         <mech model="timber_wolf_TW-B" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
         <mech model="timber_wolf_TW-C" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
         <mech model="timber_wolf_TW-D" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
-        <mech model="timber_wolf_TW-E" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-E" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="Finally, it carries a Light TAG designator for calling in Arrow IV artillery fire." with="Finally, it carries a Light TAG designator for marking targets for its lance."/>
+        </mech>
         <mech model="timber_wolf_TW-E2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
         <mech model="timber_wolf_TW-E3" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
@@ -5635,10 +5640,22 @@
             <swap-inventory item="Ammo_AmmunitionBox_Magshot" with="Ammo_AmmunitionBox_Generic_MG"/>
         </mech>
         <!-- komodo -->
-        <mech model="komodo_KIM-2"/>
-        <mech model="komodo_KIM-2A"/>
-        <mech model="komodo_KIM-2C"/>
-        <mech model="komodo_KIM-3C"/>
+        <mech model="komodo_KIM-2">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="a Forward-1 TAG allowing the Komodo to designate a target for an Arrow IV artillery strike." with="a Forward-1 TAG allowing the Komodo to designate a target for the rest of its lance."/>
+        </mech>
+        <mech model="komodo_KIM-2A">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="a Forward-1 TAG allowing the Komodo to designate a target for an Arrow IV artillery strike." with="a Forward-1 TAG allowing the Komodo to designate a target for the rest of its lance."/>
+        </mech>
+        <mech model="komodo_KIM-2C">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="a Forward-1 TAG allowing the Komodo to designate a target for an Arrow IV artillery strike." with="a Forward-1 TAG allowing the Komodo to designate a target for the rest of its lance."/>
+        </mech>
+        <mech model="komodo_KIM-3C">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="a Forward-1 TAG allowing the Komodo to designate a target for an Arrow IV artillery strike." with="a Forward-1 TAG allowing the Komodo to designate a target for the rest of its lance."/>
+        </mech>
         <!-- komodo_iic -->
         <mech model="komodo_iic_KIM-IIC"/>
         <!-- kyudo -->
@@ -5789,16 +5806,43 @@
         <mech model="osteon_OTN-J"/>
         <mech model="osteon_OTN-Prime"/>
         <!-- owens -->
-        <mech model="owens_OW-1"/>
-        <mech model="owens_OW-1A"/>
-        <mech model="owens_OW-1Ar"/>
-        <mech model="owens_OW-1B"/>
-        <mech model="owens_OW-1C"/>
-        <mech model="owens_OW-1D"/>
-        <mech model="owens_OW-1E"/>
-        <mech model="owens_OW-1F"/>
+        <mech model="owens_OW-1">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1A">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1Ar">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1B">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1C">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1D">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1E">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
+        <mech model="owens_OW-1F">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
         <mech model="owens_OW-1G"/>
-        <mech model="owens_OW-1R"/>
+        <mech model="owens_OW-1R">
+            <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
+            <replace-details find="designate targets for bombardment with Arrow IV artillery attacks." with="designate targets for the rest of the lance to bombard."/>
+        </mech>
         <!-- prometheus -->
         <mech model="prometheus_PTS-01"/>
         <!-- rakshasa -->
