@@ -697,10 +697,13 @@
         <remove-inventory item="Linked_ArmorMod_SignatureDamper"/>
         <remove-inventory item="Linked_Armor_VoidSignatureSystem"/>
 
-        <!-- Phase 3 additions - Armor components to import -->
-        <swap-inventory item="Gear_ArmorMod_SignatureDamper" with="Gear_ArmorMod_SignatureDamper"/>
+        <!-- Phase 3 additions - Armor components to import. SignatureDamper and
+             HeatDissipating_Clan were retired 2026-09-20 (TKT-131): both were inert -
+             the damper was activatable-only, the armor carried only the dead
+             CACIncomingHeatMult - so a self-swap would only re-create a dangling ref. -->
+        <remove-inventory item="Gear_ArmorMod_SignatureDamper"/>
         <swap-inventory item="Gear_Armor_VoidSignatureSystem" with="Gear_Armor_VoidSignatureSystem"/>
-        <swap-inventory item="Gear_Armor_HeatDissipating_Clan" with="Gear_Armor_HeatDissipating_Clan"/>
+        <remove-inventory item="Gear_Armor_HeatDissipating_Clan"/>
 
         <!-- Phase 3 additions - LRM Streak ammo -->
         <swap-inventory item="Ammo_AmmunitionBox_LRM_Streak" with="Ammo_AmmunitionBox_STREAKLRM_Standard_IS"/>
