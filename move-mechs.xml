@@ -140,6 +140,14 @@
         <remove-fixedEquipment item="Linked_Engine_Size_6"/>
         <remove-fixedEquipment item="Linked_Engine_Size_8"/>
 
+        <!-- TKT-069 savage_wolf (Mad Cat IV): the 4 omni chassis pin their engine and a bespoke gyro
+             into FixedEquipment, and neither def exists in IrianTech (RapidMech reports both as
+             "File not found"). A dangling chassisdef FixedEquipment ref resolves to a NULL
+             CustomComponents entry and crashes the store card on click, so both are stripped;
+             the engine is re-derived from the mech line's engineRating/engineType as usual. -->
+        <remove-fixedEquipment item="Gear_Engine_XXL_Clan"/>
+        <remove-fixedEquipment item="Unique_Gyro_SavageWolf"/>
+
         <remove-fixedEquipment item="Quirk_ProtectedActuators"/>
         <remove-fixedEquipment item="Gear_Armor_Stealth"/>
         <remove-fixedEquipment item="Linked_Armor_Stealth"/>
@@ -5010,6 +5018,19 @@
         <!-- Quickdraw (DarkAge) -->
         <mech model="quickdraw_QKD-9G" engineRating="300" engineType="standard" apply="quickdraw"/>
 
+        <!-- Savage Wolf / Mad Cat IV (DarkAge) - TKT-069 2026-09-22.
+             USER OVERRIDE of the geometry-borrow rule: these reuse the Mad Cat Mk II model
+             (chrprfmech_madcatmkiibase-001), so they wear that silhouette in mechlab/combat.
+             They do have their own portrait (MadCatMKIV). 75t Clan OmniMechs, 375 XXL, endo
+             steel. Armor is FerroLamellor, which is not modelled here, so it comes across as
+             Standard (same treatment as the Bushwacker's exotic armor). The chassis-omni post
+             task pods their hardpoints automatically. MCIV-PR-RISC is deliberately NOT here:
+             its 2x Weapon_Laser_Hyper_Large (RISC Hyper Laser) has no IrianTech counterpart. -->
+        <mech model="savage_wolf_MCIV-Prime" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
+        <mech model="savage_wolf_MCIV-A" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
+        <mech model="savage_wolf_MCIV-B" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
+        <mech model="savage_wolf_MCIV-C" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
+
         <!-- Shogun (DarkAge) - disabled (removed from IrTech 2026-06-14)
         <mech model="shogun_SHG-C2" engineRating="255" engineType="standard"/>
         <mech model="shogun_SHG-C3" engineRating="255" engineType="standard"/>
@@ -5972,6 +5993,13 @@
         <mech model="salamander_PPR-7S"/>
         <mech model="salamander_PPR-7T"/>
         <!-- salamander SMR-* variants dropped: engine rating not in RapidMech's FusionEngine table (PPR-* variants kept) -->
+        <!-- savage_wolf / Mad Cat IV (Republic) - TKT-069 2026-09-22. USER OVERRIDE of the
+             geometry-borrow rule; see the DarkAge block above. These two are NOT OmniMechs
+             (conventional 375 XL Clan, endo steel), so they keep typed
+             mounts. Attrs stated explicitly rather than left to engine auto-detect. Their Clan
+             ferro-fibrous armor is not modelled here either, so it lands as Standard. -->
+        <mech model="savage_wolf_MCIV-PR" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
+        <mech model="savage_wolf_MCIV-PR2" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
         <!-- shootist -->
         <mech model="shootist_ST-8A"/>
         <mech model="shootist_ST-8A2"/>
