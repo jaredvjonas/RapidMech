@@ -3759,7 +3759,10 @@
         </hardpoints>
 
         <mech model="thunderbolt_TDR-1C" engineRating="210" engineType="standard" apply="thunderbolt"/>
-        <mech model="thunderbolt_TDR-5G" engineRating="260" engineType="standard" ferroFibrous="true" techBase="Clan" apply="thunderbolt"/>
+        <mech model="thunderbolt_TDR-5G" engineRating="260" engineType="standard" ferroFibrous="true" techBase="Clan" apply="thunderbolt">
+            <!-- TKT-139: BC Jam retired (jamming unsupported); Clan laser/missile mix, has Crit, lacks Energy -->
+            <swap-inventory item="Gear_TargetingTrackingSystem_Jam" with="Gear_TargetingTrackingSystem_Energy"/>
+        </mech>
         <mech model="thunderbolt_TDR-5L" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-5LS" engineRating="260" engineType="standard" apply="thunderbolt"/>
         <mech model="thunderbolt_TDR-5S" engineRating="260" engineType="standard" apply="thunderbolt"/>
@@ -3839,7 +3842,10 @@
             <add-hardpoint location="RightTorso" weaponMounts="Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy,Energy"/>
         </mech>
-        <mech model="timber_wolf_TW-J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf"/>
+        <mech model="timber_wolf_TW-J" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
+            <!-- TKT-139: BC Jam retired (jamming unsupported); 4 Clan ER lasers, has Cluster+Crit+Gunnery, lacks Energy -->
+            <swap-inventory item="Gear_TargetingTrackingSystem_Jam" with="Gear_TargetingTrackingSystem_Energy"/>
+        </mech>
         <mech model="timber_wolf_TW-K" engineRating="375" engineType="XL" endoSteel="true" ferroFibrous="true" techBase="Clan" apply="timber_wolf">
             <add-hardpoint location="LeftArm" weaponMounts="Missile,Missile,Missile,Missile"/>
             <add-hardpoint location="RightArm" weaponMounts="Missile,Missile,Missile,Missile"/>
@@ -4855,13 +4861,18 @@
         <mech model="deimos_DEI-Prime" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
 
         <!-- Legionnaire (Jihad only - LGN-2K moved to Republic) -->
-        <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL"/>
+        <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL">
+            <!-- TKT-139: BC Jam retired (jamming unsupported); RAC/5 boat, already has Ballistic+Recoil, lacks Crit -->
+            <swap-inventory item="Gear_TargetingTrackingSystem_Jam" with="Gear_TargetingTrackingSystem_Crit"/>
+        </mech>
         <mech model="legionnaire_LGN-2F" engineRating="350" engineType="XL"/>
         <mech model="legionnaire_LGN-2XA" engineRating="350" engineType="XL">
             <!-- TKT-019: the text still described the artillery this mech no longer carries. -->
             <replace-details find="mounts an Arrow IV launcher in the right arm and torso." with="mounts an ELRM-20 launcher in the right arm and torso."/>
         </mech>
         <mech model="legionnaire_LGN-2XU" engineRating="350" engineType="XL">
+            <!-- TKT-139: BC Jam retired (jamming unsupported); UAC/10, has Ballistic+Range+Recoil, lacks Gunnery -->
+            <swap-inventory item="Gear_TargetingTrackingSystem_Jam" with="Gear_TargetingTrackingSystem_Gunnery"/>
             <add-hardpoint location="LeftArm" weaponMounts="Energy"/>
             <add-hardpoint location="RightArm" weaponMounts="Energy"/>
         </mech>
