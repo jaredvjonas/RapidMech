@@ -5025,12 +5025,39 @@
              steel. Armor is FerroLamellor, which is not modelled here, so it comes across as
              Standard (same treatment as the Bushwacker's exotic armor). The chassis-omni post
              task pods their hardpoints automatically. MCIV-PR-RISC is deliberately NOT here:
-             its 2x Weapon_Laser_Hyper_Large (RISC Hyper Laser) has no IrianTech counterpart. -->
-        <mech model="savage_wolf_MCIV-Prime" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
-        <mech model="savage_wolf_MCIV-A" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
-        <mech model="savage_wolf_MCIV-B" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
-        <mech model="savage_wolf_MCIV-C" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan"/>
-
+             its 2x Weapon_Laser_Hyper_Large (RISC Hyper Laser) has no IrianTech counterpart.
+             UNDERWEIGHT FIX 2026-09-22: the XXL engine, the bespoke gyro and the FerroLamellor
+             armor we strip are not modelled here and nothing reclaims that tonnage, so all four
+             landed 6.6-10.6t light. maxArmor="true" spends what it can on armor (all four now sit
+             at the 1430-pt chassis cap, +281 pts each); the Clan doubles below soak the remainder,
+             sized per variant. Every one of these designs is heat-limited, so sinks are the honest
+             place to put it, and slots are ample (each side torso has 10, at most 3 used).
+             add-inventory is a per-mech task and so runs BEFORE the global recalc pass, which is
+             what lets the armor fill see the added weight and still land inside tonnage. -->
+        <mech model="savage_wolf_MCIV-Prime" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan" maxArmor="true">
+            <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="RightTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="LeftLeg" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+        </mech>
+        <mech model="savage_wolf_MCIV-A" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan" maxArmor="true">
+            <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="RightTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="LeftLeg" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+        </mech>
+        <mech model="savage_wolf_MCIV-B" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan" maxArmor="true">
+            <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="RightTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="LeftLeg" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+        </mech>
+        <mech model="savage_wolf_MCIV-C" engineRating="375" engineType="XXL" endoSteel="true" ferroFibrous="false" techBase="Clan" maxArmor="true">
+            <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="LeftTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="RightTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="RightTorso" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="LeftArm" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="RightArm" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+            <add-inventory location="LeftLeg" item="Gear_HeatSink_Generic_Double_Clan" itemType="HeatSink"/>
+        </mech>
         <!-- Shogun (DarkAge) - disabled (removed from IrTech 2026-06-14)
         <mech model="shogun_SHG-C2" engineRating="255" engineType="standard"/>
         <mech model="shogun_SHG-C3" engineRating="255" engineType="standard"/>

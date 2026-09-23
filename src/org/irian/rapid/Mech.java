@@ -38,6 +38,9 @@ public class Mech {
 
     public TechnologyBase techBase = TechnologyBase.InnerSphere;
 
+    /** Opt-in from the mech line: spend all tonnage-allowed armor rather than only trimming. */
+    public boolean maxArmor = false;
+
     public Mech(MechCmd mechCmd, MechDef mechDef, ChasisDef chassisDef) {
         this.engineRating = mechCmd.engineRating;
         this.engineType = buildEngineType(mechCmd.engineType);
@@ -46,6 +49,7 @@ public class Mech {
         this.mechDef = mechDef;
         this.chasisDef = chassisDef;
         this.techBase = (mechCmd.techBase != null && mechCmd.techBase.equals("Clan")) ? TechnologyBase.Clan : TechnologyBase.InnerSphere;
+        this.maxArmor = mechCmd.maxArmor;
 
         // The hand-typed engine/structure/armor attributes are error-prone. Override them with
         // what the source mech actually carries, so InitialTonnage is computed correctly.
@@ -186,6 +190,9 @@ public class Mech {
 
         int currentArmor = mechDef.armorValue();
         if (currentArmor <= maxArmorPoints) {
+            if (maxArmor && currentArmor < maxArmorPoints) {
+                fillArmor(maxArmorPoints, currentArmor, available);
+            }
             return; // already fits within tonnage
         }
 
@@ -199,6 +206,64 @@ public class Mech {
 
         System.out.printf("Trimmed armor on %s: %d -> %d pts (equip %.2ft, %.2ft for armor of %.1ft chassis)\n",
                 mechDef.Description.Id, currentArmor, mechDef.armorValue(), equipmentWeight, available, chasisDef.Tonnage);
+    }
+
+    /**
+     * Spends the armor tonnage a conversion left idle. Only ever called when the mech already
+     * fits its chassis tonnage and `maxArmor` is set on the mech line, so it cannot make a mech
+     * overweight: the ceiling is the same tonnage-derived point budget recalculateArmor uses to
+     * trim, and every location is additionally capped by the chassis MaxArmor / MaxRearArmor.
+     *
+     * Points are handed out front-first in a fixed location order, then to rear arcs, so the
+     * result is deterministic and idempotent across regens (a second run finds nothing to add).
+     * Armor that cannot be placed because every location is already at its cap is simply left
+     * unspent -- the chassis caps win over the tonnage budget, never the other way round.
+     */
+    private void fillArmor(int maxArmorPoints, int currentArmor, double available) {
+        int budget = maxArmorPoints - currentArmor;
+        if (budget <= 0) {
+            return;
+        }
+
+        // Front arcs first: a point of front armor is worth more than a point of rear armor.
+        for (var location : mechDef.Locations) {
+            if (budget <= 0) break;
+            var cap = findChassisLocation(location.Location);
+            if (cap == null || cap.MaxArmor <= 0) continue;
+            int room = cap.MaxArmor - location.AssignedArmor;
+            if (room <= 0) continue;
+            int add = Math.min(room, budget);
+            location.AssignedArmor += add;
+            location.CurrentArmor = location.AssignedArmor;
+            budget -= add;
+        }
+
+        // Then rear arcs, where MaxRearArmor of -1 means the location has no rear facing.
+        for (var location : mechDef.Locations) {
+            if (budget <= 0) break;
+            var cap = findChassisLocation(location.Location);
+            if (cap == null || cap.MaxRearArmor <= 0) continue;
+            int room = cap.MaxRearArmor - location.AssignedRearArmor;
+            if (room <= 0) continue;
+            int add = Math.min(room, budget);
+            location.AssignedRearArmor += add;
+            location.CurrentRearArmor = location.AssignedRearArmor;
+            budget -= add;
+        }
+
+        System.out.printf("Filled armor on %s: %d -> %d pts of %d allowed (%.2ft for armor of %.1ft chassis)%s\n",
+                mechDef.Description.Id, currentArmor, mechDef.armorValue(), maxArmorPoints,
+                available, chasisDef.Tonnage,
+                budget > 0 ? String.format(", %d pts unspent (all locations at chassis cap)", budget) : "");
+    }
+
+    private org.irian.rapid.defs.chassis.Location findChassisLocation(String name) {
+        for (var location : chasisDef.Locations) {
+            if (location.Location.equals(name)) {
+                return location;
+            }
+        }
+        return null;
     }
 
     private double lookupTonnage(String componentDefID, ResourceScanner resourceScanner) {

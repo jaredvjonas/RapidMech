@@ -36,6 +36,17 @@ public class MechCmd {
     @XmlAttribute
     public String tasks;
 
+    /**
+     * Opt-in: after recalc-armor has worked out how many armor points the chassis tonnage
+     * allows, spend ALL of them instead of only trimming an overweight mech down. Off by
+     * default, so every existing mech line keeps the trim-only behaviour. Use it where a
+     * conversion frees tonnage the source design had spent on gear IrianTech does not
+     * model (e.g. an XXL engine and a bespoke gyro), which would otherwise be left idle.
+     */
+    @XmlAttribute
+    public boolean maxArmor;
+
+
     @XmlElements({
             @XmlElement(name="add-hardpoint", type = AddHardpoint.class),
             @XmlElement(name="set-hardpoint", type = SetHardpoint.class),
