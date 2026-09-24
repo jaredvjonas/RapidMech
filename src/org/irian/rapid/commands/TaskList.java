@@ -19,6 +19,7 @@ public class TaskList {
             @XmlElement(name = "swap-fixedEquipment", type = SwapFixedEquipment.class),
             @XmlElement(name = "remove-fixedEquipment", type = RemoveFixedEquipment.class),
             @XmlElement(name = "move-fixedEquipment", type = MoveFixedEquipment.class),
+            @XmlElement(name = "promote-chassis-default", type = PromoteChassisDefault.class),
             @XmlElement(name = "swap-hardpoint", type = SwapHardpoint.class),
             @XmlElement(name = "ensure-ap-hardpoints", type = EnsureApHardpoints.class),
             @XmlElement(name = "omnify-hardpoints", type = OmnifyHardpoints.class),

@@ -51,6 +51,7 @@
         <dir path="${irianTechHome}/rogueTech/Gyro"/>
         <dir path="${irianTechHome}/rogueTech/Weapons"/>
         <dir path="${irianTechHome}/rogueTech/Unique/Weapons"/>
+        <dir path="${irianTechHome}/rogueTech/Unique/Gear"/>
 
         <!-- Imported from Vanilla Plus -->
         <dir path="${irianTechHome}/vanillaPlusCore/ammunitionbox"/>
@@ -146,7 +147,34 @@
              CustomComponents entry and crashes the store card on click, so both are stripped;
              the engine is re-derived from the mech line's engineRating/engineType as usual. -->
         <remove-fixedEquipment item="Gear_Engine_XXL_Clan"/>
-        <remove-fixedEquipment item="Unique_Gyro_SavageWolf"/>
+        <!-- TKT-138: Unique_Gyro_SavageWolf is no longer stripped - the def now ships in rogueTech/Unique/Gear,
+             so the savage_wolf chassis keep it as FixedEquipment (the RT def was never missing, only uncopied). -->
+
+        <!-- TKT-138: RT chassis quirks. RT installs these through the chassisdef's Custom.ChassisDefaults block,
+             which RapidMech does not write out (IrianTech has no CC slot categories), so they used to vanish on
+             import. Each whitelisted part is promoted to plain FixedEquipment at RT's location, on exactly the
+             chassis RT gives it to; every other ChassisDefaults entry is still dropped. Defs: rogueTech/Unique/Gear.
+             Scope rule: only quirks carried by a mech active in this file (2026-09-23). All are no_salvage +
+             not_broken + BLACKLISTED, so they stay locked to the chassis. finalize-mech's recalc-armor counts
+             FixedEquipment tonnage, so heavier hosts trim armor to fit. -->
+        <promote-chassis-default item="Unique_Cockpit_ZeusX"/>
+        <promote-chassis-default item="Unique_FCS_ZeusX"/>
+        <promote-chassis-default item="Unique_Sensors_ZeusX"/>
+        <promote-chassis-default item="Unique_Gear_Armor_ReactivePlating_ZeusX"/> <!-- trial: its RT slot cost is MechEngineer-only, so it is a free buff here -->
+        <promote-chassis-default item="Unique_Sensors_TrackerMk2"/>
+        <promote-chassis-default item="Unique_Cockpit_LifeSupportB_Knife"/>
+        <promote-chassis-default item="Unique_FCS_BrigandTC"/>
+        <promote-chassis-default item="Unique_FCS_Defiance"/>
+        <promote-chassis-default item="Unique_FCS_Katyusha"/>
+        <promote-chassis-default item="Unique_Gyro_Artillery_Heavy"/>
+        <promote-chassis-default item="Unique_Gyro_Brawler"/>
+        <!-- RVN-1X / RVN-3X / QKD-4P "ECM Equipment": RT's version was activatable (auto EWS ping) and LV_-based;
+             the shipped def is converted to always-on per TKT-130/131 (ping + LV_ECM_JAMMED + C3 tags dropped,
+             LV_ stats remapped to Sensor/Spotter/Signature). 7.5t / 4 slots as RT. -->
+        <promote-chassis-default item="Unique_EWS_Prototype"/>
+        <!-- Deliberately NOT promoted (user 2026-09-23, dropped): Unique_Sensors_Totem (16 chassis, every stat
+             dead here), Unique_Sensors_C3BAP_Owens (C3 has no support) and Unique_Cockpit_Dual (0 live stats) -
+             the latter two are also stripped from FixedEquipment above. -->
 
         <remove-fixedEquipment item="Quirk_ProtectedActuators"/>
         <remove-fixedEquipment item="Gear_Armor_Stealth"/>
@@ -209,7 +237,9 @@
         <swap-inventory item="Gear_MASC_Clan" with="Gear_MASC_CLAN"/> <!-- Vanilla Plus -->
         <!-- Pre-CAC passive AMS (Gear_AMS/Gear_AMS_CLAN) deleted: CAC AMS weapons work now and the
              AMS ammo bins were never stripped, so mechs keep their native RT AMS weapon and feed it. -->
-        <swap-inventory item="Unique_Weapon_AMS_Laser_Prototype" with="Weapon_AMS_Laser_Clan" itemType="Weapon"/>
+        <!-- TKT-138: the Unique_Weapon_AMS_Laser_Prototype -> Weapon_AMS_Laser_Clan swap is gone; the def now ships
+             and its only active host (wolfhound WLF-1X) mounts it. Globals run AFTER per-mech tasks, so a swap here
+             would silently undo that restore. -->
         <swap-inventory item="Weapon_AMS_Laser_Integrated" with="Weapon_AMS_Laser" itemType="Weapon"/> <!-- bundle-orphan LAMS -> standalone laser AMS (no ammo bin needed) -->
 
         <swap-inventory item="Gear_FCS_Missile_Accuracy" with="Gear_FCS_Missile_Accuracy"/>
@@ -4158,8 +4188,10 @@
         <mech model="wolfhound_WLF-1-KH" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-1R" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-1X" engineRating="240" engineType="XL" endoSteel="true">
-            <!-- passive Gear_AMS was deleted 2026-09-17; WLF-1X keeps a real CAC laser AMS (no ammo bin needed) -->
-            <add-inventory location="LeftTorso" item="Weapon_AMS_Laser" itemType="Weapon" hardpointSlot="0"/>
+            <!-- TKT-138: restore the RT chassis quirk - its Proto Laser AMS (8 activations/turn, 180m) instead of
+                 the standard laser AMS it carried since 2026-09-17. Moved out of chassis FixedEquipment into the
+                 mechdef (a weapon in FixedEquipment is a validator warning class, same as ENF-7S's Gauss prototype). -->
+            <move-fixedEquipment item="Unique_Weapon_AMS_Laser_Prototype" with="Unique_Weapon_AMS_Laser_Prototype" itemType="Weapon"/>
         </mech>
         <mech model="wolfhound_WLF-2" engineRating="210" engineType="standard"/>
         <mech model="wolfhound_WLF-3-WDR" engineRating="210" engineType="XL" ferroFibrous="true" techBase="Clan"/>

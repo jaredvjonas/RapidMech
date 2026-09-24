@@ -2,9 +2,14 @@ package org.irian.rapid.defs;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import org.irian.rapid.defs.chassis.ChassisDefault;
 import org.irian.rapid.defs.item.BasicItemDef;
 
 import java.io.*;
+import java.util.List;
 
 public class ReaderWriter {
     public static MechDef readMech(InputStream stream) {
@@ -14,7 +19,17 @@ public class ReaderWriter {
 
     public static ChasisDef readChassis(InputStream stream) {
         Gson gson = new Gson();
-        return gson.fromJson(new InputStreamReader(stream), ChasisDef.class);
+        JsonElement json = JsonParser.parseReader(new InputStreamReader(stream));
+        ChasisDef def = gson.fromJson(json, ChasisDef.class);
+        // Custom.ChassisDefaults is not part of the written model; keep it on the side for promote-chassis-default.
+        if (def != null && json.isJsonObject()) {
+            JsonElement custom = json.getAsJsonObject().get("Custom");
+            if (custom != null && custom.isJsonObject() && custom.getAsJsonObject().has("ChassisDefaults")) {
+                def.SourceChassisDefaults = gson.fromJson(custom.getAsJsonObject().get("ChassisDefaults"),
+                        new TypeToken<List<ChassisDefault>>() {}.getType());
+            }
+        }
+        return def;
     }
 
     public static BasicItemDef readItem(InputStream stream) {

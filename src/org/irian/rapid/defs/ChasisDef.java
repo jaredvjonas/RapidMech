@@ -51,4 +51,7 @@ public class ChasisDef {
     public List<Location> Locations;
     public List<Coords> LOSSourcePositions;
     public List<Coords> LOSTargetPositions;
+
+    // Source Custom.ChassisDefaults, set by RapidFile.loadChassisDef. transient: Gson never writes it back out.
+    public transient List<ChassisDefault> SourceChassisDefaults;
 }

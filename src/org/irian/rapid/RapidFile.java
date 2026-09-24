@@ -287,6 +287,9 @@ public class RapidFile {
         else if (task instanceof MoveFixedEquipment) {
             moveFixedEquipment((MoveFixedEquipment) task, mech);
         }
+        else if (task instanceof PromoteChassisDefault) {
+            promoteChassisDefault((PromoteChassisDefault) task, mech.chasisDef);
+        }
         else if (task instanceof ReplaceDetails) {
             replaceDetails((ReplaceDetails) task, mech.mechDef);
         }
@@ -536,6 +539,34 @@ public class RapidFile {
 
     private void removeFixedEquipment(RemoveFixedEquipment task, ChasisDef def) {
         def.FixedEquipment.removeIf(item -> item.ComponentDefID.equals(task.item));
+    }
+
+    private void promoteChassisDefault(PromoteChassisDefault task, ChasisDef def) {
+        if (def.SourceChassisDefaults == null) {
+            return;
+        }
+        if (def.FixedEquipment == null) {
+            def.FixedEquipment = new ArrayList<>();
+        }
+        for (var group : def.SourceChassisDefaults) {
+            if (group.Defaults == null) continue;
+            for (var entry : group.Defaults) {
+                if (!task.item.equals(entry.DefID)) continue;
+                // a multi-category part can appear under several CategoryIDs - promote it once per location
+                boolean present = def.FixedEquipment.stream().anyMatch(e ->
+                        entry.DefID.equals(e.ComponentDefID) && entry.Location.equals(e.MountedLocation));
+                if (present) continue;
+
+                Equipment equipment = new Equipment();
+                equipment.MountedLocation = entry.Location;
+                equipment.ComponentDefID = entry.DefID;
+                equipment.ComponentDefType = entry.Type != null ? entry.Type : "Upgrade";
+                equipment.HardpointSlot = -1;
+                equipment.DamageLevel = "Functional";
+                def.FixedEquipment.add(equipment);
+                System.out.printf("Promoted chassis default %s to FixedEquipment at %s\n", entry.DefID, entry.Location);
+            }
+        }
     }
 
     private void moveFixedEquipment(MoveFixedEquipment task, Mech mech) {
