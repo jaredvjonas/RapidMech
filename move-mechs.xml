@@ -1279,8 +1279,10 @@
 
         <!-- Archangel - moved to Jihad era -->
 
+        <!-- Arcas - removed 2026-09-29 (borrows ShadowHawk-4 placeholder geometry) - disabled
         <mech model="arcas_ARS-1" engineRating="325" engineType="XL" endoSteel="true"/>
         <mech model="arcas_ARS-2" engineRating="325" engineType="XL" endoSteel="true" apply="arcas-missiles"/>
+        -->
 
         <hardpoints id="arctic_cheetah">
             <add-hardpoint location="Head" weaponMounts="Missile"/>
@@ -2293,6 +2295,7 @@
         <mech model="hauptmann_HA1-OB" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
         <mech model="hauptmann_HA1-OC" engineRating="285" engineType="standard" apply="hauptmann-extra"/>
 
+        <!-- Havoc - removed 2026-09-29 (borrows Hellbringer geometry) - disabled
         <hardpoints id="havoc">
             <add-hardpoint location="LeftArm" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
             <add-hardpoint location="LeftTorso" weaponMounts="Ballistic, Ballistic, Energy, Energy, AntiPersonnel"/>
@@ -2320,6 +2323,7 @@
             <add-hardpoint location="LeftTorso" weaponMounts="Missile, Missile, Missile"/>
             <add-hardpoint location="RightTorso" weaponMounts="Missile, Missile"/>
         </mech>
+        -->
 
         <mech model="hector_HOR-1B" engineRating="340" engineType="standard"/>
         <mech model="hector_HOR-1C" engineRating="340" engineType="standard"/>
@@ -3500,7 +3504,9 @@
         <mech model="starslayer_STY-3C" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
         <mech model="starslayer_STY-3D" engineRating="250" engineType="standard" endoSteel="true" ferroFibrous="true"/>
 
-        <!-- stinger goes here -->
+        <mech model="stinger_STG-3R" engineRating="120" engineType="standard">
+            <remove-inventory item="Gear_HeatSink_Single"/> <!-- canon: all 10 SHS are free engine sinks; IrianTech charges 1t each for listed ones -->
+        </mech>
 
         <mech model="stone_rhino_SR-1" engineRating="300" engineType="XL" techBase="Clan" apply="stone_rhino-missiles"/>
         <mech model="stone_rhino_SR-2" engineRating="300" engineType="XL" techBase="Clan" apply="stone_rhino-missiles">
@@ -4171,7 +4177,9 @@
         <mech model="warhawk_WHK-W" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
         <mech model="warhawk_WHK-X" engineRating="340" engineType="XL" ferroFibrous="true" techBase="Clan" apply="warhawk-extra"/>
 
-        <!-- Wasp goes here -->
+        <mech model="wasp_WSP-1A" engineRating="120" engineType="standard">
+            <remove-inventory item="Gear_HeatSink_Single"/> <!-- canon: all 10 SHS are free engine sinks; IrianTech charges 1t each for listed ones -->
+        </mech>
 
         <mech model="whitworth_WTH-0" engineRating="160" engineType="standard"/>
         <mech model="whitworth_WTH-1" engineRating="160" engineType="standard"/>
@@ -4887,10 +4895,11 @@
         <mech model="hellstar_HST-2" engineRating="380" engineType="XL" techBase="Clan"/>
         <mech model="hellstar_HST-3" engineRating="380" engineType="XL" techBase="Clan" apply="hellstar-missiles"/>
 
-        <!-- Deimos -->
+        <!-- Deimos - removed 2026-09-29 (borrows Bane geometry) - disabled
         <mech model="deimos_DEI-A" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
         <mech model="deimos_DEI-B" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
         <mech model="deimos_DEI-Prime" engineRating="210" engineType="XL" techBase="Clan" apply="deimos-extra"/>
+        -->
 
         <!-- Legionnaire (Jihad only - LGN-2K moved to Republic) -->
         <mech model="legionnaire_LGN-2D" engineRating="350" engineType="XL">
