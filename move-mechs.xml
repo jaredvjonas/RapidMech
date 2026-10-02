@@ -359,9 +359,9 @@
         <swap-inventory item="Ammo_AmmunitionBox_LRM_FTL_Half" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_LRM_ListenKill_Half" with="Ammo_AmmunitionBox_Generic_LRM"/>
         <swap-inventory item="Ammo_AmmunitionBox_MRM_Acid_Half" with="Ammo_AmmunitionBox_MRM"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Airburst" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Fascam" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
-        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Inferno" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Airburst" with="Ammo_AmmunitionBox_Mortar"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Fascam" with="Ammo_AmmunitionBox_Mortar"/>
+        <swap-inventory item="Ammo_AmmunitionBox_Mortar_Inferno" with="Ammo_AmmunitionBox_Mortar"/>
         <swap-inventory item="Ammo_AmmunitionBox_Sniper" with="Ammo_AmmunitionBox_Thumper"/>
         <swap-inventory item="Ammo_AmmunitionBox_Sniper_Half" with="Ammo_AmmunitionBox_Thumper"/>
         <swap-inventory item="Ammo_AmmunitionBox_Sniper_Copperhead" with="Ammo_AmmunitionBox_Thumper"/>
@@ -890,8 +890,9 @@
 
         <!-- Phase 5 additions - Mad Cat components -->
         <swap-inventory item="Gear_HarJel3" with="Gear_HarJel3"/>
-        <swap-inventory item="Gear_Attachment_LaserInsulator" with="Gear_Attachment_LaserInsulator"/>
-        <swap-inventory item="Gear_Structure_EndoComposite_Clan" with="Gear_Structure_EndoComposite_Clan"/>
+        <!-- 2026-10-01: both are MechEngineer-only (no statusEffects; Weights/DynamicSlots/AddonReference are read by nothing here) -> stripped, not kept -->
+        <remove-inventory item="Gear_Attachment_LaserInsulator"/>
+        <remove-inventory item="Gear_Structure_EndoComposite_Clan"/>
         <swap-inventory item="Gear_EWS_NovaCEWS" with="Gear_EWS_NovaCEWS"/>
 
         <!-- Remove unsupported equipment -->
@@ -5442,10 +5443,10 @@
         <!-- minsk -->
         <mech model="minsk_MNK-1"/>
         <mech model="minsk_MNK-101"/>
-        <!-- minsk_MNK-2: Clan Mortar 6 (not in IrTech) -> Mortar 6; Airburst ammo -> generic mortar -->
+        <!-- minsk_MNK-2: Clan Mortar 6 (not in IrTech) -> Mortar 6; Airburst ammo -> standard mortar (Generic_MORTAR is the CAC nuke, never use) -->
         <mech model="minsk_MNK-2">
             <swap-inventory item="Weapon_Mortar_6_Clan" with="Weapon_Mortar_6" itemType="Weapon"/>
-            <swap-inventory item="Ammo_AmmunitionBox_Mortar_Airburst" with="Ammo_AmmunitionBox_Generic_MORTAR"/>
+            <swap-inventory item="Ammo_AmmunitionBox_Mortar_Airburst" with="Ammo_AmmunitionBox_Mortar"/>
         </mech>
         <!-- omen -->
         <mech model="omen_OM-1"/>
@@ -6020,8 +6021,8 @@
         <!-- razorback -->
         <mech model="razorback_RZK-10S"/>
         <mech model="razorback_RZK-10T"/>
-        <mech model="razorback_RZK-11T"/>
-        <mech model="razorback_RZK-9S"/>
+        <mech model="razorback_RZK-11T" maxArmor="true"/> <!-- 2026-10-01: Laser Insulators stripped, freed tonnage -> armor -->
+        <mech model="razorback_RZK-9S" maxArmor="true"/> <!-- 2026-10-01: Laser Insulators stripped, freed tonnage -> armor -->
         <mech model="razorback_RZK-9T"/>
         <!-- reptar -->
         <mech model="reptar_EPT-C-1"/>
@@ -6162,7 +6163,7 @@
         <mech model="uziel_UZL-8S"/>
         <!-- valiant -->
         <mech model="valiant_V4-LNT-J3"/>
-        <mech model="valiant_V4-LNT-K7"/>
+        <mech model="valiant_V4-LNT-K7" maxArmor="true"/> <!-- 2026-10-01: Laser Insulators stripped, freed tonnage -> armor -->
         <mech model="valiant_VAL-NT-JX"/>
         <mech model="valiant_VLN-3T"/>
         <mech model="valiant_VLT-3E"/>
@@ -6195,7 +6196,10 @@
         <mech model="zeus-x_ZEU-X4"/>
         <!-- shadow_cat_ii -->
         <mech model="shadow_cat_ii_SHCII-1"/>
-        <mech model="shadow_cat_ii_SHCII-2"/>
+        <!-- 2026-10-01: Laser Insulators stripped, freed tonnage -> armor; description no longer names them -->
+        <mech model="shadow_cat_ii_SHCII-2" maxArmor="true">
+            <replace-details find=", both fitted with Laser Insulator Shields." with="."/>
+        </mech>
         <mech model="shadow_cat_ii_SHCII-3"/>
         <mech model="shadow_cat_ii_SHCII-4"/>
         <!-- shadow_cat_iii -->

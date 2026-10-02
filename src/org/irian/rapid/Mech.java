@@ -226,35 +226,92 @@ public class Mech {
         }
 
         // Front arcs first: a point of front armor is worth more than a point of rear armor.
-        for (var location : mechDef.Locations) {
-            if (budget <= 0) break;
-            var cap = findChassisLocation(location.Location);
-            if (cap == null || cap.MaxArmor <= 0) continue;
-            int room = cap.MaxArmor - location.AssignedArmor;
-            if (room <= 0) continue;
-            int add = Math.min(room, budget);
-            location.AssignedArmor += add;
-            location.CurrentArmor = location.AssignedArmor;
-            budget -= add;
-        }
+        // Points go out one round at a time across every location, and left/right pairs only
+        // ever receive them together, so a small budget spreads evenly and stays symmetric
+        // instead of piling into whichever locations come first in the file.
+        budget = spreadArmor(FRONT_GROUPS, budget, false);
 
         // Then rear arcs, where MaxRearArmor of -1 means the location has no rear facing.
-        for (var location : mechDef.Locations) {
-            if (budget <= 0) break;
-            var cap = findChassisLocation(location.Location);
-            if (cap == null || cap.MaxRearArmor <= 0) continue;
-            int room = cap.MaxRearArmor - location.AssignedRearArmor;
-            if (room <= 0) continue;
-            int add = Math.min(room, budget);
-            location.AssignedRearArmor += add;
-            location.CurrentRearArmor = location.AssignedRearArmor;
-            budget -= add;
-        }
+        budget = spreadArmor(REAR_GROUPS, budget, true);
 
         System.out.printf("Filled armor on %s: %d -> %d pts of %d allowed (%.2ft for armor of %.1ft chassis)%s\n",
                 mechDef.Description.Id, currentArmor, mechDef.armorValue(), maxArmorPoints,
                 available, chasisDef.Tonnage,
                 budget > 0 ? String.format(", %d pts unspent (all locations at chassis cap)", budget) : "");
+    }
+
+    private static final String[][] FRONT_GROUPS = {
+            {"CenterTorso"}, {"LeftTorso", "RightTorso"}, {"LeftLeg", "RightLeg"},
+            {"LeftArm", "RightArm"}, {"Head"}};
+    private static final String[][] REAR_GROUPS = {
+            {"CenterTorso"}, {"LeftTorso", "RightTorso"}};
+
+    /**
+     * Hands out {@code budget} armor points one round at a time: each round gives one point to
+     * every group that can take it (a pair needs room on both sides and two points). Once no
+     * group can take a full share, any points left go one at a time to whatever still has room,
+     * which only happens when the chassis caps themselves are lopsided. Returns what is unspent.
+     */
+    private int spreadArmor(String[][] groups, int budget, boolean rear) {
+        boolean progress = true;
+        while (budget > 0 && progress) {
+            progress = false;
+            for (var group : groups) {
+                if (budget < group.length) continue;
+                boolean fits = true;
+                for (var name : group) {
+                    if (armorRoom(name, rear) <= 0) fits = false;
+                }
+                if (!fits) continue;
+                for (var name : group) {
+                    addArmorPoint(name, rear);
+                }
+                budget -= group.length;
+                progress = true;
+            }
+        }
+
+        progress = true;
+        while (budget > 0 && progress) {
+            progress = false;
+            for (var group : groups) {
+                for (var name : group) {
+                    if (budget > 0 && armorRoom(name, rear) > 0) {
+                        addArmorPoint(name, rear);
+                        budget--;
+                        progress = true;
+                    }
+                }
+            }
+        }
+        return budget;
+    }
+
+    private int armorRoom(String name, boolean rear) {
+        var cap = findChassisLocation(name);
+        var location = findMechLocation(name);
+        if (cap == null || location == null) return 0;
+        return rear ? cap.MaxRearArmor - location.AssignedRearArmor : cap.MaxArmor - location.AssignedArmor;
+    }
+
+    private void addArmorPoint(String name, boolean rear) {
+        var location = findMechLocation(name);
+        if (rear) {
+            location.AssignedRearArmor++;
+            location.CurrentRearArmor = location.AssignedRearArmor;
+        } else {
+            location.AssignedArmor++;
+            location.CurrentArmor = location.AssignedArmor;
+        }
+    }
+
+    private org.irian.rapid.defs.mech.Location findMechLocation(String name) {
+        for (var location : mechDef.Locations) {
+            if (location.Location.equals(name)) {
+                return location;
+            }
+        }
+        return null;
     }
 
     private org.irian.rapid.defs.chassis.Location findChassisLocation(String name) {
