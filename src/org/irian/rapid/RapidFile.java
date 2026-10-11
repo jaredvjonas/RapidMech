@@ -305,6 +305,9 @@ public class RapidFile {
         else if (task instanceof OmnifyHardpoints) {
             omnifyHardpoints((OmnifyHardpoints) task, mech.chasisDef);
         }
+        else if (task instanceof SwapPrefab) {
+            swapPrefab((SwapPrefab) task, mech.chasisDef);
+        }
         else if (task instanceof AddItem) {
             addItem((AddItem) task, mech.mechDef);
         }
@@ -517,6 +520,20 @@ public class RapidFile {
                 }
             }
         }
+    }
+
+    /**
+     * Re-points a chassis whose source model isn't installed at a stand-in model. The three model
+     * fields always move together so the prefab and its weapon-mount layout stay matched.
+     */
+    private void swapPrefab(SwapPrefab task, ChasisDef def) {
+        if (!task.base.equalsIgnoreCase(def.PrefabBase)) {
+            return;
+        }
+        def.PrefabBase = task.with;
+        def.HardpointDataDefID = "hardpointdatadef_" + task.with;
+        def.PrefabIdentifier = task.identifier != null ? task.identifier : "chrprfmech_" + task.with + "base-001";
+        System.out.printf("Swapped prefab %s -> %s for %s\n", task.base, task.with, def.Description.Id);
     }
 
     private void swapHardpoint(SwapHardpoint task, ChasisDef def) {

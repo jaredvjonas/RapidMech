@@ -105,6 +105,19 @@
              falls back to the default cockpit like its sibling Valiant variants. -->
         <remove-fixedEquipment item="Unique_Cockpit_Ceres_TSM"/>
 
+        <!-- TKT-142: RT source chassis that name a model no installed mod ships (no prefab, no
+             hardpointdatadef -> no model and no weapon mounts). Point them at installed stand-ins:
+             RT's own choices where it has one; broadside / ferdelance by size and build.
+             Vanilla models need the camel-case identifier; CAB models use the lowercase default. -->
+        <swap-prefab base="atlas3" with="atlas" identifier="chrPrfMech_atlasBase-001"/>
+        <swap-prefab base="broadside" with="atlas" identifier="chrPrfMech_atlasBase-001"/>
+        <swap-prefab base="caesar" with="cataphract" identifier="chrPrfMech_cataphractBase-001"/>
+        <swap-prefab base="daikyu" with="cataphract" identifier="chrPrfMech_cataphractBase-001"/>
+        <swap-prefab base="ferdelance" with="panther" identifier="chrPrfMech_pantherBase-001"/>
+        <swap-prefab base="ionclint" with="clint"/>
+        <swap-prefab base="marauderiic2" with="marauderiic"/>
+        <swap-prefab base="solitaire" with="hollander"/>
+
         <!-- CASE: RT ammo-explosion gear not supported in IrianTech (no def; already stripped from
              mech inventory in mech-standard). Some RT chassis (balar/strider, 18 defs) carry it as
              FixedEquipment on the chassisdef, which remove-inventory can't reach, so it dangles ->
