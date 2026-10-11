@@ -28,6 +28,9 @@ public class RapidFile {
     private final Map<String, TaskList> taskMap = new HashMap<>();
     private static final List<String> NonPortableEquipment = new ArrayList<>();
     private Map<String, File> _searchIndex = null; // lazily built filename -> File index under ${searchRoot}
+    private Set<String> _installedHardpointDefs = null; // lazily built from ${btHome}: vanilla manifest, DLC bundles, mods
+    private static final List<String> DlcBundles = List.of("heavymetal", "flashpoint", "urbanwarfare", "shadowhawkdlc");
+    private static final Pattern HardpointDefId = Pattern.compile("hardpointdatadef_[A-Za-z0-9_]+");
 
     public RapidFile(File file) {
         this._file = file;
@@ -121,6 +124,7 @@ public class RapidFile {
                 }
 
                 validateInventory(mech);
+                validateModel(mech);
                 saveMech(mech, copy.chassisDefCmd, copy.mechDefCmd);
               } catch (Exception e) {
                 System.out.printf("SKIPPED model=[%s]: %s %s\n", mechCmd.model, e.getClass().getSimpleName(), e.getMessage());
@@ -251,6 +255,100 @@ public class RapidFile {
             System.out.printf("File not found: %s\n", outputFile);
         } catch (IOException e) {
             System.out.printf("Error writing file: %s\n", outputFile);
+        }
+    }
+
+    /**
+     * Warns when a chassis names a model no installed content ships (TKT-142). The game would log
+     * "ManifestEntry is null" for its hardpointdatadef and prefab, and the mech gets no model or weapon
+     * mounts. Each model ships exactly one hardpointdatadef, so that id stands in for the model.
+     * Skipped when ${btHome} isn't declared.
+     */
+    private void validateModel(Mech mech) throws IOException {
+        var installed = installedHardpointDefs();
+        if (installed.isEmpty()) {
+            return;
+        }
+        var def = mech.chasisDef;
+        if (!installed.contains(def.HardpointDataDefID)) {
+            System.out.printf("WARNING: %s uses model [%s] but nothing installed ships %s - add a swap-prefab\n",
+                    def.Description.Id, def.PrefabBase, def.HardpointDataDefID);
+        }
+    }
+
+    private Set<String> installedHardpointDefs() throws IOException {
+        if (_installedHardpointDefs != null) {
+            return _installedHardpointDefs;
+        }
+        _installedHardpointDefs = new HashSet<>();
+        if (!variables.containsKey("btHome")) {
+            return _installedHardpointDefs;
+        }
+        File btHome = buildPath("${btHome}");
+        File data = new File(btHome, "BattleTech_Data/StreamingAssets/data");
+
+        // base game: listed in the manifest as id,type,path,...
+        File manifest = new File(data, "VersionManifest.csv");
+        if (manifest.exists()) {
+            try (var reader = new BufferedReader(new FileReader(manifest))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    var parts = line.split(",", 3);
+                    if (parts.length > 1 && parts[1].equals("HardpointDataDef")) {
+                        _installedHardpointDefs.add(parts[0]);
+                    }
+                }
+            }
+        }
+
+        // DLC: packed inside the content pack asset bundles, so pull the ids out of the raw bytes
+        for (var bundle : DlcBundles) {
+            File file = new File(data, "assetbundles/" + bundle);
+            if (file.exists()) {
+                scanBundleForHardpointDefs(file, _installedHardpointDefs);
+            }
+        }
+
+        // mods (CAB packs, IrianTech itself, ...): one hardpointdatadef_<x>.json per model
+        indexHardpointDefFiles(new File(btHome, "Mods"), _installedHardpointDefs);
+
+        System.out.printf("installed model index built: %d hardpointdatadefs\n", _installedHardpointDefs.size());
+        return _installedHardpointDefs;
+    }
+
+    private void scanBundleForHardpointDefs(File bundle, Set<String> ids) throws IOException {
+        // the bundles run to hundreds of MB: stream in chunks, carrying a tail over so an id split
+        // across a chunk boundary is still matched
+        final int overlap = 128;
+        var buffer = new byte[8 * 1024 * 1024];
+        String carry = "";
+        try (var in = new FileInputStream(bundle)) {
+            int read;
+            while ((read = in.read(buffer)) > 0) {
+                String text = carry + new String(buffer, 0, read, java.nio.charset.StandardCharsets.ISO_8859_1);
+                Matcher matcher = HardpointDefId.matcher(text);
+                while (matcher.find()) {
+                    ids.add(matcher.group());
+                }
+                carry = text.substring(Math.max(0, text.length() - overlap));
+            }
+        }
+    }
+
+    private void indexHardpointDefFiles(File dir, Set<String> ids) {
+        File[] entries = dir.listFiles();
+        if (entries == null) {
+            return;
+        }
+        for (File entry : entries) {
+            String name = entry.getName();
+            if (entry.isDirectory()) {
+                if (!name.startsWith(".")) { // skip ModTek's .modtek cache
+                    indexHardpointDefFiles(entry, ids);
+                }
+            } else if (name.startsWith("hardpointdatadef_") && name.endsWith(".json")) {
+                ids.add(name.substring(0, name.length() - ".json".length()));
+            }
         }
     }
 
