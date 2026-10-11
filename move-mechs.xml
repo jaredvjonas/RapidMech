@@ -587,6 +587,10 @@
         <remove-inventory item="Gear_Structure_EndoComposite"/>
         <remove-inventory item="Gear_TSM_Standard"/>
         <remove-inventory item="Gear_TSM_Industrial"/>
+        <!-- RT 2b94f94 gives the Reptar EPT-C-1 an industrial Advanced FCS. It only cancels RT's
+             industrial-mech to-hit penalty, which nothing here applies, and IrianTech has no def
+             for it (dangling id -> CustomComponents NULL). -->
+        <remove-inventory item="Gear_FCS_Industrial_Advanced"/>
         <remove-inventory item="Linked_Armor_NullSignatureSystem"/>
         <remove-inventory item="Linked_Armor_Stealth"/>
         <remove-inventory item="Linked_Engine_Size_1"/>
