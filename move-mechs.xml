@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rapid>
     <dir id="btHome" path="/Program Files (x86)/Steam/steamapps/common/BATTLETECH"/>
+    <!-- RT source: github.com/BattletechModders/RogueTech commit 2b94f94a90ff39f7676fd3deaea9823ea4ab9a5a
+         (2026-10-11), extracted to Downloads/BattleTech/RogueTech-master. Re-fetch with
+         https://codeload.github.com/BattletechModders/RogueTech/zip/<commit>. Change the commit here when moving to a new RT. -->
     <dir id="clanInvasion" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/ClanInvasion3061"/>
     <dir id="civilWar" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/CivilWar3062-3067"/>
     <dir id="jihad" path="/Users/jared/Downloads/BattleTech/RogueTech-master/Eras/Jihad3068-3080"/>
@@ -117,6 +120,12 @@
         <swap-prefab base="ionclint" with="clint"/>
         <swap-prefab base="marauderiic2" with="marauderiic"/>
         <swap-prefab base="solitaire" with="hollander"/>
+        <!-- RT 2b94f94 renames / adds models that aren't installed either; keep the stand-ins
+             IrianTech already uses for these chassis -->
+        <swap-prefab base="atlasii" with="atlas" identifier="chrPrfMech_atlasBase-001"/>
+        <swap-prefab base="mwolongbow" with="ionlongbow"/>
+        <swap-prefab base="shdiic" with="shadowhawk" identifier="chrPrfMech_shadowhawkBase-001"/>
+        <swap-prefab base="sunder" with="ionsunder"/>
 
         <!-- CASE: RT ammo-explosion gear not supported in IrianTech (no def; already stripped from
              mech inventory in mech-standard). Some RT chassis (balar/strider, 18 defs) carry it as
